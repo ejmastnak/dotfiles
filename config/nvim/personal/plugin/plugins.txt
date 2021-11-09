@@ -1,0 +1,16 @@
+asyncrun
+asynctasks
+ultisnips
+vim-commentary
+vim-fugitive
+vim-surround
+
+markdown-preview
+vim-markdown-toc
+vim-pythonsense
+vimtex
+
+coq_nvim
+nvim-lspconfig
+
+darcula

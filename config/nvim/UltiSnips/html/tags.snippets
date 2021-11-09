@@ -1,0 +1,55 @@
+# snippets for html tags
+
+snippet "h([1-6])" "Heading tag" rA
+<h`!p snip.rv = match.group(1)`>${1:${VISUAL:}}</h`!p snip.rv = match.group(1)`>$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])pp" "Paragraph tag" rA
+`!p snip.rv = match.group(1)`<p>${1:${VISUAL:}}</p>$0
+endsnippet
+
+
+# STATIC STUFF
+snippet html "<html> </html>" b
+<html>
+	$0
+</html>
+endsnippet
+
+snippet nav "<nav> </nav>" b
+<nav>
+	$0
+</nav>
+endsnippet
+
+snippet head "<head> </head>" b
+<head>
+	$0
+</head>
+endsnippet
+
+snippet bod "<body> </body>" b
+<body>
+	$0
+</body>
+endsnippet
+# STATIC STUFF
+
+# START TAGS
+snippet tg "Generic tab < >...</ >" A
+<$1>${2:${VISUAL:}}</$1>$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])aa" "<a href=>...</a> (link tag)" rA
+`!p snip.rv = match.group(1)`<a href="${1:${VISUAL:}}">$2</a>$0
+endsnippet
+
+# END TAGS
+
+snippet "(^|[^;])<" " < ... >  not in front of the ; character" rA
+`!p snip.rv = match.group(1)`<${1:${VISUAL:}}>$0
+endsnippet
+
+snippet ;< "Unpaired <" iA
+<
+endsnippet

@@ -1,0 +1,49 @@
+# BEGIN PLOTTING OPTIONS
+# --------------------------------------------- #
+snippet ;m "marker='' (for matplotlib)" A
+marker='$1'$0
+endsnippet
+
+snippet ;b "label='' (for matplotlib)" A
+label='$1'$0
+endsnippet
+
+snippet ;l "linestyle='' (for matplotlib)" A
+linestyle='$1'$0
+endsnippet
+# --------------------------------------------- #
+# END PLOTTING OPTIONS
+
+snippet ;p "plt.plot() (for matplotlib)" A
+plt.
+endsnippet
+
+snippet pll "plt.plot() (for matplotlib)" bA
+plt.plot($1)$0
+endsnippet
+
+snippet pss "plt.show() (for matplotlib)" bA
+plt.show()
+endsnippet
+
+snippet rc "Some default options for matplotlib" bA
+# START MATPLOTLIB DEFAULTS CONFIGURATION
+# --------------------------------------------- #
+import matplotlib as mpl
+import matplotlib.font_manager as font_manager
+mpl.rcParams['font.family'] = 'serif'
+
+try:
+	cmfont = font_manager.FontProperties(fname=mpl.get_data_path() + '/fonts/ttf/cmr10.ttf')
+	mpl.rcParams['font.serif'] = cmfont.get_name()
+	mpl.rcParams['mathtext.fontset'] = 'cm'
+	mpl.rcParams['axes.unicode_minus'] = False  # so the minus sign '-' displays correctly in plots
+except FileNotFoundError as error:
+	plt.rcParams['mathtext.fontset'] = 'cm'
+	plt.rcParams['font.family'] = 'STIXGeneral'
+
+plt.rc('axes', labelsize=12)    # fontsize of the x and y labels
+plt.rc('axes', titlesize=16)    # fontsize of titles
+# --------------------------------------------- #
+# END MATPLOTLIB DEFAULTS CONFIGURATION
+endsnippet

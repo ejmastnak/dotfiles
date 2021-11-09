@@ -1,0 +1,51 @@
+# option black-on-end true
+option windowed-mode both
+
+# Action bindings
+# ------------------------------- #
+# clear existing bindings
+unbind_all
+unmouse_all
+
+# navigation
+bind j next
+bind J next10
+bind k prev
+bind K prev10
+
+# vim inspired
+bind slash goto
+bind g gotoFirst
+bind G gotoLast
+bind C+o histBack
+bind C+i histFwd
+
+bind o overview
+
+# timer commands
+bind s start
+bind p pause
+bind t resetTimer
+
+# screen control
+bind b blank
+bind h blank
+bind f freeze
+bind Escape exitState
+
+# annotation
+bind plus increaseSize
+bind equal increaseSize
+bind minus decreaseSize
+
+bind l switchMode pointer
+bind n switchMode normal
+bind d switchMode pen
+bind e switchMode eraser
+bind c clearDrawing
+
+# system
+bind C+t toggleToolbox
+bind C+q quit
+bind C+r reload
+bind question showHelp

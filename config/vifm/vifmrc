@@ -1,0 +1,227 @@
+" OS-specific settings
+" ---------------------------------------------
+if system('uname -s') == "Linux"
+  " source ~/.config/vifm/personal/linux.vifm
+elseif system('uname -s') == "Darwin"
+  source ~/.config/vifm/personal/mac.vifm
+else
+  echo "Error: the current OS won't support all of my Vifm configurations."
+endif
+" echo "Current OS: " . $OS
+" ---------------------------------------------
+
+" BEGIN BASIC SETTINGS
+" ---------------------------------------------
+set vicmd=nvim          " basic editor command
+set vimhelp             " use Vim-style help file instead of plain text
+set syscalls            " perform file operations with vifm instead of cp
+set trash               " use a temporary trash directory
+set dotdirs=rootparent  " show ../ only when directory is empty
+set confirm-=delete     " disable confirmation when deleting files
+set history=100         " directories to store in directory history
+set undolevels=100      " maximum number of changes that can be undone
+set nofollowlinks       " automatically resolve symbolic links on l or Enter.
+set sortnumbers         " natural sort of (version) numbers within text
+set nohlsearch          " don't highlight search results automatically
+set noincsearch         " don't jump to match while type
+set scrolloff=4         " add space between cursor and border in lists
+set slowfs=curlftpfs    " don't do too many requests to slow file systems
+set norunexec           " don't automatically run executable files on l or Enter
+colorscheme solarized-dark Default-256 Default
+
+" Ignore case in search patterns unless the pattern 
+" contains at least one uppercase letter.
+set ignorecase
+set smartcase
+
+" completion
+set wildmenu         " show list of matches on tab completion in command-line mode
+set wildstyle=popup  " display completions as a popup with descriptions of the matches
+
+
+" What should be saved automatically between vifm sessions.  Drop "savedirs"
+" value if you don't want vifm to remember last visited directories for you.
+set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+    \phistory,fhistory,dirstack,registers,bookmarks,bmarks
+
+" Set custom status line look
+set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
+
+" format for time in file list
+set timefmt=%m/%d\ %H:%M  
+
+" Display suggestions in normal, visual and view modes for keys, marks and
+" registers (at most 5 files).  In other view, when available.
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+" ---------------------------------------------
+" END BASIC SETTINGS
+
+
+" BEGIN MARKS
+" --------------------------------------------- "
+" Syntax: mark {mark} {directory} [filename]
+mark h ~/
+mark d ~/dotfiles/
+mark c ~/dotfiles/config/
+mark v ~/dotfiles/config/nvim
+mark U ~/dotfiles/config/UltiSnips
+mark t ~/MEGA/test/
+mark p ~/MEGA/planning/
+mark P ~/MEGA/projects/
+mark b ~/MEGA/basics/
+mark C ~/MEGA/cv/cv/ cv.tex
+mark w ~/MEGA/projects/ejmastnak/
+mark V ~/MEGA/projects/ejmastnak/tutorials/vim-latex/
+mark r ~/MEGA/basics/food/recipes/
+mark m ~/MEGA/projects/music/
+mark a ~/MEGA/academics/
+mark f ~/MEGA/academics/fmf/
+mark q ~/MEGA/academics/qap/
+mark k ~/MEGA/academics/klf/
+mark s ~/MEGA/software/software-resources/
+mark M ~/Media/music/music-library/
+mark Z ~/Media/music/music-library/Unsorted/
+mark S ~/Media/software-and-web/
+mark F ~/Media/academics/fmf/
+mark N ~/Media/academics/literature/deep-learning/nnfs/
+" --------------------------------------------- "
+" END MARKS
+
+
+" BEGIN COMMANDS
+" --------------------------------------------- "
+" :com[mand][!] command_name action
+" The following macros can be used in a command
+" %a is replaced with the user arguments.
+" %c the current file under the cursor.
+" %C the current file under the cursor in the other directory.
+" %f the current selected file, or files.
+" %F the current selected file, or files in the other directory.
+" %b same as %f %F.
+" %d the current directory name.
+" %D the other window directory name.
+" %m run the command in a menu window
+
+command! df df -h %m 2> /dev/null
+command! diff vim -d %f %F
+command! zip zip -r %f.zip %f
+command! run !! ./%f
+command! make !!make %a
+command! mkcd :mkdir %a | cd %a
+command! reload :write | restart full
+" --------------------------------------------- "
+" BEGIN COMMANDS
+
+
+" BEGIN MAPPINGS
+" --------------------------------------------- "
+" Start shell in current directory
+nnoremap s :shell<cr>
+
+" Display sorting dialog
+nnoremap S :sort<cr>
+
+" Toggle visibility of preview window
+nnoremap w :view<cr>
+vnoremap w :view<cr>gv
+
+" Mappings for faster renaming
+nnoremap I cw<c-a>
+nnoremap cc cw<c-u>
+nnoremap A cw
+
+" open vifmrc in editor
+nnoremap C :!nvim -c 'set filetype=vim' $MYVIFMRC<CR>:restart<CR>
+
+" yank current filename without path into the clipboard
+nnoremap yn :!echo -n %c | pbcopy %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
+
+" yank current file path into the clipboard
+nnoremap yp :!echo -n %c:p | pbcopy %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
+" --------------------------------------------- "
+" END MAPPINGS
+
+
+" BEGIN FILE OPENING CONFIGURATION
+" ---------------------------------------------
+" TeX
+filetype {*.tex},<text/tex> nvim --listen /tmp/texsocket
+
+" LyTeX
+filetype {*.lytex},<text/tex> nvim --listen /tmp/lytexsocket
+
+" LilyPond
+filetype {*.ly},<text/lilypond> nvim --listen /tmp/lilypondsocket
+
+" Audio
+filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
+        \<audio/*> mpv
+
+" Video
+filetype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+         \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+         \*.as[fx]},
+        \<video/*>
+       \ {Play using mpv}
+       \ mpv,
+fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+           \*.as[fx]},
+          \<video/*>
+         \ ffprobe -pretty %c 2>&1
+
+" HTML files
+filetype {*.html,*.htm},<text/html>
+       \ {Open with NeoVim}
+       \ nvim,
+
+" Object
+filetype {*.o},<application/x-object> nm %f | less
+
+" Man page
+filetype {*.[1-8]},<text/troff> man ./%c
+fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
+
+" MD5
+filetype *.md5
+       \ {Check MD5 hash sum}
+       \ md5sum -c %f %S,
+
+" SHA1
+filetype *.sha1
+       \ {Check SHA1 hash sum}
+       \ sha1sum -c %f %S,
+
+" SHA256
+filetype *.sha256
+       \ {Check SHA256 hash sum}
+       \ sha256sum -c %f %S,
+
+" SHA512
+filetype *.sha512
+       \ {Check SHA512 hash sum}
+       \ sha512sum -c %f %S,
+
+" Torrent
+filetype {*.torrent},<application/x-bittorrent> open -a Transmission.app
+fileviewer {*.torrent},<application/x-bittorrent> dumptorrent -v %c
+
+" Extract zip files
+filetype {*.zip},<application/zip,application/java-archive> unzip %f
+fileviewer {*.zip,*.jar,*.war,*.ear},
+          \<application/zip,application/java-archive>
+          \ zip -sf %c
+
+" Extract tar archives
+filetype {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz},<application/x-tar>
+       \ tar -xf %f
+fileviewer {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz},<application/x-tar>
+         \ tar -tf %f
+
+" Extract .bz2 archives
+filetype *.bz2 bzip2 -d %f
+
+" Extract .gz files
+filetype *.gz gunzip %f
+" ---------------------------------------------
+" END FILE OPENING CONFIGURATION

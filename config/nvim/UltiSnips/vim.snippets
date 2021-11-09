@@ -1,0 +1,9 @@
+snippet -- "Commented line with a bunch of dashes ----------------- " bA
+" ---------------------------------------------
+endsnippet
+
+priority 1
+# expands " into " " everywhere except on a new line to avoid class with Vim comments
+snippet "(.)\"" "paired quotation marks" rA
+`!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
+endsnippet

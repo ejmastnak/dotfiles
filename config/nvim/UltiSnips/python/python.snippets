@@ -1,0 +1,26 @@
+# Basic Python language settings
+
+snippet pp "print()" A
+print(${1:${VISUAL:}})$0
+endsnippet
+
+snippet ;s "self. (for use in Python classes)"  Ai
+self.
+endsnippet
+
+snippet dd "New function definition" bA
+def ${1:function_name}($2):
+	"""
+	${3:documentation}
+	"""
+	$0
+endsnippet
+
+snippet main "if name==main" bA
+if __name__ == "__main__":
+	$0
+endsnippet
+
+snippet prr ":param (for block comments)" bA
+:param $1: $0
+endsnippet

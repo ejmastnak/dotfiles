@@ -1,0 +1,40 @@
+set trashdir=~/.Trash/  " use macOS Trash as trash directory
+
+" BEGIN FILE OPENING CONFIGURATION
+" ---------------------------------------------
+" PDF
+filetype {*.pdf},<application/pdf> open -a Skim.app
+fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
+
+" PostScript
+filetype {*.ps,*.eps,*.ps.gz},<application/postscript> open -a Preview.app
+
+" SVG
+filetype {*.svg},<application/svg> open -a Inkscape.app
+
+" Image
+filetype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
+       \ open -a Preview.app
+
+" Office document files
+filetype {*.doc,*.docx}, \<application/msword>
+       \ open -a Microsoft\ Word.app
+
+" Office presentation files
+filetype {*.ppt,*.pptx}, \<application/msppt>
+       \ open -a Microsoft\ PowerPoint.app
+
+" Office spreadsheet files
+filetype {*.xls,*.xlsx}, \<application/msexcel>
+       \ open -a Microsoft\ Excel.app
+
+" Mount .dmg archives
+filetype *.dmg open
+
+" Mount disk .img
+filetype *.img open
+
+" Open .pkg binaries
+filetype *.pkg open
+" ---------------------------------------------
+" END FILE OPENING CONFIGURATION

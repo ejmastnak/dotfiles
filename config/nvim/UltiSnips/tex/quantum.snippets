@@ -1,0 +1,37 @@
+global !p
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+endglobal
+
+
+# Dirac braket notation commands
+
+context "math()"
+snippet "([\W_])ket" "\ket{}" rA
+`!p snip.rv = match.group(1)`\ket{${1:${VISUAL:}}}$0
+endsnippet
+
+context "math()"
+snippet "([\W_])bra" "\bra{}" rA
+`!p snip.rv = match.group(1)`\bra{${1:${VISUAL:}}}$0
+endsnippet
+
+context "math()"
+snippet "([\W_])bk" "\braket{}{}" rA
+`!p snip.rv = match.group(1)`\braket\{$1\}\{$2\}$0
+endsnippet
+
+context "math()"
+snippet "([\W_])mel" "\mel{}{}{} (matrix element)" rA
+`!p snip.rv = match.group(1)`\mel{$1}{$2}{$3}$0
+endsnippet
+
+# static snippets
+snippet "([^a-zA-Z0-9\\])hbar" "\hbar" rA
+`!p snip.rv = match.group(1)`\hbar
+endsnippet
+
+context "math()"
+snippet "([^a-zA-Z0-9\\])dag" "\dagger" rA
+`!p snip.rv = match.group(1)`\dagger
+endsnippet
