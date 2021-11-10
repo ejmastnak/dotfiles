@@ -10,11 +10,11 @@ set shiftwidth=4
 set foldmethod=indent
 set foldlevel=99
 
-" start language server
-source ~/.config/nvim/personal/lsp/lsp-config.vim
-luafile ~/.config/nvim/lua/lsp/pyright-config.lua
-LspStart pyright
+" " start language server
+" source ~/.config/nvim/personal/lsp/lsp-config.vim
+" luafile ~/.config/nvim/personal/lsp/pyright-config.lua
+" LspStart pyright
 
-" start autocompletion plugin
-source ~/.config/nvim/personal/plugin/config/coq-config.vim
-COQnow
+" " start autocompletion plugin
+" source ~/.config/nvim/personal/plugin/config/coq-config.vim
+" COQnow
