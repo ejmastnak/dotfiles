@@ -65,7 +65,7 @@ mark d ~/dotfiles/
 mark c ~/dotfiles/config/
 mark v ~/dotfiles/config/nvim
 mark U ~/dotfiles/config/UltiSnips
-mark t ~/MEGA/test/
+mark T ~/MEGA/test/
 mark p ~/MEGA/planning/
 mark P ~/MEGA/projects/
 mark b ~/MEGA/basics/
@@ -76,6 +76,7 @@ mark r ~/MEGA/basics/food/recipes/
 mark m ~/MEGA/projects/music/
 mark a ~/MEGA/academics/
 mark f ~/MEGA/academics/fmf/
+mark t ~/MEGA/academics/telecomm/
 mark q ~/MEGA/academics/qap/
 mark k ~/MEGA/academics/klf/
 mark s ~/MEGA/software/software-resources/
@@ -117,6 +118,9 @@ command! reload :write | restart full
 " --------------------------------------------- "
 " Start shell in current directory
 nnoremap s :shell<cr>
+
+" Shortcut for edit command
+nnoremap e :edit<space>
 
 " Display sorting dialog
 nnoremap S :sort<cr>
