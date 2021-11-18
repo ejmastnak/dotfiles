@@ -7,3 +7,6 @@ nnoremap <silent> gR <cmd>lua vim.lsp.buf.references()<CR>
 
 " nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 " nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+
+" to easily restart LSP
+nnoremap <leader>l :LspRestart<CR>
