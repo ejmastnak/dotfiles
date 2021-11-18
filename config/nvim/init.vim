@@ -177,6 +177,9 @@ endfunction
 
 " BEGIN MISCELLANEOUS
 " ---------------------------------------------
+" Easier write command
+nnoremap <leader>w :w<CR>
+
 " For easy macro playback; note that this overrides entering Ex mode with Q
 nnoremap Q @q
 

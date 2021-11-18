@@ -64,7 +64,7 @@ mark h ~/
 mark d ~/dotfiles/
 mark c ~/dotfiles/config/
 mark v ~/dotfiles/config/nvim
-mark U ~/dotfiles/config/UltiSnips
+mark U ~/dotfiles/config/nvim/UltiSnips
 mark T ~/MEGA/test/
 mark p ~/MEGA/planning/
 mark P ~/MEGA/projects/
@@ -82,7 +82,7 @@ mark k ~/MEGA/academics/klf/
 mark s ~/MEGA/software/software-resources/
 mark M ~/Media/music/music-library/
 mark Z ~/Media/music/music-library/Unsorted/
-mark S ~/Media/software-and-web/
+mark S ~/.local/share/nvim/swap/
 mark F ~/Media/academics/fmf/
 mark N ~/Media/academics/literature/deep-learning/nnfs/
 " --------------------------------------------- "
