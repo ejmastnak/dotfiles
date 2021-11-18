@@ -22,11 +22,11 @@ if !exists("b:did_indent")
 endif
 
 " indentation setting as for LaTeX
-set expandtab
-set autoindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+setlocal expandtab
+setlocal autoindent
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
 
 
 " BEGIN COMPILATION COMMANDS
@@ -55,25 +55,25 @@ let s:compile_tex_command = "pdflatex -output-dir=" .
 " BEGIN COMPILATION FUNCTIONS
 " ------------------------------------------- "
 " compile .lytex file with lilypond-book
-function! lytex#compile_lily() abort
+function! s:LytexCompileLytex() abort
   update
   execute "AsyncRun " . expand(s:compile_lily_command)
 endfunction
 
 " compile generated .tex file with pdflatex
-function! lytex#compile_tex() abort
+function! s:LytexCompileTex() abort
   execute "AsyncRun " . expand(s:compile_tex_command)
 endfunction
 
 " compile .lytex file, then compile generated .tex file
-function! lytex#compile_lily_tex() abort
+function! s:LytexCompileAll() abort
   update
   execute "AsyncRun " . expand(s:compile_lily_command) .
         \ " && " . expand(s:compile_tex_command)
 endfunction
 
 " move pdf file to position corresponding to current line in .lytex file
-function! lytex#forward_show() abort
+function! s:LytexForwardShow() abort
   update
   " TLDR: AsyncRun sh forward_show_script lytex_line lytex_file tex_file pdf_file
   execute "AsyncRun sh " . expand(s:forward_show_script) . " " .
@@ -89,19 +89,24 @@ endfunction
 
 " BEGIN MAPPINGS
 " ------------------------------------------- "
-" generic <Plug> mappings
-noremap <Plug>LilyCompile :call lytex#compile_lily()<CR>
-noremap <Plug>LilyTexCompile :call lytex#compile_tex()<CR>
-noremap <Plug>LilyLyTexCompile :call lytex#compile_lily_tex()<CR>
-noremap <Plug>LyTexForwardShow :call lytex#forward_show()<CR>
+" LytexCompileLytex
+nmap <leader>l <Plug>LytexCompileLytex
+noremap <script> <Plug>LytexCompileLytex <SID>LytexCompileLytex
+noremap <SID>LytexCompileLytex :call <SID>LytexCompileLytex()<CR>
 
-" explicit mappings
-nmap <leader>l <Plug>LilyCompile
-nmap <leader>t <Plug>LilyTexCompile
-nmap <leader>r <Plug>LilyLyTexCompile
-nmap <leader>v <Plug>LyTexForwardShow
+" LytexCompileTex
+nmap <leader>t <PlugLytexCompileTex>
+noremap <script> <Plug>LytexCompileTex <SID>LytexCompileTex
+noremap <SID>LytexCompileTex :call <SID>LytexCompileTex()<CR>
+
+" LytexCompileAll
+nmap <leader>r <Plug>LytexCompileAll
+noremap <script> <Plug>LytexCompileAll <SID>LytexCompileAll
+noremap <SID>LytexCompileAll :call <SID>LytexCompileAll()<CR>
+
+" LytexForwardShow
+nmap <leader>v <Plug>LytexForwardShow
+noremap <script> <Plug>LytexForwardShow <SID>LytexForwardShow
+noremap <SID>LytexForwardShow :call <SID>LytexForwardShow()<CR>
 " ------------------------------------------- "
 " END MAPPINGS
-
-" --------------------------------------------- "
-" END COMPILATION FUNCTIONALITY

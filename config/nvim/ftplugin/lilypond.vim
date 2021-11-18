@@ -10,15 +10,15 @@ Let s:forward_show_script = "$HOME/.config/nvim/personal/forward-show.sh"
 let s:displayline_command = "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g"
 
 " setting indentation
-set expandtab
-set autoindent
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+setlocal expandtab
+setlocal autoindent
+setlocal tabstop=2
+setlocal softtabstop=2
+setlocal shiftwidth=2
 
 " BEGIN FUNCTIONS
 " ------------------------------------------- "
-function! lilypond#compile() abort
+function! s:LilyCompile() abort
   update
   if g:os_current == "Linux"
     execute "AsyncRun lilypond $(VIM_FILENAME)"
@@ -29,7 +29,7 @@ function! lilypond#compile() abort
   endif
 endfunction
 
-function! lilypond#forward_show() abort
+function! s:LilyForwardShow() abort
   " TLDR: AsyncRun sh forward_show_script line pdf_file lilypond_file OS_name
   execute "AsyncRun sh " . expand(s:forward_show_script) . " " .
         \ line('.') .
@@ -40,12 +40,17 @@ endfunction
 " ------------------------------------------- "
 " END FUNCTIONS
 
+
 " BEGIN MAPPINGS
 " ------------------------------------------- "
-noremap <Plug>LilyPondCompile :call lilypond#compile()<cr>
-nmap <leader>r <Plug>LilyPondCompile
+" LilyCompile
+nmap <leader>r <Plug>LilyCompile
+noremap <script> <Plug>LilyCompile <SID>LilyCompile
+noremap <SID>LilyCompile :call LilyCompile()<CR>
 
-noremap <Plug>LilyPondForwardShow :call lilypond#forward_show()<cr>
-nmap <leader>v <Plug>LilyPondForwardShow
+" LilyForwardShow
+nmap <leader>v <Plug>LilyForwardShow
+noremap <script> <Plug>LilyForwardShow <SID>LilyForwardShow
+noremap <SID>LilyForwardShow :call LilyForwardShow()<CR>
 " ------------------------------------------- "
 " END MAPPINGS

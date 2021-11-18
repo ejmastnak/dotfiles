@@ -1,13 +1,13 @@
 " Python settings
 
 " indentation settings
-set expandtab
-set autoindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set foldmethod=indent
-set foldlevel=99
+setlocal expandtab
+setlocal autoindent
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal foldmethod=indent
+setlocal foldlevel=99
 
 " start language server
 source ~/.config/nvim/personal/lsp/lsp-config.vim

@@ -10,11 +10,11 @@ let b:did_mytexplugin = 1       " plugin is loaded
 let g:tex_flavor = 'latex'		" recognize tex files as latex
 
 " setting indentation
-set expandtab
-set autoindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+setlocal expandtab
+setlocal autoindent
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
 
 " turn off automatic indenting in enumerated environments
 let g:tex_indent_items=0

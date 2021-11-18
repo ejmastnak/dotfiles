@@ -32,7 +32,7 @@ endif
 " BEGIN FUNCTIONS
 " ------------------------------------------- "
 " function for toggling latexmk
-function! tex_compile#toggle_latexmk() abort
+function! s:TexToggleLatexmk() abort
   if b:tex_compile_use_latexmk  " turn off latexmk
     let b:tex_compile_use_latexmk = 0
   else  " turn on latexmk
@@ -41,7 +41,7 @@ function! tex_compile#toggle_latexmk() abort
 endfunction
 
 " function for toggling shell escape
-function! tex_compile#toggle_shell_escape() abort
+function! s:TexToggleShellEscape() abort
   if b:tex_compile_use_shell_escape  " turn off shell escape
     let b:tex_compile_use_shell_escape = 0
   else  " turn on shell escape
@@ -49,7 +49,7 @@ function! tex_compile#toggle_shell_escape() abort
   endif
 endfunction
 
-function! tex_compile#compile() abort
+function! s:TexCompile() abort
   update
   execute "AsyncRun sh " . expand(s:compile_script_path) . 
         \ " $(VIM_RELDIR)" . " $(VIM_FILENOEXT) " . 
@@ -57,15 +57,7 @@ function! tex_compile#compile() abort
         \ expand(b:tex_compile_use_shell_escape)
 endfunction
 
-function! tex_compile#compile_show() abort
-  update  " save buffer if necessary
-  execute "AsyncRun sh " . expand(s:compile_show_script_path) .
-        \ " $(VIM_RELDIR)" . " $(VIM_FILENOEXT) " .
-        \ expand(b:tex_compile_use_latexmk) . " " .
-        \ expand(b:tex_compile_use_shell_escape) . " " . line('.')
-endfunction
-
-function! tex_compile#forward_show() abort
+function! s:TexForwardShow() abort
   " TLDR: AsyncRun sh forward_show_script line pdf_file tex_file OS_name
   execute "AsyncRun sh " . expand(s:forward_show_script) . " " .
         \ line('.') .
@@ -79,18 +71,24 @@ endfunction
 
 " BEGIN MAPPINGS
 " ------------------------------------------- "
-" generic <Plug> mappings
-noremap <Plug>TexToggleLatexmk :call tex_compile#toggle_latexmk()<CR>
-noremap <Plug>TexToggleShellEscape :call tex_compile#toggle_shell_escape()<CR>
-noremap <Plug>TexCompile :call tex_compile#compile()<CR>
-noremap <Plug>TexCompileShow :call tex_compile#compile_show()<CR>
-noremap <Plug>TexForwardShow :call tex_compile#forward_show()<CR>
-
-" explicit mappings
+" TexToggleLatexmk
 nmap <leader>tl <Plug>TexToggleLatexmk
+nnoremap <script> <Plug>TexToggleLatexmk <SID>TexToggleLatexmk
+noremap <SID>TexToggleLatexmk :call <SID>TexToggleLatexmk()<CR>
+
+" TexToggleShellEscape
 nmap <leader>te <Plug>TexToggleShellEscape
+noremap <script> <Plug>TexToggleShellEscape <SID>TexToggleShellEscape
+noremap <SID>TexToggleShellEscape :call <SID>TexToggleShellEscape()<CR>
+
+" TexCompile
 nmap <leader>r <Plug>TexCompile
-nmap <leader>c <Plug>TexCompileShow
+noremap <script> <Plug>TexCompile <SID>TexCompile
+noremap <SID>TexCompile :call <SID>TexCompile()<CR>
+
+" TexForwardShow
 nmap <leader>v <Plug>TexForwardShow
+noremap <script> <Plug>TexForwardShow <SID>TexForwardShow
+noremap <SID>TexForwardShow :call <SID>TexForwardShow()<CR>
 " ------------------------------------------- "
 " END MAPPINGS
