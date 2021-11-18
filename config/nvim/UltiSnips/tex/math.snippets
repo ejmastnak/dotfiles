@@ -6,12 +6,12 @@ endglobal
 # BEGIN SUPERSCRIPTS AND SUBSCRIPTS
 # ------------------------------------------------ #
 context "math()"
-snippet "([\w]|[\}\)\]\|'])j;" "Superscript" rA
+snippet "([\w]|[\}\)\]\|'])'" "Superscript" rA
 `!p snip.rv = match.group(1)`^{${1:${VISUAL:}}}$0
 endsnippet
 
 context "math()"
-snippet "([\w]|[\}\)\]\|'])jl" "Subscript" rA
+snippet "([\w]|[\}\)\]\|']);" "Subscript" rA
 `!p snip.rv = match.group(1)`_{${1:${VISUAL:}}}$0
 endsnippet
 
@@ -20,31 +20,13 @@ snippet "([\w]|[\}\)\]\|'])sd" "Text subscript" rA
 `!p snip.rv = match.group(1)`_{\mathrm{${1:${VISUAL:}}}}$0
 endsnippet
 
-snippet "([\w]|[\}\)\]\|']);([0-9])" "Automatic numeric subscript " rA
-`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
-endsnippet
-
-snippet "([\w]|[\}\)\]\|'])'([1-9])" "Automatic numeric superscript" rA
-`!p snip.rv = match.group(1)`^{`!p snip.rv = match.group(2)`}
-endsnippet
-
 snippet "([a-zA-Z]|[\}\)\]\|'])00" "Automatic 0 subscript" rA
 `!p snip.rv = match.group(1)`_{0}
-endsnippet
-
-snippet "([\w]|[\}\)\]\|'])'0" "Automatic (0) superscript" rA
-`!p snip.rv = match.group(1)`^{(0)}
 endsnippet
 
 context "math()"
 snippet "([^a-zA-Z])ee" "e^{} supercript" rA
 `!p snip.rv = match.group(1)`e^{${1:${VISUAL:}}}$0
-endsnippet
-
-# type e.g. II and get _{i}. So a lowercase, single-letter version of trigger
-context "math()"
-snippet "([\w]|[\}\)\]\|'])([I-N]{2}|[X-Z]{2})" "Automatic letter subscript" rA
-`!p snip.rv = match.group(1) + "_{" + match.group(2)[0].lower() + "}"`
 endsnippet
 
 context "math()"
