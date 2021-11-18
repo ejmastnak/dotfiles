@@ -40,3 +40,7 @@ snippet "(^|[^a-zA-Z])mbf" "\mathbf" rA
 `!p snip.rv = match.group(1)`\mathbf{${1:${VISUAL:}}}$0
 endsnippet
 
+snippet "(^|[^a-zA-Z\\])tm" "\music{} (for music theory documents)" rA
+`!p snip.rv = match.group(1)`\music{${1:${VISUAL:}}}$0
+endsnippet
+

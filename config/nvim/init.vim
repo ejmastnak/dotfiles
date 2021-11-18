@@ -206,6 +206,10 @@ source ~/.config/nvim/personal/spell/my_spell.vim
 
 " BEGIN PLUGIN CONFIGURATION
 " ---------------------------------------------
+" my personal MPV plugin
+command LoadMPV source $HOME/.config/nvim/personal/mpv/mpv.vim
+nnoremap <leader>M <Cmd>LoadMPV<CR>
+
 " UltiSnips Snippet keys
 let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsJumpForwardTrigger = "jk"
