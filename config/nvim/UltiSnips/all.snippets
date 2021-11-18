@@ -12,8 +12,8 @@ snippet { "Paired curly brackets {}" iA
 {${1:${VISUAL:}}}$0
 endsnippet
 
-snippet " "double quotation marks" A
-"${1:${VISUAL:}}"$0
+snippet "(^|[\W])\""  "double quotation marks" rA
+`!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
 endsnippet
 
 snippet ' "single quotation marks" A

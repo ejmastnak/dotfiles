@@ -8,11 +8,25 @@ snippet ;s "self. (for use in Python classes)"  Ai
 self.
 endsnippet
 
-snippet dd "New function definition" bA
+snippet ff "New function definition" bA
 def ${1:function_name}($2):
 	"""
 	${3:documentation}
 	"""
+	$0
+endsnippet
+
+snippet sf "New function definition inside a class (with self parameter)" bA
+def ${1:function_name}(self, $2):
+	"""
+	${3:documentation}
+	"""
+	$0
+endsnippet
+
+
+snippet ii "init method" bA
+def __init__(self$1):
 	$0
 endsnippet
 
