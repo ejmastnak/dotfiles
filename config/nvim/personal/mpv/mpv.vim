@@ -2,7 +2,6 @@ let g:mpv_connected = 0     " initially disconnected
 let g:mpv_video_paused = 1  " initially paused
 
 let g:mpv_last_seek_time = 0    " used to repeat the last seek duration
-
 let s:mpv_socket = "/tmp/mpvsocket"
 let s:mpv_scripts = "$HOME/.config/nvim/personal/mpv/"
 let s:get_property_script = s:mpv_scripts . "get-property.sh"
@@ -107,39 +106,88 @@ nnoremap <leader>p :MPVProperty<Space>
 " MPVTogglePause function
 nmap ;<Space> <Plug>MPVTogglePause
 nnoremap <script> <Plug>MPVTogglePause <SID>MPVTogglePause
-nnoremap <silent> <SID>MPVTogglePause :silent call <SID>MPVTogglePause()<CR>
+nnoremap <silent> <SID>MPVTogglePause <Cmd>silent call <SID>MPVTogglePause()<CR>
 imap ;<Space> <Plug>MPVTogglePause
 inoremap <script> <Plug>MPVTogglePause <SID>MPVTogglePause
-inoremap <silent> <SID>MPVTogglePause <C-O>:silent call <SID>MPVTogglePause()<CR>
+inoremap <silent> <SID>MPVTogglePause <Cmd>silent call <SID>MPVTogglePause()<CR>
 
 " MPVGetTime function
-imap ;T <Plug>MPVGetTime
+imap `t <Plug>MPVGetTime
 inoremap <script> <Plug>MPVGetTime <SID>MPVGetTime
 inoremap <expr> <silent> <SID>MPVGetTime <SID>MPVGetTime()
 
-" MPVChangeSpeed function
+" MPVChangeSpeed (faster)
 nmap `. <Plug>MPVFaster
 nnoremap <script> <Plug>MPVFaster <SID>MPVFaster
-nnoremap <silent> <SID>MPVFaster :silent call <SID>MPVChangeSpeed("faster")<CR>
+nnoremap <silent> <SID>MPVFaster <Cmd>silent call <SID>MPVChangeSpeed("faster")<CR>
 imap `. <Plug>MPVFaster
 inoremap <script> <Plug>MPVFaster <SID>MPVFaster
-inoremap <silent> <SID>MPVFaster <C-O>:silent call <SID>MPVChangeSpeed("faster")<CR>
+inoremap <silent> <SID>MPVFaster <Cmd>silent call <SID>MPVChangeSpeed("faster")<CR>
 
+" MPVChangeSpeed (slower)
 nmap `, <Plug>MPVSlower
 nnoremap <script> <Plug>MPVSlower <SID>MPVSlower
-nnoremap <silent> <SID>MPVSlower :silent call <SID>MPVChangeSpeed("slower")<CR>
+nnoremap <silent> <SID>MPVSlower <Cmd>silent call <SID>MPVChangeSpeed("slower")<CR>
 imap `, <Plug>MPVSlower
 inoremap <script> <Plug>MPVSlower <SID>MPVSlower
-inoremap <silent> <SID>MPVSlower <C-O>:silent call <SID>MPVChangeSpeed("slower")<CR>
+inoremap <silent> <SID>MPVSlower <Cmd>silent call <SID>MPVChangeSpeed("slower")<CR>
 
+" MPVChangeSpeed (reset)
 nmap `= <Plug>MPVReset
 nnoremap <script> <Plug>MPVReset <SID>MPVReset
-nnoremap <silent> <SID>MPVReset :silent call <SID>MPVChangeSpeed("reset")<CR>
+nnoremap <silent> <SID>MPVReset <Cmd>silent call <SID>MPVChangeSpeed("reset")<CR>
 imap `= <Plug>MPVReset
 inoremap <script> <Plug>MPVReset <SID>MPVReset
-inoremap <silent> <SID>MPVReset <C-O>:silent call <SID>MPVChangeSpeed("reset")<CR>
+inoremap <silent> <SID>MPVReset <Cmd>silent call <SID>MPVChangeSpeed("reset")<CR>
 
-" nnoremap <silent> ;a :call <SID>MPVSeek(10)<CR>
+" MPVSeek (forward 10 seconds)
+nmap ,a <Plug>MPVSeekF1
+nnoremap <script> <Plug>MPVSeekF1 <SID>MPVSeekF1
+nnoremap <silent> <SID>MPVSeekF1 <Cmd>silent call <SID>MPVSeek(10)<CR>
+imap ,a <Plug>MPVSeekF1
+inoremap <script> <Plug>MPVSeekF1 <SID>MPVSeekF1
+inoremap <silent> <SID>MPVSeekF1 <Cmd>silent call <SID>MPVSeek(10)<CR>
+
+" MPVSeek (forward 60 seconds)
+nmap ,s <Plug>MPVSeekF2
+nnoremap <script> <Plug>MPVSeekF2 <SID>MPVSeekF2
+nnoremap <silent> <SID>MPVSeekF2 <Cmd>silent call <SID>MPVSeek(60)<CR>
+imap ,s <Plug>MPVSeekF2
+inoremap <script> <Plug>MPVSeekF2 <SID>MPVSeekF2
+inoremap <silent> <SID>MPVSeekF2 <Cmd>silent call <SID>MPVSeek(60)<CR>
+
+" MPVSeek (forward 300 seconds)
+nmap ,d <Plug>MPVSeekF3
+nnoremap <script> <Plug>MPVSeekF3 <SID>MPVSeekF3
+nnoremap <silent> <SID>MPVSeekF3 <Cmd>silent call <SID>MPVSeek(300)<CR>
+imap ,d <Plug>MPVSeekF3
+inoremap <script> <Plug>MPVSeekF3 <SID>MPVSeekF3
+inoremap <silent> <SID>MPVSeekF3 <Cmd>silent call <SID>MPVSeek(300)<CR>
+
+" MPVSeek (back 10 seconds)
+nmap ,q <Plug>MPVSeekB1
+nnoremap <script> <Plug>MPVSeekB1 <SID>MPVSeekB1
+nnoremap <silent> <SID>MPVSeekB1 <Cmd>silent call <SID>MPVSeek(-10)<CR>
+imap ,q <Plug>MPVSeekB1
+inoremap <script> <Plug>MPVSeekB1 <SID>MPVSeekB1
+inoremap <silent> <SID>MPVSeekB1 <Cmd>silent call <SID>MPVSeek(-10)<CR>
+
+" MPVSeek (back 60 seconds)
+nmap ,w <Plug>MPVSeekB2
+nnoremap <script> <Plug>MPVSeekB2 <SID>MPVSeekB2
+nnoremap <silent> <SID>MPVSeekB2 <Cmd>silent call <SID>MPVSeek(-60)<CR>
+imap ,w <Plug>MPVSeekB2
+inoremap <script> <Plug>MPVSeekB2 <SID>MPVSeekB2
+inoremap <silent> <SID>MPVSeekB2 <Cmd>silent call <SID>MPVSeek(-60)<CR>
+
+" MPVSeek (back 300 seconds)
+nmap ,e <Plug>MPVSeekB3
+nnoremap <script> <Plug>MPVSeekB3 <SID>MPVSeekB3
+nnoremap <silent> <SID>MPVSeekB3 <Cmd>silent call <SID>MPVSeek(-300)<CR>
+imap ,e <Plug>MPVSeekB3
+inoremap <script> <Plug>MPVSeekB3 <SID>MPVSeekB3
+inoremap <silent> <SID>MPVSeekB3 <Cmd>silent call <SID>MPVSeek(-300)<CR>
+
 " nnoremap <silent> ;s :call <SID>MPVSeek(30)<CR>
 " nnoremap <silent> ;d :call <SID>MPVSeek(60)<CR>
 " nnoremap <silent> ;f :call <SID>MPVSeek(300)<CR>
