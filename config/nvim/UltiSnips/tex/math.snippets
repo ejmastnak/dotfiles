@@ -20,6 +20,16 @@ snippet "([\w]|[\}\)\]\|'])sd" "Text subscript" rA
 `!p snip.rv = match.group(1)`_{\mathrm{${1:${VISUAL:}}}}$0
 endsnippet
 
+context "math()"
+snippet "([\w]|[\}\)\]\|'])"([\w]{1})" "Place the first \w character after the quotation mark in a subscript" rA
+`!p snip.rv = match.group(1) + "^{" + match.group(2) + "}"`
+endsnippet
+
+context "math()"
+snippet "([\w]|[\}\)\]\|']):([\w]{1})" "Place the first \w character after the : in a subscript" rA
+`!p snip.rv = match.group(1) + "_{" + match.group(2) + "}"`
+endsnippet
+
 snippet "([a-zA-Z]|[\}\)\]\|'])00" "Automatic 0 subscript" rA
 `!p snip.rv = match.group(1)`_{0}
 endsnippet
@@ -46,6 +56,11 @@ context "math()"
 snippet "([\w]|[\}\)\]\|'])CC" "Automatic complement superscript" rA
 `!p snip.rv = match.group(1)`^{\complement}
 endsnippet
+
+# context "math()"
+# snippet "([\w]|[\}\)\]\|'])\"" "Access prime with quotation mark, since prime is used for superscript." rA
+# `!p snip.rv = match.group(1)`'
+# endsnippet
 # ----------------------------------------- #
 # END SUPERSCRIPTS AND SUBSCRIPTS
 
@@ -58,6 +73,11 @@ endsnippet
 
 snippet "(^|[^a-zA-Z])tf" "\tfrac{}{}" rA
 `!p snip.rv = match.group(1)`\tfrac{${1:${VISUAL:}}}{$2}$0
+endsnippet
+
+context "math()"
+snippet "([^a-zA-Z])sq" "\sqrt (square root)" rA
+`!p snip.rv = match.group(1)`\sqrt{${1:${VISUAL:}}}$0
 endsnippet
 
 context "math()"
@@ -141,6 +161,16 @@ endsnippet
 context "math()"
 snippet "([^a-zA-Z\\])ang" "ang{} (Angle)" rA
 `!p snip.rv = match.group(1)`\ang{${1:${VISUAL:}}}$0
+endsnippet
+
+context "math()"
+snippet aa "\annotate{}{} (custom command for annotated stackrel)" A
+\annotate{${1:above}}{${2:below}}$0
+endsnippet
+
+context "math()"
+snippet "([\W_\\])srr" "\stackrel{}{}" rA
+`!p snip.rv = match.group(1)`\stackrel{${1:above}}{${2:${VISUAL:below}}}$0
 endsnippet
 # --------------------------------------------- #
 # END SEMANTIC COMMANDS (vec, tilde, etc...)
@@ -307,11 +337,6 @@ endsnippet
 # turns B| into \Big |
 snippet "([\W])([bB])\|" "(bB)ig |_{evaluation}" rA
 `!p snip.rv = match.group(1)`\\`!p snip.rv = match.group(2)`ig|_{${1:${VISUAL:}}}$0
-endsnippet
-
-context "math()"
-snippet "([^a-zA-Z])sq" "\sqrt (square root)" rA
-`!p snip.rv = match.group(1)`\sqrt{${1:${VISUAL:}}}$0
 endsnippet
 
 snippet qm "\questionmath{} (for coloring math commands to distinguish from colored question text)"

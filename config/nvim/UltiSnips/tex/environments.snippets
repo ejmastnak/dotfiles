@@ -24,13 +24,6 @@ snippet nn "Equation environment with suppressed numbering" bA
 $0
 endsnippet
 
-snippet th "Theorem environment" bA
-\begin{theorem}
-	$1
-\end{theorem}
-$0
-endsnippet
-
 snippet all "Align environment with suppressed numbering" bA
 \begin{align*}
 	$1
@@ -53,23 +46,19 @@ $0
 \begin{itemize}
 endsnippet
 
-snippet rmcc "Reversed multicols environment, used to split up an existing multicols environment in equation sheets" b
-\end{multicols}
-
-\newSection
-
-$1
-\begin{multicols}{2}
-
-	$0
-endsnippet
-
 snippet enn "Enumerate environment" bA
 \begin{enumerate}
 
 	\item $0
 
 \end{enumerate}
+endsnippet
+
+snippet tc "tcolorbox environment" bA
+\begin{tcolorbox}
+	$1
+\end{tcolorbox}
+$0
 endsnippet
 
 snippet pm "Parentheses matrix pmatrix" bA
