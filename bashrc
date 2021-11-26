@@ -21,8 +21,6 @@ fi
 
 # BEGIN ALIASES
 # --------------------------------------------- #
-alias vim="nvim"
-
 alias pip="pip3"
 
 # improved ls

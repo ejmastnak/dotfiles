@@ -77,14 +77,17 @@ mark m ~/MEGA/projects/music/
 mark a ~/MEGA/academics/
 mark f ~/MEGA/academics/fmf/
 mark t ~/MEGA/academics/telecomm/
+mark e ~/MEGA/academics/telecomm/masters/
 mark q ~/MEGA/academics/qap/
 mark k ~/MEGA/academics/klf/
 mark s ~/MEGA/software/software-resources/
 mark M ~/Media/music/music-library/
 mark Z ~/Media/music/music-library/Unsorted/
 mark S ~/.local/share/nvim/swap/
+mark A ~/Media/academics/
 mark F ~/Media/academics/fmf/
 mark N ~/Media/academics/literature/deep-learning/nnfs/
+
 " --------------------------------------------- "
 " END MARKS
 

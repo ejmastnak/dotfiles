@@ -1,5 +1,6 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
+
 # Font configuration
 font:
   normal:
