@@ -7,8 +7,8 @@
 #     "." if compiled file is in Vim's cwd 
 #     "../../directory" for a file outside Vim's cwd
 #     final forward slash after "directory" is intentionally omitted and added manually
-# $2: file name without extension
-#     e.g. "myfile" if editing myfile.tex
+# $2: file name with but without path
+#     e.g. "myfile.tex" if editing myfile.tex
 # $3: boolean 0/1 controlling latexmk or pdflatex compile
 #     1 for latexmk
 #     0 for pdflatex (anything other than 1 also works)
@@ -31,12 +31,10 @@ pdflatex_options="-file-line-error -interaction=nonstopmode -halt-on-error -sync
 
 # test for compilation with latexmk
 # --------------------------------------------- #
-if [ ${3} -eq 1 ] 2> /dev/null  # use latexmk
+if [ ${3} -eq 1 ]  # use latexmk
 then
-  echo "Compiling with latexmk..."
   command="latexmk ${latexmk_options}"
 else  # use pdflatex
-  echo "Compiling with pdflatex..."
   command="pdflatex ${pdflatex_options}"
 fi
 # --------------------------------------------- #
@@ -45,4 +43,4 @@ fi
 [ ${4} -eq 1 ] && command="${command} -shell-escape"
 
 # run the compilation command
-${command} "${1}/${2}.tex"
+${command} "${1}/${2}"

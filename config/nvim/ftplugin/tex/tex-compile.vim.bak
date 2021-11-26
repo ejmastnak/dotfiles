@@ -1,4 +1,5 @@
 " Settings for compiling LaTeX documents
+" These are old settings from a script-based setup
 
 " Only load this plugin it has not yet been loaded for this buffer
 " Note that using b:did_ftplugin would disable vimtex
@@ -17,7 +18,6 @@ let s:forward_show_script = "$HOME/.config/nvim/personal/forward-show.sh"
 let b:tex_compile_use_latexmk = 0
 let b:tex_compile_use_shell_escape = 0
 
-
 " Enable b:tex_compile_use_shell_escape if the minted package is detected in the tex file's preamble
 " --------------------------------------------- "
 silent execute '!sed "/\\begin{document}/q" ' . expand('%') . ' | grep "minted" > /dev/null'
@@ -27,7 +27,6 @@ else  " 'minted' found in preamble
   let b:tex_compile_use_shell_escape = 1  " enable shell escape
 endif
 " --------------------------------------------- "
-
 
 " BEGIN FUNCTIONS
 " ------------------------------------------- "
@@ -52,7 +51,7 @@ endfunction
 function! s:TexCompile() abort
   update
   execute "AsyncRun sh " . expand(s:compile_script_path) . 
-        \ " $(VIM_RELDIR)" . " $(VIM_FILENOEXT) " . 
+        \ " $(VIM_RELDIR)" . " $(VIM_FILENAME) " . 
         \ expand(b:tex_compile_use_latexmk) . " " . 
         \ expand(b:tex_compile_use_shell_escape)
 endfunction
