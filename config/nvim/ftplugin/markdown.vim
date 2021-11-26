@@ -15,5 +15,5 @@ let g:mkdp_preview_options = {
     \ }
 
 noremap <silent><leader>v :MarkdownPreview<cr>
-noremap <leader>tm i## Contents<esc>:GenTocMarked<cr>
+noremap <leader>tm i## Contents<esc>:GenTocGFM<cr>
 noremap <leader>x :syntax sync fromstart<cr>

@@ -13,6 +13,7 @@ set ruler	  			        " shows cursor position in current line
 set showcmd				        " shows partially typed commands
 set nohlsearch				    " don't highlight search results
 set noincsearch				    " don't jump to search results as search string is being typed
+set noshowmode            " disable in favor of lightline.vim's statusline
 set autowriteall          " write current buffer when moving buffers
 filetype on				        " enable filetype detection
 filetype plugin on		    " load file-specific plugins
@@ -210,6 +211,9 @@ source ~/.config/nvim/personal/spell/my_spell.vim
 command LoadMPV source $HOME/.config/nvim/personal/mpv/mpv.vim
 nnoremap <leader>M <Cmd>LoadMPV<CR>
 
+" disable vim-dispatch's default key mappings
+let g:dispatch_no_maps = 1
+
 " UltiSnips Snippet keys
 let g:UltiSnipsExpandTrigger = "<Tab>"
 let g:UltiSnipsJumpForwardTrigger = "jk"
@@ -220,6 +224,7 @@ nnoremap <leader>U :call UltiSnips#RefreshSnippets()<CR>
 
 " AsyncRun and AsyncTaks
 let g:asyncrun_open = 8      " automatically open QuickFix menu with the given number of rows for use with AsyncRun
+let g:asyncrun_trim = 1      " remove empty lines from QuickFix list
 noremap <silent><leader>q :call asyncrun#stop('')<cr>
 noremap <silent><leader>r :AsyncTask file-run-compile<cr>
 noremap <silent><leader>p :AsyncTask project-build-serve<cr>
