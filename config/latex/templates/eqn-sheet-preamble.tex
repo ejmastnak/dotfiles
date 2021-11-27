@@ -1,0 +1,55 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{geometry, multicol}
+\usepackage{titlesec}
+\usepackage[shortlabels]{enumitem}
+\usepackage{microtype, xspace, suffix}
+\usepackage[fleqn]{amsmath}
+\usepackage{amsmath, amssymb, mathtools, bm, esint}
+\usepackage{physics, siunitx}
+\usepackage{graphicx, caption}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+\geometry{margin=1cm}
+\sisetup{separate-uncertainty=true, exponent-product=\cdot}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan}
+\graphicspath{{../figures/}}
+
+\pagenumbering{gobble}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\mathindent}{0pt}
+\setlist{itemsep=-4.0pt, topsep=0pt}
+
+% BEGIN CUSTOM ENVIRONMENTS AND COMMANDS
+% --------------------------------------------- %
+\newcommand{\TODO}[1]{{\textbf{TODO:} {\color{red} #1}}}
+\newcommand{\newsec}[1]{\vspace{0.8ex}\textbf{#1}\\}
+\WithSuffix\newcommand\newsec*[1]{\textbf{#1}\\}
+\newcommand{\newSection}{\rule{\textwidth}{0.5pt}}
+
+% for figures in multicols environment
+\newenvironment{multicolFigure}
+  {\par\smallskip\noindent
+  \minipage{\columnwidth}}
+  {\endminipage\par\smallskip}
+
+% center environment with reduced top and bottom spacing
+% used to hold figures
+\newenvironment{tightcenter}[1][\topsep]
+  {\setlength{\topsep}{#1}\par\kern2pt\centering}% \begin{mycenter}
+  {\par\kern0pt}% \end{tightcenter}
+
+% redefine \tableofcontents to not print "Contents"
+\makeatletter
+\renewcommand{\tableofcontents}[1][\contentsname]{%
+  \section*{#1}
+  \begin{multicols}{2}
+    \@starttoc{toc}
+  \end{multicols}
+}
+\makeatother
+% --------------------------------------------- %
+% END CUSTOM ENVIRONMENTS AND COMMANDS

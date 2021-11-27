@@ -1,0 +1,25 @@
+% Header configuration
+%--------------------------------------------%
+\usepackage{fancyhdr, extramarks}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[L]{\textit{\firstrightmark}}
+\fancyfoot[C]{\centering \thepage}
+
+\renewcommand{\sectionmark}[1]{
+    \markboth{\thesection. \ #1}
+    {\noexpand\firstsubsectiontitle}
+    \global\firstsubsectionmarktrue}
+\renewcommand{\subsectionmark}[1]{
+    \markright{\thesubsection. \, #1}
+    \iffirstsubsectionmark
+\edef\firstsubsectiontitle{\thesubsection. \, #1}
+\fi
+\global\firstsubsectionmarkfalse}
+\newif\iffirstsubsectionmark
+\def\firstsubsectiontitle{}
+
+\setlength{\headheight}{14pt} 
+%--------------------------------------------%
+% End header configuration
