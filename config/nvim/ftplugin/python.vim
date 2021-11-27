@@ -14,6 +14,5 @@ source ~/.config/nvim/personal/lsp/lsp-config.vim
 source ~/.config/nvim/personal/lsp/jedi-server-config.vim
 LspStart jedi_language_server
 
-" " start autocompletion plugin
-" source ~/.config/nvim/personal/plugin/config/coq-config.vim
-" COQnow
+nnoremap <leader>r :execute "AsyncRun -save=2 " .
+      \ "python3 %"<CR>
