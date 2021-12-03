@@ -14,6 +14,7 @@ set showcmd				        " shows partially typed commands
 set nohlsearch				    " don't highlight search results
 set noincsearch				    " don't jump to search results as search string is being typed
 set noshowmode            " disable in favor of lightline.vim's statusline
+set nofoldenable          " don't fold text by default when opening files
 set autowriteall          " write current buffer when moving buffers
 filetype on				        " enable filetype detection
 filetype plugin on		    " load file-specific plugins
@@ -183,6 +184,9 @@ nnoremap <leader>w :w<CR>
 
 " For easy macro playback; note that this overrides entering Ex mode with Q
 nnoremap Q @q
+
+" Easily pull up the Git command (for use with vim-fugitive)
+nnoremap <leader>g :Git 
 
 " disable automatic commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o  
