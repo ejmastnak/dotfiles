@@ -1,0 +1,12 @@
+axes.labelsize: 12
+axes.titlesize: 16
+
+# Use Computer Modern for text and mathtext
+font.family: serif
+font.serif: cmr10, serif
+mathtext.fontset: cm
+
+# For minus sign to appear properly; see e.g. https://stackoverflow.com/a/32020370
+axes.unicode_minus: False
+
+font.monospace: Computer Modern Typewriter, monospace
