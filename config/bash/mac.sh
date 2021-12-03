@@ -2,6 +2,8 @@
 # because of differences between macOS and Linux as to where certain
 # software is installed on the file system.
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # BEGIN ADDITIONS TO PATH
 # --------------------------------------------- #
 # Homebrew packages
