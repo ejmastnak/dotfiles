@@ -8,6 +8,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # --------------------------------------------- #
 # Homebrew packages
 export PATH="/usr/local/bin:${PATH}"
+export PATH="/usr/local/sbin:${PATH}"
 
 # yarn
 export PATH="${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:${PATH}"
