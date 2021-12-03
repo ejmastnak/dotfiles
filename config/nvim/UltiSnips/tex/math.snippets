@@ -11,7 +11,7 @@ snippet "([\w]|[\}\)\]\|'])'" "Superscript" rA
 endsnippet
 
 context "math()"
-snippet "([\w]|[\}\)\]\|']);" "Subscript" rA
+snippet "([a-zA-Z]|[\}\)\]\|']);" "Subscript" rA
 `!p snip.rv = match.group(1)`_{${1:${VISUAL:}}}$0
 endsnippet
 

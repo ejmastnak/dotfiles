@@ -85,8 +85,8 @@ snippet "(^|[\W_])REF" "TODO: reference" rA
 `!p snip.rv = match.group(1)`\TODO{reference}$0
 endsnippet
 
-snippet "([\W_])EE" "Equation~\ref{}" rA
-`!p snip.rv = match.group(1)`Equation~\ref{${1:${VISUAL:}}}$0
+snippet "(^|[\W_])EE" "\eqref{}" rA
+`!p snip.rv = match.group(1)`\eqref{${1:${VISUAL:}}}$0
 endsnippet
 # --------------------------------------------- #
 # END REFERENCING SNIPPETS
