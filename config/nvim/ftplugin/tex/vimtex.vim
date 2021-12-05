@@ -72,20 +72,20 @@ xmap ae <plug>(vimtex-ae)
 omap ie <plug>(vimtex-ie)
 xmap ie <plug>(vimtex-ie)
 
-omap a$ <plug>(vimtex-a$)
-xmap a$ <plug>(vimtex-a$)
-omap i$ <plug>(vimtex-i$)
-xmap i$ <plug>(vimtex-i$)
+omap am <plug>(vimtex-a$)
+xmap am <plug>(vimtex-a$)
+omap im <plug>(vimtex-i$)
+xmap im <plug>(vimtex-i$)
 
 omap aP <plug>(vimtex-aP)
 xmap aP <plug>(vimtex-aP)
 omap iP <plug>(vimtex-iP)
 xmap iP <plug>(vimtex-iP)
 
-omap am <plug>(vimtex-am)
-xmap am <plug>(vimtex-am)
-omap im <plug>(vimtex-im)
-xmap im <plug>(vimtex-im)
+omap ai <plug>(vimtex-am)
+xmap ai <plug>(vimtex-am)
+omap ii <plug>(vimtex-im)
+xmap ii <plug>(vimtex-im)
 
 " nvo mode mappings
 map %  <plug>(vimtex-%)
