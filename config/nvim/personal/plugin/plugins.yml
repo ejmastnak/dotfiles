@@ -16,7 +16,7 @@ asynctasks:
 ultisnips:
   url: "https://github.com/SirVer/ultisnips"
   parent-dir: "global"
-  type: "start"
+  type: "opt"
   name: "ultisnips"
 
 vim-commentary:
