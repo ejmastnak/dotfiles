@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 export EDITOR="nvim"
 export PAGER="less"
 
@@ -21,8 +24,6 @@ fi
 
 # BEGIN ALIASES
 # --------------------------------------------- #
-alias pip="pip3"
-
 # improved ls
 alias l="exa"
 alias L="exa -la"
