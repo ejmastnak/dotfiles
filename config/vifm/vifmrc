@@ -1,7 +1,7 @@
 " OS-specific settings
 " ---------------------------------------------
 if system('uname -s') == "Linux"
-  " source ~/.config/vifm/personal/linux.vifm
+  source ~/.config/vifm/personal/linux.vifm
 elseif system('uname -s') == "Darwin"
   source ~/.config/vifm/personal/mac.vifm
 else

@@ -1,0 +1,9 @@
+" BEGIN FILE OPENING CONFIGURATION
+" ---------------------------------------------
+" PDF
+filetype {*.pdf},<application/pdf> zathura
+
+" PostScript
+filetype {*.ps,*.eps,*.ps.gz},<application/postscript> zathura
+" ---------------------------------------------
+" END FILE OPENING CONFIGURATION
