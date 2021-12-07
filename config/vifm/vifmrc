@@ -87,7 +87,6 @@ mark S ~/.local/share/nvim/swap/
 mark A ~/Media/academics/
 mark F ~/Media/academics/fmf/
 mark N ~/Media/academics/literature/deep-learning/nnfs/
-
 " --------------------------------------------- "
 " END MARKS
 
@@ -139,6 +138,9 @@ nnoremap A cw
 
 " open vifmrc in editor
 nnoremap C :!nvim -c 'set filetype=vim' $MYVIFMRC<CR>:restart<CR>
+
+" Play a file with mpv (mostly for m3u playlists)
+nnoremap P :!mpv %c<cr>
 
 " yank current filename without path into the clipboard
 nnoremap yn :!echo -n %c | pbcopy %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
