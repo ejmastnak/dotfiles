@@ -3,6 +3,7 @@ def math():
 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 endglobal
 
+priority 2
 # BEGIN SUPERSCRIPTS AND SUBSCRIPTS
 # ------------------------------------------------ #
 context "math()"
@@ -11,7 +12,7 @@ snippet "([\w]|[\}\)\]\|'])'" "Superscript" rA
 endsnippet
 
 context "math()"
-snippet "([\w]|[\}\)\]\|']);" "Subscript" rA
+snippet "([a-zA-Z]|[\}\)\]\|']);" "Subscript" rA
 `!p snip.rv = match.group(1)`_{${1:${VISUAL:}}}$0
 endsnippet
 

@@ -1,0 +1,15 @@
+axes.labelsize: 12
+axes.titlesize: 16
+
+# Use Computer Modern for text and mathtext
+font.family: serif
+font.serif: cmr10, serif
+mathtext.fontset: cm
+
+# For minus sign to appear properly; see e.g.
+# https://stackoverflow.com/a/32020370
+# https://github.com/matplotlib/matplotlib/issues/17007#issuecomment-685951519
+axes.unicode_minus: False
+axes.formatter.use_mathtext: True
+
+font.monospace: Computer Modern Typewriter, monospace

@@ -8,5 +8,5 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ln -s ${BASEDIR}/config ~/.config
 ln -s ${BASEDIR}/bash_profile ~/.bash_profile
 ln -s ${BASEDIR}/bashrc ~/.bashrc
-ln -s ${BASEDIR}/tmux.conf ~/.tmux.conf
 ln -s ${BASEDIR}/xinitrc ~/.xinitrc
+ln -s ${BASEDIR}/config/matplotlib/matplotlibrc ~/.matplotlib/matplotlibrc

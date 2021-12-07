@@ -1,3 +1,4 @@
-/config/nvim/pack/
-/config/vifm/vifminfo.json
+/config/nvim/pack
+/config/vifm/*.json
+/config/mpv/watch_later
 /config/pulse/*.tdb

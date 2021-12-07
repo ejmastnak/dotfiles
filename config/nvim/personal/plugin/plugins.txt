@@ -4,13 +4,15 @@ ultisnips
 vim-commentary
 vim-fugitive
 vim-surround
+vim-repeat
+vim-dispatch
+lightline
 
 markdown-preview
 vim-markdown-toc
 vim-pythonsense
 vimtex
 
-coq_nvim
 nvim-lspconfig
 
 darcula

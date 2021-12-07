@@ -1,4 +1,4 @@
-set trashdir=~/.Trash/  " use macOS Trash as trash directory
+" set trashdir=~/.Trash/  " use macOS Trash as trash directory
 
 " BEGIN FILE OPENING CONFIGURATION
 " ---------------------------------------------

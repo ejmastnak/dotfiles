@@ -2,10 +2,13 @@
 # because of differences between macOS and Linux as to where certain
 # software is installed on the file system.
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # BEGIN ADDITIONS TO PATH
 # --------------------------------------------- #
 # Homebrew packages
 export PATH="/usr/local/bin:${PATH}"
+export PATH="/usr/local/sbin:${PATH}"
 
 # yarn
 export PATH="${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:${PATH}"
@@ -46,4 +49,4 @@ alias pip="/usr/local/bin/pip3"
 # For ruby using chruby and ruby-install
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-chruby ruby-2.7.2
+chruby ruby-2.7.4

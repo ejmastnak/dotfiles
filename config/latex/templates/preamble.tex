@@ -1,0 +1,17 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry, xspace}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath, amssymb, mathtools, bm, esint}
+\usepackage{physics, siunitx}
+\usepackage{hyperref}
+
+\geometry{margin=3.2cm}
+\sisetup{separate-uncertainty=true, exponent-product=\cdot, range-units=single}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan}
+\setlength{\parindent}{0pt}
+\numberwithin{equation}{section}
+
+\newcommand{\myhref}[2]{\hyperref[#1]{\textcolor{blue}{\underline{#2}}}}
+\newcommand{\TODO}[1]{{\textbf{TODO:} {\color{red} #1}}}

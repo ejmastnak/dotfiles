@@ -25,17 +25,35 @@ vim-commentary:
   type: "start"
   name: "vim-commentary"
 
+vim-dispatch:
+  url: "https://github.com/tpope/vim-dispatch"
+  parent-dir: "global"
+  type: "start"
+  name: "vim-dispatch"
+
 vim-fugitive:
   url: "https://github.com/tpope/vim-fugitive"
   parent-dir: "global"
   type: "start"
   name: "vim-fugitive"
 
+vim-repeat:
+  url: "https://github.com/tpope/vim-repeat"
+  parent-dir: "global"
+  type: "start"
+  name: "vim-repeat"
+
 vim-surround:
   url: "https://github.com/tpope/vim-surround"
   parent-dir: "global"
   type: "start"
   name: "vim-surround"
+
+lightline:
+  url: "https://github.com/itchyny/lightline.vim"
+  parent-dir: "global"
+  type: "start"
+  name: "lightline.vim"
 # -------------------------------
 # END GLOBAL
 
