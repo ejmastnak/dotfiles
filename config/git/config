@@ -1,8 +1,6 @@
 [user]
 	name = Elijan Mastnak
 	email = ejmastnak@gmail.com
-[credential]
-	helper = osxkeychain
 [core]
 	editor = nvim
 [init]
