@@ -4,5 +4,7 @@
 /config/vifm/*.json
 /config/mpv/watch_later
 /config/pulse/*.tdb
+
 /config/tmux/iterm2
 /config/tmux/plugins
+/config/tmux/resurrect
