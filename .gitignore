@@ -1,2 +1,3 @@
 /config/nvim/pack/
 /config/vifm/vifminfo.json
+/config/pulse/*.tdb
