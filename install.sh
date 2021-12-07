@@ -9,3 +9,4 @@ ln -s ${BASEDIR}/config ~/.config
 ln -s ${BASEDIR}/bash_profile ~/.bash_profile
 ln -s ${BASEDIR}/bashrc ~/.bashrc
 ln -s ${BASEDIR}/tmux.conf ~/.tmux.conf
+ln -s ${BASEDIR}/xinitrc ~/.xinitrc
