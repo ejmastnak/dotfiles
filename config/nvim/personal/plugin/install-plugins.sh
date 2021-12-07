@@ -1,6 +1,9 @@
 #!/bin/bash
 # Used to install my Vim plugins to the ~/.config/nvim/pack/ directory
 # for use with Vim's built-in package management system
+# Create the directory ~/.config/nvim/pack before running the script!
+
+# DEPENDENCY: the Go version of yq ('go-yq' with pacman)
 
 # Usage: install-plugins [plugin-keys]
 # EXAMPLE usage: 
