@@ -12,7 +12,7 @@ setlocal foldlevel=99
 " start language server
 source ~/.config/nvim/personal/lsp/lsp-config.vim
 source ~/.config/nvim/personal/lsp/jedi-server-config.vim
-LspStart jedi_language_server
+" LspStart jedi_language_server
 
 nnoremap <leader>r :execute "AsyncRun -save=2 " .
       \ "python3 %"<CR>
