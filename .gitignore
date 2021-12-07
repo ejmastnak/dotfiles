@@ -1,3 +1,5 @@
+.DS_Store
+
 /config/nvim/pack
 /config/vifm/*.json
 /config/mpv/watch_later
