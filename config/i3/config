@@ -31,6 +31,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # NAVIGATION
 # ------------------------------------ #
+focus_follows_mouse no
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
