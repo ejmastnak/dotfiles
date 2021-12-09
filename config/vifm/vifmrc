@@ -124,6 +124,9 @@ nnoremap s :shell<cr>
 " Shortcut for edit command
 nnoremap e :edit<space>
 
+" Shortcut for mkdir command
+nnoremap m :mkdir<space>
+
 " Display sorting dialog
 nnoremap S :sort<cr>
 
