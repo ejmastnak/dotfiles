@@ -235,3 +235,11 @@ noremap <silent><leader>r :AsyncTask file-run-compile<cr>
 noremap <silent><leader>p :AsyncTask project-build-serve<cr>
 " ---------------------------------------------
 " END PLUGIN CONFIGURATION
+
+
+" LSP CONGIFURATION
+" ---------------------------------------------
+lua <<EOF
+  require'lspconfig'.jedi_language_server.setup{}
+EOF
+source ~/.config/nvim/personal/lsp/lsp-config.vim
