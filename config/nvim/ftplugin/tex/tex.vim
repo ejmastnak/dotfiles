@@ -30,18 +30,45 @@ call system(printf("echo %s > %s", "TEX", "/tmp/inverse-search-target.txt"))
 
 " Compilation
 nnoremap <leader>r :Make<CR>
-" let g:dispatch_no_tmux_make = 1
 
 " Forward show
 " ---------------------------------------------
+
 " Goal: suppress all output for forward show command.
 " (Hacked) solution: Disable vim-dispatch's terminal mode for Start commands,
 "  which makes vim-dispatch fall back to headless mode which has no output.
+let g:dispatch_no_tmux_start = 1
 let g:dispatch_no_terminal_start = 1
 
-
+" Linux forward search implementation
 if g:os_current == "Linux"
-  echom "TODO: implement forward show on Linux"
+  function! s:TexForwardShowZathura()
+
+      let forward_command = " --synctex-forward " .
+        \ line('.') . ":" .
+        \ col('.') . ":" .
+        \ expand('%:p') . " " .
+        \ substitute(expand('%:p'),"tex$","pdf", "")
+      " Human-readable version of forward_command:
+      " --synctex-forward line:col:myfile.tex myfile.pdf
+
+      " Async Neovim jobstart version for practical use
+      call jobstart("sh $HOME/.config/nvim/personal/vimura.sh " . forward_command)
+
+      " " vim-dispatch version for practical use
+      " execute "Start! sh $HOME/.config/nvim/personal/vimura.sh " . expand(forward_command)
+
+      " " Synchronous version for debugging
+      " execute "!sh $HOME/.config/nvim/personal/vimura.sh " . expand(forward_command)
+
+      redraw!
+  endfunction
+
+  nmap <leader>v <Plug>TexForwardShow
+  noremap <script> <Plug>TexForwardShow <SID>TexForwardShow
+  noremap <SID>TexForwardShow :call <SID>TexForwardShowZathura()<CR>
+
+" macOS forward search implementation
 elseif g:os_current == "Darwin"
   nnoremap <leader>v :execute "Start! " .
         \ "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g " .
