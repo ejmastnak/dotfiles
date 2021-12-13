@@ -13,6 +13,9 @@ export PATH="/usr/local/sbin:${PATH}"
 # yarn
 export PATH="${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:${PATH}"
 
+# User bin folder
+export PATH="${HOME}/bin:${PATH}"
+
 # MEGAcmd
 export PATH="/Applications/MEGAcmd.app/Contents/MacOS:${PATH}"
 
