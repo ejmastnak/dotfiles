@@ -1,0 +1,2 @@
+# To copy selection to clipboard on macOS
+set selection-clipboard clipboard

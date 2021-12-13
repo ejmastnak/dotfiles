@@ -77,7 +77,7 @@ snippet "(^|[^a-zA-Z])tf" "\tfrac{}{}" rA
 endsnippet
 
 context "math()"
-snippet "([^a-zA-Z])sq" "\sqrt (square root)" rA
+snippet "([^a-zA-Z\\])sq" "\sqrt (square root)" rA
 `!p snip.rv = match.group(1)`\sqrt{${1:${VISUAL:}}}$0
 endsnippet
 

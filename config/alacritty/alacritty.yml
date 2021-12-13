@@ -336,15 +336,20 @@ cursor:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
-  #- { key: Paste,                                       action: Paste          }
-  #- { key: Copy,                                        action: Copy           }
-  #- { key: L,         mods: Control,                    action: ClearLogNotice }
-  #- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
-  #- { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp,  }
-  #- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
-  #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
-  #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
+
+# Use for Alt to work as Mod key on macOS
+# See https://github.com/alacritty/alacritty/issues/62
+key_bindings:
+  - { key: Key1,     mods: Alt,     chars: "\x1b1"                       }
+  - { key: Key2,     mods: Alt,     chars: "\x1b2"                       }
+  - { key: Key3,     mods: Alt,     chars: "\x1b3"                       }
+  - { key: Key4,     mods: Alt,     chars: "\x1b4"                       }
+  - { key: Key5,     mods: Alt,     chars: "\x1b5"                       }
+  - { key: Key6,     mods: Alt,     chars: "\x1b6"                       }
+  - { key: Key7,     mods: Alt,     chars: "\x1b7"                       }
+  - { key: Key8,     mods: Alt,     chars: "\x1b8"                       }
+  - { key: Key9,     mods: Alt,     chars: "\x1b9"                       }
+  - { key: Key0,     mods: Alt,     chars: "\x1b0"                       }
 
   # Vi Mode
   #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }

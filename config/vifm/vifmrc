@@ -65,22 +65,23 @@ mark d ~/dotfiles/
 mark c ~/dotfiles/config/
 mark v ~/dotfiles/config/nvim
 mark U ~/dotfiles/config/nvim/UltiSnips
-mark T ~/MEGA/test/
-mark p ~/MEGA/planning/
-mark P ~/MEGA/projects/
-mark b ~/MEGA/basics/
-mark C ~/MEGA/cv/cv/ cv.tex
-mark w ~/MEGA/projects/ejmastnak/
-mark V ~/MEGA/projects/ejmastnak/tutorials/vim-latex/
-mark r ~/MEGA/basics/food/recipes/
-mark m ~/MEGA/projects/music/
-mark a ~/MEGA/academics/
-mark f ~/MEGA/academics/fmf/
-mark t ~/MEGA/academics/telecomm/
-mark e ~/MEGA/academics/telecomm/masters/
-mark q ~/MEGA/academics/qap/
-mark k ~/MEGA/academics/klf/
-mark s ~/MEGA/software/software-resources/
+mark T ~/Documents/test/
+mark p ~/Documents/planning/
+mark P ~/Documents/projects/
+mark b ~/Documents/basics/
+mark C ~/Documents/cv/cv/ cv.tex
+mark w ~/Documents/projects/ejmastnak/
+mark V ~/Documents/projects/ejmastnak/tutorials/vim-latex/
+mark r ~/Documents/basics/food/recipes/
+mark m ~/Documents/projects/music/
+mark a ~/Documents/academics/
+mark f ~/Documents/academics/fmf/
+mark t ~/Documents/academics/telecomm/
+mark e ~/Documents/academics/telecomm/masters/
+mark q ~/Documents/academics/qap/
+mark k ~/Documents/academics/klf/
+mark 1 ~/Documents/academics/mat1/
+mark s ~/Documents/software/software-resources/
 mark M ~/Media/music/music-library/
 mark Z ~/Media/music/music-library/Unsorted/
 mark S ~/.local/share/nvim/swap/
@@ -123,6 +124,9 @@ nnoremap s :shell<cr>
 
 " Shortcut for edit command
 nnoremap e :edit<space>
+
+" Shortcut for mkdir command
+nnoremap m :mkdir<space>
 
 " Display sorting dialog
 nnoremap S :sort<cr>

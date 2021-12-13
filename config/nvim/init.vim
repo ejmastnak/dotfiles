@@ -74,9 +74,10 @@ endif
 " Make Y work like D or C (not vi compatible)
 noremap Y y$
 
-" stop cc and x from overwriting default register
+" stop cc, x, and s from overwriting default register
 nnoremap cc "_cc
 nnoremap x "_x
+nnoremap s "_s
 
 " Paste in visual mode without overwriting default register
 vnoremap <silent> p "_d:call <SID>VisualPasteWithoutOverwrite()<CR>
@@ -234,3 +235,11 @@ noremap <silent><leader>r :AsyncTask file-run-compile<cr>
 noremap <silent><leader>p :AsyncTask project-build-serve<cr>
 " ---------------------------------------------
 " END PLUGIN CONFIGURATION
+
+
+" LSP CONGIFURATION
+" ---------------------------------------------
+lua <<EOF
+  require'lspconfig'.jedi_language_server.setup{}
+EOF
+source ~/.config/nvim/personal/lsp/lsp-config.vim

@@ -3,7 +3,9 @@
 " BEGIN FILE OPENING CONFIGURATION
 " ---------------------------------------------
 " PDF
-filetype {*.pdf},<application/pdf> open -a Skim.app
+filetype {*.pdf},<pdf/*> zathura %c &,
+      \<application/pdf> open -a Skim.app,
+
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
 
 " PostScript
