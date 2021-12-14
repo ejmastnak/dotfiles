@@ -14,6 +14,9 @@ setlocal tabstop=2
 setlocal softtabstop=2
 setlocal shiftwidth=2
 
+" Make vim-commentary use % for comments 
+setlocal commentstring=%\ %s
+
 " Compilation
 nnoremap <leader>r :Make<CR>
 
