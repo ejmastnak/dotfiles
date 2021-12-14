@@ -55,10 +55,10 @@ bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
 
 # split in left/right horizontal orientation
-bindsym $mod+| split h
+bindsym $mod+backslash split h
 
 # split windows in top/bottom orientation
-bindsym $mod+_ split v
+bindsym $mod+minus split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
