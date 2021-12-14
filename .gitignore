@@ -5,6 +5,9 @@
 /config/mpv/watch_later
 /config/pulse/*.tdb
 
+/config/dconf
+/config/syncthing
+
 /config/tmux/iterm2
 /config/tmux/plugins
 /config/tmux/resurrect
