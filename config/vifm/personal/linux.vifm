@@ -3,6 +3,9 @@
 " PDF
 filetype {*.pdf},<application/pdf> zathura
 
+" Image
+filetype {*.jpg,*.jpeg,*.png,*.gif},<image/*> feh %c &
+
 " PostScript
 filetype {*.ps,*.eps,*.ps.gz},<application/postscript> zathura
 " ---------------------------------------------
