@@ -3,5 +3,6 @@
 	email = ejmastnak@gmail.com
 [core]
 	editor = nvim
+	fileMode = false
 [init]
 	defaultBranch = main
