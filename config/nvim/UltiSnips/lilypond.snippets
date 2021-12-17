@@ -1,0 +1,16 @@
+snippet vv "This inserts the LilyPond version" b
+\version "2.22.1"
+endsnippet
+
+snippet hh "Inserts a LilyPond header" b
+\header{
+    title = "$1"
+}
+$0
+endsnippet
+
+snippet rr "Inserts a LilyPond relative block" b
+\relative{
+    $1
+}
+endsnippet
