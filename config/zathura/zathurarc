@@ -1,6 +1,2 @@
 # To copy selection to clipboard on macOS
 set selection-clipboard clipboard
-
-# Temporary but not yet general fix to prevent switching focus to Zathura
-# when using forward search from Vim in a Vim-LaTeX workflow.
-no_focus [class="Zathura"]

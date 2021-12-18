@@ -4,9 +4,6 @@ set $mod Mod1
 # Font for window titles status bar
 font pango:DejaVu Sans Mono 10
 
-# For LaTeX synctex
-no_focus [class="Zathura"]
-
 # SYSTEM COMMANDS
 # ------------------------------------ #
 # start a terminal
