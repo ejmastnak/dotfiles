@@ -5,7 +5,7 @@ if exists("b:did_ftplugin")
 endif
 let b:did_ftplugin = 1       " plugin is loaded 
 
-Let s:forward_show_script = "$HOME/.config/nvim/personal/forward-show.sh"
+let s:forward_show_script = "$HOME/.config/nvim/personal/forward-show.sh"
 
 let s:displayline_command = "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g"
 

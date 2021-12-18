@@ -231,7 +231,6 @@ nnoremap <leader>U :call UltiSnips#RefreshSnippets()<CR>
 let g:asyncrun_open = 8      " automatically open QuickFix menu with the given number of rows for use with AsyncRun
 let g:asyncrun_trim = 1      " remove empty lines from QuickFix list
 noremap <silent><leader>q :call asyncrun#stop('')<cr>
-noremap <silent><leader>r :AsyncTask file-run-compile<cr>
 noremap <silent><leader>p :AsyncTask project-build-serve<cr>
 " ---------------------------------------------
 " END PLUGIN CONFIGURATION
