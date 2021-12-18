@@ -107,9 +107,12 @@ snippet "([\W_\\])hh" "\hat" rA
 `!p snip.rv = match.group(1)`\hat{${1:${VISUAL:}}}$0
 endsnippet
 
-context "math()"
-snippet "([\W_\\])bb" "\hat" rA
+snippet "([\W_\\])bb" "\bar" rA
 `!p snip.rv = match.group(1)`\bar{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "([\W_\\])cc" "Complex conjugate" rA
+`!p snip.rv = match.group(1)`\conjugate{${1:${VISUAL:}}}$0
 endsnippet
 
 snippet "([^a-zA-Z\\])d" "\dot" r
