@@ -1,7 +1,10 @@
 " BEGIN FILE OPENING CONFIGURATION
 " ---------------------------------------------
 " PDF
-filetype {*.pdf},<application/pdf> zathura
+filetype {*.pdf},<application/pdf> zathura %c &
+
+" Image
+filetype {*.jpg,*.jpeg,*.png,*.gif},<image/*> feh %c &
 
 " PostScript
 filetype {*.ps,*.eps,*.ps.gz},<application/postscript> zathura

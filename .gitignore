@@ -6,5 +6,7 @@
 /config/pulse/*.tdb
 
 /config/iterm2
+/config/dconf
+/config/syncthing
 /config/tmux/plugins
 /config/tmux/resurrect

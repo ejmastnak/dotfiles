@@ -232,6 +232,30 @@ let g:asyncrun_open = 8      " automatically open QuickFix menu with the given n
 let g:asyncrun_trim = 1      " remove empty lines from QuickFix list
 noremap <silent><leader>q :call asyncrun#stop('')<cr>
 noremap <silent><leader>p :AsyncTask project-build-serve<cr>
+
+" Lightline status bar
+let g:lightline = {
+      \ 'component_function': {
+      \   'fileformat': 'LightlineFileFormat',
+      \   'filetype': 'LightlineFiletype',
+      \   'fileencoding': 'LightlineFileEncoding',
+      \ },
+      \ }
+
+" Hide file format for window widths below 70 cols
+function! LightlineFileFormat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+" Hide file encoding for window widths below 70 cols
+function! LightlineFileEncoding()
+  return winwidth(0) > 70 ? &fileencoding : ''
+endfunction
+
+" Hide file type for window widths below 60 cols
+function! LightlineFiletype()
+  return winwidth(0) > 60 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
 " ---------------------------------------------
 " END PLUGIN CONFIGURATION
 
