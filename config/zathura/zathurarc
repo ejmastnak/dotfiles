@@ -30,8 +30,12 @@ set inputbar-fg                 "#f8f8f2" # Foreground
 set statusbar-bg                "#282a36" # Background
 set statusbar-fg                "#f8f8f2" # Foreground
 
-set highlight-color             "#ffb86c" # Orange
-set highlight-active-color      "#ff79c6" # Pink
+# Disable highlighting (e.g. after Vim forward search)
+# set highlight-color             "#ffffff"
+# set highlight-active-color      "#ffffff"
+set highlight-transparency 0.0
+# set highlight-color             "#ffb86c" # Orange
+# set highlight-active-color      "#ff79c6" # Pink
 
 set default-bg                  "#282a36" # Background
 set default-fg                  "#f8f8f2" # Foreground
