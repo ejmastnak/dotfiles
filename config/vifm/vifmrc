@@ -145,12 +145,6 @@ nnoremap C :!nvim -c 'set filetype=vim' $MYVIFMRC<CR>:restart<CR>
 
 " Play a file with mpv (mostly for m3u playlists)
 nnoremap P :!mpv %c<cr>
-
-" yank current filename without path into the clipboard
-nnoremap yn :!echo -n %c | pbcopy %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
-
-" yank current file path into the clipboard
-nnoremap yp :!echo -n %c:p | pbcopy %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
 " --------------------------------------------- "
 " END MAPPINGS
 

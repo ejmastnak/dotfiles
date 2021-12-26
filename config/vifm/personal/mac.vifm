@@ -40,3 +40,19 @@ filetype *.img open
 filetype *.pkg open
 " ---------------------------------------------
 " END FILE OPENING CONFIGURATION
+
+# Copy and paste
+# See https://wiki.vifm.info/index.php/How_to_copy_path_to_current_file/directory_to_system_clipboard
+" ---------------------------------------------
+" yank current directory path into the clipboard
+nnoremap yd :!echo -n %d | pbcopy %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
+
+" yank current file path into the clipboard
+nnoremap yp :!echo -n %c:p | pbcopy %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
+
+" yank current filename without path into the clipboard
+nnoremap yn :!echo -n %c | pbcopy %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
+
+" yank root of current file's name into the clipboard
+nnoremap yr :!echo -n %c:r | pbcopy %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
+" ---------------------------------------------
