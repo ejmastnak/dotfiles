@@ -17,5 +17,5 @@ export LYEDITOR="nvr --servername=/tmp/lilypondsocket +%(line)s %(file)s"
 
 # Aliases
 # --------------------------------------------- #
-alias sc="systemctl"
+alias sus="systemctl suspend"
 # --------------------------------------------- #
