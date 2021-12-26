@@ -172,3 +172,9 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Autostarting
+# --------------------------------------------- #
+# Set display temperature to 3500K
+exec redshift -O -P 3500
+

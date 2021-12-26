@@ -35,7 +35,4 @@ fi
 # Decrease typematic delay to 200 ms and 30 Hz
 xset r rate 200 30
 
-# Set display temperature to 3500K
-redshift -O -P 3500 &
-
 exec i3
