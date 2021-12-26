@@ -11,5 +11,8 @@ filetype {*.ps,*.eps,*.ps.gz},<application/postscript> zathura
 
 " Office spreadsheet files
 filetype {*.xls,*.xlsx},<application/msexcel> gnumeric %c &
+
+" CSV files
+filetype {*.csv},<text/csv> sc-im
 " ---------------------------------------------
 " END FILE OPENING CONFIGURATION
