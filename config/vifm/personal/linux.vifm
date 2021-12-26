@@ -8,5 +8,8 @@ filetype {*.jpg,*.jpeg,*.png,*.gif},<image/*> feh %c &
 
 " PostScript
 filetype {*.ps,*.eps,*.ps.gz},<application/postscript> zathura
+
+" Office spreadsheet files
+filetype {*.xls,*.xlsx},<application/msexcel> gnumeric %c &
 " ---------------------------------------------
 " END FILE OPENING CONFIGURATION
