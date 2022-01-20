@@ -71,6 +71,8 @@ mark P ~/Documents/projects/
 mark b ~/Documents/basics/
 mark C ~/Documents/cv/cv/ cv.tex
 mark w ~/Documents/projects/ejmastnak/
+mark g ~/Documents/projects/tmg-bmc/
+mark G ~/Media/tmg-bmc-media/
 mark V ~/Documents/projects/ejmastnak/tutorials/vim-latex/
 mark r ~/Documents/basics/food/recipes/
 mark m ~/Documents/projects/music/
@@ -84,7 +86,7 @@ mark 1 ~/Documents/academics/mat1/
 mark s ~/Documents/software/software-resources/
 mark M ~/Media/music/music-library/
 mark Z ~/Media/music/music-library/Unsorted/
-mark S ~/.local/share/nvim/swap/
+mark S ~/Media/software-and-web/
 mark A ~/Media/academics/
 mark F ~/Media/academics/fmf/
 mark N ~/Media/academics/literature/deep-learning/nnfs/
@@ -151,6 +153,9 @@ nnoremap P :!mpv %c<cr>
 
 " BEGIN FILE OPENING CONFIGURATION
 " ---------------------------------------------
+" Image
+filetype {*.jpg,*.jpeg,*.png},<image/*> feh %c &
+
 " TeX
 filetype {*.tex},<text/tex> nvim --listen /tmp/texsocket
 
