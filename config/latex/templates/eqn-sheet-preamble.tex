@@ -25,10 +25,20 @@
 
 % BEGIN CUSTOM ENVIRONMENTS AND COMMANDS
 % --------------------------------------------- %
+\newcommand{\diff}{\ensuremath{\operatorname{d}\!}}
 \newcommand{\TODO}[1]{{\textbf{TODO:} {\color{red} #1}}}
 \newcommand{\newsec}[1]{\vspace{0.8ex}\textbf{#1}\\}
 \WithSuffix\newcommand\newsec*[1]{\textbf{#1}\\}
 \newcommand{\newSection}{\rule{\textwidth}{0.5pt}}
+
+% Used to place a label above an equals sign to easily
+% reference and explain steps in derivations.
+\newcommand{\annotate}[2]{\stackrel{\mathrm{#1}}{#2}}
+
+% For \hfill-like functionality in math environments
+\makeatletter
+\newcommand{\pushright}[1]{\ifmeasuring@\hfill\text{#1}\else\omit$\displaystyle\hfill\text{#1}$\ignorespaces\fi}
+\makeatother
 
 % for figures in multicols environment
 \newenvironment{multicolFigure}
@@ -51,5 +61,14 @@
   \end{multicols}
 }
 \makeatother
+
+% Define align environments that display math as \textstyle
+% See https://tex.stackexchange.com/a/274456
+\newenvironment{talign}
+ {\let\displaystyle\textstyle\align}
+ {\endalign}
+\newenvironment{talign*}
+ {\let\displaystyle\textstyle\csname align*\endcsname}
+ {\endalign}
 % --------------------------------------------- %
 % END CUSTOM ENVIRONMENTS AND COMMANDS
