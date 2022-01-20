@@ -17,15 +17,6 @@ endsnippet
 snippet inn "\input{} intended for use in FMF documents" bA
 \input{${1:~/dotfiles/config/latex/templates/}$2}$0
 endsnippet
-
-snippet MM "Block comment: begin/end custom macros" bA
-% BEGIN CUSTOM MACROS
-% --------------------------------------------- %
-$0
-% --------------------------------------------- %
-% END CUSTOM MACROS
-endsnippet
-# --------------------------------------------- #
 # END PREAMBLE SNIPPETS
 
 
@@ -121,6 +112,10 @@ endsnippet
 
 snippet hpp "\hphantom{}" iA
 \hphantom{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet prr "\hfill-like fuctionality in math environments. Used in equation sheets" A
+& \pushright{$1}\\\\$0
 endsnippet
 
 snippet tls "\textls[]{}" i

@@ -1,5 +1,13 @@
 # Basic Python language settings
 
+snippet "(^|[\W])\""  "double quotation marks" rA
+`!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
+endsnippet
+
+snippet "(^|[\W])`"  "Back ticks" rA
+`!p snip.rv = match.group(1)`\`${1:${VISUAL:}}\`$0
+endsnippet
+
 snippet pp "print()" A
 print(${1:${VISUAL:}})$0
 endsnippet

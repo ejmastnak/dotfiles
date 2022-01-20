@@ -31,6 +31,11 @@ snippet "([\w]|[\}\)\]\|']):([\w]{1})" "Place the first \w character after the :
 `!p snip.rv = match.group(1) + "_{" + match.group(2) + "}"`
 endsnippet
 
+context "math()"
+snippet "([\w]{1})__" "e.g. expand x__ into x_{1}, x_{2}, x_{3}" rA
+`!p snip.rv = match.group(1) + "_{1}, " + match.group(1) + "_{2}, " + match.group(1) + "_{3}"`
+endsnippet
+
 snippet "([a-zA-Z]|[\}\)\]\|'])00" "Automatic 0 subscript" rA
 `!p snip.rv = match.group(1)`_{0}
 endsnippet
@@ -111,7 +116,12 @@ snippet "([\W_\\])bb" "\bar" rA
 `!p snip.rv = match.group(1)`\bar{${1:${VISUAL:}}}$0
 endsnippet
 
-snippet "([\W_\\])cc" "Complex conjugate" rA
+context "math()"
+snippet "ss" "Line segment (assumes a user-defined macro)" A
+`!p snip.rv = match.group(1)`\linesegment{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "([\W_\\])cc" "Complex conjugate (assumes a user-defined macro)" rA
 `!p snip.rv = match.group(1)`\conjugate{${1:${VISUAL:}}}$0
 endsnippet
 
@@ -148,7 +158,7 @@ snippet "([^a-zA-Z\\])ddv" "\dv[]{}{}" rA
 endsnippet
 
 context "math()"
-snippet "([^a-zA-Z\\])abs" "\abs{}" rA
+snippet "([^a-zA-Z\\])aa" "\abs{}" rA
 `!p snip.rv = match.group(1)`\abs{${1:${VISUAL:}}}$0
 endsnippet
 
@@ -168,7 +178,7 @@ snippet "([^a-zA-Z\\])ang" "ang{} (Angle)" rA
 endsnippet
 
 context "math()"
-snippet aa "\annotate{}{} (custom command for annotated stackrel)" A
+snippet ann "\annotate{}{} (custom command for annotated stackrel)" A
 \annotate{${1:above}}{${2:below}}$0
 endsnippet
 
