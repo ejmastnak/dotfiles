@@ -35,4 +35,7 @@ fi
 # Decrease typematic delay to 200 ms and 30 Hz
 xset r rate 200 30
 
+# Activate key bindings
+xbindkeys
+
 exec i3
