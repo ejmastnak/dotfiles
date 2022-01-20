@@ -14,6 +14,6 @@ let g:mkdp_preview_options = {
     \ 'disable_filename': 0
     \ }
 
-noremap <silent><leader>v :MarkdownPreview<cr>
-noremap <leader>tm i## Contents<esc>:GenTocGFM<cr>
-noremap <leader>x :syntax sync fromstart<cr>
+noremap <buffer> <silent><leader>v :MarkdownPreview<cr>
+noremap <buffer> <leader>tm i## Contents<esc>:GenTocGFM<cr>
+noremap <buffer> <leader>x :syntax sync fromstart<cr>
