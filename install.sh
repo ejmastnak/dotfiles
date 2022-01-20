@@ -9,4 +9,6 @@ ln -s ${BASEDIR}/config ~/.config
 ln -s ${BASEDIR}/bash_profile ~/.bash_profile
 ln -s ${BASEDIR}/bashrc ~/.bashrc
 ln -s ${BASEDIR}/xinitrc ~/.xinitrc
+ln -s ${BASEDIR}/xbindkeysrc ~/.xbindkeysrc
+ln -s ${BASEDIR}/gemrc ~/.gemrc
 ln -s ${BASEDIR}/config/matplotlib/matplotlibrc ~/.matplotlib/matplotlibrc
