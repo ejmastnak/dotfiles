@@ -1,4 +1,4 @@
-lua require'lspconfig'.jedi_language_server.setup{}
+" Currently not actually source from anywhere
 
 " use <C-Space> for Jedi omnicompletion
 inoremap <silent> <buffer> <C-Space> <C-x><C-o><Down>

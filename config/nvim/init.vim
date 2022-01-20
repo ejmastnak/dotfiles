@@ -19,6 +19,7 @@ set autowriteall          " write current buffer when moving buffers
 filetype on				        " enable filetype detection
 filetype plugin on		    " load file-specific plugins
 filetype indent on		    " load file-specific indentation
+syntax enable             " enable syntax highlighting
 colorscheme darcula       " set colorscheme
 let mapleader = " "
 " ---------------------------------------------
@@ -262,7 +263,12 @@ endfunction
 
 " LSP CONGIFURATION
 " ---------------------------------------------
+let g:Illuminate_ftwhitelist = ['python']
 lua <<EOF
-  require'lspconfig'.jedi_language_server.setup{}
+  require'lspconfig'.jedi_language_server.setup {
+    on_attach = function(client)
+      require 'illuminate'.on_attach(client)
+    end,
+  }
 EOF
 source ~/.config/nvim/personal/lsp/lsp-config.vim
