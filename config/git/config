@@ -6,3 +6,10 @@
 	fileMode = false
 [init]
 	defaultBranch = main
+[credential]
+	helper = 
+	helper = /usr/local/bin/git-credential-manager-core
+	credentialStore = cache
+	cacheOptions = --timeout 300
+[credential "https://dev.azure.com"]
+	useHttpPath = true
