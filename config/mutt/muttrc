@@ -1,0 +1,25 @@
+set from="ejmastnak@gmail.com"
+set realname="Elijan Mastnak"
+
+# IMAP settings
+set folder="imaps://imap.gmail.com:993/"
+set imap_user="ejmastnak@gmail.com"
+# set imap_pass=""
+
+# SMTP settings
+set smtp_url="smtps://ejmastnak@smtp.gmail.com:587/"
+# set smtp_pass=""
+
+# Remote Gmail folders
+set spoolfile="+INBOX"
+set postponed="+[Gmail]/Drafts"
+set record="+[Gmail]/Sent Mail"
+set trash="+[Gmail]/Trash"
+
+# Personal settings
+set editor="nvim"
+set ssl_force_tls=yes
+set abort_nosubject=no
+set sort="reverse-date-received"
+set mail_check=60
+set copy=no
