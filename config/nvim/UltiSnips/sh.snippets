@@ -3,6 +3,14 @@ snippet -- "Commented line with a bunch of dashes ----------------- " bA
 # --------------------------------------------- #
 endsnippet
 
+snippet "(^|[\W])'"  "single quotation marks" rA
+`!p snip.rv = match.group(1)`'${1:${VISUAL:}}'$0
+endsnippet
+
+snippet "(^|[\W])\""  "double quotation marks" rA
+`!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
+endsnippet
+
 snippet ff "New function definition" bA
 function ${1:name}() {
 	$0
