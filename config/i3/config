@@ -167,52 +167,54 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Window colors (see https://i3wm.org/docs/userguide.html#_changing_colors)
+# Nord colors: https://lospec.com/palette-list/nord-theme
+# background (background color of ribbon holding window title)
+
+# Number progressions go from darker to lighter
+set $nord_dark1   #2e3440
+set $nord_dark2   #3b4252
+set $nord_dark3   #434c5e
+set $nord_dark4   #4c566a
+set $nord_light1  #d8dee9
+set $nord_light2  #e5e9f0
+set $nord_light3  #eceff4
+set $nord_teal    #8fbcbb
+set $nord_blue1   #5e81ac
+set $nord_blue2   #81a1c1
+set $nord_blue3   #88c0d0
+set $nord_red     #bf616a
+set $nord_orange  #d08770
+set $nord_yellow  #ebcb8b
+set $nord_green   #a3be8c
+set $nord_lilac   #b48ead
+
+# Setting window colors (see https://i3wm.org/docs/userguide.html#_changing_colors)
+# class                 border        background    text           indicator      child_border
+client.focused          $nord_blue3   $nord_blue3   $nord_dark2    $nord_light2   $nord_dark1
+# client.focused_inactive $fi_bd_color  $fi_bg_color  $fi_txt_color  $fi_ind_color  $fi_cbd_color
+client.unfocused        $nord_dark4   $nord_dark4   $nord_light3   $nord_light1   $nord_dark1
+client.urgent           $nord_red     $nord_red     $nord_light1   $nord_light2   $nord_dark1
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
   	status_command i3status
   	# status_command exec ~/.config/i3status/myi3bar.sh
+	font pango:Source Code Pro 10
+	colors {
+	background $nord_dark3
+	statusline $nord_light3
+	separator  $nord_blue2
+
+        # colorclass       border       background   text
+	focused_workspace  $nord_blue1  $nord_blue1  $nord_light3
+	active_workspace   $nord_blue1  $nord_blue1  $nord_light3
+	inactive_workspace $nord_dark3  $nord_dark3  $nord_blue2
+	urgent_workspace   $nord_dark1  $nord_red    $nord_light1
+	binding_mode       $nord_dark1  $nord_red    $nord_dark2
+	}
 }
-
-
-# Window colors (see https://i3wm.org/docs/userguide.html#_changing_colors)
-# Nord colors: https://lospec.com/palette-list/nord-theme
-# background (background color of ribbon holding window title)
-set $bg_color     #88c0d0
-set $fi_bg_color  #4c566a
-set $uf_bg_color  #4c566a
-set $urg_bg_color #ff0000
-
-# borders (border of ribbon holding window title)
-set $bd_color     $bg_color
-set $fi_bd_color  $fi_bg_color
-set $uf_bd_color  $uf_bg_color
-set $urg_bd_color $urg_bg_color
-
-# text (color of window title text)
-set $txt_color     #3b4252
-set $fi_txt_color  #ffffff
-set $uf_txt_color  #ffffff
-set $urg_txt_color #ffffff
-
-# indicator (shows where a new window will be opened)
-set $ind_color     #2e9ef4
-set $fi_ind_color  #292d2e
-set $uf_ind_color  #292d2e
-set $urg_ind_color #900000
-
-# child borders
-set $cbd_color     #000000
-set $fi_cbd_color  #333333
-set $uf_cbd_color  #333333
-set $urg_cbd_color #2f343a
-
-# Setting window colors (see https://i3wm.org/docs/userguide.html#_changing_colors)
-# class                 	border        background    text           indicator      child_border
-client.focused          $bd_color     $bg_color     $txt_color     $ind_color     $cbd_color
-client.focused_inactive $fi_bd_color  $fi_bg_color  $fi_txt_color  $fi_ind_color  $fi_cbd_color
-client.unfocused        $uf_bd_color  $uf_bg_color  $uf_txt_color  $uf_ind_color  $uf_cbd_color
-client.urgent           $urg_bd_color $urg_bg_color $urg_txt_color $urg_ind_color $urg_cbd_color
 
 # Autostarting
 # --------------------------------------------- #
