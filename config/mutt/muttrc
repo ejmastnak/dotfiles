@@ -23,3 +23,10 @@ set abort_nosubject=no
 set sort="reverse-date-received"
 set mail_check=60
 set copy=no
+
+# Source colorscheme
+source ~/.config/mutt/colors/nordish
+
+# set sidebar_visible
+# set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+# set mail_check_stats
