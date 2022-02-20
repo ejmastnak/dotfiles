@@ -5,6 +5,7 @@
 /config/mpv/watch_later
 /config/pulse/*.tdb
 
+/config/Signal
 /config/iterm2
 /config/dconf
 /config/syncthing
