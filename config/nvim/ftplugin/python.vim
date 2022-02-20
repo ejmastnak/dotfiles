@@ -11,3 +11,6 @@ setlocal foldlevel=99
 
 nnoremap <leader>r :execute "AsyncRun -save=2 " .
       \ "python3 %"<CR>
+
+" Source LSP configuration
+source ~/.config/nvim/personal/lsp/jedi-server-config.vim

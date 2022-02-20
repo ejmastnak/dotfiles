@@ -62,8 +62,7 @@ if g:os_current == "Linux"
       " Note that setting `b:zathura_open = 0` is taken care of
       " in the below jobstart call's `on_exit` handler.
       if b:zathura_open
-        call jobstart("zathura " . forward_command)
-        sleep 100m  " give Zathura time steal focus before calling xdotool
+        execute "!zathura " . expand(forward_command)
 
       " If Zathura is not yet open, set the -x (inverse search) option.
       else
@@ -73,7 +72,7 @@ if g:os_current == "Linux"
               \ {'on_exit': 'ZathuraExit'})
 
         let b:zathura_open = 1
-        sleep 250m  " give Zathura time to open and steal focus before calling xdotool
+        sleep 350m  " give Zathura time to open and steal focus before calling xdotool
       endif
 
       " The xdotool call finishes quickly enough to run synchronously, i.e. with `execute !`
