@@ -17,7 +17,7 @@ filetype {*.xls,*.xlsx},<application/msexcel> gnumeric %c &
 " filetype {*.xls,*.xlsx},<application/msexcel> sc-im
 
 " CSV files
-filetype {*.csv},<text/csv> sc-im
+" filetype {*.csv},<text/csv> sc-im --import_delimited_as_text
 " ---------------------------------------------
 " END FILE OPENING CONFIGURATION
 
