@@ -1,4 +1,4 @@
-% This environment is used for a document's title page
+% This environment is used for the title page in lecture notes and exercises
 % \NewDocumentEnvironment (which requires the xparse package) is used instead of \newenvironment to allow for the year parameter #2 to be used in the environment end code.
 % Parameters:
 % - title e.g. "Classical Physics"
@@ -37,6 +37,44 @@ Faculty of Mathematics and Physics, University of Ljubljana\\
 }
 % --------------------------------------------- %
 
+% This environment is used for the title page in equation sheets
+% \NewDocumentEnvironment (which requires the xparse package) is used instead of \newenvironment to allow for the year parameter #2 to be used in the environment end code.
+% Parameters:
+% - title e.g. "A Concise Summary of Classical Physics"
+% - date e.g. "Summer semester 2020-2021"
+% The argspec {mm} means the titlepage environment takes two (m)andatory arguments
+\NewDocumentEnvironment{eqnSheetTitlepage}{mm}
+{% ENVIRONMENT PREAMBLE
+\pagestyle{empty}  % remove headers from title page
+\begin{center}
+\thispagestyle{empty}
+\null
+\vspace{5ex}
+% {\huge \underline{\hphantom{m}{#1}\hphantom{m}}}\\[1.5ex]
+{\huge {#1}}\\[2.5ex]
+
+% \setlength{\parindent}{2em}
+\begin{minipage}[t]{0.99\textwidth}%
+\setlength{\parindent}{1.5em}
+    % minipage to hold introductory text
+}% ENVIRONMENT CONTENT GOES HERE
+{% ENVIRONMENT "POST-AMBLE"
+\end{minipage}
+% \setlength{\parindent}{0pt}
+\vfill
+
+{\textit{For more notes like this, visit \href{https://ejmastnak.github.io/fmf.html}{\texttt{ejmastnak.github.io/fmf}}}}\\[-1.0ex]
+% \rule{0.9\textwidth}{0.4pt}\\[0.5ex]
+% Elijan J. Mastnak\\
+% Last update: \today\\
+% Faculty of Mathematics and Physics, University of Ljubljana\\
+
+\end{center}
+}
+% --------------------------------------------- %
+
+% --------------------------------------------- %
+
 % Macro: introduction to lectures
 % --------------------------------------------- %
 % Params:
@@ -70,13 +108,22 @@ Faculty of Mathematics and Physics, University of Ljubljana\\
 \newcommand{\introOral}[5]{Notes covering typical questions from the oral exam required to pass the {#1}-year undergraduate course \textit{#2} ({#3}), given by {#4} at the Faculty of Mathematics and Physics at the University of Ljubljana in the academic year {#5}}
 % --------------------------------------------- %
 
+% Macro: introduction to equation sheet
+% --------------------------------------------- %
+% Params:
+% 1: year e.g. "first"/"second"/"third"
+% 2: Slovene name e.g. "Kvanta Mehanika"
+% 3: English name e.g. "Quantum Mechanics"
+% 4: academic year e.g. "2020-21"
+\newcommand{\introEqSheet}[5]{Condensed notes of the material covered in the {#1}-year undergraduate course \textit{#2} ({#3}) at the Faculty of Mathematics and Physics at the University of Ljubljana in the academic year {#4}}
+% --------------------------------------------- %
 
 % --------------------------------------------- %
 \newcommand{\creditMaterial}[1]{Credit for the material covered in these notes is due to #1}
-
 \newcommand{\creditElijanUpper}{The voice, typesetting, and translation to English in this document are my own}
-
 \newcommand{\creditElijanLower}{the voice, typesetting, and translation to English in this document are my own}
-
-\newcommand{\mistakesLine}{\vspace{0.5ex}\textit{Disclaimer:} Mistakes---both simple typos and legitimate errors---are likely. Keep in mind that these are the notes of an undergraduate student in the process of learning the material himself---take what you read with a grain of salt. If you find mistakes and feel like telling me, for example by \href{mailto:ejmastnak@gmail.com}{\underline{email}}, I'll be happy to hear from you, even for the most trivial of errors.}
+\newcommand{\mistakesLine}{\vspace{0.5ex}\textit{Disclaimer:} This document will inevitably contain some mistakes---both simple typos and legitimate errors.
+Keep in mind that these are the notes of an undergraduate student in the process of learning the material himself, so take what you read with a grain of salt.
+If you find mistakes and feel like telling me, I will be grateful and happy to hear from you, even for the most trivial of errors.
+You can reach me by email, in English, Slovene, or Spanish, at \href{mailto:ejmastnak@gmail.com}{\texttt{ejmastnak@gmail.com}}.}
 % \href{https://github.com/ejmastnak/fmf}{\underline{Github}}

@@ -1,0 +1,68 @@
+% A collection of environments intended for use in mathematics documents, e.g.
+% - Theorem
+% - Proposition
+% - Example
+% - Definition
+%   and so on...
+% A single counter, `mathenvcounter` is used for all environments
+% and is number by section using `amsmath`'s `numberwithin` command.
+
+\newcounter{mathenvcounter}
+\numberwithin{mathenvcounter}{section}  % requires the `amsmath` package
+
+\newcommand{\spaceAboveEnvironment}{\vspace{0.8ex}}
+
+% Theorem
+% param 1: name (e.g. Bolzano-Weierstrass theorem)
+\newenvironment{theorem}[1]
+{\refstepcounter{mathenvcounter}
+\spaceAboveEnvironment
+\textbf{Theorem~\themathenvcounter: {#1}}
+}
+{}
+
+% Proposition
+% param 1: name (e.g. De Morgan's Laws)
+\newenvironment{prop}[1]
+{\refstepcounter{mathenvcounter}
+\spaceAboveEnvironment
+\textbf{Prop.~\themathenvcounter: {#1}}
+}
+{}
+
+% Proof
+\newenvironment{proof}
+{\vspace{0.5ex}
+\textit{Proof}: }
+{}
+
+% Example
+% param 1: example name (e.g. The Natural Numbers)
+\newenvironment{example}[1]
+{\refstepcounter{mathenvcounter}
+\spaceAboveEnvironment
+\textbf{Example~\themathenvcounter: {#1}}}
+{}
+
+% Definition
+% param 1: definition name (e.g. Injective and Surjective Function)
+\newenvironment{define}[1]
+{\refstepcounter{mathenvcounter}
+\spaceAboveEnvironment
+\textbf{Definition~\themathenvcounter: {#1}}}
+{}
+
+% Corollary
+% param 1: corollary name
+\newenvironment{corr}[1]
+{\refstepcounter{mathenvcounter}
+\spaceAboveEnvironment
+\textbf{Corollary~\themathenvcounter: {#1}}}
+{}
+
+% Remark
+% param 1: remark name
+\newenvironment{remark}[1]
+{\spaceAboveEnvironment
+\textbf{Remark: {#1}}}
+{}
