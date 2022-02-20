@@ -60,36 +60,35 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 " BEGIN MARKS
 " --------------------------------------------- "
 " Syntax: mark {mark} {directory} [filename]
-mark h ~/
-mark d ~/dotfiles/
-mark c ~/dotfiles/config/
-mark v ~/dotfiles/config/nvim
-mark U ~/dotfiles/config/nvim/UltiSnips
-mark T ~/Documents/test/
-mark p ~/Documents/planning/
-mark P ~/Documents/projects/
-mark b ~/Documents/basics/
-mark C ~/Documents/cv/cv/ cv.tex
-mark w ~/Documents/projects/ejmastnak/
-mark g ~/Documents/projects/tmg-bmc/
-mark G ~/Media/tmg-bmc-media/
-mark V ~/Documents/projects/ejmastnak/tutorials/vim-latex/
-mark r ~/Documents/basics/food/recipes/
-mark m ~/Documents/projects/music/
-mark a ~/Documents/academics/
-mark f ~/Documents/academics/fmf/
-mark t ~/Documents/academics/telecomm/
-mark e ~/Documents/academics/telecomm/masters/
-mark q ~/Documents/academics/qap/
-mark k ~/Documents/academics/klf/
 mark 1 ~/Documents/academics/mat1/
-mark s ~/Documents/software/software-resources/
-mark M ~/Media/music/music-library/
-mark Z ~/Media/music/music-library/Unsorted/
-mark S ~/Media/software-and-web/
 mark A ~/Media/academics/
 mark F ~/Media/academics/fmf/
+mark G ~/Media/tmg-bmc-media/
+mark M ~/Media/music/music-library/
 mark N ~/Media/academics/literature/deep-learning/nnfs/
+mark S ~/Media/software-and-web/
+mark T ~/Documents/test/
+mark Z ~/Media/music/music-library/unsorted/
+mark a ~/Documents/academics/
+mark b ~/Documents/projects/fitness-biomechanics/
+mark c ~/dotfiles/config/
+mark d ~/dotfiles/
+mark e ~/Documents/academics/telecomm/masters/
+mark f ~/Documents/academics/fmf/
+mark g ~/Documents/projects/tmg-bmc/
+mark h ~/
+mark D ~/Documents/
+mark k ~/Documents/academics/klf/
+mark m ~/Documents/projects/music/
+mark p ~/Documents/planning/
+mark P ~/Documents/projects/
+mark q ~/Documents/academics/qap/
+mark r ~/Documents/basics/food/recipes/
+mark s ~/Documents/software/software-resources/
+mark t ~/Documents/academics/telecomm/
+mark u ~/dotfiles/config/nvim/UltiSnips
+mark v ~/dotfiles/config/nvim
+mark w ~/Documents/projects/ejmastnak/
 " --------------------------------------------- "
 " END MARKS
 
@@ -145,8 +144,10 @@ nnoremap A cw
 " open vifmrc in editor
 nnoremap C :!nvim -c 'set filetype=vim' $MYVIFMRC<CR>:restart<CR>
 
-" Play a file with mpv (mostly for m3u playlists)
-nnoremap P :!mpv %c<cr>
+" give file under cursor =644 permissions
+nnoremap c6 :!chmod =644 %c<CR>
+
+nnoremap P :!mpv %c<CR>
 " --------------------------------------------- "
 " END MAPPINGS
 
