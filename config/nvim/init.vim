@@ -4,6 +4,9 @@
 " Basic configuration settings
 " -----------------------------------------------
 set nocompatible			    " use vim and not vi
+filetype plugin on		    " load file-specific plugins
+filetype indent on		    " load file-specific indentation
+filetype on				        " enable filetype detection
 set encoding=utf-8
 syntax enable				      " enable syntax highlighting
 set wrap linebreak        " wrap long lines and break lines at words
@@ -16,14 +19,15 @@ set noincsearch				    " don't jump to search results as search string is being 
 set noshowmode            " disable in favor of lightline.vim's statusline
 set nofoldenable          " don't fold text by default when opening files
 set autowriteall          " write current buffer when moving buffers
-filetype on				        " enable filetype detection
-filetype plugin on		    " load file-specific plugins
-filetype indent on		    " load file-specific indentation
 syntax enable             " enable syntax highlighting
-colorscheme darcula       " set colorscheme
+" colorscheme darcula       " set colorscheme
+colorscheme nord          " set colorscheme
 let mapleader = " "
 " ---------------------------------------------
 
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " OS detection
 " ---------------------------------------------
@@ -196,6 +200,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " close folds with zf
 nnoremap zf zc
 
+" equivalent of `:join` or `J` for lines above cursor
+nnoremap K kdd$
+
 " global substitute
 nnoremap <leader>s :%s/
 vnoremap <leader>s :s/
@@ -236,6 +243,7 @@ noremap <silent><leader>p :AsyncTask project-build-serve<cr>
 
 " Lightline status bar
 let g:lightline = {
+      \ 'colorscheme': 'nord',
       \ 'component_function': {
       \   'fileformat': 'LightlineFileFormat',
       \   'filetype': 'LightlineFiletype',
@@ -271,4 +279,5 @@ lua <<EOF
     end,
   }
 EOF
+highlight link illuminatedWord Visual
 source ~/.config/nvim/personal/lsp/lsp-config.vim
