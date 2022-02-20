@@ -1,0 +1,53 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=20
+
+[disk]
+command=scripts/disk
+LABEL=HOME:
+# DIR=$HOME
+interval=30
+
+[memory]
+command=scripts/memory
+label=MEM:
+interval=30
+
+[volume]
+command=scripts/volume
+LABEL=♪ 
+interval=once
+signal=10
+MIXER=default
+
+[iface]
+command=scripts/iface
+LABEL=wlp4s0:
+INTERFACE=wlp4s0
+ADDRESS_FAMILY=inet6?
+color=#00FF00
+interval=10
+display_wifi_name=1
+
+[wifi]
+command=scripts/wifi
+label=wifi:
+INTERFACE=wlp4s0
+interval=60
+
+[battery]
+command=scripts/battery
+interval=30
+LABEL=⚡ 
+
+[time]
+command=date '+%d-%m-%Y %H:%M:%S'
+interval=1

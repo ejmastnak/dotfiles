@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+# Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
+# Copyright (C) 2014 Alexander Keller <github@nycroth.com>
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+#------------------------------------------------------------------------
+
+# Use the provided interface, otherwise the device used for the default route.
+IF="${IFACE:-$BLOCK_INSTANCE}"
+IF="${IF:-$(ip route | awk '/^default/ { print $5 ; exit }')}"
+
+# Exit if there is no default route
+[[ -z "$IF" ]] && exit
+
+#------------------------------------------------------------------------
+
+# As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
+# connection (think desktop), the corresponding block should not be displayed.
+[[ ! -d /sys/class/net/${IF} ]] && exit
+
+#------------------------------------------------------------------------
+
+AF=${ADDRESS_FAMILY:-inet6?}
+LABEL="${LABEL:-}"
+
+for flag in "$1" "$2"; do
+  case "$flag" in
+    -4)
+      AF=inet ;;
+    -6)
+      AF=inet6 ;;
+    -L)
+      if [[ "$IF" = "" ]]; then
+        LABEL="iface"
+      else
+        LABEL="$IF:"
+      fi ;;
+  esac
+done
+
+if [[ "$IF" = "" ]] || [[ "$(cat /sys/class/net/$IF/operstate)" = 'down' ]]; then
+  echo "${LABEL} down" # full text
+  echo "${LABEL} down" # short text
+  echo \#FF0000 # color
+  exit
+fi
+
+# if no interface is found, use the first device with a global scope
+IPADDR=$(ip addr show $IF | perl -n -e "/$AF ([^ \/]+).* scope global/ && print \$1 and exit")
+
+case $BLOCK_BUTTON in
+  3) echo -n "$IPADDR" | xclip -q -se c ;;
+esac
+
+if [[ "${display_wifi_name}" == "1" ]];
+then
+  # try to guess the wifi name
+  if command -v iw > /dev/null && iw $IF info > /dev/null 2>&1;
+  then
+    WIFI_NAME=$(iw $IF info | grep -Po '(?<=ssid ).*' | tr -d " \t\n\r")
+
+    if [[ $BLOCK_BUTTON -eq 1 ]];
+    then
+      message="$LABEL $WIFI_NAME ($IPADDR)"
+    else
+      message="$LABEL $WIFI_NAME"
+    fi
+  else
+    message="$LABEL $IPADDR"
+  fi
+else
+  message="$LABEL $IPADDR"
+fi
+
+#------------------------------------------------------------------------
+
+echo "$message"
