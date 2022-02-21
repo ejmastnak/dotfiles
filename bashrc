@@ -4,6 +4,9 @@
 export EDITOR="nvim"
 export PAGER="less"
 
+# For GPG to know which terminal to use for input during Git credential verification
+export GPG_TTY=$(tty)
+
 # BEGIN OS DETECTION
 # --------------------------------------------- #
 os_linux=0
