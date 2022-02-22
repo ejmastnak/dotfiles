@@ -18,6 +18,7 @@ if len(b:tex_root_file) == 0
   let b:tex_root_file = expand('%:p')  " use current file as project root
   let b:tex_root_dir = expand('%:p:h')
 else  " 'TEXROOT' found in preamble; current file is NOT project root
+  lcd %:p:h
   let b:tex_root_file = fnamemodify(b:tex_root_file, ':p')
   let b:tex_root_dir = fnamemodify(b:tex_root_file, ':p:h')
 endif
