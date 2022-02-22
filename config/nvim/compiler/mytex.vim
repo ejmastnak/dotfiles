@@ -4,12 +4,34 @@ if exists("current_compiler")
 endif
 let current_compiler = "mytex"
 
+" Begin project root detection
+" ---------------------------------------------
+" Search for the string "TEXROOT" in the first few lines of the document
+" Set the variable `b:tex_root` if "TEXROOT" is detected.
+" --------------------------------------------- "
+let b:tex_root_file = system("head -5 " . expand('%') . 
+      \ '| grep "^%TEXROOT" ' . 
+      \ '| awk -F "=" ''{print $2}'' ' .
+      \ '| sed ''s/ *$//''')
+
+if len(b:tex_root_file) == 0
+  let b:tex_root_file = expand('%:p')  " use current file as project root
+  let b:tex_root_dir = expand('%:p:h')
+else  " 'TEXROOT' found in preamble; current file is NOT project root
+  let b:tex_root_file = fnamemodify(b:tex_root_file, ':p')
+  let b:tex_root_dir = fnamemodify(b:tex_root_file, ':p:h')
+endif
+
 " make programs using pdflatex or latexmk
 let s:pdflatex = 'pdflatex -file-line-error -interaction=nonstopmode ' .
-      \ '-halt-on-error -synctex=1 -output-directory=%:h'
-let s:latexmk = 'latexmk -pdf -output-directory=%:h'
+      \ '-halt-on-error -synctex=1 -output-directory=' . expand(b:tex_root_dir)
+let s:latexmk = 'latexmk -pdf -output-directory=' . expand(b:tex_root_dir)
+" ---------------------------------------------
+" End project root detection
 
-" used to toggle latexmk and shell-escape compilation on and off
+
+" Variables used to toggle latexmk and shell-escape compilation on and off.
+" Values are initialized to zero, then potentially turned on below.
 let b:tex_compile_use_latexmk = 0
 let b:tex_compile_use_shell_escape = 0
 
@@ -26,7 +48,7 @@ else  " 'minted' found in preamble
 endif
 
 
-" User-defined functions
+" Begin user-defined functions
 " ------------------------------------------- "
 " Toggles between latexmk and pdflatex
 function! s:TexToggleLatexmk() abort
@@ -59,8 +81,11 @@ function! s:TexSetMakePrg() abort
   if b:tex_compile_use_shell_escape
     let &l:makeprg = &makeprg . ' -shell-escape'
   endif
-  let &l:makeprg = &makeprg . ' %'
+  " let &l:makeprg = &makeprg . ' %'
+  let &l:makeprg = &makeprg . ' ' . b:tex_root_file
 endfunction
+" ---------------------------------------------
+" End user-defined functions
 
 
 " Key mappings for functions
