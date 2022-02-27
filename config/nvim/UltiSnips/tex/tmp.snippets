@@ -9,3 +9,6 @@
 # endsnippet
 
 priority -1
+snippet "([\w])RR" "For writing PDFs and PMFs of random variables" rA
+`!p snip.rv = match.group(1)`_{$1}(${1/\w+\s*/\L$0\E/g}) $0
+endsnippet
