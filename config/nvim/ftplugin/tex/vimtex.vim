@@ -20,19 +20,6 @@ let g:vimtex_delim_stopline = 5
 
 " vimtex toggle delimeter configuration
 " ------------------------------- "
-let g:vimtex_delim_list = {'mods' : {}}
-let g:vimtex_delim_list.mods.name = [
-      \ ['\left', '\right'],
-      \ ['\mleft', '\mright'],
-      \ ['\bigl', '\bigr'],
-      \ ['\Bigl', '\Bigr'],
-      \ ['\biggl', '\biggr'],
-      \ ['\Biggl', '\Biggr'],
-      \ ['\big', '\big'],
-      \ ['\Big', '\Big'],
-      \ ['\bigg', '\bigg'],
-      \ ['\Bigg', '\Bigg'],
-      \]
 let g:vimtex_delim_toggle_mod_list = [
   \ ['\left', '\right'],
   \ ['\big', '\big'],
@@ -43,11 +30,11 @@ let g:vimtex_delim_toggle_mod_list = [
 " ---------------------------------------------
 nmap dse <plug>(vimtex-env-delete)
 nmap dsc <plug>(vimtex-cmd-delete)
-nmap ds$ <plug>(vimtex-env-delete-math)
+nmap dsm <plug>(vimtex-env-delete-math)
 nmap dsd <plug>(vimtex-delim-delete)
 nmap cse <plug>(vimtex-env-change)
 nmap csc <plug>(vimtex-cmd-change)
-nmap cs$ <plug>(vimtex-env-change-math)
+nmap csm <plug>(vimtex-env-change-math)
 nmap csd <plug>(vimtex-delim-change-math)
 nmap tsf <plug>(vimtex-cmd-toggle-frac)
 nmap tsc <plug>(vimtex-cmd-toggle-star)

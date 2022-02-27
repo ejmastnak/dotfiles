@@ -6,4 +6,4 @@ inoremap <silent> <buffer> <C-Space> <C-x><C-o><Down>
 
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-set completeopt=longest,menuone
+" set completeopt=longest,menuone
