@@ -43,7 +43,6 @@ if !exists("g:os_current")
 endif
 " ---------------------------------------------
 
-
 " Set Python provider
 " ---------------------------------------------
 if g:os_current == "Linux"
@@ -52,6 +51,36 @@ elseif g:os_current == "Darwin"
   let g:python3_host_prog = '/usr/local/bin/python3'
 else
 endif
+" ---------------------------------------------
+
+" Specify plugins using Vim-Plug
+" ---------------------------------------------
+call plug#begin('~/dotfiles/config/nvim/plugged')
+" Global
+Plug 'junegunn/vim-plug'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'skywind3000/asynctasks.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+
+" Filetype-specific
+Plug 'chrisbra/csv.vim'
+Plug 'iamcco/markdown-preview.nvim'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'jeetsukumaran/vim-pythonsense'
+Plug 'lervag/vimtex'
+
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'RRethy/vim-illuminate'
+call plug#end()
 " ---------------------------------------------
 
 
