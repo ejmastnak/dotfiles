@@ -26,4 +26,6 @@ export LYEDITOR="nvr --servername=/tmp/lilypondsocket +%(line)s %(file)s"
 # Aliases
 # --------------------------------------------- #
 alias sus="systemctl suspend"
+alias s="systemctl"
+alias backup_documents="rclone sync -v --filter-from ~/.config/rclone/filter.txt /home/ej/Documents/ google-drive:Documents/"
 # --------------------------------------------- #
