@@ -265,12 +265,19 @@ endfunction
 function! LightlineFiletype()
   return winwidth(0) > 60 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 " ---------------------------------------------
 " END PLUGIN CONFIGURATION
 
 
 " LSP CONGIFURATION
 " ---------------------------------------------
+source ~/.config/nvim/personal/lsp/lsp-config.vim
 let g:Illuminate_ftwhitelist = ['python']
 lua <<EOF
   require'lspconfig'.jedi_language_server.setup {
@@ -278,6 +285,8 @@ lua <<EOF
       require 'illuminate'.on_attach(client)
     end,
   }
+vim.api.nvim_command [[ hi def link LspReferenceText CursorLine ]]
+vim.api.nvim_command [[ hi def link LspReferenceWrite CursorLine ]]
+vim.api.nvim_command [[ hi def link LspReferenceRead CursorLine ]]
 EOF
-highlight link illuminatedWord Visual
-source ~/.config/nvim/personal/lsp/lsp-config.vim
+" highlight link illuminatedWord Visual
