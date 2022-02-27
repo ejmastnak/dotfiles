@@ -63,6 +63,7 @@
 % Remark
 % param 1: remark name
 \newenvironment{remark}[1]
-{\spaceAboveEnvironment
-\textbf{Remark: {#1}}}
+{\refstepcounter{mathenvcounter}
+\spaceAboveEnvironment
+\textbf{Remark~\themathenvcounter: {#1}}}
 {}
