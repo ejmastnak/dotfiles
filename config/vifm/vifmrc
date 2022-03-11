@@ -78,6 +78,7 @@ mark f ~/Documents/academics/fmf/
 mark g ~/Documents/projects/tmg-bmc/
 mark h ~/
 mark D ~/Documents/
+mark W ~/Downloads/
 mark k ~/Documents/academics/klf/
 mark m ~/Documents/projects/music/
 mark p ~/Documents/planning/
@@ -145,7 +146,7 @@ nnoremap A cw
 nnoremap C :!nvim -c 'set filetype=vim' $MYVIFMRC<CR>:restart<CR>
 
 " give file under cursor =644 permissions
-nnoremap c6 :!chmod =644 %c<CR>
+nnoremap cm :!chmod =644 *.
 
 nnoremap P :!mpv %c<CR>
 " --------------------------------------------- "
@@ -158,7 +159,7 @@ nnoremap P :!mpv %c<CR>
 filetype {*.jpg,*.jpeg,*.png},<image/*> feh %c &
 
 " TeX
-filetype {*.tex},<text/tex> nvim --listen /tmp/texsocket
+filetype {*.tex},<text/tex> nvim
 
 " LyTeX
 filetype {*.lytex},<text/tex> nvim --listen /tmp/lytexsocket
