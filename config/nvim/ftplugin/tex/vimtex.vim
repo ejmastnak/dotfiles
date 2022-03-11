@@ -7,8 +7,6 @@ endif
 let b:did_myvimtexsettings = 1
 
 " Disabling some default features
-let g:vimtex_compiler_enabled = 0        " turn off compilation interface
-let g:vimtex_view_enabled = 0            " turn off pdf viewer interface
 let g:vimtex_indent_enabled = 0          " turn off vimtex indentation
 let g:vimtex_mappings_enabled = 0        " disable default mappings
 let g:vimtex_imaps_enabled = 0           " disable insert mode mappings (I use UltiSnips)
@@ -24,6 +22,12 @@ let g:vimtex_delim_toggle_mod_list = [
   \ ['\left', '\right'],
   \ ['\big', '\big'],
   \]
+
+" Don't open quickfix for warning measseges if no errors are present
+let g:vimtex_quickfix_open_on_warning = 0  
+
+" Use Zathura as the PDF viewer
+let g:vimtex_view_method = 'zathura'
 
 
 " DEFINE MAPPINGS
