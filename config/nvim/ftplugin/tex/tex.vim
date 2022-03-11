@@ -8,7 +8,6 @@ endif
 let b:did_mytexplugin = 1
 
 let g:tex_flavor = 'latex'  " recognize tex files as latex
-compiler mytex              " load my user-defined tex compiler
 
 " setting indentation
 setlocal expandtab
@@ -21,7 +20,7 @@ setlocal shiftwidth=4
 let g:tex_indent_items=0
 
 " Compilation
-nnoremap <leader>r :Make<CR>
+nnoremap <leader>r :update<CR>:VimtexCompileSS<CR>
 
 " Write the line "TEX" to the file "/tmp/inverse-search-target.txt".
 " I use the file  "/tmp/inverse-search-target.txt" as part of making inverse 
