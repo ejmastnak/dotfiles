@@ -37,7 +37,11 @@ alias sl="shopt | grep login"
 # restart Bash
 alias R="exec bash -l"
 
-# alias path='tr ':' '\n' <<< "$PATH"'
+# Some Git alias
+alias gg="git status"
+alias ggd="git diff"
+alias gga="git add"
+alias ggc="git commit"
 # --------------------------------------------- #
 # END ALIASES
 
