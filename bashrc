@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Use VI keybindings in the shell
+set -o vi
+
 export EDITOR="nvim"
 export PAGER="less"
 

@@ -1,0 +1,3 @@
+set show-mode-in-prompt on
+set vi-ins-mode-string "I"
+set vi-cmd-mode-string "N"
