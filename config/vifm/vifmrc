@@ -1,3 +1,4 @@
+% vim: set filetype=vim :
 " OS-specific settings
 " ---------------------------------------------
 if system('uname -s') == "Linux"
