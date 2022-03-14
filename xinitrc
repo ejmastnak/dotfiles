@@ -39,4 +39,6 @@ xbindkeys
 # Set wallpaper with feh
 ~/.fehbg &
 
+redshift -O 3500 &
+
 exec i3

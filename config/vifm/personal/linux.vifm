@@ -14,7 +14,9 @@ filetype {*.ps,*.eps,*.ps.gz},<application/postscript> zathura
 
 " Office spreadsheet files
 filetype {*.xls,*.xlsx},<application/msexcel> gnumeric %c &
-" filetype {*.xls,*.xlsx},<application/msexcel> sc-im
+
+" Word files
+filetype {*.doc,*.docx},<application/msword> libreoffice --writer %c &
 
 " CSV files
 " filetype {*.csv},<text/csv> sc-im --import_delimited_as_text
