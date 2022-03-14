@@ -11,3 +11,8 @@
 /config/syncthing
 /config/tmux/plugins
 /config/tmux/resurrect
+/config/okularrc
+/config/okularpartrc
+/config/nvim/swap
+/config/abiword
+/config/libreoffice
