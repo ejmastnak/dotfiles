@@ -1,0 +1,10 @@
+[Unit]
+Description=Desktop alert warning of low remaining battery
+Wants=alert-battery.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh /home/ej/scripts/alert-battery.sh
+
+[Install]
+WantedBy=graphical.target

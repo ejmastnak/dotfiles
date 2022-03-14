@@ -1,0 +1,10 @@
+[Unit]
+Description=Check battery status every few minutes to warn the user in case of low battery
+Requires=alert-battery.service
+
+[Timer]
+OnActiveSec=5m
+OnUnitActiveSec=5m
+
+[Install]
+WantedBy=timers.target
