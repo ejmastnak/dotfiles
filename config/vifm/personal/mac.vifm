@@ -41,8 +41,8 @@ filetype *.pkg open
 " ---------------------------------------------
 " END FILE OPENING CONFIGURATION
 
-# Copy and paste
-# See https://wiki.vifm.info/index.php/How_to_copy_path_to_current_file/directory_to_system_clipboard
+" Copy and paste
+" See https://wiki.vifm.info/index.php/How_to_copy_path_to_current_file/directory_to_system_clipboard
 " ---------------------------------------------
 " yank current directory path into the clipboard
 nnoremap yd :!echo -n %d | pbcopy %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
