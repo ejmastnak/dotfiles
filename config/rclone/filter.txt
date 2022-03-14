@@ -1,0 +1,24 @@
+- .git/**
+- .stversions/**
+
+- .jekyll-cache/**
+- .old-java/**
+- .venv/**
+- __pycache__/**
+
+- *.bak
+- *.DS_Store
+
+- *.aux
+- *.bbl
+- *.bcf
+- *.blg
+- *.fdb_latexmk
+- *.fls
+- *.log
+- *.nav
+- *.out
+- *.pdfpc
+- *.snm
+- *.synctex.gz
+- *.toc
