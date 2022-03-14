@@ -65,6 +65,8 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
@@ -72,7 +74,7 @@ Plug 'tpope/vim-surround'
 
 " Filetype-specific
 Plug 'chrisbra/csv.vim'
-Plug 'iamcco/markdown-preview.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'lervag/vimtex'
@@ -243,18 +245,24 @@ nnoremap <leader>f :set filetype=
 " Important: make sure call mapleader before sourcing my_spell,
 " so that my_spell mappings use the correct leader key.
 source ~/.config/nvim/personal/spell/my_spell.vim
+
+" Set swap file directory
+set directory^=$HOME/.config/nvim/swap//
 " ---------------------------------------------
 " END MISCELLANEOUS
 
 
 " BEGIN PLUGIN CONFIGURATION
 " ---------------------------------------------
-" my personal MPV plugin
+" For my personal MPV plugin
 command LoadMPV source $HOME/.config/nvim/personal/mpv/mpv.vim
 nnoremap <leader>M <Cmd>LoadMPV<CR>
 
-" disable vim-dispatch's default key mappings
+" Disable vim-dispatch's default key mappings
 let g:dispatch_no_maps = 1
+
+" Disable csv.vim's key bindings
+let g:no_csv_maps = 1
 
 " UltiSnips Snippet keys
 let g:UltiSnipsExpandTrigger = "<Tab>"
