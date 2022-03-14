@@ -6,6 +6,8 @@ if exists("b:did_myvimtexsettings")
 endif
 let b:did_myvimtexsettings = 1
 
+map <leader>i :VimtexInfo<CR>
+
 " Disabling some default features
 let g:vimtex_indent_enabled = 0          " turn off vimtex indentation
 let g:vimtex_mappings_enabled = 0        " disable default mappings
@@ -23,12 +25,38 @@ let g:vimtex_delim_toggle_mod_list = [
   \ ['\big', '\big'],
   \]
 
-" Don't open quickfix for warning measseges if no errors are present
+" Don't open quickfix for warning messages if no errors are present
 let g:vimtex_quickfix_open_on_warning = 0  
+
+" Disable some compilation warning messages
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'LaTeX hooks Warning',
+      \ 'Underfull \\hbox',
+      \ 'Overfull \\hbox',
+      \ 'LaTeX Warning: .\+ float specifier changed to',
+      \ 'Package siunitx Warning: Detected the "physics" package:',
+      \ 'Package hyperref Warning: Token not allowed in a PDF string',
+      \]
 
 " Use Zathura as the PDF viewer
 let g:vimtex_view_method = 'zathura'
 
+" Don't automatically open PDF viewer after first compilation
+let g:vimtex_view_automatic = 0
+
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 0,
+    \ 'executable' : 'latexmk',
+    \ 'hooks' : [],
+    \ 'options' : [
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 
 " DEFINE MAPPINGS
 " ---------------------------------------------
