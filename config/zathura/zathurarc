@@ -5,17 +5,11 @@ set window-title-basename true
 set statusbar-home-tilde  true
 set recolor               true
 
-# LAYOUT SETTINGS
-# --------------------------------------------- #
-set statusbar-h-padding 0
-set statusbar-v-padding 0
-set show-scrollbars     false
-
 # NORD THEME
 # https://github.com/arcticicestudio/nord/issues/143
 # --------------------------------------------- #
 set default-bg                 "#2e3440"    # nord0
-set default-fg                 "#d8dee9"    # nord4
+set default-fg                 "#d8de9"    # nord4
 set statusbar-bg               "#2e3440"    # nord0
 set statusbar-fg               "#d8dee9"    # nord4
 set inputbar-bg                "#2e3440"    # nord0
@@ -46,4 +40,4 @@ set render-loading-fg          "#d8dee9"    # nord4
 
 
 # Decrease highlight prominence (e.g. after Vim forward search)
-set highlight-transparency 0.15
+set highlight-transparency 0.10
