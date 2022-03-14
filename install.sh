@@ -13,3 +13,4 @@ ln -s ${BASEDIR}/xinitrc ~/.xinitrc
 ln -s ${BASEDIR}/xbindkeysrc ~/.xbindkeysrc
 ln -s ${BASEDIR}/gemrc ~/.gemrc
 ln -s ${BASEDIR}/config/matplotlib/matplotlibrc ~/.matplotlib/matplotlibrc
+ln -s ${BASEDIR}/vim ~/.vim
