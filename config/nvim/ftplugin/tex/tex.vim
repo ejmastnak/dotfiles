@@ -37,6 +37,7 @@ if g:os_current == "Linux"
 
   function! s:TexForwardShowZathura() abort
     VimtexView
+    sleep 100m
     execute "!xdotool windowfocus " . expand(g:window_id)
 
     " If above command failed; perhaps window ID changed
@@ -51,7 +52,7 @@ if g:os_current == "Linux"
   nmap <leader>v <Plug>TexForwardShow
   noremap <script> <Plug>TexForwardShow <SID>TexForwardShow
   noremap <SID>TexForwardShow :call <SID>TexForwardShowZathura()<CR>
-
+  
 " macOS forward search implementation
 elseif g:os_current == "Darwin"
   nnoremap <leader>v :execute "Start! " .
