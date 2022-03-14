@@ -1,0 +1,19 @@
+snippet "([\W_])EV" "\electronvolt" rA
+`!p snip.rv = match.group(1)`\electronvolt
+endsnippet
+
+snippet "([\W_])DB" "\decibell" rA
+`!p snip.rv = match.group(1)`\decibell
+endsnippet
+
+snippet "([\W_])SS" "SI{}{}" rA
+`!p snip.rv = match.group(1)`\SI{$1}{$2}$0
+endsnippet
+
+snippet SIr "SIrange{}{}" i
+\SIrange{$1}{$2}{$3}$0
+endsnippet
+
+snippet si "si{} (\si unit)" i
+\si{$1}$0
+endsnippet

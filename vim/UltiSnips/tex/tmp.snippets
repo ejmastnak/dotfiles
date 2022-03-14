@@ -1,0 +1,14 @@
+# snippet CC "New chapter environment for UPC application" bA
+# \begin{chapter}{${1:${VISUAL:}}}
+# 	$0
+# \end{chapter}
+# endsnippet
+
+# snippet ss "Sequence definition for Chapter 4 of Mat 1" A
+# \sequence{${1:a}}{${2:n}}{${3:\mathbb{N}}}
+# endsnippet
+
+priority -1
+snippet "([\w])RR" "For writing PDFs and PMFs of random variables" rA
+`!p snip.rv = match.group(1)`_{$1}(${1/\w+\s*/\L$0\E/g}) $0
+endsnippet

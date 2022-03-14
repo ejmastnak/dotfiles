@@ -1,0 +1,46 @@
+# Font styles
+
+snippet "(^|[^a-zA-Z\\])tt" "\texttt{} (typewriter)" rA
+`!p snip.rv = match.group(1)`\texttt{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])tii" "\textit{} " rA
+`!p snip.rv = match.group(1)`\textit{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])tbb" "\textbf{} " rA
+`!p snip.rv = match.group(1)`\textbf{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])ul" "\underline{} (underline)" r
+`!p snip.rv = match.group(1)`\underline{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])tee" "\text{} (math environment)" rA
+`!p snip.rv = match.group(1)`\text{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])rmm" "\mathrm{} (math roman font)" rA
+`!p snip.rv = match.group(1)`\mathrm{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])mcc" "\mathcal" rA
+`!p snip.rv = match.group(1)`\mathcal{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])msf" "\mathsf" rA
+`!p snip.rv = match.group(1)`\mathsf{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])mbb" "\mathbb" rA
+`!p snip.rv = match.group(1)`\mathbb{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])mbf" "\mathbf" rA
+`!p snip.rv = match.group(1)`\mathbf{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z\\])tm" "\music{} (for music theory documents)" rA
+`!p snip.rv = match.group(1)`\music{${1:${VISUAL:}}}$0
+endsnippet
+

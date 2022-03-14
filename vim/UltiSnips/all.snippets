@@ -1,0 +1,38 @@
+# snippets for all files. Mostly auto-pair delimiters
+
+priority -1
+
+# snippet "(^|[\W])'"  "single quotation marks" rA
+# `!p snip.rv = match.group(1)`'${1:${VISUAL:}}'$0
+# endsnippet
+
+snippet ' "single quotation marks" A
+'${1:${VISUAL:}}'$0
+endsnippet
+
+# snippet "(^|[\W])\""  "double quotation marks" rA
+# snippet "(^|[\W])\""  "double quotation marks" rA
+# `!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
+# endsnippet
+# `!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
+# endsnippet
+
+snippet ( "Paired parentheses ()" iA 
+(${1:${VISUAL:}})$0
+endsnippet
+
+snippet [ "Paired square brackets []" iA
+[${1:${VISUAL:}}]$0
+endsnippet
+
+snippet { "Paired curly brackets {}" iA
+{${1:${VISUAL:}}}$0
+endsnippet
+
+# snippet "(^|[\W])`"  "Back ticks" rA
+# `!p snip.rv = match.group(1)`\`${1:${VISUAL:}}\`$0
+# endsnippet
+
+snippet -- "Commented line with a bunch of dashes ----------------- " bA
+# --------------------------------------------- #
+endsnippet

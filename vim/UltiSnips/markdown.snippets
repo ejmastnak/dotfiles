@@ -1,0 +1,50 @@
+# snippets for markdown files
+
+snippet << "Paired < ... > tags" A
+<${1:${VISUAL:}}>$0
+endsnippet
+
+snippet "(^|[\W])`"  "Back ticks (for inline code)" rA
+`!p snip.rv = match.group(1)`\`${1:${VISUAL:}}\`$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])sd"  "Back ticks (for inline code); alternate trigger" rA
+`!p snip.rv = match.group(1)`\`${1:${VISUAL:}}\`$0
+endsnippet
+
+# snippet "(^|[\W])mm" "Inline math $ $" rA
+# `!p snip.rv = match.group(1)`\$${1:${VISUAL:}}\$$0
+# endsnippet
+
+snippet mm "Inline math $ $" A
+\$${1:${VISUAL:}}\$$0
+endsnippet
+
+snippet "(^|[^a-zA-Z'])ll"  "Link [display name](url)" rA
+`!p snip.rv = match.group(1)`[${1:${VISUAL:}}]($2)$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])tbb" "Bold text. (Trigger used in analogy with my LaTeX textbf trigger.)" rA
+`!p snip.rv = match.group(1)`**${1:${VISUAL:}}**$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])tii" "Italic text. (Trigger used in analogy with my LaTeX textit trigger.)" rA
+`!p snip.rv = match.group(1)`*${1:${VISUAL:}}*$0
+endsnippet
+
+snippet gcc "Comment for Jekyll/Liquid markdown files" bA
+{% comment %} 
+${1:${VISUAL:}}$0
+{% endcomment %}
+endsnippet
+
+snippet cc "Back-tick code block" bA
+\`\`\`$1
+${2:${VISUAL:}}$0
+\`\`\`
+$0
+endsnippet
+
+snippet "(^|[^a-zA-Z'])TODOO"  "TODO (in bold)" rA
+`!p snip.rv = match.group(1)`**TODO** 
+endsnippet

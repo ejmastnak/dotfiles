@@ -1,0 +1,9 @@
+# snippets for the Liquid templating language
+
+snippet "(^|[^a-zA-Z])tt" "Liquid tag {% %}" rA
+`!p snip.rv = match.group(1)`{% $1 %}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])obb" "Liquid object {{ }}" rA
+`!p snip.rv = match.group(1)`{{ $1 }}$0
+endsnippet

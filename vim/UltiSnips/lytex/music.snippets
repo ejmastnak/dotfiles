@@ -1,0 +1,26 @@
+snippet ll "Lilypond environment" bA
+%<LILY_START>
+\begin{lilypond}
+	$0
+\end{lilypond}
+%<LILY_END>
+endsnippet
+
+snippet lf "\lilypondfile command" bA
+%<LILY_START>
+\lilypondfile{$1}$0
+%<LILY_END>
+endsnippet
+
+snippet "(^|[^a-zA-Z])sd" "\music{} command" rA
+`!p snip.rv = match.group(1)`\music{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet ;f "\flat" iA
+\flat
+endsnippet
+
+snippet ;s "\sharp" iA
+\sharp
+endsnippet
+

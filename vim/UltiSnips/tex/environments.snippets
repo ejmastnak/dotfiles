@@ -1,0 +1,109 @@
+snippet "(^|[^a-zA-Z\\])mm" "Inline math $ $" rA
+`!p snip.rv = match.group(1)`\$ ${1:${VISUAL:}} \$$0
+endsnippet
+
+# Various environments
+
+snippet env "New environment" bA
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+# hacky way to stop UltiSnips from mirroring the {$2} tag
+snippet eenv "New environment" bA
+\begin{$1}{$2}
+	$0
+\end{$1}
+endsnippet
+
+snippet nn "Equation environment with suppressed numbering" bA
+\begin{equation*}
+	$1
+\end{equation*}
+$0
+endsnippet
+
+snippet all "Align environment with suppressed numbering" bA
+\begin{align*}
+	$1
+\end{align*}
+$0
+endsnippet
+
+snippet itt "Itemize environment" bA
+\begin{itemize}
+
+	\item $0
+
+\end{itemize}
+endsnippet
+
+snippet rit "Reversed itemize environment, used to split up an existing itemize environment" b
+\end{itemize}
+
+$0
+\begin{itemize}
+endsnippet
+
+snippet enn "Enumerate environment" bA
+\begin{enumerate}
+
+	\item $0
+
+\end{enumerate}
+endsnippet
+
+snippet tc "tcolorbox environment" bA
+\begin{tcolorbox}
+	$1
+\end{tcolorbox}
+$0
+endsnippet
+
+snippet pm "Parentheses matrix pmatrix" bA
+\begin{pmatrix}
+	$1
+\end{pmatrix}$0
+endsnippet
+
+snippet mq "\mqty() (matrix for inline math)" A
+\mqty(${1:${VISUAL:}})$0
+endsnippet
+
+snippet case "Cases environment" bA
+\begin{cases}
+	$1
+\end{cases}$0
+endsnippet
+
+snippet arr "Array environment" b
+\begin{array}{${1:cc}}
+	$2
+\end{array}$0
+endsnippet
+
+snippet qu "Quote environment" b
+\begin{quote}
+	$1
+\end{quote}
+endsnippet
+
+
+snippet VV "Verbatim environment" bA
+\begin{verbatim}
+	$1
+\end{verbatim}
+endsnippet
+
+snippet mint "Minted environment" b
+\begin{minted}{$1}
+$0    
+\end{minted}
+endsnippet
+
+snippet title "mytitlepage environment for FMF documents" bA
+\begin{mytitlepage}{${1:title}}{${2:date}}
+	$0
+\end{mytitlepage}
+endsnippet

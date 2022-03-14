@@ -1,0 +1,125 @@
+# Various ``system-style'' commands.
+
+# BEGIN PREAMBLE SNIPPETS
+# --------------------------------------------- #
+snippet pack "\usepackage{}" b
+\usepackage{$1}$0
+endsnippet
+
+snippet nc "\newcommand{}{}" b
+\newcommand{$1}{$2}$0
+endsnippet
+
+snippet rnc "\renewcommand{}{}" b
+\renewcommand{$1}{$2}$0
+endsnippet
+
+snippet inn "\input{} intended for use in FMF documents" bA
+\input{${1:~/dotfiles/config/latex/templates/}$2}$0
+endsnippet
+# END PREAMBLE SNIPPETS
+
+
+# BEGIN SECTIONING SNIPPETS
+# --------------------------------------------- #
+snippet s "New section" b
+\section{$1}$0
+endsnippet
+
+snippet ss "New subsection" b
+\subsection{$1}$0
+endsnippet
+
+snippet sss "New subsubsection" bA
+\subsubsection{$1}$0
+endsnippet
+
+snippet ns "\newsec{} (for equation sheet sections)" bA
+\newsec{$1}$0
+endsnippet
+
+snippet toc "\tableofcontents" b
+\tableofcontents
+endsnippet
+
+snippet np "\newpage" b
+\newpage
+endsnippet
+# --------------------------------------------- #
+# END SECTIONING SNIPPETS
+
+snippet "(^|[\W_])vv" "inline verabtim" rA
+`!p snip.rv = match.group(1)`\verb|${1:${VISUAL:}}|
+endsnippet
+
+snippet "(^|[\W_])TODOO" "TODO mark" rA
+`!p snip.rv = match.group(1)`\TODO{${1:${VISUAL:}}}$0
+endsnippet
+
+
+# BEGIN REFERENCING SNIPPETS
+# --------------------------------------------- #
+snippet "([\W_])lbl" "\label{} (for creating cross-references and hyperlinks)" rA
+`!p snip.rv = match.group(1)`\label{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "([^a-zA-Z\s])RR" "\ref{}" rA
+`!p snip.rv = match.group(1)`~\ref{${1:${VISUAL:}}}$0
+endsnippet
+
+# one or more white space characters followed by RR
+snippet "[\s]+RR" "\ref{}" rA
+~\ref{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet "(^|[\W_])REF" "TODO: reference" rA
+`!p snip.rv = match.group(1)`\TODO{reference}$0
+endsnippet
+
+snippet "(^|[\W_])EE" "\eqref{}" rA
+`!p snip.rv = match.group(1)`\eqref{${1:${VISUAL:}}}$0
+endsnippet
+# --------------------------------------------- #
+# END REFERENCING SNIPPETS
+
+
+# BEGIN HYPERLINK SNIPPETS
+# --------------------------------------------- #
+snippet url "\myurl{url}" i
+\url{${1:${VISUAL:url}}}$0
+endsnippet
+
+snippet hr "\href{url}{display name} (for url links)"
+\href{${1:url}}{${2:display name}}$0
+endsnippet
+
+snippet hrr "\hyperref[label]{display name} (for referencing labeled sections)" A
+\hyperref[${1:label}]{${2:${VISUAL:display name}}}$0
+endsnippet
+# --------------------------------------------- #
+# END HYPERLINK SNIPPETS
+
+
+# BEGIN SPACING SNIPPETS
+# --------------------------------------------- #
+snippet "([vhm])s" "(vhm)space (various spacing commands in one regex)" r
+\\`!p snip.rv = match.group(1)`space{$1}$0
+endsnippet
+
+snippet "vs([1-9])" "vspace with predefined spacing" rA
+\\vspace{0.`!p snip.rv = match.group(1)`ex}
+endsnippet
+
+snippet hpp "\hphantom{}" iA
+\hphantom{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet prr "\hfill-like fuctionality in math environments. Used in equation sheets" A
+& \pushright{$1}\\\\$0
+endsnippet
+
+snippet tls "\textls[]{}" i
+\textls[$1]{${2:${VISUAL:}}}$0
+endsnippet
+# --------------------------------------------- #
+# END SPACING SNIPPETS

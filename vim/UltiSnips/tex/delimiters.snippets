@@ -1,0 +1,48 @@
+# Delimiters
+global !p
+def notmath():
+	return vim.eval('vimtex#syntax#in_mathzone()') != '1'
+endglobal
+
+# set priority 2 to override snippets in all.snippets
+priority 2
+snippet "(^|[\W])\\\{" "Escaped curly braces \{ ... \}" rA
+`!p snip.rv = match.group(1)`\\{ ${1:${VISUAL:}} \\}$0
+endsnippet
+
+snippet "([^a-zA-Z])l\(" "Left/Right parentheses" rA
+`!p snip.rv = match.group(1)`\left( ${1:${VISUAL:}} \right)$0
+endsnippet
+
+snippet "([^a-zA-Z])l\[" "Left/Right square brackets" rA
+`!p snip.rv = match.group(1)`\left[ ${1:${VISUAL:}} \right]$0
+endsnippet
+
+snippet "([^a-zA-Z])l\{" "Left/Right curly braces" rA
+`!p snip.rv = match.group(1)`\left\\{ ${1:${VISUAL:}} \right\\}$0
+endsnippet
+
+# turns b( into big( big) and
+# turns B( into Big( Big)
+snippet "([^a-zA-Z])([bB])\(" "(bB)ig/(bB)ig parentheses" rA
+`!p snip.rv = match.group(1)`\\`!p snip.rv = match.group(2)`ig( ${1:${VISUAL:}} \\`!p snip.rv = match.group(2)`ig)$0
+endsnippet
+
+snippet "([^a-zA-Z])([bB])\[" "(bB)ig/(bB)ig square brackets" rA
+`!p snip.rv = match.group(1)`\\`!p snip.rv = match.group(2)`ig[ ${1:${VISUAL:}} \\`!p snip.rv = match.group(2)`ig]$0
+endsnippet
+
+snippet "([^a-zA-Z])([bB])\{" "(bB)ig/(bB)ig curly brackets" rA
+`!p snip.rv = match.group(1)`\\`!p snip.rv = match.group(2)`ig\\{ ${1:${VISUAL:}} \\`!p snip.rv = match.group(2)`ig\\}$0
+endsnippet
+
+# not math so that " can be used in math to access ',
+# since ' is used to trigger superscript.
+context "notmath()"
+snippet "(^|[^a-zA-Z0-9])``" "LaTeX quotation marks" rA
+`!p snip.rv = match.group(1)`\`\`${1:${VISUAL:}}''$0
+endsnippet
+
+snippet "(^|[^\w\$\)\}])'"  "single quotation marks" rA
+`!p snip.rv = match.group(1)`'${1:${VISUAL:}}'$0
+endsnippet

@@ -1,0 +1,52 @@
+# Basic Python language settings
+
+snippet "(^|[\W])\""  "double quotation marks" rA
+`!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
+endsnippet
+
+snippet "(^|[\W])`"  "Back ticks" rA
+`!p snip.rv = match.group(1)`\`${1:${VISUAL:}}\`$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])sd"  "Back ticks (for inline code); alternate trigger" rA
+`!p snip.rv = match.group(1)`\`${1:${VISUAL:}}\`$0
+endsnippet
+
+snippet pp "print()" A
+print(${1:${VISUAL:}})$0
+endsnippet
+
+snippet ;s "self. (for use in Python classes)"  Ai
+self.
+endsnippet
+
+snippet ff "New function definition" bA
+def ${1:function_name}($2):
+	"""
+	${3:documentation}
+	"""
+	$0
+endsnippet
+
+snippet sf "New function definition inside a class (with self parameter)" bA
+def ${1:function_name}(self, $2):
+	"""
+	${3:documentation}
+	"""
+	$0
+endsnippet
+
+
+snippet ii "init method" bA
+def __init__(self$1):
+	$0
+endsnippet
+
+snippet main "if name==main" bA
+if __name__ == "__main__":
+	$0
+endsnippet
+
+snippet prr ":param (for block comments)" bA
+:param $1: $0
+endsnippet

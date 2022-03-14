@@ -1,0 +1,177 @@
+snippet template "Basic template for math/physics documents" b
+\documentclass[11pt, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{physics, siunitx}
+\usepackage{hyperref}
+
+\geometry{margin=3.5cm}
+\sisetup{separate-uncertainty=true, exponent-product=\cdot, range-units=single}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan}
+\setlength{\parindent}{0pt}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\TODO}[1]{{\textbf{TODO:} {\color{red} #1}}}
+
+\begin{document}
+$0
+\end{document}
+
+endsnippet
+
+# --------------------------------------------
+snippet simple "Basic document template without math packages" b
+\documentclass[11pt, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{hyperref}
+
+\geometry{margin=3.5cm}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan}
+
+\begin{document}
+$0
+\end{document}
+
+endsnippet
+
+# --------------------------------------------
+snippet eqn "Template for equation sheets" b
+\documentclass[10pt, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{geometry, multicol}
+\usepackage{microtype, suffix}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{physics, siunitx}
+\usepackage{hyperref}
+
+\geometry{margin=1.0cm}
+\sisetup{separate-uncertainty=true, exponent-product=\cdot, range-units=single}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan}
+
+\newcommand{\newsec}[1]{\vspace{2mm}\textbf{#1}\\\\}
+\WithSuffix\newcommand\newsec*[1]{\textbf{#1}\\\\}
+
+\pagenumbering{gobble}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlist{itemsep=-1.0pt, topsep=2pt}
+
+% Redefine section commands to use less space
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+	{-2.0ex}% % skip above section name
+	{1.0ex}% % skip below section name
+	{\normalfont\Large\bfseries}}
+
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+	{-1.5ex}% % skip above section name
+	{0.75ex}% % skip below section name
+	{\normalfont\large\bfseries}}
+
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{2}{0mm}%
+	{-1.5ex}% % skip above section name
+	{0.75ex}% % skip below section name
+	{\normalfont\large\bfseries}}
+\makeatother
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+
+\begin{document}
+\begin{multicols}{2}
+	$0
+\end{multicols}
+\end{document}
+endsnippet
+
+# --------------------------------------------
+
+snippet tlim "Custom \tlim and \tsum commands for equation sheets" b
+\newcommand{\tsum}[1]{\raisebox{0.1ex}{\scalebox{0.8}{$\displaystyle \sum_{#1}$}}}
+\newcommand{\tsumm}[2]{\raisebox{0.1ex}{\scalebox{0.8}{$\displaystyle \sum_{#1}^{#2}$}}}
+\newcommand{\tlim}[1]{\scalebox{0.8}{$\displaystyle \lim_{#1}\,$}}
+\newcommand{\tmax}[1]{\scalebox{0.8}{$\displaystyle \max_{#1}\,$}}
+endsnippet
+
+# ---------------------------------------------
+
+snippet vccommands "Vector calculus commands" b
+\renewcommand{\vec}[1]{\bm{#1}}
+\newcommand{\uvec}[1]{\mathop{} \!\hat{\mathbf{#1}}}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\tensor}[1]{\mathsf{#1}}
+
+\renewcommand{\div}{\nabla \cdot}
+\renewcommand{\curl}{\nabla \cross}
+\renewcommand{\grad}{\nabla}
+\renewcommand{\laplacian}{\nabla^{2}}
+$0
+endsnippet
+
+# --------------------------------------------
+
+snippet figurepack "Packages for Latex figures and floats" b
+\usepackage{graphicx}
+\graphicspath{{"${1:graphicspath}"}}
+\usepackage[section]{placeins}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+$0
+endsnippet
+
+# --------------------------------------------
+
+snippet minted "Packages for minted" b
+\newcommand{\tqs}{\textquotesingle}
+\newcommand{\ttilde}{{\raise.17ex\hbox{$\scriptstyle\sim$}}}
+
+\usepackage{minted, tcolorbox, etoolbox}
+\tcbuselibrary{minted,skins}
+\BeforeBeginEnvironment{minted}{\begin{tcolorbox}}
+\AfterEndEnvironment{minted}{\end{tcolorbox}}
+\setminted[${1:language}]{tabsize=2, breaklines}
+$0
+endsnippet
+
+# ---------------------------------------------
+
+snippet bib "Bibliography" b
+\begin{thebibliography}{}
+
+\setlength{\itemsep}{.2\itemsep} \setlength{\parsep}{.5\parsep}
+$0
+
+\end{thebibliography}
+endsnippet
+
+# ---------------------------------------------
+
+snippet header "Description" b
+% Header configuration
+%--------------------------------------------%
+\usepackage{fancyhdr, extramarks}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[L]{\textit{\firstrightmark}}
+\fancyfoot[C]{\centering \thepage}
+
+\renewcommand{\sectionmark}[1]{
+	\markboth{\thesection. \ #1}
+	{\noexpand\firstsubsectiontitle}
+	\global\firstsubsectionmarktrue}
+\renewcommand{\subsectionmark}[1]{
+	\markright{\thesubsection. \, #1}
+	\iffirstsubsectionmark
+\edef\firstsubsectiontitle{\thesubsection. \, #1}
+\fi
+\global\firstsubsectionmarkfalse}
+\newif\iffirstsubsectionmark
+\def\firstsubsectiontitle{}
+%--------------------------------------------%
+% End header configuration
+endsnippet

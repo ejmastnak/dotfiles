@@ -1,0 +1,29 @@
+snippet env "New environment" bA
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+# hacky way to stop UltiSnips from mirroring the {$2} tag
+snippet eenv "New environment" bA
+\begin{$1}{$2}
+	$0
+\end{$1}
+endsnippet
+
+snippet itt "Itemize environment" bA
+\begin{itemize}
+
+	\item $0
+
+\end{itemize}
+endsnippet
+
+
+snippet enn "Enumerate environment" bA
+\begin{enumerate}
+
+	\item $0
+
+\end{enumerate}
+endsnippet

@@ -1,0 +1,51 @@
+# Snippets for Python comments and docstrings
+
+snippet cc "Block comment" bA
+"""
+$1
+"""
+$0
+endsnippet
+
+snippet PP "Parameters (for use in docstrings)" bA
+Parameters
+----------
+${1:name} : ${2:type}
+    ${3:description}
+$0
+endsnippet
+
+snippet AA "Attributes (for use in docstrings)" bA
+Class Attributes
+----------------
+${1:name} : ${2:type}
+    ${3:description}
+$0
+endsnippet
+
+snippet RR "Returns (for use in docstrings)" bA
+Returns
+-------
+${1:name} : ${2:type}
+    ${3:description}
+$0
+endsnippet
+
+snippet OO "Outputs (for use in docstrings)" bA
+Outputs
+-------
+${1:name} : ${2:type}
+    ${3:description}
+$0
+endsnippet
+
+snippet : "parameter name and description (for use in docstrings)" bA
+${1:name} : ${2:type}
+    ${3:description}
+$0
+endsnippet
+
+snippet -- "Commented line with a bunch of dashes ----------------- " bA
+# --------------------------------------------- #
+endsnippet
+

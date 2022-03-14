@@ -1,0 +1,42 @@
+# BEGIN PLOTTING OPTIONS
+# --------------------------------------------- #
+snippet ;m "marker='' (for matplotlib)" A
+marker='$1'$0
+endsnippet
+
+snippet ;b "label='' (for matplotlib)" A
+label='$1'$0
+endsnippet
+
+snippet ;l "linestyle='' (for matplotlib)" A
+linestyle='$1'$0
+endsnippet
+# --------------------------------------------- #
+# END PLOTTING OPTIONS
+
+# snippet sub "Matplotlib subplots" bA
+# fig, axes = plt.subplots(${1:2}, ${2:1})
+# $0
+# endsnippet
+
+
+snippet ;p "plt.plot() (for matplotlib)" A
+plt.
+endsnippet
+
+snippet pll "plt.plot() (for matplotlib)" bA
+plt.plot($1)$0
+endsnippet
+
+snippet pss "plt.show() (for matplotlib)" bA
+plt.show()
+endsnippet
+
+snippet axl "axes.setx_label" bA
+ax.set_xlabel($1)$0
+endsnippet
+
+snippet ayl "axes.sety_label" bA
+ax.set_ylabel($1)$0
+endsnippet
+

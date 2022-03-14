@@ -1,0 +1,11 @@
+# Delimiters
+
+# set priority 2 to override snippets in all.snippets
+priority 2
+snippet "(^|[\W])\\\{" "\{ ... \}" rA
+`!p snip.rv = match.group(1)`\\{ ${1:${VISUAL:}} \\}$0
+endsnippet
+
+snippet "(^|[^a-zA-Z0-9])``" "LaTeX quotation marks" rA
+`!p snip.rv = match.group(1)`\`\`${1:${VISUAL:}}''$0
+endsnippet
