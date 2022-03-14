@@ -20,7 +20,7 @@ setlocal shiftwidth=4
 let g:tex_indent_items=0
 
 " Compilation
-nnoremap <leader>r :update<CR>:VimtexCompileSS<CR>
+noremap <leader>r <Cmd>update<CR><Cmd>VimtexCompileSS<CR>
 
 " Write the line "TEX" to the file "/tmp/inverse-search-target.txt".
 " I use the file  "/tmp/inverse-search-target.txt" as part of making inverse 
@@ -38,6 +38,13 @@ if g:os_current == "Linux"
   function! s:TexForwardShowZathura() abort
     VimtexView
     execute "!xdotool windowfocus " . expand(g:window_id)
+
+    " If above command failed; perhaps window ID changed
+    if v:shell_error
+      let g:window_id = system("xdotool getactivewindow")
+      execute "!xdotool windowfocus " . expand(g:window_id)
+    endif
+
     redraw!
   endfunction
 
