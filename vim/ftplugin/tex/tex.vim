@@ -7,11 +7,6 @@ if exists("b:did_mytexplugin")
 endif
 let b:did_mytexplugin = 1
 
-" Start a server
-if empty(v:servername) && exists('*remote_startserver')
-  call remote_startserver('VIM')
-endif
-
 let g:tex_flavor = 'latex'  " recognize tex files as latex
 
 " setting indentation
@@ -43,20 +38,20 @@ if g:os_current == "Linux"
   function! s:TexForwardShowZathura() abort
     VimtexView
     sleep 100m
-    silent execute "!xdotool windowfocus " . expand(g:window_id)
+    execute "!xdotool windowfocus " . expand(g:window_id)
 
     " If above command failed; perhaps window ID changed
     if v:shell_error
       let g:window_id = system("xdotool getactivewindow")
-      silent execute "!xdotool windowfocus " . expand(g:window_id)
+      execute "!xdotool windowfocus " . expand(g:window_id)
     endif
 
     redraw!
   endfunction
 
-  nmap <silent> <leader>v <Plug>TexForwardShow
-  noremap <silent> <script> <Plug>TexForwardShow <SID>TexForwardShow
-  noremap <silent> <SID>TexForwardShow :call <SID>TexForwardShowZathura()<CR>
+  nmap <leader>v <Plug>TexForwardShow
+  noremap <script> <Plug>TexForwardShow <SID>TexForwardShow
+  noremap <SID>TexForwardShow :call <SID>TexForwardShowZathura()<CR>
   
 " macOS forward search implementation
 elseif g:os_current == "Darwin"
