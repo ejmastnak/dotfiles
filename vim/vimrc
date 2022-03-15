@@ -16,13 +16,19 @@ set noshowmode            " disable in favor of lightline.vim's statusline
 set nofoldenable          " don't fold text by default when opening files
 set autowriteall          " write current buffer when moving buffers
 syntax enable             " enable syntax highlighting
-" colorscheme nord          " set colorscheme
 let mapleader = " "
 " ---------------------------------------------
 
 if (has("termguicolors"))
+  " Force true color; see https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6
+  if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  endif
   set termguicolors
 endif
+
+colorscheme nord          " set colorscheme
 
 " OS detection
 " ---------------------------------------------
