@@ -20,14 +20,13 @@ set noshowmode            " disable in favor of lightline.vim's statusline
 set nofoldenable          " don't fold text by default when opening files
 set autowriteall          " write current buffer when moving buffers
 syntax enable             " enable syntax highlighting
-" colorscheme darcula       " set colorscheme
-colorscheme nord          " set colorscheme
 let mapleader = " "
 " ---------------------------------------------
 
 if (has("termguicolors"))
   set termguicolors
 endif
+colorscheme nord          " set colorscheme
 
 " OS detection
 " ---------------------------------------------
