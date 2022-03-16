@@ -6,6 +6,7 @@
 - .venv/**
 - __pycache__/**
 
+- *.tar.gz
 - *.bak
 - *.DS_Store
 
