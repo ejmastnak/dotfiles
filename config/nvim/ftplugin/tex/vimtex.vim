@@ -75,7 +75,7 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 
-" Close viewers when VimTeX buffers are closed
+" Close viewers when VimTeX buffers are closed (see :help vimtex-events)
 function! CloseViewers()
   if executable('xdotool')
         \ && exists('b:vimtex.viewer.xwin_id')
