@@ -75,6 +75,20 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 
+" Close viewers when VimTeX buffers are closed
+function! CloseViewers()
+  if executable('xdotool')
+        \ && exists('b:vimtex.viewer.xwin_id')
+        \ && b:vimtex.viewer.xwin_id > 0
+    call system('xdotool windowclose '. b:vimtex.viewer.xwin_id)
+  endif
+endfunction
+
+augroup vimtex_event_close
+  au!
+  au User VimtexEventQuit call CloseViewers()
+augroup END
+
 " DEFINE MAPPINGS
 " ---------------------------------------------
 nmap dse <plug>(vimtex-env-delete)
