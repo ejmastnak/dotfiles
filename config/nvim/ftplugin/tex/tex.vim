@@ -27,17 +27,18 @@ noremap <leader>r <Cmd>update<CR><Cmd>VimtexCompileSS<CR>
 " search work for both LaTeX and Lilypond LyTeX files.
 call system(printf("echo %s > %s", "TEX", "/tmp/inverse-search-target.txt"))
 
-" For switching focus from Zathura to Vim using xdotool
-let g:window_id = system("xdotool getactivewindow")
-
 " BEGIN FORWARD SHOW
 " ---------------------------------------------
 " Linux forward search implementation
 if g:os_current == "Linux"
 
-  function! s:TexForwardShowZathura() abort
-    VimtexView
-    sleep 100m
+  nmap <leader>v <plug>(vimtex-view)
+
+  " For switching focus from Zathura to Vim using xdotool
+  let g:window_id = system("xdotool getactivewindow")
+
+  function! s:TexFocusVim() abort
+    sleep 100m  " Give window manager time to recognize focus moved to Zathura
     execute "!xdotool windowfocus " . expand(g:window_id)
 
     " If above command failed; perhaps window ID changed
@@ -45,13 +46,13 @@ if g:os_current == "Linux"
       let g:window_id = system("xdotool getactivewindow")
       execute "!xdotool windowfocus " . expand(g:window_id)
     endif
-
     redraw!
   endfunction
 
-  nmap <leader>v <Plug>TexForwardShow
-  noremap <script> <Plug>TexForwardShow <SID>TexForwardShow
-  noremap <SID>TexForwardShow :call <SID>TexForwardShowZathura()<CR>
+  augroup vimtex_event_focus
+    au!
+    au User VimtexEventView call s:TexFocusVim()
+  augroup END
   
 " macOS forward search implementation
 elseif g:os_current == "Darwin"
