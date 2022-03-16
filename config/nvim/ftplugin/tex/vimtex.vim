@@ -49,11 +49,10 @@ let g:vimtex_quickfix_ignore_filters = [
       \]
 
 if g:os_current == "Linux"
-  " Use Zathura as the PDF viewer
   let g:vimtex_view_method = 'zathura'
 elseif g:os_current == "Darwin"
-  " Use Skim as the PDF viewer
   let g:vimtex_view_method = 'skim'
+  " let g:vimtex_view_method = 'zathura'
 else
   echom "Error: forward show not supported on this OS"
 endif

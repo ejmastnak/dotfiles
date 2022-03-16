@@ -29,11 +29,10 @@ call system(printf("echo %s > %s", "TEX", "/tmp/inverse-search-target.txt"))
 
 " BEGIN FORWARD SHOW
 " ---------------------------------------------
+nmap <leader>v <plug>(vimtex-view)
+
 " Linux forward search implementation
 if g:os_current == "Linux"
-
-  nmap <leader>v <plug>(vimtex-view)
-
   " For switching focus from Zathura to Vim using xdotool
   let g:window_id = system("xdotool getactivewindow")
 
@@ -56,11 +55,15 @@ if g:os_current == "Linux"
   
 " macOS forward search implementation
 elseif g:os_current == "Darwin"
-  nnoremap <leader>v :execute "Start! " .
-        \ "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g " .
-        \ line('.') . " " .
-        \ expand('%:r') . ".pdf " .
-        \ expand('%')<CR>
+  function! s:TexFocusVim() abort
+    execute "!open -a Alacritty"
+    redraw!
+  endfunction
+
+  augroup vimtex_event_focus
+    au!
+    au User VimtexEventViewReverse call s:TexFocusVim()
+  augroup END
 else
   echom "Error: forward show not supported on this OS"
 endif
