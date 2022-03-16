@@ -1,7 +1,7 @@
-# Use XF86Search (F9 on T460) to play/pause MPV
+# Use XF86Search (F10 on T460) to play/pause MPV
 "playerctl --player=mpv play-pause"
    XF86Search
 
-# Use XF86Tools (F10 on T460) to play/pause firefox
+# Use XF86Tools (F9 on T460) to play/pause firefox
 "playerctl --player=firefox play-pause"
    XF86Tools
