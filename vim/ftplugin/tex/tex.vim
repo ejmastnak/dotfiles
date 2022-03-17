@@ -37,28 +37,25 @@ nmap <leader>v <plug>(vimtex-view)
 " Linux forward search implementation
 if g:os_current == "Linux"
 
-  " For switching focus from Zathura to Vim using xdotool
-  let g:window_id = system("xdotool getactivewindow")
+  " Get Vim's window ID for switching focus from Zathura to Vim using xdotool.
+  " Only set this variable once for the current Vim instance.
+  if !exists("g:vim_window_id")
+    let g:vim_window_id = system("xdotool getactivewindow")
+  endif
 
   function! s:TexFocusVim(delay_ms) abort
     " Give window manager time to recognize focus 
     " moved to PDF viewer before focusing Vim.
     let delay = a:delay_ms . "m"
     execute 'sleep ' . delay
-    execute "!xdotool windowfocus " . expand(g:window_id)
-
-    " If above command failed; perhaps window ID changed
-    if v:shell_error
-      let g:window_id = system("xdotool getactivewindow")
-      execute "!xdotool windowfocus " . expand(g:window_id)
-    endif
+    execute "!xdotool windowfocus " . expand(g:vim_window_id)
     redraw!
   endfunction
 
   augroup vimtex_event_focus
     au!
     au User VimtexEventView call s:TexFocusVim(100)
-    " Only gVim loses focus on inverse search, hence check gui_running
+    " Only gVim (and not Vim) loses focus on inverse search, hence the `gui_running` check
     if has("gui_running")
       au User VimtexEventViewReverse call s:TexFocusVim(0)
     endif
