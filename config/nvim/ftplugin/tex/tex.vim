@@ -33,18 +33,15 @@ nmap <leader>v <plug>(vimtex-view)
 
 " Linux forward search implementation
 if g:os_current == "Linux"
-  " For switching focus from Zathura to Vim using xdotool
-  let g:window_id = system("xdotool getactivewindow")
+  " Get Vim's window ID for switching focus from Zathura to Vim using xdotool.
+  " Only set this variable once for the current Vim instance.
+  if !exists("g:window_id")
+    let g:window_id = system("xdotool getactivewindow")
+  endif
 
   function! s:TexFocusVim() abort
-    sleep 100m  " Give window manager time to recognize focus moved to Zathura
+    sleep 200m  " Give window manager time to recognize focus moved to Zathura
     execute "!xdotool windowfocus " . expand(g:window_id)
-
-    " If above command failed; perhaps window ID changed
-    if v:shell_error
-      let g:window_id = system("xdotool getactivewindow")
-      execute "!xdotool windowfocus " . expand(g:window_id)
-    endif
     redraw!
   endfunction
 
