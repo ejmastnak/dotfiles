@@ -54,7 +54,7 @@ if g:os_current == "Linux"
 
   augroup vimtex_event_focus
     au!
-    au User VimtexEventView call s:TexFocusVim(100)
+    au User VimtexEventView call s:TexFocusVim(200)
     " Only gVim (and not Vim) loses focus on inverse search, hence the `gui_running` check
     if has("gui_running")
       au User VimtexEventViewReverse call s:TexFocusVim(0)
