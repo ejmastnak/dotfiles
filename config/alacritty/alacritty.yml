@@ -45,18 +45,18 @@ font:
 # Source: https://github.com/arcticicestudio/nord-alacritty/blob/develop/src/nord.yml
 colors:
   primary:
-    background: '#2e3440'
-    foreground: '#d8dee9'
-    dim_foreground: '#a5abb6'
+    background: '#2e3440'      # nord0; darkest in Polar Night
+    foreground: '#d8dee9'      # nord4; darkest in Snow Storm
+    dim_foreground: '#a5abb6'  # intermediate gray
   cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
+    text: '#2e3440'    # nord0; darkest in Polar Night
+    cursor: '#d8dee9'  # nord4; darkest in Snow Storm
   vi_mode_cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
+    text: '#2e3440'    # nord0; darkest in Polar Night
+    cursor: '#d8dee9'  # nord0; darkest in Polar Night
   selection:
     text: CellForeground
-    background: '#4c566a'
+    background: '#4c566a'   # nord3; lightest in Polar Night
   search:
     matches:
       foreground: CellBackground
@@ -65,32 +65,32 @@ colors:
       background: '#434c5e'
       foreground: '#d8dee9'
   normal:
-    black: '#3b4252'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#88c0d0'
-    white: '#e5e9f0'
+    black: '#3b4252'    # nord1; one shade lighter than nord0
+    red: '#bf616a'      # nord11
+    green: '#a3be8c'    # nord14
+    yellow: '#ebcb8b'   # nord13
+    cyan: '#88c0d0'     # nord8; 2nd-lightest in Frost
+    blue: '#81a1c1'     # nord9; 2nd-darkest in Frost
+    magenta: '#b48ead'  # nord15
+    white: '#e5e9f0'    # nord5; intermediate in Snow Storm
   bright:
-    black: '#4c566a'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#8fbcbb'
-    white: '#eceff4'
+    black: '#4c566a'    # nord3; lightest in Polar Night
+    red: '#bf616a'      # nord11
+    green: '#a3be8c'    # nord14
+    yellow: '#ebcb8b'   # nord13
+    cyan: '#8fbcbb'     # nord7; lightest in Frost
+    blue: '#81a1c1'     # nord9; 2nd-darkest in Frost
+    magenta: '#b48ead'  # nord15
+    white: '#eceff4'    # nord6; lightest in Snow Storm
   dim:
-    black: '#373e4d'
-    red: '#94545d'
-    green: '#809575'
-    yellow: '#b29e75'
-    blue: '#68809a'
-    magenta: '#8c738c'
-    cyan: '#6d96a5'
-    white: '#aeb3bb'
+    black: '#373e4d'    # dark black-blue-gray
+    red: '#94545d'      # muted version of nord11
+    green: '#809575'    # muted version of nord14
+    yellow: '#b29e75'   # muted version of nord13
+    blue: '#68809a'     # muted version of nord10
+    magenta: '#8c738c'  # muted version of nord15
+    cyan: '#6d96a5'     # muted version of nord7
+    white: '#aeb3bb'    # darkened version of nord4
 
 selection:
   # This string contains all characters that are used as separators for
@@ -123,7 +123,7 @@ cursor:
   # the style of the active value of the normal cursor.
   #
   # See `cursor.style` for available options.
-  vi_mode_style: None
+  vi_mode_style: Beam
 
   # Cursor blinking interval in milliseconds.
   blink_interval: 750
@@ -137,17 +137,19 @@ cursor:
   thickness: 0.15
 
 
-# Use for Alt to work as Mod key on macOS
-# See https://github.com/alacritty/alacritty/issues/62
 key_bindings:
-  - { key: Key1,     mods: Alt,     chars: "\x1b1"                       }
-  - { key: Key2,     mods: Alt,     chars: "\x1b2"                       }
-  - { key: Key3,     mods: Alt,     chars: "\x1b3"                       }
-  - { key: Key4,     mods: Alt,     chars: "\x1b4"                       }
-  - { key: Key5,     mods: Alt,     chars: "\x1b5"                       }
-  - { key: Key6,     mods: Alt,     chars: "\x1b6"                       }
-  - { key: Key7,     mods: Alt,     chars: "\x1b7"                       }
-  - { key: Key8,     mods: Alt,     chars: "\x1b8"                       }
-  - { key: Key9,     mods: Alt,     chars: "\x1b9"                       }
-  - { key: Key0,     mods: Alt,     chars: "\x1b0"                       }
-
+  # Key bindings to control font size from keyboard 
+  - { key: Minus,   mods: Control,   action: DecreaseFontSize }
+  - { key: Plus,    mods: Control,   action: IncreaseFontSize }
+  - { key: Key0,    mods: Control,   action: ResetFontSize    }
+# # Use for Alt to work as Mod key on macOS
+# # See https://github.com/alacritty/alacritty/issues/62
+#   - { key: Key1,    mods: Alt,       chars: "\x1b1"           }
+#   - { key: Key2,    mods: Alt,       chars: "\x1b2"           }
+#   - { key: Key3,    mods: Alt,       chars: "\x1b3"           }
+#   - { key: Key4,    mods: Alt,       chars: "\x1b4"           }
+#   - { key: Key5,    mods: Alt,       chars: "\x1b5"           }
+#   - { key: Key6,    mods: Alt,       chars: "\x1b6"           }
+#   - { key: Key7,    mods: Alt,       chars: "\x1b7"           }
+#   - { key: Key8,    mods: Alt,       chars: "\x1b8"           }
+#   - { key: Key9,    mods: Alt,       chars: "\x1b9"           }
