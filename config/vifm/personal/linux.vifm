@@ -1,13 +1,18 @@
+" % vim: set filetype=vim :
+
 " BEGIN FILE OPENING CONFIGURATION
 " ---------------------------------------------
 " PDF
 filetype {*.pdf},<application/pdf> zathura %c &
 
-" Image
-filetype {*.jpg,*.jpeg,*.png},<image/*> feh %c &
-
 " GIF
 filetype {*.gif},<image/gif> mpv %c
+
+" APNG
+filetype {*.apng},<image/apng> mpv %c
+
+" Image
+filetype {*.jpg,*.jpeg,*.png},<image/*> feh %c &
 
 " PostScript
 filetype {*.ps,*.eps,*.ps.gz},<application/postscript> zathura

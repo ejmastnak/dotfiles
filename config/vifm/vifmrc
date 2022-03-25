@@ -28,7 +28,7 @@ set noincsearch         " don't jump to match while type
 set scrolloff=4         " add space between cursor and border in lists
 set slowfs=curlftpfs    " don't do too many requests to slow file systems
 set norunexec           " don't automatically run executable files on l or Enter
-colorscheme solarized-dark Default-256 Default
+colorscheme nord solarized-dark Default-256 Default
 
 " Ignore case in search patterns unless the pattern 
 " contains at least one uppercase letter.
@@ -131,8 +131,8 @@ nnoremap e :edit<space>
 " Shortcut for mkdir command
 nnoremap m :mkdir<space>
 
-" Display sorting dialog
-nnoremap S :sort<cr>
+" " Display sorting dialog
+" nnoremap S :sort<cr>
 
 " Toggle visibility of preview window
 nnoremap w :view<cr>
@@ -149,7 +149,11 @@ nnoremap C :!nvim -c 'set filetype=vim' $MYVIFMRC<CR>:restart<CR>
 " give file under cursor =644 permissions
 nnoremap cm :!chmod =644 *.
 
+" Play file under cursor with mpv
 nnoremap P :!mpv %c<CR>
+
+" Run file under cursor as a shell script
+nnoremap S :!sh %c<CR>
 " --------------------------------------------- "
 " END MAPPINGS
 

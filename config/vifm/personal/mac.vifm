@@ -1,3 +1,5 @@
+" % vim: set filetype=vim :
+
 " set trashdir=~/.Trash/  " use macOS Trash as trash directory
 
 " BEGIN FILE OPENING CONFIGURATION
