@@ -6,7 +6,7 @@ if exists("b:did_myvimtexsettings")
 endif
 let b:did_myvimtexsettings = 1
 
-map <leader>i :VimtexInfo<CR>
+nmap <leader>i <plug>(vimtex-info)
 
 " Disabling some default features
 " ---------------------------------------------
@@ -46,6 +46,7 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'LaTeX Warning: .\+ float specifier changed to',
       \ 'Package siunitx Warning: Detected the "physics" package:',
       \ 'Package hyperref Warning: Token not allowed in a PDF string',
+      \ 'Fatal error occurred, no output PDF file produced!',
       \]
 
 if g:os_current == "Linux"

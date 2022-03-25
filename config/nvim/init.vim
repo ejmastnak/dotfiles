@@ -269,7 +269,7 @@ let g:UltiSnipsJumpForwardTrigger = "jk"
 let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
-nnoremap <leader>U :call UltiSnips#RefreshSnippets()<CR>
+nnoremap <leader>U <Cmd>call UltiSnips#RefreshSnippets()<CR>
 
 " AsyncRun and AsyncTaks
 let g:asyncrun_open = 8      " automatically open QuickFix menu with the given number of rows for use with AsyncRun
