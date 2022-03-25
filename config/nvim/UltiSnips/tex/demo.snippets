@@ -1,0 +1,26 @@
+# A collection of snippets used for demonstrative purposes for my Vim-LaTeX tutorial
+
+snippet fig "Trigger and tabstop demo" b
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\linewidth]{${1:Tabstop: file}}
+	\caption{${2:Tabstop: caption}}
+	\label{${3:Tabstop: label}}
+\end{figure}
+$0
+endsnippet
+
+# snippet fig "Demo: figure environment" bA
+# \begin{figure}[htb!]
+# 	\centering
+# 	\includegraphics[width=${1:\linewidth}]{${2:path}}
+# 	\caption{$3}
+# 	\label{fig:$4}
+# \end{figure}$0
+# endsnippet
+
+snippet item "Itemize environment" bA
+\begin{itemize}
+	${1:${VISUAL:\item }}
+\end{itemize}
+endsnippet
