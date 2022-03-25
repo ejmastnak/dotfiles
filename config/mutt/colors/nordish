@@ -1,40 +1,51 @@
 # Nord-like color scheme
 # Source: https://gitlab.uni-oldenburg.de/fili6799/dotfiles/-/blob/2c78cceae1f2a6cc86d9f23452903f4d133beeab/mutt/colors/okubax.mutt
 
-color	normal		default default             # default colours
-color   index       brightblue default ~N              # new messages
-color   index       red default ~F            # flagged messages
-color   index       blue default ~T             # tagged messages
-color   index       cyan default ~D             # deleted messages
+color	normal		default default		# default colours
+color   index       	brightblue default ~N	# new messages
+color   index       	red default ~F		# flagged messages
+color   index       	blue default ~T		# tagged messages
+color   index       	cyan default ~D		# deleted messages
 color	body		brightyellow default    (https?|ftp)://[\-\.+,/%~_:?&=\#a-zA-Z0-9]+
 color	body		brightgreen default     [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color	attachment	magenta default             # attachments
-color	signature	brightwhite default         # sigs
-color   search      brightred black             # highlight results
+color	attachment	magenta default		# attachments
+color	signature	brightwhite default	# sigs
+color   search      	brightred black		# highlight results
 
-color	indicator	brightyellow default        # currently highlighted message
-color	error		red default                 # error messages
-color	status		white cyan                  # status line
-color	tree		brightblack default         # thread tree
-color   tilde       cyan default                # blank line padding
+# THe currently highlighted message in the Mutt index
+color	indicator	brightwhite brightblue
 
-color	hdrdefault	black cyan                  # default headers
-color   header      brightwhite cyan "^From:"
-color   header      brightwhite cyan "^Subject:"
+# Error messages
+color	error		red default
 
-color	quoted		cyan default                # quote colours
-color   quoted1     brightcyan default
-color   quoted2     blue default
-color   quoted3     green default
-color   quoted4     yellow default
-color   quoted5     red default
+# The Mutt status bar both at the top and bottom of the screen;
+# the top bar shows key bindings and the bottom one shows inbox status
+color	status		white blue
 
-color	body	    green default           "^gpg: Good signature from"
-color	body	    brightred default		"^gpg: Bad signature from"
-color	body	    brightred default		"^gpg: BAD signature from"
-color	body	    brightred default		"^gpg: Note: This key has expired!"
-color	body	    brightyellow default	"^gpg: WARNING: This key is not certified with a trusted signature!"
-color	body	    brightyellow default	"^gpg:          There is no indication that the signature belongs to the owner."
-color	body	    brightyellow default	"^gpg: can't handle these multiple signatures"
-color	body	    brightyellow default	"^gpg: signature verification suppressed"
-color	body	    brightyellow default	"^gpg: invalid node with packet of type"
+color	tree		brightblack default	# thread tree
+color   tilde       	cyan default		# blank line padding
+
+# Header shown at the top of the pager, showing Date, From, To, etc. fields
+color	hdrdefault	black cyan
+color   header      	brightwhite brightblue "^Date:"
+color   header      	brightwhite brightblue "^From:"
+color   header      	brightwhite cyan "^To:"
+color   header      	brightwhite cyan "^Subject:"
+color   header      	brightwhite cyan "^X-Mailer:"
+
+color	quoted		cyan default		# quote colours
+color   quoted1     	brightcyan default
+color   quoted2     	blue default
+color   quoted3     	green default
+color   quoted4     	yellow default
+color   quoted5     	red default
+
+color	body	    	green default           "^gpg: Good signature from"
+color	body	    	brightred default	"^gpg: Bad signature from"
+color	body	    	brightred default	"^gpg: BAD signature from"
+color	body	    	brightred default	"^gpg: Note: This key has expired!"
+color	body	    	brightyellow default	"^gpg: WARNING: This key is not certified with a trusted signature!"
+color	body	    	brightyellow default	"^gpg: There is no indication that the signature belongs to the owner."
+color	body	    	brightyellow default	"^gpg: can't handle these multiple signatures"
+color	body	    	brightyellow default	"^gpg: signature verification suppressed"
+color	body	    	brightyellow default	"^gpg: invalid node with packet of type"

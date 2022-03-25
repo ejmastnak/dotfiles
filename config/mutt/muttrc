@@ -1,3 +1,4 @@
+# % vim: set filetype=neomuttrc :
 set from="ejmastnak@gmail.com"
 set realname="Elijan Mastnak"
 
@@ -21,12 +22,56 @@ set editor="nvim"
 set ssl_force_tls=yes
 set abort_nosubject=no
 set sort="reverse-date-received"
-set mail_check=60
+set mail_check=120
 set copy=no
+
+# Macro to reload config file using <Ctrl>r
+macro generic \Cr '<enter-command>source ~/.config/mutt/muttrc<enter>'
+
+# BEGIN KEY BINDINGS
+# --------------------------------------------- #
+
+# Unbind all default commands
+unbind *
+unbind index q
+
+# Close Neomutt from index using ZZ
+bind index Z  noop
+bind index ZZ exit
+
+# Navigation
+# --------------------------------------------- #
+set menu_scroll
+bind index k   previous-entry
+bind index j   next-entry
+bind index \Cu half-up
+bind index \Cd half-down
+bind attach,browser,index g  noop
+bind attach,browser,index gg first-entry
+bind attach,browser,index G  last-entry
+
+bind index l display-message
+bind pager h exit
+
+bind pager g   noop
+bind pager gg  top
+bind pager G   bottom
+bind pager k   previous-line
+bind pager j   next-line
+bind pager \Cu half-up
+bind pager \Cd half-down
+
+# Actions
+# --------------------------------------------- #
+# bind pager,index                d   noop
+# bind pager,index                dd  delete-message
+
+bind pager,index r reply
+# --------------------------------------------- #
 
 # Source colorscheme
 source ~/.config/mutt/colors/nordish
 
-# set sidebar_visible
-# set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
-# set mail_check_stats
+
+# Move cursor to the most recent email in inbox
+exec first-entry
