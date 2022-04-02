@@ -83,6 +83,9 @@ Plug 'lervag/vimtex'
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'RRethy/vim-illuminate'
+
+" Email
+Plug 'soywod/himalaya', {'rtp': 'vim'}
 call plug#end()
 " ---------------------------------------------
 
