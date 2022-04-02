@@ -95,6 +95,7 @@ source ~/.config/nvim/personal/plugins/csv.vim
 source ~/.config/nvim/personal/plugins/dispatch.vim
 source ~/.config/nvim/personal/plugins/easy-align.vim
 source ~/.config/nvim/personal/plugins/lightline.vim
+source ~/.config/nvim/personal/plugins/lightspeed.vim
 source ~/.config/nvim/personal/plugins/mpv.vim
 source ~/.config/nvim/personal/plugins/UltiSnips.vim
 
