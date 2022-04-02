@@ -95,6 +95,7 @@ source ~/.config/nvim/personal/plugins/async-run-task.vim
 source ~/.config/nvim/personal/plugins/csv.vim
 source ~/.config/nvim/personal/plugins/dispatch.vim
 source ~/.config/nvim/personal/plugins/easy-align.vim
+source ~/.config/nvim/personal/plugins/fzf.vim
 source ~/.config/nvim/personal/plugins/lightline.vim
 source ~/.config/nvim/personal/plugins/lightspeed.vim
 source ~/.config/nvim/personal/plugins/mpv.vim
@@ -129,8 +130,8 @@ nnoremap K kdd$
 nnoremap <leader>s :%s/
 vnoremap <leader>s :s/
 
-" set filetype
-nnoremap <leader>f :set filetype=
+" " set filetype
+" nnoremap <leader>f :set filetype=
 
 " Source my spelling configurations.
 " Important: make sure to set mapleader before sourcing my_spell,
