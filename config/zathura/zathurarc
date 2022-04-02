@@ -4,12 +4,34 @@ set selection-clipboard   clipboard
 set window-title-basename true
 set statusbar-home-tilde  true
 set recolor               true
+set guioptions		  none
 
 # NORD THEME
 # https://github.com/arcticicestudio/nord/issues/143
 # --------------------------------------------- #
+
+# nord0: #2e3440;
+# nord1: #3b4252;
+# nord2: #434c5e;
+# nord3: #4c566a;
+
+# nord4: #d8dee9;
+# nord5: #e5e9f0;
+# nord6: #eceff4;
+
+# nord7: #8fbcbb;
+# nord8: #88c0d0;
+# nord9: #81a1c1;
+# nord10: #5e81ac;
+
+# nord11: #bf616a;
+# nord12: #d08770;
+# nord13: #ebcb8b;
+# nord14: #a3be8c;
+# nord15: #b48ead;
+
 set default-bg                 "#2e3440"    # nord0
-set default-fg                 "#d8de9"    # nord4
+set default-fg                 "#d8dee9"    # nord4
 set statusbar-bg               "#2e3440"    # nord0
 set statusbar-fg               "#d8dee9"    # nord4
 set inputbar-bg                "#2e3440"    # nord0
@@ -26,18 +48,27 @@ set notification-error-bg      "#bf616a"    # nord11
 set notification-error-fg      "#eceff4"    # nord6
 set notification-warning-bg    "#ebcb8b"    # nord13
 set notification-warning-fg    "#2e3440"    # nord0
-# set highlight-color            "#5e81ac"    # nord10
 set highlight-color            "#88c0d0"    # nord8
 set highlight-active-color     "#88c0d0"    # nord8
 set index-bg                   "#2e3440"    # nord0
 set index-fg                   "#d8dee9"    # nord4
+
 set index-active-bg            "#434c5e"    # nord2
 set index-active-fg            "#d8dee9"    # nord4
 set recolor-darkcolor          "#d8dee9"    # nord4
 set recolor-lightcolor         "#2e3440"    # nord0
+
+
 set render-loading-bg          "#2e3440"    # nord0
 set render-loading-fg          "#d8dee9"    # nord4
 
 
 # Decrease highlight prominence (e.g. after Vim forward search)
 set highlight-transparency 0.10
+
+set recolor-lightcolor        "#fbfbfc"    # markdown body background
+set recolor-darkcolor         "#2e3440"    # nord0
+set default-bg                "#fbfbfc"    # markdown body background
+set recolor true
+
+# map <C-o> feedkeys ":set recolor true<Return>"
