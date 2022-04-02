@@ -63,6 +63,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
+Plug 'ggandor/lightspeed.nvim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -112,7 +113,6 @@ noremap Y y$
 " stop cc, x, and s from overwriting default register
 nnoremap cc "_cc
 nnoremap x "_x
-nnoremap s "_s
 
 " Paste in visual mode without overwriting default register
 vnoremap <silent> p "_d:call <SID>VisualPasteWithoutOverwrite()<CR>
@@ -157,6 +157,10 @@ nnoremap j gj
 nnoremap k gk
 nnoremap 0 g0
 nnoremap I g^i
+
+" Stay inside current paragraph
+noremap } j}k
+noremap { k}j
 
 " navigate to line start and end from home row
 " note that this overrides H and L to move the cursor to page top and page bottom
@@ -326,3 +330,4 @@ vim.api.nvim_command [[ hi def link LspReferenceWrite CursorLine ]]
 vim.api.nvim_command [[ hi def link LspReferenceRead CursorLine ]]
 EOF
 " highlight link illuminatedWord Visual
+
