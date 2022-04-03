@@ -22,6 +22,8 @@ chruby ruby-2.7.4
 export LYEDITOR="nvr --servername=/tmp/lilypondsocket +%(line)s %(file)s"
 # --------------------------------------------- #
 
+# Completion
+source ${HOME}/.config/himalaya/himalaya-completions.bash
 
 # Aliases
 # --------------------------------------------- #
