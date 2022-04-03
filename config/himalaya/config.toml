@@ -1,0 +1,22 @@
+name = "Elijan Mastnak"
+downloads-dir = "/home/ej/Downloads"
+
+[gmail]
+default = true
+format  = { type = "auto" }
+email   = "ejmastnak@gmail.com"
+
+imap-host       = "imap.gmail.com"
+imap-port       = 993
+imap-login      = "ejmastnak@gmail.com"
+imap-passwd-cmd = "pass show online/Google | head -1"
+
+smtp-host       = "smtp.gmail.com"
+smtp-port       = 465
+smtp-login      = "ejmastnak@gmail.com"
+smtp-passwd-cmd = "pass show online/Google | head -1"
+
+[gmail.mailboxes]
+sent  = "[Gmail]/Sent Mail"
+draft = "[Gmail]/Drafts"
+trash = "[Gmail]/Trash"
