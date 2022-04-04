@@ -62,13 +62,25 @@ set recolor-lightcolor         "#2e3440"    # nord0
 set render-loading-bg          "#2e3440"    # nord0
 set render-loading-fg          "#d8dee9"    # nord4
 
-
 # Decrease highlight prominence (e.g. after Vim forward search)
 set highlight-transparency 0.10
 
+# Light
 set recolor-lightcolor        "#fbfbfc"    # markdown body background
 set recolor-darkcolor         "#2e3440"    # nord0
 set default-bg                "#fbfbfc"    # markdown body background
+
+# Dark
+set recolor-lightcolor        "#2e3440"    # markdown body background
+set recolor-darkcolor         "#fbfbfc"    # nord0
+set default-bg                "#2e3440"    # markdown body background
+
 set recolor true
 
-# map <C-o> feedkeys ":set recolor true<Return>"
+# Switch to light recolored mode
+map L feedkeys ':set recolor-lightcolor "#fbfbfc"<Return>:set recolor-darkcolor "#2e3440"<Return>:set default-bg "#fbfbfc"<Return>:set recolor true<Return>'
+
+# Switch to dark recolored mode
+map D feedkeys ':set recolor-lightcolor "#2e3440"<Return>:set recolor-darkcolor "#fbfbfc"<Return>:set default-bg "#2e3440"<Return>:set recolor true<Return>'
+
+# See also https://unix.stackexchange.com/questions/456837/zathura-shortcut-feedkeys-configuration-for-recolouring
