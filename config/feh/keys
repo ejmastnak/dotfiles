@@ -1,0 +1,267 @@
+# I am a comment
+# Modifiers are"
+# C for Control
+# S for Shift
+# 1 for Mod1 (Alt)
+# 4 for Mod4 (Windows)
+
+# Specify an action without any keys to remove the default bindings for that action
+
+# Syntax is 
+# action [key1 [key2 [key3]]]
+# The keys use X11 syntax
+
+quit q
+toggle_fullscreen f
+
+# Navigation
+# --------------------------------------------- #
+scroll_left h
+scroll_right l
+scroll_up k
+scroll_down j
+
+# Scroll to the left by one page
+# ⟨Alt+Left [scroll_left_page]⟩
+scroll_left_page
+
+# Scroll to the right by one page
+# ⟨Alt+Right [scroll_right_page]⟩
+scroll_right_page
+
+# Scroll up by one page
+# ⟨Alt+Up [scroll_up_page]⟩
+scroll_up_page
+
+# Scroll down by one page
+# ⟨Alt+Down [scroll_down_page]⟩
+scroll_down_page
+
+
+# Zoom
+# --------------------------------------------- #
+# Zoom in
+# ⟨keypad +⟩, ⟨Up⟩ [zoom_in]
+zoom_in
+
+# Zoom out
+# ⟨keypad -⟩, ⟨Down⟩ [zoom_out]
+zoom_out
+
+# Zoom to 100%
+# *, ⟨keypad *⟩ [zoom_default]
+zoom_default
+
+# Zoom to fit the window size
+# /, ⟨keypad /⟩ [zoom_fit]
+zoom_fit
+
+# Zoom to fill the window size like --bg-fill
+# ! [zoom_fill]
+zoom_fill
+
+
+# UNBIND DEFAULT KEYS
+# --------------------------------------------- #
+# Toggle actions display (see --draw-actions)
+# a [toggle_actions]
+toggle_actions
+
+# Enable/Disable anti-aliasing
+# A [toggle_aliasing]
+toggle_aliasing
+
+# Caption entry mode.  If --caption-path has been specified,
+# then this enables caption editing.  The caption at the bottom
+# of the screen will turn yellow and can be edited.  Hit return
+# to confirm and save the caption, or escape to cancel editing.
+# Note that you can insert an actual newline into the caption
+# using ⟨Ctrl+return⟩.
+# c [toggle_caption]
+toggle_caption
+
+# Toggle filename display (see --draw-filename)
+# d [toggle_filenames]
+toggle_filenames
+
+# (optional feature, available in this build) Toggle EXIF tag
+# display
+# e [toggle_exif]
+toggle_exif
+
+
+# Toggle filename display (see --draw-filename)
+# d [toggle_filenames]
+toggle_filenames
+
+# (optional feature, available in this build) Toggle EXIF tag
+# display
+# e [toggle_exif]
+toggle_exif
+
+
+# Enable/Disable automatic window resize when changing images.
+# g [toggle_fixed_geometry]
+toggle_fixed_geometry
+
+# Pause/Continue the slideshow.  When it is paused, it will not
+# automatically change slides based on --slideshow-delay.
+# h [toggle_pause]
+toggle_pause
+
+# Toggle info display (see --info)
+# i [toggle_info]
+toggle_info
+
+# Toggle zoom and viewport keeping.  When enabled, feh will keep
+# zoom and X, Y offset when switching images.
+# k [toggle_keep_vp]
+toggle_keep_vp
+
+# Save the current filelist as "feh_PID_ID_filelist".  It is
+# saved in the directory specified by --output-dir, if set, and
+# in the current working directory otherwise.
+# L [save_filelist]
+save_filelist
+
+# Show menu.  Use the arrow keys and return to select items, and
+# ⟨escape⟩ to close the menu.
+# m [toggle_menu]
+toggle_menu
+
+# Show next image.  Selects the next image in thumbnail mode.
+# n, ⟨space⟩, ⟨Right⟩ [next_img]
+next_img
+
+# Toggle pointer visibility
+# o [toggle_pointer]
+toggle_pointer
+
+# Show previous image.  Selects the previous image in thumbnail
+# mode.
+# p, ⟨BackSpace⟩, ⟨Left⟩ [prev_img]
+prev_img
+
+# Reload current image.  Useful for webcams
+# r [reload_image]
+reload_image
+
+# Save the current image as "feh_PID_ID_FILENAME".  It is saved
+# in the directory specified by --output-dir, if set, and in the
+# current working directory otherwise.
+save_image
+
+# Change window size to fit current image size (plus/minus zoom,
+# if set).  In scale-down and fixed-geometry mode, this also up‐
+# dates the window size limits.
+size_to_image
+
+# Close current window
+# x [close]
+close
+
+# Jump to a random position in the current filelist
+# z [jump_random]
+jump_random
+
+# Toggle auto-zoom.
+# Z [toggle_auto_zoom]
+toggle_auto_zoom
+
+# Jump to the first image of the previous or next sequence of
+# images sharing a directory name in the current filelist.  Use
+# --sort dirname if you would like to ensure that all images in
+# a directory are grouped together.
+# [, ] [prev_dir, next_dir]
+prev_dir
+next_dir
+
+# rotate the image 90 degrees (counter)clockwise.
+# <, > [orient_3, orient_1]
+orient_3
+orient_1
+
+# Vertically flip image.  When --edit is used, this also flips
+# the image in the underlying file (see above).
+# _ [flip]
+flip
+
+# Horizontally flip image.  When --edit is used, this also flips
+# the image in the underlying file (see above).
+# | [mirror]
+mirror
+
+# Execute the corresponding action (0 = --action, 1 = --action1
+# etc.)
+# 0 .. 9 [action_0 .. action_9]
+# action_0 .. action_9
+
+# Run the command defined by --action
+# ⟨Return⟩ [action_0]
+action_0
+
+# Show first image
+# ⟨Home⟩ [jump_first]
+jump_first
+
+# Show last image
+# ⟨End⟩ [jump_last]
+jump_last
+
+# Go forward ~5% of the filelist
+# ⟨page up⟩ [jump_fwd]
+jump_fwd
+
+# Go backward ~5% of the filelist
+# ⟨page down⟩ [jump_back]
+jump_back
+
+# Increase reload delay by 1 second
+# + [reload_plus]
+reload_plus
+
+# Decrease reload delay by 1 second
+# - [reload_minus]
+reload_minus
+
+# Remove current file from filelist
+# ⟨Delete⟩ [remove]
+remove
+
+# Remove current file from filelist and delete it
+# ⟨Ctrl+Delete⟩ [delete]
+delete
+
+
+# Anti-alias the image.  Opens the currently selected image in
+# thumbnail mode.
+# R, ⟨keypad begin⟩ [render]
+render
+
+# MENU KEYS
+# The following keys bindings are used for the feh menu:
+# --------------------------------------------- #
+
+# Close the menu
+# ⟨Escape⟩ [menu_close]
+menu_close
+
+# Highlight previous menu item
+# ⟨Up⟩ [menu_up]
+menu_up
+
+# Highlight next menu item
+# ⟨Down⟩ [menu_down]
+menu_down
+
+# Highlight parent menu item
+# ⟨Left⟩ [menu_parent]
+menu_parent
+
+# Highlight child menu item
+# ⟨Right⟩ [menu_child]
+menu_child
+
+# Select highlighted menu item
+# ⟨Return⟩, ⟨space⟩ [menu_select]
+menu_select
