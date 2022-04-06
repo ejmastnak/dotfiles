@@ -29,6 +29,24 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # ------------------------------------ #
 
 
+# GAPS
+# --------------------------------------------- #
+# Disable 
+for_window [class=.*] border pixel 0
+
+gaps inner 20
+
+# Setting globally
+# gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
+
+# Setting for a workspace
+# workspace <ws> gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
+
+# Changing at runtime
+# gaps inner|outer|horizontal|vertical|top|right|bottom|left current|all set|plus|minus|toggle <px>
+# --------------------------------------------- #
+
+
 # NAVIGATION
 # ------------------------------------ #
 focus_follows_mouse no
@@ -219,5 +237,7 @@ bar {
 # Autostarting
 # --------------------------------------------- #
 # Set display temperature to 3500K
-exec --no-startup-id redshift -OP 3000
+exec_always --no-startup-id redshift -OP 3000
 
+# Start compositor
+exec_always --no-startup-id picom -b
