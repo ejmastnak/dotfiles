@@ -5,6 +5,9 @@ export PATH="$HOME/.local/bin:${PATH}"
 
 # For personal scripts
 export PATH="$HOME/scripts:${PATH}"
+
+# Julia language
+export PATH="$HOME/src/julia-1.7.2/bin:${PATH}"
 # --------------------------------------------- #
 
 # Manage Ruby version with chruby
