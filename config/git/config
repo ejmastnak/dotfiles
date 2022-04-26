@@ -1,6 +1,7 @@
 [user]
 	name = Elijan Mastnak
 	email = ejmastnak@gmail.com
+	signingKey = 53191F20A84693CE
 
 [core]
 	editor = nvim
