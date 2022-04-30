@@ -21,6 +21,10 @@ scroll_right l
 scroll_up k
 scroll_down j
 
+next_img J
+prev_img K
+reload_image r
+
 # Scroll to the left by one page
 # ⟨Alt+Left [scroll_left_page]⟩
 scroll_left_page
@@ -42,19 +46,19 @@ scroll_down_page
 # --------------------------------------------- #
 # Zoom in
 # ⟨keypad +⟩, ⟨Up⟩ [zoom_in]
-zoom_in
+zoom_in plus
 
 # Zoom out
 # ⟨keypad -⟩, ⟨Down⟩ [zoom_out]
-zoom_out
+zoom_out minus
 
 # Zoom to 100%
 # *, ⟨keypad *⟩ [zoom_default]
-zoom_default
+zoom_default equal
 
 # Zoom to fit the window size
 # /, ⟨keypad /⟩ [zoom_fit]
-zoom_fit
+zoom_fit slash
 
 # Zoom to fill the window size like --bg-fill
 # ! [zoom_fill]
@@ -129,22 +133,9 @@ save_filelist
 # m [toggle_menu]
 toggle_menu
 
-# Show next image.  Selects the next image in thumbnail mode.
-# n, ⟨space⟩, ⟨Right⟩ [next_img]
-next_img
-
 # Toggle pointer visibility
 # o [toggle_pointer]
 toggle_pointer
-
-# Show previous image.  Selects the previous image in thumbnail
-# mode.
-# p, ⟨BackSpace⟩, ⟨Left⟩ [prev_img]
-prev_img
-
-# Reload current image.  Useful for webcams
-# r [reload_image]
-reload_image
 
 # Save the current image as "feh_PID_ID_FILENAME".  It is saved
 # in the directory specified by --output-dir, if set, and in the
@@ -178,10 +169,9 @@ next_dir
 
 # rotate the image 90 degrees (counter)clockwise.
 # <, > [orient_3, orient_1]
-orient_3
-orient_1
+orient_3 r
+orient_1 R
 
-# Vertically flip image.  When --edit is used, this also flips
 # the image in the underlying file (see above).
 # _ [flip]
 flip
