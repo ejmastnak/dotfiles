@@ -1,3 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<keys
-   name="User Shortcuts" />
+<keys name="User Shortcuts">
+
+  <!-- Align selected objects vertically/horizontally -->
+  <bind key="backslash" modifiers="Ctrl" action="AlignHorizontalCenter" display="false" />
+  <bind key="minus" modifiers="Ctrl" action="AlignVerticalCenter" display="false" />
+
+  <!-- Undo and redo -->
+  <bind key="u" modifiers="" action="EditUndo" display="false" />
+  <bind key="r" modifiers="Ctrl" action="EditRedo" display="false" />
+
+  <!-- Save -->
+  <bind key="w" modifiers="" action="FileSave" display="false" />
+
+  <!-- Copy and paste -->
+  <bind key="y" modifiers="" action="EditCopy" />
+  <bind key="p" modifiers="" action="EditPaste" />
+
+  <!-- Group and ungroup -->
+  <bind key="g" modifiers="" action="SelectionGroup" />
+  <bind key="u" modifiers="Shift" action="SelectionUnGroup" />
+
+  <!-- Lower/raise layers -->
+  <bind key="u" modifiers="Ctrl" action="SelectionRaise" />
+  <bind key="d" modifiers="Ctrl" action="SelectionLower" />
+
+  <!-- Dropper tool to pick colors -->
+  <bind key="c" action="ToolDropper" />
+
+</keys>
