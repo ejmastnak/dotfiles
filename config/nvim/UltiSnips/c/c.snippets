@@ -1,0 +1,43 @@
+snippet df "New code block" A
+{
+	$0
+}
+endsnippet
+
+snippet pp "printf" bA
+printf($1);
+endsnippet
+
+snippet "(^|[\W])'"  "single quotation marks" rA
+`!p snip.rv = match.group(1)`'${1:${VISUAL:}}'$0
+endsnippet
+
+snippet "(^|[\W])\""  "double quotation marks" rA
+`!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
+endsnippet
+
+snippet rr "return" bA
+return 
+endsnippet
+
+snippet r0 "return" bA
+return 0;
+endsnippet
+
+snippet ff "Basic function definition" bA
+${1:int} ${2:name}() {
+	$0
+}
+endsnippet
+
+snippet mm "int main function" bA
+int main() {
+	$0
+	return 0;
+}
+endsnippet
+
+snippet dd "#define symbolic constant" bA
+#define $1 $0
+endsnippet
+
