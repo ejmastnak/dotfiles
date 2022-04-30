@@ -6,7 +6,7 @@ env:
 # Font configuration
 font:
   normal:
-    family: Source Code Pro
+    family: Iosevka
     style: Regular
   bold:
     style: Semibold
