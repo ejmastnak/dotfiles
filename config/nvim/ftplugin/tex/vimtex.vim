@@ -11,16 +11,17 @@ nmap <leader>i <plug>(vimtex-info)
 " Disabling some default features
 " ---------------------------------------------
 " Turn off VimTeX indentation
-let g:vimtex_indent_enabled = 0          
+let g:vimtex_indent_enabled = 0
 
 " Disable default mappings
-let g:vimtex_mappings_enabled = 0        
+let g:vimtex_mappings_enabled = 0
 
 " Disable insert mode mappings (I use UltiSnips)
-let g:vimtex_imaps_enabled = 0           
+let g:vimtex_imaps_enabled = 0
 
 " Turn off completion (not currently used so more efficient to turn off)
-let g:vimtex_complete_enabled = 0        
+" let g:vimtex_complete_enabled = 0
+let g:vimtex_complete_enabled = 1
 
 " Disable syntax conceal
 let g:vimtex_syntax_conceal_disable = 1  
@@ -74,6 +75,27 @@ let g:vimtex_compiler_latexmk = {
     \   '-interaction=nonstopmode',
     \ ],
     \}
+
+" Toggle shell escape on an off when using minted package
+" ---------------------------------------------
+
+" Toggles shell escape compilation on and off
+function! s:TexToggleShellEscape() abort
+  if g:vimtex_compiler_latexmk.options[0] ==# '-shell-escape'
+    " Disable shell escape
+    call remove(g:vimtex_compiler_latexmk.options, 0)
+  else
+    " Enable shell escape
+    call insert(g:vimtex_compiler_latexmk.options, '-shell-escape', 0)
+  endif
+  VimtexReload
+  VimtexClean
+endfunction
+
+nmap <leader>te <Plug>TexToggleShellEscape
+nnoremap <script> <Plug>TexToggleShellEscape <SID>TexToggleShellEscape
+nnoremap <SID>TexToggleShellEscape :call <SID>TexToggleShellEscape()<CR>
+" ---------------------------------------------
 
 " Close viewers when VimTeX buffers are closed (see :help vimtex-events)
 function! CloseViewers()
