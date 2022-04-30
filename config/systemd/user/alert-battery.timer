@@ -3,7 +3,7 @@ Description=Check battery status every few minutes to warn the user in case of l
 Requires=alert-battery.service
 
 [Timer]
-OnActiveSec=5m
+OnBootSec=5m
 OnUnitActiveSec=5m
 
 [Install]

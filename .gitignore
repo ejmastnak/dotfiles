@@ -6,6 +6,7 @@
 /config/vifm/*.json*
 /config/mpv/watch_later
 /config/pulse/*.tdb
+/config/QtProject.conf
 
 /config/Signal
 /config/iterm2

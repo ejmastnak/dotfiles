@@ -30,6 +30,8 @@ source ${HOME}/.config/himalaya/himalaya-completions.bash
 
 # Aliases
 # --------------------------------------------- #
+alias sps="sudo pacman -S"
+alias spu="sudo pacman -Syu"
 alias sus="systemctl suspend"
 alias s="systemctl"
 alias backup_documents="rclone sync -v --filter-from ~/.config/rclone/filter.txt /home/ej/Documents/ google-drive:Documents/"
