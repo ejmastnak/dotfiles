@@ -1,16 +1,16 @@
-#!/bin/bash
-# $HOME/dotfiles/install
-# Shell script used to link my dotfiles into place. 
-# Should be run from within my dotfiles directory.
+#!/bin/sh
+# A very simple shell script used to link my dotfiles into place. 
+# Important: should be run from within my dotfiles directory.
 
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASEDIR="$(pwd)"
 
-ln -s ${BASEDIR}/config ~/.config
-ln -s ${BASEDIR}/bash_profile ~/.bash_profile
-ln -s ${BASEDIR}/bashrc ~/.bashrc
-ln -s ${BASEDIR}/inputrc ~/.inputrc
-ln -s ${BASEDIR}/xinitrc ~/.xinitrc
-ln -s ${BASEDIR}/xbindkeysrc ~/.xbindkeysrc
-ln -s ${BASEDIR}/gemrc ~/.gemrc
-ln -s ${BASEDIR}/config/matplotlib/matplotlibrc ~/.matplotlib/matplotlibrc
-ln -s ${BASEDIR}/vim ~/.vim
+[ ! -d "${HOME}/.config" ] && ln -s ${BASEDIR}/config ~/.config
+[ ! -d "${HOME}/.vim" ]          && ln -s ${BASEDIR}/vim ~/.vim
+[ ! -e "${HOME}/.bash_profile" ] && ln -s ${BASEDIR}/bash_profile ~/.bash_profile
+[ ! -e "${HOME}/.bashrc" ]       && ln -s ${BASEDIR}/bashrc ~/.bashrc
+[ ! -e "${HOME}/.zprofile" ]     && ln -s ${BASEDIR}/zprofile ~/.zprofile
+[ ! -e "${HOME}/.zshrc" ]        && ln -s ${BASEDIR}/zshrc ~/.zshrc
+[ ! -e "${HOME}/.inputrc" ]      && ln -s ${BASEDIR}/inputrc ~/.inputrc
+[ ! -e "${HOME}/.xinitrc" ]      && ln -s ${BASEDIR}/xinitrc ~/.xinitrc
+[ ! -e "${HOME}/.xbindkeysrc" ]  && ln -s ${BASEDIR}/xbindkeysrc ~/.xbindkeysrc
+[ ! -e "${HOME}/.gemrc" ]        && ln -s ${BASEDIR}/gemrc ~/.gemrc
