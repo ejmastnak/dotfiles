@@ -11,6 +11,9 @@ filetype {*.gif},<image/gif> mpv %c
 " APNG
 filetype {*.apng},<image/apng> mpv %c
 
+" SVG
+filetype {*.svg},<image/svg> inkscape %c &
+
 " Image
 filetype {*.jpg,*.jpeg,*.png},<image/*> feh %c &
 
