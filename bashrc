@@ -4,11 +4,14 @@
 # Use VI keybindings in the shell
 set -o vi
 
+# Set environment variables
+# --------------------------------------------- #
 export EDITOR="nvim"
 export PAGER="less"
 
 # For GPG to know which terminal to use for input during Git credential verification
 export GPG_TTY=$(tty)
+# --------------------------------------------- #
 
 # BEGIN OS DETECTION
 # --------------------------------------------- #
@@ -33,9 +36,6 @@ fi
 # improved ls
 alias l="exa"
 alias L="exa -la"
-
-# check if current shell is a login shell (for Alacritty)
-alias sl="shopt | grep login"
 
 # restart Bash
 alias R="exec bash -l"
