@@ -29,3 +29,15 @@ elif [ $1 ]
 then
 	$0
 endsnippet
+
+snippet for "for loop" bA
+for $1 in $2
+do
+	$0
+done
+endsnippet
+
+snippet !! "shebang" bA
+#!/bin/${1:sh}
+$0
+endsnippet

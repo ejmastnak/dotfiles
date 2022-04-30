@@ -52,3 +52,14 @@ endsnippet
 snippet "(^|[^a-zA-Z'])TODOO"  "TODO (in bold)" rA
 `!p snip.rv = match.group(1)`**TODO:** 
 endsnippet
+
+snippet det "HTML details element" bA
+
+<details>
+	<summary>
+	$1
+	</summary>
+	$0
+</details>
+endsnippet
+

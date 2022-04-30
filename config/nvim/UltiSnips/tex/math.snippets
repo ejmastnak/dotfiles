@@ -8,27 +8,27 @@ priority 2
 # ------------------------------------------------ #
 context "math()"
 snippet "([\w]|[\}\)\]\|'])'" "Superscript" rA
-`!p snip.rv = match.group(1)`^{${1:${VISUAL:}}} $0
+`!p snip.rv = match.group(1)`^{${1:${VISUAL:}}}$0
 endsnippet
 
 context "math()"
 snippet "([a-zA-Z]|[\}\)\]\|']);" "Subscript" rA
-`!p snip.rv = match.group(1)`_{${1:${VISUAL:}}} $0
+`!p snip.rv = match.group(1)`_{${1:${VISUAL:}}}$0
 endsnippet
 
 context "math()"
 snippet "([\w]|[\}\)\]\|'])sd" "Text subscript" rA
-`!p snip.rv = match.group(1)`_{\mathrm{${1:${VISUAL:}}}} $0
+`!p snip.rv = match.group(1)`_{\mathrm{${1:${VISUAL:}}}}$0
 endsnippet
 
 context "math()"
 snippet "([\w]|[\}\)\]\|'])"([\w]{1})" "Place the first \w character after the quotation mark in a subscript" rA
-`!p snip.rv = match.group(1) + "^{" + match.group(2) + "}"` 
+`!p snip.rv = match.group(1) + "^{" + match.group(2) + "}"`
 endsnippet
 
 context "math()"
 snippet "([\w]|[\}\)\]\|']):([\w]{1})" "Place the first \w character after the : in a subscript" rA
-`!p snip.rv = match.group(1) + "_{" + match.group(2) + "}"` 
+`!p snip.rv = match.group(1) + "_{" + match.group(2) + "}"`
 endsnippet
 
 context "math()"
@@ -37,7 +37,7 @@ snippet "([\w]{1})__" "e.g. expand x__ into x_{1}, x_{2}, x_{3}" rA
 endsnippet
 
 snippet "([a-zA-Z]|[\}\)\]\|'])00" "Automatic 0 subscript" rA
-`!p snip.rv = match.group(1)`_{0} 
+`!p snip.rv = match.group(1)`_{0}
 endsnippet
 
 context "math()"
