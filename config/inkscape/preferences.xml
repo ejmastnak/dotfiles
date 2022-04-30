@@ -30,7 +30,7 @@
        state="1" />
     <group
        id="rulers"
-       state="1" />
+       state="0" />
     <group
        id="scrollbars"
        state="1" />
@@ -38,7 +38,8 @@
   <group
      id="fullscreen">
     <group
-       id="task" />
+       id="task"
+       taskset="0" />
     <group
        id="menu"
        state="1" />
@@ -62,7 +63,7 @@
        state="1" />
     <group
        id="rulers"
-       state="1" />
+       state="0" />
     <group
        id="scrollbars"
        state="1" />
@@ -103,15 +104,15 @@
      id="template">
     <sodipodi:namedview
        id="base"
-       pagecolor="#ffffff"
-       pageopacity="0.0"
+       pagecolor="#505050"
+       pageopacity="0"
        pagecheckerboard="0"
-       bordercolor="#666666"
-       borderopacity="1.0"
+       bordercolor="#eeeeee"
+       borderopacity="1"
        objecttolerance="10.0"
        gridtolerance="10.0"
        guidetolerance="10.0"
-       pageshadow="2" />
+       pageshadow="0" />
   </group>
   <group
      id="tools"
@@ -124,7 +125,10 @@
       <eventcontext
          id="rect"
          style="fill:blue;"
-         usecurrent="1" />
+         usecurrent="1"
+         width="574.371"
+         height="278.252"
+         ry="0" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -159,7 +163,9 @@
          style="fill:red;"
          end="0"
          start="0"
-         usecurrent="1" />
+         usecurrent="1"
+         rx="53.1252"
+         ry="46.25" />
       <eventcontext
          id="star"
          magnitude="5"
@@ -203,8 +209,8 @@
        usepressure="1"
        usetilt="0"
        keep_selected="1"
-       abs_width="1"
-       unit="mm">
+       abs_width="0"
+       unit="px">
       <group
          id="preset">
         <group
@@ -309,7 +315,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="mm"
+       unit="px"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -318,8 +324,9 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;"
-       selcue="1" />
+       style="line-height:1.25;font-family:sans-serif;font-size:40px;text-anchor:middle;text-align:center"
+       selcue="1"
+       align_mode="1" />
     <eventcontext
        id="nodes"
        selcue="1"
@@ -335,8 +342,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="0"
-       y="0"
+       x="628.771"
+       y="77.3126"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -389,7 +396,8 @@
     <eventcontext
        id="connector"
        style="fill:none;fill-rule:evenodd;stroke:black;stroke-opacity:1;stroke-linejoin:miter;stroke-width:1px;stroke-linecap:butt;"
-       selcue="1" />
+       selcue="1"
+       curvature="0" />
     <eventcontext
        id="paintbucket"
        style="fill:#a0a0a0;stroke:none;"
@@ -541,7 +549,8 @@
        id="transformation"
        applyseparately="0" />
     <group
-       id="align" />
+       id="align"
+       align-to="1" />
     <group
        id="xml"
        h="500"
@@ -558,7 +567,8 @@
        state="1" />
     <group
        id="preferences"
-       state="1" />
+       state="1"
+       page="28" />
     <group
        id="gradienteditor" />
     <group
@@ -570,9 +580,10 @@
        path="">
       <group
          id="exportarea"
-         value="custom" />
+         value="drawing" />
       <group
-         id="defaultxdpi" />
+         id="defaultxdpi"
+         value="300" />
     </group>
     <group
        id="save_as"
@@ -795,7 +806,7 @@
        value="0" />
     <group
        id="stickyzoom"
-       value="0" />
+       value="1" />
     <group
        id="selcue"
        value="2" />
@@ -916,19 +927,33 @@
        partialdynamic="0" />
     <group
        id="rendering" />
+    <group
+       id="boot"
+       canvas="dark"
+       theme="classic"
+       enabled="0">
+      <group
+         id="shown"
+         ver1.1.2="1" />
+    </group>
+    <group
+       id="font"
+       unitType="2" />
+    <group
+       id="kbshortcuts" />
   </group>
   <group
      id="extensions" />
   <group
      id="desktop"
-     style="fill:#2e3440">
+     style="fill:#fbfbfc;font-size:16px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Latin Modern Roman, ';font-family:'Latin Modern Roman';line-height:1.1;stroke-width:0.69999999;stroke-dasharray:0.69999999, 0.69999999">
     <group
-       width="640"
-       height="480"
-       x="0"
-       y="0"
-       maximized="1"
-       fullscreen="1"
+       width="1880"
+       height="1016"
+       x="20"
+       y="20"
+       maximized="0"
+       fullscreen="0"
        id="geometry" />
     <group
        id="XYfront" />
@@ -1035,7 +1060,12 @@
      menuIcons_canvas="0"
      menuIcons_layers="0"
      menuIcons_objects="0"
-     darkTheme="0" />
+     darkTheme="1"
+     preferDarkTheme="1"
+     iconTheme="hicolor"
+     symbolicDefaultBaseColors="1"
+     symbolicDefaultHighColors="1"
+     gtkTheme="HighContrastInverse" />
   <group
      id="live_effects"
      flattening="0" />
