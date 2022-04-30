@@ -114,6 +114,9 @@ source ~/.config/nvim/personal/lsp/illuminate.vim
 " Easier write command
 nnoremap <leader>w :w<CR>
 
+" Easier edit command
+nnoremap <leader>e :e 
+
 " For easy macro playback; note that this overrides entering Ex mode with Q
 nnoremap Q @q
 
@@ -145,3 +148,6 @@ source ~/.config/nvim/personal/spell/my_spell.vim
 set directory^=$HOME/.config/nvim/swap//
 " ---------------------------------------------
 " END MISCELLANEOUS
+
+
+

@@ -13,7 +13,7 @@ nnoremap I g^i
 
 " Stay inside current paragraph
 noremap } j}k
-noremap { k}j
+noremap { k{j
 
 " Navigate to line start and end from home row; note that this overrides 
 " H and L to move the cursor to page top and page bottom.
