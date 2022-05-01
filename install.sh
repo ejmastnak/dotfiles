@@ -4,7 +4,7 @@
 
 BASEDIR="$(pwd)"
 
-[ ! -d "${HOME}/.config" ] && ln -s ${BASEDIR}/config ~/.config
+[ ! -d "${HOME}/.config" ]       && ln -s ${BASEDIR}/config ~/.config
 [ ! -d "${HOME}/.vim" ]          && ln -s ${BASEDIR}/vim ~/.vim
 [ ! -e "${HOME}/.bash_profile" ] && ln -s ${BASEDIR}/bash_profile ~/.bash_profile
 [ ! -e "${HOME}/.bashrc" ]       && ln -s ${BASEDIR}/bashrc ~/.bashrc
@@ -14,3 +14,11 @@ BASEDIR="$(pwd)"
 [ ! -e "${HOME}/.xinitrc" ]      && ln -s ${BASEDIR}/xinitrc ~/.xinitrc
 [ ! -e "${HOME}/.xbindkeysrc" ]  && ln -s ${BASEDIR}/xbindkeysrc ~/.xbindkeysrc
 [ ! -e "${HOME}/.gemrc" ]        && ln -s ${BASEDIR}/gemrc ~/.gemrc
+
+
+# Clone Zsh autosuggestions if not already installed
+if [ ! -d "${BASEDIR}/config/zsh/zsh-autosuggestions" ]
+then
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git "${BASEDIR}/config/zsh/zsh-autosuggestions"
+  rm -r "${BASEDIR}/config/zsh/zsh-autosuggestions/.git"
+fi

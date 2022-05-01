@@ -21,6 +21,7 @@ fi
 
 # Set vi mode and configure cursor
 # Source https://github.com/lervag/dotfiles/blob/2e9a760897d5246c0f02e30c997b23f3894c688d/zsh/.zshrc#L241
+# --------------------------------------------- #
 bindkey -v
 
 export KEYTIMEOUT=15
@@ -44,3 +45,21 @@ if [[ ! "$TERM" =~ 'linux' ]]; then
   zle -N zle-line-init
   zle -N zle-keymap-select
 fi
+# --------------------------------------------- #
+
+# Configure Zsh autosuggestion features
+# --------------------------------------------- #
+if [ -d "${HOME}/.config/zsh/zsh-autosuggestions" ]
+then
+  source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+  # Accept current suggestion with <Ctrl>-<Space>
+  bindkey '^ ' autosuggest-accept
+
+  # Use history and completion for suggestions
+  ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+  # Use bright nord3 color for suggestion text
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#616E88"
+fi
+# --------------------------------------------- #
