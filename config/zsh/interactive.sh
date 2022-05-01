@@ -59,7 +59,5 @@ then
   # Use history and completion for suggestions
   ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-  # Use bright nord3 color for suggestion text
-  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#616E88"
 fi
 # --------------------------------------------- #
