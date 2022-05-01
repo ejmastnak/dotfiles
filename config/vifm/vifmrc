@@ -62,7 +62,7 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 " --------------------------------------------- "
 " Syntax: mark {mark} {directory} [filename]
 mark 1 ~/Documents/academics/mat1
-mark 6 ~/Documents/academics/telecomm/courses/6041
+mark 6 ~/Documents/academics/telecomm/courses/probability
 mark A ~/Media/academics
 mark F ~/Media/academics/fmf
 mark G ~/Media/tmg-bmc-media

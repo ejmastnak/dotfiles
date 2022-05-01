@@ -57,7 +57,7 @@ then
   bindkey '^ ' autosuggest-accept
 
   # Use history and completion for suggestions
-  ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+  ZSH_AUTOSUGGEST_STRATEGY=(completion)
 
 fi
 # --------------------------------------------- #
