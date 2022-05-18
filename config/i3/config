@@ -36,7 +36,7 @@ for_window [class="matplotlib"] floating enable
 # Disable 
 for_window [class=.*] border pixel 0
 
-gaps inner 20
+gaps inner 10
 
 # Setting globally
 # gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
@@ -146,18 +146,42 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock -- i3lock --nofork \
+  --color=81a1c1ff \
+  --radius 110 \
+  --inside-color=d8dee9ff \
+  --insidever-color=d8dee9ff \
+  --ringver-color=5e81acff \
+  --insidewrong-color=bf616aff \
+  --ringwrong-color=bf616aff \
+  --line-uses-inside \
+  --ring-color=5e81acff \
+  --separator-color=5e81acff \
+  --keyhl-color=81a1c1ff \
+  --bshl-color=5e81acff \
+  --verif-text="Verifying..." \
+  --wrong-text="Incorrect." \
+  --verif-color=2e3440ff \
+  --wrong-color=2e3440ff \
+  --modif-color=2e3440ff \
+  --layout-color=2e3440ff \
+  --time-color=2e3440ff \
+  --date-color=2e3440ff \
+  --greeter-color=2e3440ff \
+  --time-font="Iosevka" \
+  --date-font="Iosevka" \
+  --layout-font="Iosevka" \
+  --verif-font="Iosevka" \
+  --wrong-font="Iosevka" \
+  --greeter-font="Iosevka"
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3blockvolume pkill -RTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3blockvolume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3blockvolume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blockvolume
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blockvolume
+# # Use pactl to adjust volume in PulseAudio.
+# set $refresh_i3blockvolume pkill -RTMIN+10 i3blocks
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3blockvolume
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3blockvolume
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blockvolume
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blockvolume
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
