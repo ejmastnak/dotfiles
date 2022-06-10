@@ -12,13 +12,13 @@ highlight CmdLine       cterm=none      ctermfg=white   ctermbg=default
 highlight ErrorMsg      cterm=none      ctermfg=red     ctermbg=default
 
 highlight  Win          cterm=none      ctermfg=default ctermbg=default
-highlight  Directory    cterm=bold      ctermfg=4       ctermbg=default
-highlight  Link         cterm=none      ctermfg=6       ctermbg=default
-highlight  BrokenLink   cterm=bold      ctermfg=6       ctermbg=default
+highlight  Directory    cterm=bold      ctermfg=blue    ctermbg=default
+highlight  Link         cterm=none      ctermfg=magenta ctermbg=default
+highlight  BrokenLink   cterm=bold      ctermfg=red     ctermbg=default
 highlight  Socket       cterm=bold      ctermfg=3       ctermbg=default
 highlight  Device       cterm=bold      ctermfg=3       ctermbg=default
 highlight  Fifo         cterm=bold      ctermfg=6       ctermbg=default
 highlight  Executable   cterm=bold      ctermfg=6       ctermbg=default
-highlight  Selected     cterm=bold      ctermfg=3       ctermbg=default
-highlight  CurrLine     cterm=bold      ctermfg=default ctermbg=0
+highlight  Selected     cterm=bold      ctermfg=white   ctermbg=default
+highlight  CurrLine     cterm=bold      ctermfg=white   ctermbg=blue
 highlight  OtherLine    cterm=default   ctermfg=default ctermbg=default
