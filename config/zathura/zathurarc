@@ -4,7 +4,6 @@ set selection-clipboard   clipboard
 set window-title-basename true
 set statusbar-home-tilde  true
 set recolor               true
-set guioptions		  none
 
 # NORD THEME
 # https://github.com/arcticicestudio/nord/issues/143
@@ -57,7 +56,6 @@ set index-active-bg            "#434c5e"    # nord2
 set index-active-fg            "#d8dee9"    # nord4
 set recolor-darkcolor          "#d8dee9"    # nord4
 set recolor-lightcolor         "#2e3440"    # nord0
-
 
 set render-loading-bg          "#2e3440"    # nord0
 set render-loading-fg          "#d8dee9"    # nord4
