@@ -5,3 +5,23 @@
 # Use XF86Tools (F9 on T460) to play/pause firefox
 "playerctl --player=firefox play-pause"
    XF86Tools
+
+# Mute volume
+"${HOME}/scripts/volume-pulse.sh mute"
+   XF86AudioMute
+
+# Increase volume
+"${HOME}/scripts/volume-pulse.sh raise"
+   XF86AudioRaiseVolume
+
+# Decrease volume
+"${HOME}/scripts/volume-pulse.sh lower"
+   XF86AudioLowerVolume
+
+# Mute microphone
+"${HOME}/scripts/volume-pulse.sh mute-mic"
+   XF86AudioMicMute
+
+# Suspend (sleep)
+"systemctl suspend"
+   XF86Explorer
