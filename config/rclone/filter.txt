@@ -2,6 +2,7 @@
 - .stversions/**
 
 - .jekyll-cache/**
+- _site/**
 - .old-java/**
 - .venv/**
 - __pycache__/**
