@@ -8,6 +8,8 @@ let b:did_myvimtexsettings = 1
 
 nmap <leader>i <plug>(vimtex-info)
 
+nmap <leader>t <CMD>VimtexTocToggle<CR>
+
 " Disabling some default features
 " ---------------------------------------------
 " Turn off VimTeX indentation
@@ -126,6 +128,7 @@ nmap tsc <plug>(vimtex-cmd-toggle-star)
 nmap tse <plug>(vimtex-env-toggle-star)
 nmap tsd <plug>(vimtex-delim-toggle-modifier)
 nmap tsD <plug>(vimtex-delim-toggle-modifier-reverse)
+nmap tsm <plug>(vimtex-env-toggle-math)
 imap ]] <plug>(vimtex-delim-close)
 
 " Text objects in operator-pending mode
