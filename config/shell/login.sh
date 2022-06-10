@@ -10,7 +10,6 @@ export GPG_TTY=$(tty)
 export LYEDITOR="nvr --servername=/tmp/lilypondsocket +%(line)s %(file)s"
 # --------------------------------------------- #
 
-
 # Additions to PATH
 # --------------------------------------------- #
 # Python modules installed by Pip
