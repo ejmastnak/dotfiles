@@ -62,11 +62,6 @@ context "math()"
 snippet "([\w]|[\}\)\]\|'])CC" "Automatic complement superscript" rA
 `!p snip.rv = match.group(1)`^{\complement}
 endsnippet
-
-# context "math()"
-# snippet "([\w]|[\}\)\]\|'])\"" "Access prime with quotation mark, since prime is used for superscript." rA
-# `!p snip.rv = match.group(1)`'
-# endsnippet
 # ----------------------------------------- #
 # END SUPERSCRIPTS AND SUBSCRIPTS
 
@@ -74,16 +69,26 @@ endsnippet
 # BEGIN SEMANTIC COMMANDS (vec, tilde, etc...)
 # --------------------------------------------- #
 snippet "(^|[^a-zA-Z])ff" "\frac{}{}" rA
-`!p snip.rv = match.group(1)`\frac{${1:${VISUAL:}}}{$2} $0
+`!p snip.rv = match.group(1)`\frac{${1:${VISUAL:}}}{$2}$0
 endsnippet
 
 snippet "(^|[^a-zA-Z])tf" "\tfrac{}{}" rA
-`!p snip.rv = match.group(1)`\tfrac{${1:${VISUAL:}}}{$2} $0
+`!p snip.rv = match.group(1)`\tfrac{${1:${VISUAL:}}}{$2}$0
 endsnippet
 
 context "math()"
 snippet "([^a-zA-Z\\])sq" "\sqrt (square root)" rA
 `!p snip.rv = match.group(1)`\sqrt{${1:${VISUAL:}}}$0
+endsnippet
+
+context "math()"
+snippet "([^a-zA-Z\\])ll" "Logarithm with a base" rA
+`!p snip.rv = match.group(1)`\log_{${1:${VISUAL:}}} $0
+endsnippet
+
+
+snippet "([^a-zA-Z\\])ssq" "\sqrt[n] (n-th root)" rA
+`!p snip.rv = match.group(1)`\sqrt[$1]{${2:${VISUAL:}}}$0
 endsnippet
 
 context "math()"
@@ -158,12 +163,16 @@ snippet "([^a-zA-Z\\])ddv" "\dv[]{}{}" rA
 endsnippet
 
 context "math()"
-snippet "([^a-zA-Z\\])aa" "\abs{}" rA
+snippet "([^a-zA-Z\\])aa" "Absolute value" rA
 `!p snip.rv = match.group(1)`\abs{${1:${VISUAL:}}}$0
 endsnippet
 
+snippet "([^a-zA-Z\\])ipp" "Inner product" rA
+`!p snip.rv = match.group(1)`\ip{${1:${VISUAL:}}}{$2}$0
+endsnippet
+
 context "math()"
-snippet "([^a-zA-Z\\])norm" "\norm{}" rA
+snippet "([^a-zA-Z\\])nrr" "Norm" rA
 `!p snip.rv = match.group(1)`\norm{${1:${VISUAL:}}}$0
 endsnippet
 
@@ -179,7 +188,7 @@ endsnippet
 
 context "math()"
 snippet ann "\annotate{}{} (custom command for annotated stackrel)" A
-\annotate{${1:above}}{${2:below}}$0
+\annotate{${1:}}{${2:${VISUAL:}}}$0
 endsnippet
 
 context "math()"
@@ -242,20 +251,20 @@ endsnippet
 # BEGIN LIMITS
 # --------------------------------------------- #
 context "math()"
-snippet "([^\w\\])lM" "\limits{} with only lower limit" rA
-`!p snip.rv = match.group(1)`\limits_{$1}$0
+snippet "([^\w\\])lmm" "\limits{}{} with upper and lower limit" rA
+`!p snip.rv = match.group(1)`\limits_{$1}{$2}$0
 endsnippet
 
 context "math()"
-snippet "([^\w\\])lmm" "\limits{}{} with upper and lower limit" rA
-`!p snip.rv = match.group(1)`\limits_{$1}{$2}$0
+snippet "([^\w\\])lim" "\lim_{$1 \to $2}" rA
+`!p snip.rv = match.group(1)`\lim_{$1 \to $2} $0
 endsnippet
 
 snippet "([^\w\\])lmf" "Limit to infinity" rA
 `!p snip.rv = match.group(1)`\lim_{${1} \to \infty} $0
 endsnippet
 
-snippet "([^\w\\])lm0" "Limit to infinity" rA
+snippet "([^\w\\])lmz" "Limit to zero" rA
 `!p snip.rv = match.group(1)`\lim_{${1} \to 0} $0
 endsnippet
 # --------------------------------------------- #
@@ -339,6 +348,26 @@ snippet "([^a-zA-Z0-9\\])px" "\approx" rA
 `!p snip.rv = match.group(1)`\approx 
 endsnippet
 
+snippet pp "\perp" A
+\perp 
+endsnippet
+
+snippet pll "\parallel" A
+\parallel 
+endsnippet
+
+snippet sbb "\subset" A
+\subset 
+endsnippet
+
+snippet stm "\setminus" A
+\setminus 
+endsnippet
+
+snippet mps "\mapsto" A
+\mapsto 
+endsnippet
+
 snippet "([^a-zA-Z0-9\\])eqq" "\equiv" rA
 `!p snip.rv = match.group(1)`\equiv 
 endsnippet
@@ -364,6 +393,10 @@ endsnippet
 
 snippet qm "\questionmath{} (for coloring math commands to distinguish from colored question text)"
 \questionmath{${1:${VISUAL:}}}$0
+endsnippet
+
+snippet ubb "The \underbrace command" A
+\underbrace{${1:${VISUAL:}}}_{$2} $0
 endsnippet
 # --------------------------------------------- #
 # END MISC

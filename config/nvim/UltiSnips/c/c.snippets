@@ -1,11 +1,7 @@
-snippet df "New code block" A
+snippet as "New code block" A
 {
 	$0
 }
-endsnippet
-
-snippet pp "printf" bA
-printf($1);
 endsnippet
 
 snippet "(^|[\W])'"  "single quotation marks" rA
@@ -16,28 +12,36 @@ snippet "(^|[\W])\""  "double quotation marks" rA
 `!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
 endsnippet
 
+snippet "(^|[^a-zA-Z])sd" "Back ticks (for inline code); alternate trigger" rA
+`!p snip.rv = match.group(1)`\`${1:${VISUAL:}}\`$0
+endsnippet
+
+snippet pp "printf" bA
+printf($1);
+endsnippet
+
 snippet rr "return" bA
-return 
+return $1;
 endsnippet
 
-snippet r0 "return" bA
-return 0;
+snippet /* "Comment string" A
+/* $1 */
 endsnippet
 
-snippet ff "Basic function definition" bA
-${1:int} ${2:name}() {
+snippet fn "Basic function definition" bA
+${1:type} ${2:name}($3) {
 	$0
 }
 endsnippet
 
-snippet mm "int main function" bA
-int main() {
-	$0
-	return 0;
-}
-endsnippet
-
-snippet dd "#define symbolic constant" bA
+snippet df "#define symbolic constant" bA
 #define $1 $0
 endsnippet
 
+snippet main "int main function" bA
+int main() {
+	$0
+
+	return 0;
+}
+endsnippet

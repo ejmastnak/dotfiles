@@ -34,3 +34,47 @@ snippet ;j "BibTeX journal field" bA
 journal = {$1},$0
 endsnippet
 
+snippet nn "New generic BibTeX entry" bA
+@${1:type}{${2:key},
+	$0
+}
+endsnippet
+
+snippet art "New BibTeX article entry" bA
+@article{${1:key},
+	author  = {$2},
+	title   = {$3},
+	journal = {$4},
+	year    = {$5},
+}
+endsnippet
+
+snippet book "New BibTeX book entry" bA
+@book{${1:key},
+	author    = {$2},
+	title     = {$3},
+	publisher = {$4},
+	year      = {$5},
+}
+endsnippet
+
+snippet misc "New BibTeX misc entry" bA
+@misc{${1:key},
+	author       = {$2},
+	title        = {$3},
+	howpublished = {$4},
+	year         = {$5},
+}
+endsnippet
+
+snippet web "New BibTeX misc entry for websites" bA
+@misc{${1:key},
+	author       = {$2},
+	title        = {$3},
+	howpublished = {\url{$4}},
+	year         = {$5},
+	note         = {Accessed: $6},
+}
+endsnippet
+
+
