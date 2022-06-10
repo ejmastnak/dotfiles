@@ -1,0 +1,3 @@
+" vimscript settings
+
+" setting indenendation

@@ -21,7 +21,7 @@ function! s:DeletePairedDelimeter() abort
     let pair = getline('.')[col('.')-2 : col('.')-1]
     echom pair
     " check if cursor is placed inside a paired delimeter
-    if stridx('""''''()[]<>{}``', pair) % 2 == 0
+    if stridx('""''''()[]$$<>{}``', pair) % 2 == 0
       " deletes paired delimiter
       return "\<Right>\<BS>\<BS>"
     else  " cursor was not between paired delimiters

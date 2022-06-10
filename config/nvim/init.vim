@@ -92,6 +92,7 @@ call plug#end()
 source ~/.config/nvim/personal/init/copy-paste.vim
 source ~/.config/nvim/personal/init/navigation.vim
 source ~/.config/nvim/personal/init/insert-mode.vim
+source ~/.config/nvim/personal/init/indent.vim
 
 " Plugin configuration
 source ~/.config/nvim/personal/plugins/async-run-task.vim
@@ -112,7 +113,7 @@ source ~/.config/nvim/personal/lsp/illuminate.vim
 " BEGIN MISCELLANEOUS
 " ---------------------------------------------
 " Easier write command
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w <Cmd>write<CR>
 
 " Easier edit command
 nnoremap <leader>e :e 
@@ -128,6 +129,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " close folds with zf
 nnoremap zf zc
+set foldmethod=marker
 
 " equivalent of `:join` or `J` for lines above cursor
 nnoremap K kdd$
@@ -149,5 +151,5 @@ set directory^=$HOME/.config/nvim/swap//
 " ---------------------------------------------
 " END MISCELLANEOUS
 
-
-
+" Return to Terminal in normal mode
+tnoremap <Esc> <C-\><C-n>
