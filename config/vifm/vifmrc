@@ -64,7 +64,6 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 mark 1 ~/Documents/academics/mat1
 mark 6 ~/Documents/academics/telecomm/courses/probability
 mark A ~/Media/academics
-mark F ~/Media/academics/fmf
 mark G ~/Media/tmg-bmc-media
 mark M ~/Media/music/music-library
 mark N ~/Media/academics/literature/deep-learning/nnfs
@@ -72,12 +71,13 @@ mark S ~/Media/software-and-web
 mark T ~/.local/share/vifm/Trash
 mark Z ~/Media/music/music-library/unsorted
 mark a ~/Documents/about
-mark b ~/Documents/projects/fitness-biomechanics
+mark b ~/Documents/bookmarks
 mark B ~/Media/fitness-media
 mark c ~/dotfiles/config
 mark d ~/dotfiles
 mark e ~/Documents/academics/telecomm/masters
 mark f ~/Documents/academics/fmf
+mark F ~/Documents/finances/
 mark g ~/Documents/projects/tmg-bmc
 mark h ~
 mark D ~/Documents
@@ -149,11 +149,14 @@ nnoremap A cw
 " open vifmrc in editor
 nnoremap C :!nvim -c 'set filetype=vim' $MYVIFMRC<CR>:restart<CR>
 
-" give file under cursor =644 permissions
-nnoremap cm :!chmod =644 *.
+" give file under cursor 644 permissions
+nnoremap cm :!chmod 644 *.
 
 " Play file under cursor with mpv
 nnoremap P :!mpv %c<CR>
+
+" Open file under cursor with Neovim
+nnoremap N :!nvim %c<CR>
 
 " Run file under cursor as a shell script
 nnoremap S :!sh %c<CR>

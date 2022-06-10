@@ -26,6 +26,9 @@ filetype {*.xls,*.xlsx},<application/msexcel> gnumeric %c &
 " Word files
 filetype {*.doc,*.docx},<application/msword> libreoffice --writer %c &
 
+" M3U files
+filetype {*.m3u},<text/m3u> mpv %c
+
 " CSV files
 " filetype {*.csv},<text/csv> sc-im --import_delimited_as_text
 " ---------------------------------------------
