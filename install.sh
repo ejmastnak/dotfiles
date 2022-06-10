@@ -5,6 +5,7 @@
 BASEDIR="$(pwd)"
 
 [ ! -d "${HOME}/.config" ]       && ln -s ${BASEDIR}/config ~/.config
+[ ! -d "${HOME}/scripts" ]       && ln -s ${BASEDIR}/scripts ~/scripts
 [ ! -d "${HOME}/.vim" ]          && ln -s ${BASEDIR}/vim ~/.vim
 [ ! -e "${HOME}/.bash_profile" ] && ln -s ${BASEDIR}/bash_profile ~/.bash_profile
 [ ! -e "${HOME}/.bashrc" ]       && ln -s ${BASEDIR}/bashrc ~/.bashrc
@@ -20,5 +21,7 @@ BASEDIR="$(pwd)"
 if [ ! -d "${BASEDIR}/config/zsh/zsh-autosuggestions" ]
 then
   git clone https://github.com/zsh-users/zsh-autosuggestions.git "${BASEDIR}/config/zsh/zsh-autosuggestions"
+
+  # (Hacky) solution to avoid problems with Git submodules
   rm -r "${BASEDIR}/config/zsh/zsh-autosuggestions/.git"
 fi
