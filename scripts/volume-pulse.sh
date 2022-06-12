@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # NAME
 #     volume-pulse - Increase/decrease/mute volume using PulseAudio's pactl
 # SYNOPSIS 
@@ -13,8 +13,11 @@ function get_current_volume() {
 }
 
 if [ $1 == "raise" ]; then
-  if [ `get_current_volume` -lt ${max} ]; then
+  # if [ `get_current_volume` -lt ${max} ]; then
+  if [ $((`get_current_volume` + ${step})) -lt ${max} ]; then
     pactl set-sink-volume @DEFAULT_SINK@ "+${step}%"
+  else
+    pactl set-sink-volume @DEFAULT_SINK@ "100%"
   fi
   pkill -RTMIN+10 i3blocks
 elif [ $1 == "lower" ]; then
