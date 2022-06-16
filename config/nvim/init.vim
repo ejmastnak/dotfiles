@@ -61,7 +61,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-dispatch'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'junegunn/vim-easy-align'
@@ -98,6 +98,7 @@ source ~/.config/nvim/personal/init/indent.vim
 source ~/.config/nvim/personal/plugins/async-run-task.vim
 source ~/.config/nvim/personal/plugins/csv.vim
 source ~/.config/nvim/personal/plugins/dispatch.vim
+source ~/.config/nvim/personal/plugins/comment.vim
 source ~/.config/nvim/personal/plugins/easy-align.vim
 source ~/.config/nvim/personal/plugins/fzf.vim
 source ~/.config/nvim/personal/plugins/lightline.vim
@@ -108,7 +109,6 @@ source ~/.config/nvim/personal/plugins/UltiSnips.vim
 " LSP congifuration
 source ~/.config/nvim/personal/lsp/lsp-config.vim
 source ~/.config/nvim/personal/lsp/illuminate.vim
-
 
 " BEGIN MISCELLANEOUS
 " ---------------------------------------------
