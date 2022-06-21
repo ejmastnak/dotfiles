@@ -17,12 +17,13 @@
 #      Example: ./my-favorite-things.mp3
 # 
 #   $2 <timestamp-file>
-#      Path to plain text file holding time stamps and
-#      song names in the following format (for example)
+#      Path to plain text file holding space-separated time stamps
+#      and song names in the following format (for example)
 #      00:00 My Favorite Things
 #      13:43 Everytime We Say Goodbye
 #      19:27 Summertime
 #      31:03 But Not For Me
+#
 #
 
 # Converts input to lowercase and replaces spaces with hyphens
@@ -32,8 +33,13 @@ function to_lowercase() {
   echo "${1}" | sed 's/ /-/g' | awk '{print tolower($0)}'
 }
 
-# Get lowercase version of <album-name> with spaces replaced by hyphens
-output_dir="$(to_lowercase "${1%%.mp3}")"
+# Get album file extension
+extension=${1##*.}
+
+# Get lowercase version of <album-name>, without file extension and with spaces
+# replaced by hyphens
+output_dir="$(to_lowercase "${1%%.*}")"
+
 mkdir "${output_dir}"
 
 # Read through all lines in timestamp file
@@ -62,18 +68,18 @@ do
   # Create M3U playlist
   if [ ${j} -eq 0 ]  # For first song, use '>' to overwrite (possibly) existing M3U file
   then
-    echo $(to_lowercase "${song_names[${j}]}.mp3") > "${output_dir}/${output_dir}.m3u"
+    echo $(to_lowercase "${song_names[${j}]}.${extension}") > "${output_dir}/${output_dir}.m3u"
   else  # Append songs to existing M3U playlist with '>>'
-    echo $(to_lowercase "${song_names[${j}]}.mp3") >> "${output_dir}/${output_dir}.m3u"
+    echo $(to_lowercase "${song_names[${j}]}.${extension}") >> "${output_dir}/${output_dir}.m3u"
   fi
 
   # For all songs except last song in playlist, cut using ${start_times}
   if [ ${j} -lt $((line_num-1)) ]  
   then
-    ffmpeg -i "${1}" -ss ${start_times[${j}]} -to ${start_times[$((j+1))]} -c copy "${output_dir}/$(to_lowercase "${song_names[${j}]}.mp3")"
+    ffmpeg -i "${1}" -ss ${start_times[${j}]} -to ${start_times[$((j+1))]} -c copy "${output_dir}/$(to_lowercase "${song_names[${j}]}.${extension}")"
 
   # For last song in playlist, cut using ${duration}
   else  
-    ffmpeg -i "${1}" -ss ${start_times[${j}]} -to ${duration} -c copy "${output_dir}/$(to_lowercase "${song_names[${j}]}.mp3")"
+    ffmpeg -i "${1}" -ss ${start_times[${j}]} -to ${duration} -c copy "${output_dir}/$(to_lowercase "${song_names[${j}]}.${extension}")"
   fi
 done
