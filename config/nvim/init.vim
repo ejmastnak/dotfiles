@@ -68,7 +68,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
+Plug 'kylechui/nvim-surround'
 
 " Filetype-specific
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -102,7 +102,7 @@ source ~/.config/nvim/personal/plugins/fzf.vim
 source ~/.config/nvim/personal/plugins/lualine.vim
 source ~/.config/nvim/personal/plugins/lightspeed.vim
 source ~/.config/nvim/personal/plugins/mpv.vim
-source ~/.config/nvim/personal/plugins/surround.vim
+source ~/.config/nvim/personal/plugins/nvim-surround.vim
 source ~/.config/nvim/personal/plugins/UltiSnips.vim
 
 " LSP congifuration
