@@ -1,6 +1,3 @@
-" to use Lua configurations in nvim/lua/config.lua
-" lua require('config') somewhere inside init.vim
-
 " Basic configuration settings
 " -----------------------------------------------
 set nocompatible			    " use vim and not vi
@@ -26,7 +23,6 @@ let mapleader = " "
 if (has("termguicolors"))
   set termguicolors
 endif
-colorscheme nord          " set colorscheme
 
 " OS detection
 " ---------------------------------------------
@@ -57,37 +53,40 @@ endif
 call plug#begin('~/dotfiles/config/nvim/plugged')
 " Global
 Plug 'junegunn/vim-plug'
-Plug 'skywind3000/asyncrun.vim'
-Plug 'skywind3000/asynctasks.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips'
-Plug 'numToStr/Comment.nvim'
-Plug 'tpope/vim-dispatch'
 Plug 'ggandor/lightspeed.nvim'
-Plug 'junegunn/vim-easy-align'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'junegunn/fzf'
+Plug 'junegunn/vim-easy-align'
+Plug 'numToStr/Comment.nvim'
+Plug 'shaunsingh/nord.nvim'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'skywind3000/asynctasks.vim'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " Filetype-specific
-Plug 'chrisbra/csv.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'mzlogin/vim-markdown-toc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'lervag/vimtex'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'RRethy/vim-illuminate'
-
-" Email
-Plug 'soywod/himalaya', {'rtp': 'vim'}
+Plug 'nvim-Treesitter/nvim-Treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/playground'
 call plug#end()
 " ---------------------------------------------
+
+colorscheme nord
 
 source ~/.config/nvim/personal/init/copy-paste.vim
 source ~/.config/nvim/personal/init/navigation.vim
@@ -96,7 +95,6 @@ source ~/.config/nvim/personal/init/indent.vim
 
 " Plugin configuration
 source ~/.config/nvim/personal/plugins/async-run-task.vim
-source ~/.config/nvim/personal/plugins/csv.vim
 source ~/.config/nvim/personal/plugins/dispatch.vim
 source ~/.config/nvim/personal/plugins/comment.vim
 source ~/.config/nvim/personal/plugins/easy-align.vim
@@ -104,16 +102,21 @@ source ~/.config/nvim/personal/plugins/fzf.vim
 source ~/.config/nvim/personal/plugins/lightline.vim
 source ~/.config/nvim/personal/plugins/lightspeed.vim
 source ~/.config/nvim/personal/plugins/mpv.vim
+source ~/.config/nvim/personal/plugins/surround.vim
 source ~/.config/nvim/personal/plugins/UltiSnips.vim
 
 " LSP congifuration
 source ~/.config/nvim/personal/lsp/lsp-config.vim
 source ~/.config/nvim/personal/lsp/illuminate.vim
+source ~/.config/nvim/personal/lsp/treesitter.vim
 
 " BEGIN MISCELLANEOUS
 " ---------------------------------------------
 " Easier write command
 nnoremap <leader>w <Cmd>write<CR>
+
+" Easier quit command
+nnoremap <leader>q <Cmd>wq<CR>
 
 " Easier edit command
 nnoremap <leader>e :e 
@@ -153,3 +156,7 @@ set directory^=$HOME/.config/nvim/swap//
 
 " Return to Terminal in normal mode
 tnoremap <Esc> <C-\><C-n>
+
+" Window navigation
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-j> <C-\><C-n><C-w>j

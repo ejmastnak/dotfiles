@@ -1,6 +1,11 @@
-let g:Illuminate_ftwhitelist = ['python']
+let g:Illuminate_ftwhitelist = ['python, c']
 lua <<EOF
   require'lspconfig'.jedi_language_server.setup {
+    on_attach = function(client)
+      require 'illuminate'.on_attach(client)
+    end,
+  }
+  require'lspconfig'.clangd.setup {
     on_attach = function(client)
       require 'illuminate'.on_attach(client)
     end,
