@@ -13,7 +13,7 @@ set ruler	  			        " shows cursor position in current line
 set showcmd				        " shows partially typed commands
 set nohlsearch				    " don't highlight search results
 set noincsearch				    " don't jump to search results as search string is being typed
-set noshowmode            " disable in favor of lightline.vim's statusline
+set noshowmode            " disable in favor of lualine/lightline statusline
 set nofoldenable          " don't fold text by default when opening files
 set autowriteall          " write current buffer when moving buffers
 syntax enable             " enable syntax highlighting
@@ -55,7 +55,7 @@ call plug#begin('~/dotfiles/config/nvim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'SirVer/ultisnips'
 Plug 'ggandor/lightspeed.nvim'
-Plug 'itchyny/lightline.vim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -99,7 +99,7 @@ source ~/.config/nvim/personal/plugins/dispatch.vim
 source ~/.config/nvim/personal/plugins/comment.vim
 source ~/.config/nvim/personal/plugins/easy-align.vim
 source ~/.config/nvim/personal/plugins/fzf.vim
-source ~/.config/nvim/personal/plugins/lightline.vim
+source ~/.config/nvim/personal/plugins/lualine.vim
 source ~/.config/nvim/personal/plugins/lightspeed.vim
 source ~/.config/nvim/personal/plugins/mpv.vim
 source ~/.config/nvim/personal/plugins/surround.vim
