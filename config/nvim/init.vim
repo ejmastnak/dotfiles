@@ -62,8 +62,9 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'numToStr/Comment.nvim'
 Plug 'shaunsingh/nord.nvim'
-Plug 'skywind3000/asyncrun.vim'
-Plug 'skywind3000/asynctasks.vim'
+Plug 'airblade/vim-rooter'
+" Plug 'skywind3000/asyncrun.vim'
+" Plug 'skywind3000/asynctasks.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -101,6 +102,7 @@ source ~/.config/nvim/personal/plugins/easy-align.vim
 source ~/.config/nvim/personal/plugins/fzf.vim
 source ~/.config/nvim/personal/plugins/lualine.vim
 source ~/.config/nvim/personal/plugins/lightspeed.vim
+source ~/.config/nvim/personal/plugins/rooter.vim
 source ~/.config/nvim/personal/plugins/mpv.vim
 source ~/.config/nvim/personal/plugins/nvim-surround.vim
 source ~/.config/nvim/personal/plugins/UltiSnips.vim
