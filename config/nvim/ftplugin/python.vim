@@ -9,8 +9,7 @@ setlocal shiftwidth=4
 setlocal foldmethod=indent
 setlocal foldlevel=99
 
-nnoremap <leader>r :execute "AsyncRun -save=2 " .
-      \ "python3 %"<CR>
+noremap <leader>r <Cmd>update<CR><Cmd>belowright 10split term://python3 %<CR>
 
 " Source LSP configuration
 source ~/.config/nvim/personal/lsp/jedi-server-config.vim
