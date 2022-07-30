@@ -30,6 +30,14 @@
 }
 {}
 
+% Lemma
+\newenvironment{lemma}[1]
+{\refstepcounter{mathenvcounter}
+\spaceAboveEnvironment
+\textbf{Lemma~\themathenvcounter: {#1}}
+}
+{}
+
 % Proof
 \newenvironment{proof}
 {\textit{Proof}:}
