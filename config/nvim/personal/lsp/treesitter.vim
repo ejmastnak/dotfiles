@@ -1,6 +1,6 @@
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"c", "python"},
+  ensure_installed = {"c", "python", "vim"},
 
   highlight = {
     enable = true,

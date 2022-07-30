@@ -54,6 +54,7 @@ call plug#begin('~/dotfiles/config/nvim/plugged')
 " Global
 Plug 'junegunn/vim-plug'
 Plug 'SirVer/ultisnips'
+" Plug 'L3MON4D3/LuaSnip'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf'
@@ -63,8 +64,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'numToStr/Comment.nvim'
 Plug 'shaunsingh/nord.nvim'
 Plug 'airblade/vim-rooter'
-" Plug 'skywind3000/asyncrun.vim'
-" Plug 'skywind3000/asynctasks.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -93,9 +92,9 @@ source ~/.config/nvim/personal/init/copy-paste.vim
 source ~/.config/nvim/personal/init/navigation.vim
 source ~/.config/nvim/personal/init/insert-mode.vim
 source ~/.config/nvim/personal/init/indent.vim
+source ~/.config/nvim/personal/init/projects.vim
 
 " Plugin configuration
-source ~/.config/nvim/personal/plugins/async-run-task.vim
 source ~/.config/nvim/personal/plugins/dispatch.vim
 source ~/.config/nvim/personal/plugins/comment.vim
 source ~/.config/nvim/personal/plugins/easy-align.vim
@@ -105,7 +104,8 @@ source ~/.config/nvim/personal/plugins/lightspeed.vim
 source ~/.config/nvim/personal/plugins/rooter.vim
 source ~/.config/nvim/personal/plugins/mpv.vim
 source ~/.config/nvim/personal/plugins/nvim-surround.vim
-source ~/.config/nvim/personal/plugins/UltiSnips.vim
+source ~/.config/nvim/personal/plugins/ultisnips.vim
+" source ~/.config/nvim/personal/plugins/luasnip.vim
 
 " LSP congifuration
 source ~/.config/nvim/personal/lsp/lsp-config.vim
@@ -121,7 +121,10 @@ nnoremap <leader>w <Cmd>write<CR>
 nnoremap <leader>q <Cmd>wq<CR>
 
 " Easier edit command
-nnoremap <leader>e :e 
+nnoremap <leader>e :edit 
+
+" Easier help command
+nnoremap <leader>h :help 
 
 " For easy macro playback; note that this overrides entering Ex mode with Q
 nnoremap Q @q
@@ -158,6 +161,8 @@ set directory^=$HOME/.config/nvim/swap//
 
 " Return to Terminal in normal mode
 tnoremap <Esc> <C-\><C-n>
+" Start insert mode when entering terminal buffers
+autocmd BufEnter term://* startinsert
 
 " Window navigation
 tnoremap <C-k> <C-\><C-n><C-w>k

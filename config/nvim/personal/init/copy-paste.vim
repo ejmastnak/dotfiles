@@ -13,6 +13,7 @@ noremap Y y$
 " stop cc, x, and s from overwriting default register
 nnoremap cc "_cc
 nnoremap x "_x
+nnoremap X "_X
 
 " Paste in visual mode without overwriting default register
 vnoremap <silent> p "_d:call <SID>VisualPasteWithoutOverwrite()<CR>
