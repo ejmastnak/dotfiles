@@ -1,3 +1,31 @@
+lua << EOF
+require'lightspeed'.setup { 
+  substitute_chars = { ['\r'] = '¬',
+    [' '] = '␣',
+    ['\t'] = '⇥' },
+}
+EOF
+
+" Set the keys for Lightspeed operator-pending motions
+omap r <Plug>Lightspeed_s
+omap R <Plug>Lightspeed_S
+
+" Setting `;` and `,` to repeat the last Lightspeed motion (s/x or f/t):
+" --------------------------------------------- "
+let g:lightspeed_last_motion = ''
+
+augroup lightspeed_last_motion
+autocmd!
+autocmd User LightspeedSxEnter let g:lightspeed_last_motion = 'sx'
+autocmd User LightspeedFtEnter let g:lightspeed_last_motion = 'ft'
+augroup end
+
+map <expr> ; g:lightspeed_last_motion == 'sx' ? "<Plug>Lightspeed_;_sx" : "<Plug>Lightspeed_;_ft"
+map <expr> , g:lightspeed_last_motion == 'sx' ? "<Plug>Lightspeed_,_sx" : "<Plug>Lightspeed_,_ft"
+" --------------------------------------------- "
+
+" Color configuration
+" --------------------------------------------- "
 if !has("termguicolors")
   exit
 endif
@@ -52,6 +80,11 @@ exec "highlight LightspeedShortcut" .
 " after launching a two-character search, i.e. without specifying any search chars)
 " Bold, colored background, white text
 exec "highlight LightspeedUnlabeledMatch" .
+      \ " gui="   . "bold" .
+      \ " guibg=" . "NONE" .
+      \ " guifg=" . s:text
+
+exec "highlight LightspeedUniqueChar" .
       \ " gui="   . "bold" .
       \ " guibg=" . "NONE" .
       \ " guifg=" . s:text
