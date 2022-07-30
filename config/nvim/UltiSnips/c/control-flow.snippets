@@ -1,10 +1,10 @@
-snippet fl "For loop" bA
-for (${1:int i = 0}; $2; ${3:++i}) {
+snippet for "For loop" bA
+for ($1) {
 	$0
 }
 endsnippet
 
-snippet wl "While loop" bA
+snippet while "While loop" bA
 while ($1) {
 	$0
 }
@@ -22,7 +22,7 @@ if ($1) {
 }
 endsnippet
 
-snippet elf "Else-if statement" bA
+snippet elif "Else-if statement" bA
 else if ($1) {
 	$0
 }
@@ -30,6 +30,18 @@ endsnippet
 
 snippet else "Else statement" bA
 else {
+	$0
+}
+endsnippet
+
+snippet }elif "Else-if statement" bA
+} else if ($1) {
+	$0
+}
+endsnippet
+
+snippet }else "Else statement" bA
+} else {
 	$0
 }
 endsnippet

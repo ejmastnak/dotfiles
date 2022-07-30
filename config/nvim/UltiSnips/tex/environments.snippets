@@ -12,14 +12,14 @@ endsnippet
 
 snippet env "New environment" bA
 \begin{$1}
-	$0
+	${0:${VISUAL:}}
 \end{$1}
 endsnippet
 
 # hacky way to stop UltiSnips from mirroring the {$2} tag
 snippet eenv "New environment" bA
 \begin{$1}{$2}
-	$0
+	${0:${VISUAL:}}
 \end{$1}
 endsnippet
 

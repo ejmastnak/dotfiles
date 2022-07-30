@@ -17,6 +17,11 @@ snippet "([a-zA-Z]|[\}\)\]\|']);" "Subscript" rA
 endsnippet
 
 context "math()"
+snippet "([a-zA-Z]|[\}\)\]\|'])__" "Subscript and superscript" rA
+`!p snip.rv = match.group(1)`_{${1:${VISUAL:}}}^{$2}$0
+endsnippet
+
+context "math()"
 snippet "([\w]|[\}\)\]\|'])sd" "Text subscript" rA
 `!p snip.rv = match.group(1)`_{\mathrm{${1:${VISUAL:}}}}$0
 endsnippet
@@ -31,13 +36,13 @@ snippet "([\w]|[\}\)\]\|']):([\w]{1})" "Place the first \w character after the :
 `!p snip.rv = match.group(1) + "_{" + match.group(2) + "}"`
 endsnippet
 
-context "math()"
-snippet "([\w]{1})__" "e.g. expand x__ into x_{1}, x_{2}, x_{3}" rA
-`!p snip.rv = match.group(1) + "_{1}, " + match.group(1) + "_{2}, " + match.group(1) + "_{3}"`
-endsnippet
-
 snippet "([a-zA-Z]|[\}\)\]\|'])00" "Automatic 0 subscript" rA
 `!p snip.rv = match.group(1)`_{0}
+endsnippet
+
+context "math()"
+snippet JJ "j subscript (because snippet move forward key is jk)" iA
+_{j}
 endsnippet
 
 context "math()"
@@ -139,15 +144,19 @@ snippet "([^a-zA-Z\\])dd" "\ddot" r
 endsnippet
 
 snippet "([^a-zA-Z\\])pV" "\pdv{}" rA
-`!p snip.rv = match.group(1)`\pdv{${1:${VISUAL:}}} $0
+`!p snip.rv = match.group(1)`\pdvOne{${1:${VISUAL:}}} $0
 endsnippet
 
 snippet "([^a-zA-Z\\])pvv" "\pdv{}{}" rA
 `!p snip.rv = match.group(1)`\pdv{$1}{$2} $0
 endsnippet
 
-snippet "([^a-zA-Z\\])ppv" "\pdv[]{}{}" rA
-`!p snip.rv = match.group(1)`\pdv[$1]{$2}{$3} $0
+snippet "([^a-zA-Z\\])ppv" "\pdvN{}{}{}" rA
+`!p snip.rv = match.group(1)`\pdvN{$1}{$2}{$3} $0
+endsnippet
+
+snippet "([^a-zA-Z\\])pv3" "\pdvThree{}{}" rA
+`!p snip.rv = match.group(1)`\pdvThree{$1}{$2}{$3} $0
 endsnippet
 
 snippet "([^a-zA-Z\\])dV" "\dv{}" rA
@@ -195,6 +204,11 @@ context "math()"
 snippet "([\W_\\])srr" "\stackrel{}{}" rA
 `!p snip.rv = match.group(1)`\stackrel{${1:above}}{${2:${VISUAL:below}}}$0
 endsnippet
+
+snippet "([^a-zA-Z\\])bi" "Binomial symbol" r
+`!p snip.rv = match.group(1)`\binom{${1:${VISUAL:}}}{$2}$0
+endsnippet
+
 # --------------------------------------------- #
 # END SEMANTIC COMMANDS (vec, tilde, etc...)
 
@@ -224,26 +238,16 @@ endsnippet
 # --------------------------------------------- #
 context "math()"
 snippet "([^\w\\])sM" "Sum with only lower limit" rA
-`!p snip.rv = match.group(1)`\sum_{$1}$0
+`!p snip.rv = match.group(1)`\sum_{$1} $0
 endsnippet
 
 context "math()"
 snippet "([^\w\\])smm" "Sum with upper and lower limit" rA
-`!p snip.rv = match.group(1)`\sum_{$1}^{$2}$0
+`!p snip.rv = match.group(1)`\sum_{$1}^{$2} $0
 endsnippet
 
 snippet "([^\w\\])smf" "Sum from negative to positive infinity" rA
 `!p snip.rv = match.group(1)`\sum_{$1-\infty}^{\infty} $0
-endsnippet
-
-context "math()"
-snippet "([^\w\\])lsM" "Inline math sum with only lower limit" rA
-`!p snip.rv = match.group(1)`\sum \limits_{$1}$0
-endsnippet
-
-context "math()"
-snippet "([^\w\\])lsmm" "Inline math sum with upper and lower limit" rA
-`!p snip.rv = match.group(1)`\sum \limits_{$1}^{$2}$0
 endsnippet
 # --------------------------------------------- #
 # END SUMS
@@ -264,6 +268,10 @@ snippet "([^\w\\])lmf" "Limit to infinity" rA
 `!p snip.rv = match.group(1)`\lim_{${1} \to \infty} $0
 endsnippet
 
+snippet "([^\w\\])slmf" "Limit superior to infinity" rA
+`!p snip.rv = match.group(1)`\limsup_{${1} \to \infty} $0
+endsnippet
+
 snippet "([^\w\\])lmz" "Limit to zero" rA
 `!p snip.rv = match.group(1)`\lim_{${1} \to 0} $0
 endsnippet
@@ -274,13 +282,16 @@ endsnippet
 # BEGIN STATIC TEXT
 # ------------------------------------- #
 context "math()"
-snippet and "static snippet: qquad-spaced 'and' in equation" A
-\qquad \text{and} \qquad $0
+snippet and "static snippet: quad-spaced 'and' in equation" A
+\quad \text{and} \quad $0
 endsnippet
 
-context "math()"
-snippet where "static snippet: quad-spaced 'where' in equation" A
-\quad \text{where } \, $0
+snippet forall "static snippet: 'for all'  text in equation" A
+\text{ for all } $0
+endsnippet
+
+snippet forwhich "static snippet: 'for all'  text in equation" A
+\text{ for which } $0
 endsnippet
 
 context "math()"
@@ -348,7 +359,7 @@ snippet "([^a-zA-Z0-9\\])px" "\approx" rA
 `!p snip.rv = match.group(1)`\approx 
 endsnippet
 
-snippet pp "\perp" A
+snippet prp "\perp" A
 \perp 
 endsnippet
 
@@ -371,6 +382,11 @@ endsnippet
 snippet "([^a-zA-Z0-9\\])eqq" "\equiv" rA
 `!p snip.rv = match.group(1)`\equiv 
 endsnippet
+
+snippet "([^a-zA-Z0-9\\])00" "\emptyset" rA
+`!p snip.rv = match.group(1)`\emptyset
+endsnippet
+
 # ------------------------------------- #
 # END STATIC MATH SNIPPETS
 

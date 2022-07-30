@@ -1,4 +1,4 @@
-snippet as "New code block" A
+snippet df "New code block" A
 {
 	$0
 }
@@ -17,24 +17,42 @@ snippet "(^|[^a-zA-Z])sd" "Back ticks (for inline code); alternate trigger" rA
 endsnippet
 
 snippet pp "printf" bA
-printf($1);
+printf("$1"$2);$0
 endsnippet
 
 snippet rr "return" bA
 return $1;
 endsnippet
 
-snippet /* "Comment string" A
-/* $1 */
+snippet cc "Block comment" bA
+/*
+	 $1 
+*/
 endsnippet
 
-snippet fn "Basic function definition" bA
+snippet -- "Long comment to visually break up text" bA
+// ---------------------------------------------------------------- //
+endsnippet
+
+snippet ff "Generic function definition" bA
 ${1:type} ${2:name}($3) {
 	$0
 }
 endsnippet
 
-snippet df "#define symbolic constant" bA
+snippet vv "Void function definition" bA
+void ${1:name}($2) {
+	$0
+}
+endsnippet
+
+snippet ii "Int function definition" bA
+int ${1:name}($2) {
+	$0
+}
+endsnippet
+
+snippet def "#define symbolic constant" bA
 #define $1 $0
 endsnippet
 
@@ -45,3 +63,27 @@ int main() {
 	return 0;
 }
 endsnippet
+
+snippet args "main function with int argc, char *argv[]" iA
+int main(int argc, char *argv[]) {
+	$0
+
+	return 0;
+}
+endsnippet
+
+
+
+# File IO
+# --------------------------------------------- #
+snippet fopen "Open a file for reading" bA
+// Open file for reading
+FILE* file_path = fopen(${1:input_file}, "r");
+if (file_path == NULL) {
+	fprintf(stderr, "Cannot open file\n");
+	exit(-1);
+}
+$0
+fclose(file_path);
+endsnippet
+
