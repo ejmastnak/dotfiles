@@ -16,7 +16,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Start dmenu
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+space exec --no-startup-id dmenu_run
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -86,10 +86,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+f floating toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -148,22 +145,22 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id xss-lock -- i3lock --nofork \
-  --color=81a1c1ff \
   --radius 110 \
+  --color=81a1c1ff \
   --inside-color=d8dee9ff \
+  --ring-color=5e81acff \
+  --verif-color=2e3440ff \
   --insidever-color=d8dee9ff \
   --ringver-color=5e81acff \
+  --wrong-color=2e3440ff \
   --insidewrong-color=bf616aff \
   --ringwrong-color=bf616aff \
   --line-uses-inside \
-  --ring-color=5e81acff \
   --separator-color=5e81acff \
   --keyhl-color=81a1c1ff \
   --bshl-color=5e81acff \
   --verif-text="Verifying..." \
   --wrong-text="Incorrect." \
-  --verif-color=2e3440ff \
-  --wrong-color=2e3440ff \
   --modif-color=2e3440ff \
   --layout-color=2e3440ff \
   --time-color=2e3440ff \
@@ -260,6 +257,12 @@ bar {
 	}
 }
 
+# Key bindings to launch programs
+# --------------------------------------------- #
+# Open Vim to edit LaTeX for use in Anki notes
+bindsym $mod+Shift+a exec --no-startup-id "${HOME}/.config/anki/ankitex.sh"
+# --------------------------------------------- #
+
 # Autostarting
 # --------------------------------------------- #
 # Set display temperature to 3500K
@@ -267,6 +270,3 @@ exec_always --no-startup-id redshift -OP 3000
 
 # Start compositor
 exec_always --no-startup-id picom -b
-
-# Network manager applet
- exec_always --no-startup-id nm-applet
