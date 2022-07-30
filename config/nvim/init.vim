@@ -117,8 +117,15 @@ source ~/.config/nvim/personal/lsp/treesitter.vim
 " Easier write command
 nnoremap <leader>w <Cmd>write<CR>
 
-" Easier quit command
-nnoremap <leader>q <Cmd>wq<CR>
+" Write and quit if applicable, quit otherwise
+function! s:VimQuit() abort
+  try
+    wq
+  catch /^Vim\%((\a\+)\)\=:E45:/
+    q!
+  endtry
+endfunction
+noremap <leader>q <Cmd>call <SID>VimQuit()<CR>
 
 " Easier edit command
 nnoremap <leader>e :edit 
