@@ -57,6 +57,7 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 " ---------------------------------------------
 " END BASIC SETTINGS
 
+source ~/.config/vifm/personal/navigation.vifm
 
 " BEGIN MARKS
 " --------------------------------------------- "
@@ -82,9 +83,9 @@ mark g ~/Documents/projects/tmg-bmc
 mark h ~
 mark D ~/Documents
 mark W ~/Downloads
-mark k ~/Documents/academics/klf
+mark k ~/Documents/academics/projects/klf
 mark m ~/Documents/projects/music
-mark p ~/Documents/planning
+mark p ~/Documents/plans
 mark P ~/Documents/projects
 mark q ~/Documents/academics/qap
 mark r ~/Documents/basics/food/recipes
@@ -145,6 +146,9 @@ vnoremap w :view<cr>gv
 nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
 nnoremap A cw
+
+" open restart Vifm
+nnoremap RR :restart<CR>
 
 " open vifmrc in editor
 nnoremap C :!nvim -c 'set filetype=vim' $MYVIFMRC<CR>:restart<CR>

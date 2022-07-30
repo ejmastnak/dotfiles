@@ -1,0 +1,87 @@
+" % vim: set filetype=vim :
+
+" Config and dotfiles
+" --------------------------------------------- "
+nnoremap gcc :cd ~/dotfiles/config<CR>
+nnoremap gcd :cd ~/dotfiles<CR>
+nnoremap gcv :cd ~/dotfiles/config/vifm<CR>
+nnoremap gcn :cd ~/dotfiles/config/nvim<CR>
+nnoremap gci :cd ~/dotfiles/config/i3<CR>
+nnoremap gnn :goto ~/dotfiles/config/vifm/personal/navigation.vifm<CR>
+" --------------------------------------------- "
+
+" System
+" --------------------------------------------- "
+" Bookmarks
+nnoremap gsb :cd ~/Documents/bookmarks<CR>
+" --------------------------------------------- "
+
+" Basics
+" --------------------------------------------- "
+nnoremap gbb :cd ~/Documents/basics<CR>
+nnoremap gbf :cd ~/Documents/basics/food<CR>
+nnoremap gbt :cd ~/Documents/basics/transportation<CR>
+" --------------------------------------------- "
+
+
+" Plans
+" --------------------------------------------- "
+nnoremap gpp :cd ~/Documents/plans<CR>
+nnoremap gpq :goto ~/Documents/plans/queue.md<CR>
+" --------------------------------------------- "
+
+" Projects
+" --------------------------------------------- "
+nnoremap grr :cd ~/Documents/projects<CR>
+nnoremap grf :cd ~/Documents/projects/finances<CR>
+" --------------------------------------------- "
+
+" Software notes
+" --------------------------------------------- "
+" Root directory
+nnoremap gss :cd ~/Documents/notes/software<CR>
+
+" Anki notes
+nnoremap gna :cd ~/Documents/notes/software/anki<CR>
+
+" C notes
+nnoremap gsc :cd ~/Documents/notes/software/c<CR>
+
+" Vim
+nnoremap gsn :cd ~/Documents/notes/software/vim<CR>
+" --------------------------------------------- "
+
+
+" Academics
+" --------------------------------------------- "
+" Root directory
+nnoremap gaa :cd ~/Documents/academics<CR>
+
+" QAP
+nnoremap gaq :cd ~/Documents/academics/qap<CR>
+
+" FMF
+nnoremap gaf :cd ~/Documents/academics/fmf<CR>
+
+" FE
+nnoremap gae :cd ~/Documents/academics/fe<CR>
+
+" Courses
+nnoremap gac :cd ~/Documents/academics/courses<CR>
+
+" Matematika 1
+nnoremap ga1 :cd ~/Documents/academics/courses/mat1<CR>
+" --------------------------------------------- "
+
+
+" Music
+" --------------------------------------------- "
+nnoremap gmm :cd ~/Media/music/music-library<CR>
+nnoremap gma :cd ~/Media/music/ambient<CR>
+nnoremap gmc :cd ~/Media/music/music-library/classical<CR>
+nnoremap gmj :cd ~/Media/music/music-library/jazz<CR>
+nnoremap gmb :cd ~/Media/music/music-library/bgm<CR>
+
+nnoremap gzz :cd ~/Media/music/music-library/unsorted<CR>
+nnoremap gzj :cd ~/Media/music/music-library/unsorted/jazz<CR>
+" --------------------------------------------- "
