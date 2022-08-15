@@ -3,14 +3,15 @@ imap <silent><expr> <Tab> luasnip#expandable() ? '<Plug>luasnip-expand-snippet' 
 
 " Jump forward
 imap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
+smap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
 
 " Jump backward
 imap <silent><expr> <C-j> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<C-j>'
+smap <silent><expr> <C-j> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<C-j>'
 
-" imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
-" inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-" snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
-" snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+" Cycle forward through choice nodes
+imap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
+smap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
 
 " --------------------------------------------- "
 lua << EOF
@@ -42,12 +43,7 @@ ls.config.set_config({
 })
 
 -----------------------------------------------
-ls.add_snippets("all", {
-    s("tern", {
-        -- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
-        i(1, "cond"), t(" ? "), i(2, "then"), t(" : "), i(3, "else")
-    })
-})
-
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip"})
 EOF
+
+nnoremap <leader>U <Cmd>lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip"})<CR>
