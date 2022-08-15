@@ -13,9 +13,10 @@ set ruler	  			        " shows cursor position in current line
 set showcmd				        " shows partially typed commands
 set nohlsearch				    " don't highlight search results
 set noincsearch				    " don't jump to search results as search string is being typed
+set signcolumn=no         " disable LSP diagnostic symbols in left column
 set noshowmode            " disable in favor of lualine/lightline statusline
 set nofoldenable          " don't fold text by default when opening files
-set autowriteall          " write current buffer when moving buffers
+set autowrite             " write current buffer when moving buffers
 syntax enable             " enable syntax highlighting
 let mapleader = " "
 " ---------------------------------------------
@@ -121,7 +122,7 @@ nnoremap <leader>w <Cmd>write<CR>
 function! s:VimQuit() abort
   try
     wq
-  catch /^Vim\%((\a\+)\)\=:E45:/
+  catch
     q!
   endtry
 endfunction
@@ -169,7 +170,7 @@ set directory^=$HOME/.config/nvim/swap//
 " Return to Terminal in normal mode
 tnoremap <Esc> <C-\><C-n>
 " Start insert mode when entering terminal buffers
-autocmd BufEnter term://* startinsert
+" autocmd BufEnter term://* startinsert
 
 " Window navigation
 tnoremap <C-k> <C-\><C-n><C-w>k

@@ -8,8 +8,10 @@ inoremap <C-L> <ESC>^$a
 " Mappings for navigating wrapped lines
 nnoremap j gj
 nnoremap k gk
-nnoremap 0 g0
-nnoremap I g^i
+
+" Reach start of line a bit more conveniently
+nnoremap 0 ^
+nnoremap I ^i
 
 " Stay inside current paragraph
 noremap } j}k
