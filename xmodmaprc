@@ -1,0 +1,2 @@
+! Use the right Alt key as a compose key for XCompose
+keycode 108 = Multi_key

@@ -33,6 +33,9 @@ fi
 # Set typematic delay to 200 ms and 30 Hz
 xset r rate 200 30
 
+# Activate custom keymap table
+xmodmap ~/.xmodmaprc
+
 # Activate X key bindings
 xbindkeys
 
