@@ -22,11 +22,13 @@ BASEDIR="$(pwd)"
 [ ! -e "${HOME}/.gemrc" ]        && ln -s ${BASEDIR}/gemrc ~/.gemrc
 
 
-# Clone Zsh autosuggestions if not already installed
-if [ ! -d "${BASEDIR}/config/zsh/zsh-autosuggestions" ]
-then
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git "${BASEDIR}/config/zsh/zsh-autosuggestions"
+# If using ZSH as login shell, clone Zsh autosuggestions if not already installed
+if [ "${SHELL}" == "/usr/bin/zsh" ]; then
+  if [ ! -d "${BASEDIR}/config/zsh/zsh-autosuggestions" ]
+  then
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git "${BASEDIR}/config/zsh/zsh-autosuggestions"
 
-  # (Hacky) solution to avoid problems with Git submodules
-  rm -r "${BASEDIR}/config/zsh/zsh-autosuggestions/.git"
+    # (Hacky) solution to avoid problems with Git submodules
+    rm -r "${BASEDIR}/config/zsh/zsh-autosuggestions/.git"
+  fi
 fi
