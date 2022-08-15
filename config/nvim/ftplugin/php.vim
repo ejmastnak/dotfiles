@@ -6,7 +6,9 @@ setlocal softtabstop=2
 setlocal shiftwidth=2
 
 let g:php_term_job_id = -1
-let g:php_index_file = expand("%")
+
+" Perhaps explicitly specify project root at some point; see -t option for php -S in man php
+" let g:php_project_root = GET_PROJECT_ROOT
 
 function! PHPHandleTermExit(job_id, data, event) abort
   echom "Exiting"
@@ -27,7 +29,7 @@ function! s:PHPRunServer() abort
     " Always keep the terminal window at the same size
     set winfixheight
 
-    call jobsend(g:php_term_job_id, "php -S localhost:8888 " . g:php_index_file . "\n")
+    call jobsend(g:php_term_job_id, "php -S localhost:8888\n")
   else
     echom "Server is already running!"
   endif
