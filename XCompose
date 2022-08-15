@@ -124,26 +124,28 @@
 # --------------------------------------------- #
 # BEGIN CEDILLA
 
+
+          
 # BEGIN CARON
 # --------------------------------------------- #
-<Multi_key> <v> <C> g: "Č" U010C # LATIN CAPITAL LETTER C WITH CARON
-<Multi_key> <v> <c> g: "č" U010D # LATIN SMALL LETTER C WITH CARON
-<Multi_key> <v> <D> g: "Ď" U010E # LATIN CAPITAL LETTER D WITH CARON
-<Multi_key> <v> <d> g: "ď" U010F # LATIN SMALL LETTER D WITH CARON
-<Multi_key> <v> <E> g: "Ě" U011A # LATIN CAPITAL LETTER E WITH CARON
-<Multi_key> <v> <e> g: "ě" U011B # LATIN SMALL LETTER E WITH CARON
-<Multi_key> <v> <L> g: "Ľ" U013D # LATIN CAPITAL LETTER L WITH CARON
-<Multi_key> <v> <l> g: "ľ" U013E # LATIN SMALL LETTER L WITH CARON
-<Multi_key> <v> <N> g: "Ň" U0147 # LATIN CAPITAL LETTER N WITH CARON
-<Multi_key> <v> <n> g: "ň" U0148 # LATIN SMALL LETTER N WITH CARON
-<Multi_key> <v> <R> g: "Ř" U0158 # LATIN CAPITAL LETTER R WITH CARON
-<Multi_key> <v> <r> g: "ř" U0159 # LATIN SMALL LETTER R WITH CARON
-<Multi_key> <v> <S> g: "Š" U0160 # LATIN CAPITAL LETTER S WITH CARON
-<Multi_key> <v> <s> g: "š" U0161 # LATIN SMALL LETTER S WITH CARON
-<Multi_key> <v> <T> g: "Ť" U0164 # LATIN CAPITAL LETTER T WITH CARON
-<Multi_key> <v> <t> g: "ť" U0165 # LATIN SMALL LETTER T WITH CARON
-<Multi_key> <v> <Z> g: "Ž" U017D # LATIN CAPITAL LETTER Z WITH CARON
-<Multi_key> <v> <z> g: "ž" U017E # LATIN SMALL LETTER Z WITH CARON
+<Multi_key> <v> <C> : "Č" U010C # LATIN CAPITAL LETTER C WITH CARON
+<Multi_key> <v> <c> : "č" U010D # LATIN SMALL LETTER C WITH CARON
+<Multi_key> <v> <D> : "Ď" U010E # LATIN CAPITAL LETTER D WITH CARON
+<Multi_key> <v> <d> : "ď" U010F # LATIN SMALL LETTER D WITH CARON
+<Multi_key> <v> <E> : "Ě" U011A # LATIN CAPITAL LETTER E WITH CARON
+<Multi_key> <v> <e> : "ě" U011B # LATIN SMALL LETTER E WITH CARON
+<Multi_key> <v> <L> : "Ľ" U013D # LATIN CAPITAL LETTER L WITH CARON
+<Multi_key> <v> <l> : "ľ" U013E # LATIN SMALL LETTER L WITH CARON
+<Multi_key> <v> <N> : "Ň" U0147 # LATIN CAPITAL LETTER N WITH CARON
+<Multi_key> <v> <n> : "ň" U0148 # LATIN SMALL LETTER N WITH CARON
+<Multi_key> <v> <R> : "Ř" U0158 # LATIN CAPITAL LETTER R WITH CARON
+<Multi_key> <v> <r> : "ř" U0159 # LATIN SMALL LETTER R WITH CARON
+<Multi_key> <v> <S> : "Š" U0160 # LATIN CAPITAL LETTER S WITH CARON
+<Multi_key> <v> <s> : "š" U0161 # LATIN SMALL LETTER S WITH CARON
+<Multi_key> <v> <T> : "Ť" U0164 # LATIN CAPITAL LETTER T WITH CARON
+<Multi_key> <v> <t> : "ť" U0165 # LATIN SMALL LETTER T WITH CARON
+<Multi_key> <v> <Z> : "Ž" U017D # LATIN CAPITAL LETTER Z WITH CARON
+<Multi_key> <v> <z> : "ž" U017E # LATIN SMALL LETTER Z WITH CARON
 <Multi_key> <v> <A> : "Ǎ" U01CD  # LATIN CAPITAL LETTER A WITH CARON
 <Multi_key> <v> <a> : "ǎ" U01CE  # LATIN SMALL LETTER A WITH CARON
 <Multi_key> <v> <I> : "Ǐ" U01CF  # LATIN CAPITAL LETTER I WITH CARON
