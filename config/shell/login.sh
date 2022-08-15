@@ -22,10 +22,11 @@ export PATH="${PATH}:$HOME/scripts"
 export PATH="${PATH}:$HOME/src/julia-1.7.2/bin"
 # --------------------------------------------- #
 
-
-# Manage Ruby version with chruby
+# Set Ruby version with chruby
 # --------------------------------------------- #
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.7.4
+if [ -e "/usr/local/share/chruby/chruby.sh" && -e "/usr/local/share/chruby/auto.sh" ]; then
+  source /usr/local/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
+  chruby ruby-2.7.4
+fi
 # --------------------------------------------- #
