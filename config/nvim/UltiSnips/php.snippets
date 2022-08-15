@@ -1,0 +1,31 @@
+snippet pp "HTML <pre> tags for prettier vardump" bA
+echo "<pre>";
+var_dump($1);
+echo "</pre>";
+$0
+endsnippet
+
+snippet "(^|[\W])'"  "single quotation marks" rA
+`!p snip.rv = match.group(1)`'${1:${VISUAL:}}'$0
+endsnippet
+
+snippet "(^|[\W])\""  "double quotation marks" rA
+`!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
+endsnippet
+
+snippet "(^|[^a-zA-Z])sd" "Back ticks (for inline code); alternate trigger" rA
+`!p snip.rv = match.group(1)`\`${1:${VISUAL:}}\`$0
+endsnippet
+
+snippet class "PHP Class" bA
+class $1
+{
+	$0
+}
+endsnippet
+
+snippet df "Opening and closing braces" A
+{
+	$0
+}
+endsnippet

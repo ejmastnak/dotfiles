@@ -2,17 +2,17 @@
 
 priority -1
 
-# snippet "(^|[\W])'"  "single quotation marks" rA
-# `!p snip.rv = match.group(1)`'${1:${VISUAL:}}'$0
-# endsnippet
-
 snippet ' "single quotation marks" A
 '${1:${VISUAL:}}'$0
 endsnippet
 
-# snippet test
-# (${1:test text})
+# snippet "(^|[\W])\""  "double quotation marks" rA
+# `!p snip.rv = match.group(1)`"${1:${VISUAL:}}"$0
 # endsnippet
+
+snippet "  "double quotation marks" A
+"${1:${VISUAL:}}"$0
+endsnippet
 
 snippet ( "Paired parentheses ()" iA 
 (${1:${VISUAL:}})$0
@@ -29,3 +29,8 @@ endsnippet
 # snippet "(^|[\W])`"  "Back ticks" rA
 # `!p snip.rv = match.group(1)`\`${1:${VISUAL:}}\`$0
 # endsnippet
+
+snippet ( "Paired parentheses"
+(${1:${VISUAL:}})$0
+endsnippet
+

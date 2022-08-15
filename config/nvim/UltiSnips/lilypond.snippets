@@ -1,16 +1,23 @@
-snippet vv "This inserts the LilyPond version" b
-\version "2.22.1"
+snippet vv "This inserts the LilyPond version" bA
+\version "`lilypond --version | head -1 | sed 's/GNU LilyPond //'`"
+$0
 endsnippet
 
-snippet hh "Inserts a LilyPond header" b
+snippet hh "Inserts a LilyPond header" bA
 \header{
-    title = "$1"
+	title = "$1"
 }
 $0
 endsnippet
 
-snippet rr "Inserts a LilyPond relative block" b
+snippet rr "Inserts a LilyPond relative block" bA
 \relative{
-    $1
+	$1
+}
+endsnippet
+
+snippet ss "Inserts a LilyPond score block" bA
+\score{
+	$1
 }
 endsnippet
