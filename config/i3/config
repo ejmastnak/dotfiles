@@ -15,6 +15,9 @@ floating_modifier $mod
 # Kill focused window
 bindsym $mod+Shift+q kill
 
+# Suspend computer
+bindsym $mod+Shift+s exec --no-startup-id systemctl suspend
+
 # Start dmenu
 bindsym $mod+space exec --no-startup-id dmenu_run
 

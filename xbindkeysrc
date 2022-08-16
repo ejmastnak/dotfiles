@@ -25,7 +25,3 @@
 # Mute microphone
 "${HOME}/scripts/volume-pulse.sh mute-mic"
    XF86AudioMicMute
-
-# Suspend (sleep)
-"systemctl suspend"
-   XF86Explorer
