@@ -8,6 +8,8 @@ alias s="systemctl"
 
 alias backup_documents="rclone sync -v --filter-from ~/.config/rclone/filter.txt /home/ej/Documents/ google-drive:Documents/"
 
+alias grep='grep -n --color=auto'
+
 # improved ls
 alias l="exa"
 alias L="exa -la"
