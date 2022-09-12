@@ -5,7 +5,6 @@ filetype plugin on		    " load file-specific plugins
 filetype indent on		    " load file-specific indentation
 filetype on				        " enable filetype detection
 set encoding=utf-8
-syntax enable				      " enable syntax highlighting
 set wrap linebreak        " wrap long lines and break lines at words
 set number				        " shows line numbers
 set cursorline            " highlight current line
@@ -69,7 +68,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
-Plug 'kylechui/nvim-surround'
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+" Plug 'kylechui/nvim-surround'
 
 " Filetype-specific
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -104,11 +104,12 @@ source ~/.config/nvim/personal/plugins/lualine.vim
 source ~/.config/nvim/personal/plugins/lightspeed.vim
 source ~/.config/nvim/personal/plugins/rooter.vim
 source ~/.config/nvim/personal/plugins/mpv.vim
-source ~/.config/nvim/personal/plugins/nvim-surround.vim
+source ~/.config/nvim/personal/plugins/toggle-term.vim
+" source ~/.config/nvim/personal/plugins/nvim-surround.vim
 source ~/.config/nvim/personal/plugins/ultisnips.vim
 " source ~/.config/nvim/personal/plugins/luasnip.vim
 
-" LSP congifuration
+" LSP configuration
 source ~/.config/nvim/personal/lsp/lsp-config.vim
 source ~/.config/nvim/personal/lsp/illuminate.vim
 source ~/.config/nvim/personal/lsp/treesitter.vim
