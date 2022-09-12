@@ -3,6 +3,7 @@
 
 - .jekyll-cache/**
 - _site/**
+- vendor/**
 - .old-java/**
 - .venv/**
 - __pycache__/**
