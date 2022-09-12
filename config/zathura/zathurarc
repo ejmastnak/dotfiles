@@ -61,7 +61,7 @@ set render-loading-bg          "#2e3440"    # nord0
 set render-loading-fg          "#d8dee9"    # nord4
 
 # Decrease highlight prominence (e.g. after Vim forward search)
-set highlight-transparency 0.10
+set highlight-transparency 0.25
 
 # Light
 set recolor-lightcolor        "#fbfbfc"    # markdown body background
