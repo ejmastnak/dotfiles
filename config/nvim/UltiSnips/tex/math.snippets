@@ -159,16 +159,16 @@ snippet "([^a-zA-Z\\])pv3" "\pdvThree{}{}" rA
 `!p snip.rv = match.group(1)`\pdvThree{$1}{$2}{$3} $0
 endsnippet
 
-snippet "([^a-zA-Z\\])dV" "\dv{}" rA
-`!p snip.rv = match.group(1)`\dv{${1:${VISUAL:}}} $0
+snippet "([^a-zA-Z\\])dV" "\dvOne{}" rA
+`!p snip.rv = match.group(1)`\dvOne{${1:${VISUAL:}}} $0
 endsnippet
  
 snippet "([^a-zA-Z\\])([dD])vv" "\dv{}{} or \Dv{}{}" rA
 `!p snip.rv = match.group(1)`\\`!p snip.rv = match.group(2)`v{$1}{$2} $0
 endsnippet
 
-snippet "([^a-zA-Z\\])ddv" "\dv[]{}{}" rA
-`!p snip.rv = match.group(1)`\dv[$1]{$2}{$3} $0
+snippet "([^a-zA-Z\\])ddv" "\dvN[]{}{}" rA
+`!p snip.rv = match.group(1)`\dvN[$1]{$2}{$3} $0
 endsnippet
 
 context "math()"
@@ -290,7 +290,7 @@ snippet forall "static snippet: 'for all'  text in equation" A
 \text{ for all } $0
 endsnippet
 
-snippet forw "static snippet: 'for which'  text in equation" A
+snippet forwh "static snippet: 'for which'  text in equation" A
 \text{ for which } $0
 endsnippet
 
@@ -385,10 +385,6 @@ endsnippet
 
 snippet "([^a-zA-Z0-9\\])eqq" "\equiv" rA
 `!p snip.rv = match.group(1)`\equiv 
-endsnippet
-
-snippet "([^a-zA-Z0-9\\])00" "\emptyset" rA
-`!p snip.rv = match.group(1)`\emptyset
 endsnippet
 
 # ------------------------------------- #
