@@ -62,6 +62,7 @@ Plug 'tpope/vim-dispatch'
 Plug('akinsho/toggleterm.nvim', {tag = '*'})
 Plug 'airblade/vim-rooter'
 Plug 'SirVer/ultisnips'
+-- Plug('L3MON4D3/LuaSnip', {tag = 'v<CurrentMajor>.*'})
 
 -- Filetype-specific
 Plug('iamcco/markdown-preview.nvim', {['do'] = 'cd app && yarn install'})
@@ -99,8 +100,9 @@ require('plugins/fzf')
 require('plugins/nvim-surround')
 require('plugins/toggle-term')
 require('plugins/rooter')
-require('plugins/ultisnips')
 require('plugins/lualine')
+require('plugins/ultisnips')
+-- require('plugins/LuaSnip')
 EOF
 
 source ~/.config/nvim/personal/init/insert-mode.vim
