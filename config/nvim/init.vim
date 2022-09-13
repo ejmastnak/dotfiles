@@ -94,21 +94,21 @@ require('plugins/treesitter')
 require('plugins/illuminate')
 require('plugins/Comment')
 require('plugins/dispatch')
+require('plugins/easy-align')
+require('plugins/fzf')
+require('plugins/nvim-surround')
+require('plugins/toggle-term')
+require('plugins/rooter')
+require('plugins/ultisnips')
+require('plugins/lualine')
 EOF
 
 source ~/.config/nvim/personal/init/insert-mode.vim
 source ~/.config/nvim/personal/init/projects.vim
 
 " Plugin configuration
-source ~/.config/nvim/personal/plugins/lualine.vim
 source ~/.config/nvim/personal/plugins/lightspeed.vim
-source ~/.config/nvim/personal/plugins/nvim-surround.vim
-source ~/.config/nvim/personal/plugins/easy-align.vim
-source ~/.config/nvim/personal/plugins/fzf.vim
-" source ~/.config/nvim/personal/plugins/dispatch.vim
-source ~/.config/nvim/personal/plugins/toggle-term.vim
-source ~/.config/nvim/personal/plugins/rooter.vim
-source ~/.config/nvim/personal/plugins/ultisnips.vim
+" source ~/.config/nvim/personal/plugins/ultisnips.vim
 
 " source ~/.config/nvim/personal/plugins/mpv.vim
 " source ~/.config/nvim/personal/plugins/luasnip.vim
