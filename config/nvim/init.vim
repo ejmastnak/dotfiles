@@ -80,18 +80,20 @@ vim.call('plug#end')
 -- --------------------------------------------- --
 -- End loading plugins
 
+-- --------------------------------------------- --
 vim.cmd('colorscheme nord')
 
 -- Personal configuration
 require('personal/init/copy-paste')
 require('personal/init/navigation')
--- require('personal/init/insert-mode')
 require('personal/init/indent')
+-- require('personal/init/insert-mode')
 
 -- Plugin configuration
 require('plugins/lspconfig')
 require('plugins/treesitter')
 require('plugins/illuminate')
+require('plugins/Comment')
 EOF
 
 source ~/.config/nvim/personal/init/insert-mode.vim
@@ -100,7 +102,6 @@ source ~/.config/nvim/personal/init/projects.vim
 " Plugin configuration
 source ~/.config/nvim/personal/plugins/lualine.vim
 source ~/.config/nvim/personal/plugins/lightspeed.vim
-source ~/.config/nvim/personal/plugins/comment.vim
 source ~/.config/nvim/personal/plugins/nvim-surround.vim
 source ~/.config/nvim/personal/plugins/easy-align.vim
 source ~/.config/nvim/personal/plugins/fzf.vim
