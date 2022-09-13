@@ -1,6 +1,5 @@
-" Basic configuration settings
-" -----------------------------------------------
-lua << EOF
+-- Basic configuration settings
+-- -----------------------------------------------
 vim.opt.number     = true   -- show line numbers
 vim.opt.cursorline = true   -- highlight current line
 vim.opt.ruler      = true	  -- shows cursor position in current line
@@ -104,16 +103,12 @@ require('plugins/lualine')
 require('plugins/lightspeed')
 require('plugins/ultisnips')
 -- require('plugins/LuaSnip')
-EOF
 
-source ~/.config/nvim/personal/init/insert-mode.vim
-source ~/.config/nvim/personal/init/projects.vim
+vim.cmd('source ~/.config/nvim/personal/init/insert-mode.vim')
+vim.cmd('source ~/.config/nvim/personal/init/projects.vim')
 
-" source ~/.config/nvim/personal/plugins/mpv.vim
-
-" BEGIN MISCELLANEOUS
-" ---------------------------------------------
-lua << EOF
+-- BEGIN MISCELLANEOUS
+-- --------------------------------------------- "
 -- Easier write command
 vim.keymap.set('n', '<Leader>w', '<Cmd>write<CR>')
 
@@ -168,4 +163,3 @@ vim.keymap.set('n', '<Leader>q',
 require('personal/spell/my_spell')
 
 -- END MISCELLANEOUS
-EOF
