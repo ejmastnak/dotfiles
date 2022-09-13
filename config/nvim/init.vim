@@ -80,16 +80,18 @@ vim.call('plug#end')
 
 vim.cmd('colorscheme nord')
 
--- Plugin configuration
+-- Personal configuration
 require('personal/init/copy-paste')
 require('personal/init/navigation')
 -- require('personal/init/insert-mode')
 require('personal/init/indent')
+
+-- Plugin configuration
+require('plugins/lspconfig')
 EOF
 
 source ~/.config/nvim/personal/init/insert-mode.vim
 source ~/.config/nvim/personal/init/projects.vim
-source ~/.config/nvim/personal/lsp/lsp-config.vim
 
 " Plugin configuration
 source ~/.config/nvim/personal/plugins/lualine.vim
