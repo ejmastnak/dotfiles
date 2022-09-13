@@ -39,74 +39,71 @@ elseif vim.g.os_current == "Darwin" then
   vim.g.python3_host_prog = "/usr/local/bin/python3"
 end
 
-EOF
+-- Load plugins with vim-plug
+local Plug = vim.fn['plug#']
 
-" Specify plugins using Vim-Plug
-" ---------------------------------------------
-call plug#begin('~/dotfiles/config/nvim/plugged')
-" Global
+vim.call('plug#begin', '~/.config/nvim/plugged')
+
 Plug 'junegunn/vim-plug'
-Plug 'SirVer/ultisnips'
-" Plug 'L3MON4D3/LuaSnip'
-Plug 'ggandor/lightspeed.nvim'
+Plug 'shaunsingh/nord.nvim'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'ggandor/lightspeed.nvim'
+Plug 'numToStr/Comment.nvim'
+Plug('kylechui/nvim-surround', {tag = '*'})
+Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'numToStr/Comment.nvim'
-Plug 'shaunsingh/nord.nvim'
-Plug 'airblade/vim-rooter'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
-" Plug 'kylechui/nvim-surround'
+Plug 'tpope/vim-dispatch'
+Plug('akinsho/toggleterm.nvim', {tag = '*'})
+Plug 'airblade/vim-rooter'
+Plug 'SirVer/ultisnips'
 
-" Filetype-specific
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+-- Filetype-specific
+Plug('iamcco/markdown-preview.nvim', {['do'] = 'cd app && yarn install'})
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'lervag/vimtex'
 
-" LSP
+-- LSP-like
 Plug 'neovim/nvim-lspconfig'
 Plug 'RRethy/vim-illuminate'
-Plug 'nvim-Treesitter/nvim-Treesitter', {'do': ':TSUpdate'}
+Plug('nvim-Treesitter/nvim-Treesitter', {['do'] = ':TSUpdate'})
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
-call plug#end()
-" ---------------------------------------------
 
-colorscheme nord
+vim.call('plug#end')
+
+vim.cmd('colorscheme nord')
+EOF
 
 source ~/.config/nvim/personal/init/copy-paste.vim
 source ~/.config/nvim/personal/init/navigation.vim
 source ~/.config/nvim/personal/init/insert-mode.vim
 source ~/.config/nvim/personal/init/indent.vim
 source ~/.config/nvim/personal/init/projects.vim
+source ~/.config/nvim/personal/lsp/lsp-config.vim
 
 " Plugin configuration
-source ~/.config/nvim/personal/plugins/dispatch.vim
-source ~/.config/nvim/personal/plugins/comment.vim
-source ~/.config/nvim/personal/plugins/easy-align.vim
-source ~/.config/nvim/personal/plugins/fzf.vim
 source ~/.config/nvim/personal/plugins/lualine.vim
 source ~/.config/nvim/personal/plugins/lightspeed.vim
-source ~/.config/nvim/personal/plugins/rooter.vim
-source ~/.config/nvim/personal/plugins/mpv.vim
+source ~/.config/nvim/personal/plugins/comment.vim
+source ~/.config/nvim/personal/plugins/nvim-surround.vim
+source ~/.config/nvim/personal/plugins/easy-align.vim
+source ~/.config/nvim/personal/plugins/fzf.vim
+source ~/.config/nvim/personal/plugins/dispatch.vim
 source ~/.config/nvim/personal/plugins/toggle-term.vim
-" source ~/.config/nvim/personal/plugins/nvim-surround.vim
+source ~/.config/nvim/personal/plugins/rooter.vim
 source ~/.config/nvim/personal/plugins/ultisnips.vim
-" source ~/.config/nvim/personal/plugins/luasnip.vim
-
-" LSP configuration
-source ~/.config/nvim/personal/lsp/lsp-config.vim
 source ~/.config/nvim/personal/lsp/illuminate.vim
 source ~/.config/nvim/personal/lsp/treesitter.vim
 
+" source ~/.config/nvim/personal/plugins/mpv.vim
+" source ~/.config/nvim/personal/plugins/luasnip.vim
 
 " BEGIN MISCELLANEOUS
 " ---------------------------------------------
