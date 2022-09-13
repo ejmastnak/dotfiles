@@ -1,4 +1,3 @@
-lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {"c", "python", "vim"},
 
@@ -44,4 +43,3 @@ require'nvim-treesitter.configs'.setup {
     },
    },
 }
-EOF

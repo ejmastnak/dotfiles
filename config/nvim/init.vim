@@ -88,6 +88,7 @@ require('personal/init/indent')
 
 -- Plugin configuration
 require('plugins/lspconfig')
+require('plugins/treesitter')
 EOF
 
 source ~/.config/nvim/personal/init/insert-mode.vim
@@ -105,7 +106,6 @@ source ~/.config/nvim/personal/plugins/toggle-term.vim
 source ~/.config/nvim/personal/plugins/rooter.vim
 source ~/.config/nvim/personal/plugins/ultisnips.vim
 source ~/.config/nvim/personal/lsp/illuminate.vim
-source ~/.config/nvim/personal/lsp/treesitter.vim
 
 " source ~/.config/nvim/personal/plugins/mpv.vim
 " source ~/.config/nvim/personal/plugins/luasnip.vim
