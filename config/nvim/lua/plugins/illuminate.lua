@@ -1,5 +1,5 @@
 vim.g.Illuminate_useDeprecated = 1
-vim.g.Illuminate_ftwhitelist = ['python, c']
+vim.g.Illuminate_ftwhitelist = {'python, c'}
 
 require'lspconfig'.jedi_language_server.setup {
   on_attach = function(client)
@@ -20,6 +20,6 @@ require'lspconfig'.clangd.setup {
 --   end,
 -- }
 
-vim.api.nvim_command [[ hi def link LspReferenceText CursorLine ]]
-vim.api.nvim_command [[ hi def link LspReferenceWrite CursorLine ]]
-vim.api.nvim_command [[ hi def link LspReferenceRead CursorLine ]]
+vim.api.nvim_command [[hi def link LspReferenceText CursorLine]]
+vim.api.nvim_command [[hi def link LspReferenceWrite CursorLine]]
+vim.api.nvim_command [[hi def link LspReferenceRead CursorLine]]
