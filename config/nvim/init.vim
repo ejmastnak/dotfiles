@@ -155,11 +155,11 @@ vim.keymap.set('n', '<Leader>q',
     end
   end,
   {desc = 'Write and quit if possible/applicable, force quit otherwise.'})
-EOF
 
-" Source my spelling configurations.
-" Important: make sure to set mapleader before sourcing my_spell,
-" so that my_spell mappings use the correct leader key.
-source ~/.config/nvim/personal/spell/my_spell.vim
-" ---------------------------------------------
-" END MISCELLANEOUS
+-- Source my spelling configurations.
+-- Important: make sure to set mapleader before sourcing my_spell,
+-- so that my_spell mappings use the correct leader key.
+require('personal/spell/my_spell')
+
+-- END MISCELLANEOUS
+EOF
