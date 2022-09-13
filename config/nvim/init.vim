@@ -1,52 +1,45 @@
 " Basic configuration settings
 " -----------------------------------------------
-set nocompatible			    " use vim and not vi
-filetype plugin on		    " load file-specific plugins
-filetype indent on		    " load file-specific indentation
-filetype on				        " enable filetype detection
-set encoding=utf-8
-set wrap linebreak        " wrap long lines and break lines at words
-set number				        " shows line numbers
-set cursorline            " highlight current line
-set ruler	  			        " shows cursor position in current line
-set showcmd				        " shows partially typed commands
-set nohlsearch				    " don't highlight search results
-set noincsearch				    " don't jump to search results as search string is being typed
-set signcolumn=no         " disable LSP diagnostic symbols in left column
-set noshowmode            " disable in favor of lualine/lightline statusline
-set nofoldenable          " don't fold text by default when opening files
-set autowrite             " write current buffer when moving buffers
-syntax enable             " enable syntax highlighting
-let mapleader = " "
-" ---------------------------------------------
+lua << EOF
+vim.opt.number     = true   -- show line numbers
+vim.opt.cursorline = true   -- highlight current line
+vim.opt.ruler      = true	  -- shows cursor position in current line
+vim.opt.showcmd    = true	  -- shows partially typed commands
+vim.opt.hlsearch   = false  -- don't highlight search results
+vim.opt.incsearch  = false  -- don't jump to search results as search string is being typed
+vim.opt.showmode   = false  -- disable in favor of lualine/lightline statusline
+vim.opt.foldenable = false  -- don't fold text by default when opening files
+vim.opt.foldmethod = "marker"
+vim.opt.autowrite  = true   -- write current buffer when moving buffers
+vim.opt.wrap       = true   -- wrap long lines
+vim.opt.linebreak  = true   -- break lines at words
+vim.opt.signcolumn = "no"   -- disable LSP diagnostic symbols in left column
 
-if (has("termguicolors"))
-  set termguicolors
-endif
+vim.g.mapleader = " "  -- set global leader key
 
-" OS detection
-" ---------------------------------------------
-if !exists("g:os_current")
-  if system('uname -s') == "Linux\n"
-    let g:os_current = "Linux"
-  elseif system('uname -s') == "Darwin\n"
-    let g:os_current = "Darwin"
+if vim.fn.has('termguicolors') == 1 then
+  vim.opt.termguicolors = true
+end
+
+-- OS detection
+if vim.fn.exists("g:os_current") == 0 then
+  if vim.fn.system('uname -s') == "Linux\n" then
+    vim.g.os_current = "Linux"
+  elseif vim.fn.system('uname -s') == "Darwin\n" then
+    vim.g.os_current = "Darwin"
   else
-    echom "Error: the current operating system won't support all of my Vim configurations."
-    let g:os_current = "Other"
-  endif
-endif
-" ---------------------------------------------
+    print("Error: the current operating system won't support all of my Vim configurations.")
+    vim.g.os_current = "Other"
+  end
+end
 
-" Set Python provider
-" ---------------------------------------------
-if g:os_current == "Linux"
-  let g:python3_host_prog = '/usr/bin/python3'
-elseif g:os_current == "Darwin"
-  let g:python3_host_prog = '/usr/local/bin/python3'
-else
-endif
-" ---------------------------------------------
+if vim.g.os_current == "Linux" then
+  vim.g.python3_host_prog = "/usr/bin/python3"
+elseif vim.g.os_current == "Darwin" then
+  vim.g.python3_host_prog = "/usr/local/bin/python3"
+end
+
+EOF
 
 " Specify plugins using Vim-Plug
 " ---------------------------------------------
@@ -114,65 +107,62 @@ source ~/.config/nvim/personal/lsp/lsp-config.vim
 source ~/.config/nvim/personal/lsp/illuminate.vim
 source ~/.config/nvim/personal/lsp/treesitter.vim
 
+
 " BEGIN MISCELLANEOUS
 " ---------------------------------------------
-" Easier write command
-nnoremap <leader>w <Cmd>write<CR>
+lua << EOF
+-- Easier write command
+vim.keymap.set('n', '<Leader>w', '<Cmd>write<CR>')
 
-" Write and quit if applicable, quit otherwise
-function! s:VimQuit() abort
-  try
-    wq
-  catch
-    q!
-  endtry
-endfunction
-noremap <leader>q <Cmd>call <SID>VimQuit()<CR>
+-- Easier edit command
+vim.keymap.set('n', '<Leader>e', ':edit ')
 
-" Easier edit command
-nnoremap <leader>e :edit 
+-- Easier help command
+vim.keymap.set('n', '<Leader>h', ':help ')
 
-" Easier help command
-nnoremap <leader>h :help 
+-- For easy macro playback; note that this overrides entering Ex mode with Q
+vim.keymap.set('n', 'Q', '@q')
 
-" For easy macro playback; note that this overrides entering Ex mode with Q
-nnoremap Q @q
+-- Easily pull up the Git command (for use with vim-fugitive)
+vim.keymap.set('n', '<Leader>g', ':Git ')
 
-" Easily pull up the Git command (for use with vim-fugitive)
-nnoremap <leader>g :Git 
+-- Rough analog of `:join` or `J` for lines above cursor
+vim.keymap.set('n', 'K', 'kdd$')
 
-" disable automatic commenting
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o  
+-- Global substitute
+vim.keymap.set('n', '<Leader>s', ':%s/')
+vim.keymap.set('v', '<Leader>s', ':s/')
 
-" close folds with zf
-nnoremap zf zc
-set foldmethod=marker
+-- Set swap file directory to within Vim directory
+vim.opt.directory:prepend(os.getenv("HOME") .. "/.config/nvim/swap//")
 
-" equivalent of `:join` or `J` for lines above cursor
-nnoremap K kdd$
+-- Use escape to return to normal mode in a Neovim terminal
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
-" global substitute
-nnoremap <leader>s :%s/
-vnoremap <leader>s :s/
+-- Easier window navigation in terminals
+vim.keymap.set('t', '<C-k>', '<C-\\><C-n><C-w>k')
+vim.keymap.set('t', '<C-j>', '<C-\\><C-n><C-w>j')
 
-" " set filetype
-" nnoremap <leader>f :set filetype=
+-- Disable automatic comment continuation on next line
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  command = 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'
+})
+
+-- Write and quit if possible/applicable, force quit otherwise
+vim.keymap.set('n', '<Leader>q',
+  function()
+    local success, result = pcall(vim.cmd, 'wq')
+    if not success then
+      vim.cmd('q!')
+    end
+  end,
+  {desc = 'Write and quit if possible/applicable, force quit otherwise.'})
+EOF
 
 " Source my spelling configurations.
 " Important: make sure to set mapleader before sourcing my_spell,
 " so that my_spell mappings use the correct leader key.
 source ~/.config/nvim/personal/spell/my_spell.vim
-
-" Set swap file directory
-set directory^=$HOME/.config/nvim/swap//
 " ---------------------------------------------
 " END MISCELLANEOUS
-
-" Return to Terminal in normal mode
-tnoremap <Esc> <C-\><C-n>
-" Start insert mode when entering terminal buffers
-" autocmd BufEnter term://* startinsert
-
-" Window navigation
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-j> <C-\><C-n><C-w>j
