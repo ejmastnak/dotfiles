@@ -83,11 +83,11 @@ vim.cmd('colorscheme nord')
 -- Plugin configuration
 require('personal/init/copy-paste')
 require('personal/init/navigation')
+-- require('personal/init/insert-mode')
+require('personal/init/indent')
 EOF
 
-" source ~/.config/nvim/personal/init/navigation.vim
 source ~/.config/nvim/personal/init/insert-mode.vim
-source ~/.config/nvim/personal/init/indent.vim
 source ~/.config/nvim/personal/init/projects.vim
 source ~/.config/nvim/personal/lsp/lsp-config.vim
 
