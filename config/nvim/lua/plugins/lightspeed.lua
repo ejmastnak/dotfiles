@@ -1,14 +1,14 @@
-lua << EOF
 require'lightspeed'.setup { 
   substitute_chars = { ['\r'] = '¬',
     [' '] = '␣',
     ['\t'] = '⇥' },
 }
-EOF
 
-" Set the keys for Lightspeed operator-pending motions
-omap r <Plug>Lightspeed_s
-omap R <Plug>Lightspeed_S
+-- Set the keys for Lightspeed operator-pending motions
+vim.keymap.set('o', 'r', '<Plug>Lightspeed_s')
+vim.keymap.set('o', 'R', '<Plug>Lightspeed_S')
+
+vim.cmd [[
 
 " Setting `;` and `,` to repeat the last Lightspeed motion (s/x or f/t):
 " --------------------------------------------- "
@@ -30,23 +30,10 @@ if !has("termguicolors")
   exit
 endif
 
-let s:nord0 = "#2E3440"
-let s:nord1 = "#3B4252"
-let s:nord2 = "#434C5E"
-let s:nord3 = "#4C566A"
 let s:nord3_bright = "#616E88"
-let s:nord4 = "#D8DEE9"
-let s:nord5 = "#E5E9F0"
 let s:nord6  = "#ECEFF4"
 let s:nord7  = "#8FBCBB"
-let s:nord8  = "#88C0D0"
-let s:nord9  = "#81A1C1"
-let s:nord10 = "#5E81AC"
-let s:nord11 = "#BF616A"
 let s:nord12 = "#D08770"
-let s:nord13 = "#EBCB8B"
-let s:nord14 = "#A3BE8C"
-let s:nord15 = "#B48EAD"
 
 let s:primary   = s:nord12
 let s:secondary = s:nord7
@@ -94,3 +81,4 @@ exec "highlight LightspeedGreyWash" .
       \ " gui="   . "NONE" .
       \ " guibg=" . "NONE" . 
       \ " guifg=" . s:greywash
+]]

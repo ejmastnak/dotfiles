@@ -101,6 +101,7 @@ require('plugins/nvim-surround')
 require('plugins/toggle-term')
 require('plugins/rooter')
 require('plugins/lualine')
+require('plugins/lightspeed')
 require('plugins/ultisnips')
 -- require('plugins/LuaSnip')
 EOF
@@ -108,12 +109,7 @@ EOF
 source ~/.config/nvim/personal/init/insert-mode.vim
 source ~/.config/nvim/personal/init/projects.vim
 
-" Plugin configuration
-source ~/.config/nvim/personal/plugins/lightspeed.vim
-" source ~/.config/nvim/personal/plugins/ultisnips.vim
-
 " source ~/.config/nvim/personal/plugins/mpv.vim
-" source ~/.config/nvim/personal/plugins/luasnip.vim
 
 " BEGIN MISCELLANEOUS
 " ---------------------------------------------
