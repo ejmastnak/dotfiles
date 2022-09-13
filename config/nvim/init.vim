@@ -40,6 +40,7 @@ elseif vim.g.os_current == "Darwin" then
 end
 
 -- Load plugins with vim-plug
+-- --------------------------------------------- --
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
@@ -75,8 +76,9 @@ Plug 'RRethy/vim-illuminate'
 Plug('nvim-Treesitter/nvim-Treesitter', {['do'] = ':TSUpdate'})
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
-
 vim.call('plug#end')
+-- --------------------------------------------- --
+-- End loading plugins
 
 vim.cmd('colorscheme nord')
 
