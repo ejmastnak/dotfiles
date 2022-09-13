@@ -79,9 +79,11 @@ Plug 'nvim-treesitter/playground'
 vim.call('plug#end')
 
 vim.cmd('colorscheme nord')
+
+-- Plugin configuration
+require('personal/init/copy-paste')
 EOF
 
-source ~/.config/nvim/personal/init/copy-paste.vim
 source ~/.config/nvim/personal/init/navigation.vim
 source ~/.config/nvim/personal/init/insert-mode.vim
 source ~/.config/nvim/personal/init/indent.vim
