@@ -1,6 +1,5 @@
-let g:Illuminate_useDeprecated = 1
-let g:Illuminate_ftwhitelist = ['python, c']
-lua <<EOF
+vim.g.Illuminate_useDeprecated = 1
+vim.g.Illuminate_ftwhitelist = ['python, c']
 
 require'lspconfig'.jedi_language_server.setup {
   on_attach = function(client)
@@ -24,5 +23,3 @@ require'lspconfig'.clangd.setup {
 vim.api.nvim_command [[ hi def link LspReferenceText CursorLine ]]
 vim.api.nvim_command [[ hi def link LspReferenceWrite CursorLine ]]
 vim.api.nvim_command [[ hi def link LspReferenceRead CursorLine ]]
-EOF
-" highlight link illuminatedWord Visual
