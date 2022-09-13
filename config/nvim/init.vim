@@ -80,7 +80,6 @@ vim.call('plug#end')
 -- --------------------------------------------- --
 -- End loading plugins
 
--- --------------------------------------------- --
 vim.cmd('colorscheme nord')
 
 -- Personal configuration
@@ -94,6 +93,7 @@ require('plugins/lspconfig')
 require('plugins/treesitter')
 require('plugins/illuminate')
 require('plugins/Comment')
+require('plugins/dispatch')
 EOF
 
 source ~/.config/nvim/personal/init/insert-mode.vim
@@ -105,7 +105,7 @@ source ~/.config/nvim/personal/plugins/lightspeed.vim
 source ~/.config/nvim/personal/plugins/nvim-surround.vim
 source ~/.config/nvim/personal/plugins/easy-align.vim
 source ~/.config/nvim/personal/plugins/fzf.vim
-source ~/.config/nvim/personal/plugins/dispatch.vim
+" source ~/.config/nvim/personal/plugins/dispatch.vim
 source ~/.config/nvim/personal/plugins/toggle-term.vim
 source ~/.config/nvim/personal/plugins/rooter.vim
 source ~/.config/nvim/personal/plugins/ultisnips.vim
