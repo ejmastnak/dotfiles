@@ -1,8 +1,0 @@
-nmap ghw   <plug>(himalaya-msg-write)
-nmap ghr   <plug>(himalaya-msg-reply)
-nmap ghR   <plug>(himalaya-msg-reply-all)
-nmap ghf   <plug>(himalaya-msg-forward)
-nmap gha   <plug>(himalaya-msg-attachments)
-nmap ghC   <plug>(himalaya-msg-copy)
-nmap ghM   <plug>(himalaya-msg-move)
-nmap ghD   <plug>(himalaya-msg-delete)
