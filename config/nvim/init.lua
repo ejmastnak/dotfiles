@@ -87,6 +87,7 @@ require('personal/init/copy-paste')
 require('personal/init/navigation')
 require('personal/init/indent')
 require('personal/init/insert-mode')
+require('personal/init/projects')
 
 -- Plugin configuration
 require('plugins/lspconfig')
@@ -103,8 +104,6 @@ require('plugins/lualine')
 require('plugins/lightspeed')
 require('plugins/ultisnips')
 -- require('plugins/LuaSnip')
-
-vim.cmd('source ~/.config/nvim/personal/init/projects.vim')
 
 -- BEGIN MISCELLANEOUS
 -- --------------------------------------------- "
