@@ -86,7 +86,7 @@ vim.cmd('colorscheme nord')
 require('personal/init/copy-paste')
 require('personal/init/navigation')
 require('personal/init/indent')
--- require('personal/init/insert-mode')
+require('personal/init/insert-mode')
 
 -- Plugin configuration
 require('plugins/lspconfig')
@@ -104,7 +104,6 @@ require('plugins/lightspeed')
 require('plugins/ultisnips')
 -- require('plugins/LuaSnip')
 
-vim.cmd('source ~/.config/nvim/personal/init/insert-mode.vim')
 vim.cmd('source ~/.config/nvim/personal/init/projects.vim')
 
 -- BEGIN MISCELLANEOUS
