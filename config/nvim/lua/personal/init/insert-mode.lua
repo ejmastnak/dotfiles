@@ -8,7 +8,7 @@ vim.keymap.set('i', '<C-E>', '<C-O>dw')
 vim.keymap.set('i', '<C-D>', '<C-O>D')
 
 -- Adapted from https://vi.stackexchange.com/a/24763
-function DeletePairedDelimeter()
+function DeletePairedDelimiter()
   -- First check if the cursor as at line start or line end.
   -- For reasons I haven't figured out, adding these separate cases
   -- fixes a problem with the original solution, which would
@@ -19,7 +19,7 @@ function DeletePairedDelimeter()
   else
     -- Get characters on either side of cursor
     pair = string.sub(vim.fn.getline('.'), vim.fn.col('.')-1, vim.fn.col('.'))
-    -- Check if cursor is placed inside a paired delimeter
+    -- Check if cursor is placed inside a paired delimiter
     if math.fmod(vim.fn.stridx('\'\'""()[]$$<>{}``', pair), 2) == 0 then
       return "<Right><BS><BS>" -- Deletes paired delimiter
     else
@@ -28,4 +28,4 @@ function DeletePairedDelimeter()
   end
 end
 
-vim.keymap.set('i', '<BS>', DeletePairedDelimeter, {expr = true})
+vim.keymap.set('i', '<BS>', DeletePairedDelimiter, {expr = true, desc="Delete paired delimiters surround the cursor in insert mode."})
