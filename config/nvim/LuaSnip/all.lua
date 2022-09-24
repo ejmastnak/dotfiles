@@ -39,16 +39,18 @@ return
       d(1, get_visual),
       t("`"),
   }),
-  -- Paired quotation marks
-  s({trig='"', wordTrig = false},
+  -- Paired double quotes
+  s({trig='([ =%{%(%[])"', regTrig = true, wordTrig = false},
     {
+      f( function(_, snip) return snip.captures[1] end ),
       t('"'),
       d(1, get_visual),
       t('"'),
   }),
   -- Paired single quotes
-  s({trig="'", wordTrig = false},
+  s({trig="([ =%{%(%[])'", regTrig = true, wordTrig = false},
     {
+      f( function(_, snip) return snip.captures[1] end ),
       t("'"),
       d(1, get_visual),
       t("'"),
