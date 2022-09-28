@@ -13,12 +13,9 @@ tex.in_text = function() return not tex.in_mathzone() end
 
 -- Return snippet tables
 return
--- MANUALLY TRIGGERED SNIPPETS
-{},
--- AUTOTRIGGERED SNIPPETS
 {
   -- LEFT/RIGHT PARENTHESES
-  s({trig = "([^%a])l%(", regTrig = true, wordTrig = false},
+  s({trig = "([^%a])l%(", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>\\left(<>\\right)",
       {
@@ -28,7 +25,7 @@ return
     )
   ),
   -- LEFT/RIGHT SQUARE BRACES
-  s({trig = "([^%a])l%[", regTrig = true, wordTrig = false},
+  s({trig = "([^%a])l%[", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>\\left[<>\\right]",
       {
@@ -38,7 +35,7 @@ return
     )
   ),
   -- LEFT/RIGHT CURLY BRACES
-  s({trig = "([^%a])l%{", regTrig = true, wordTrig = false},
+  s({trig = "([^%a])l%{", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>\\left\\{<>\\right\\}",
       {

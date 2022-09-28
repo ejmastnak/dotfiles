@@ -1,14 +1,6 @@
 return
--- Manually triggered snippets
 {
-  s({trig="mtrig"},
-    {
-      t("Manually triggered!")
-    }),
-}, 
--- Autotriggered
-{
-  s({trig="atrig"},
+  s({trig="atrig", snippetType="autosnippet"},
     {
       t("Autotriggered!")
     }),

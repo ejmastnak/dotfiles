@@ -17,37 +17,34 @@ end
 
 -- Return snippet tables
 return
--- MANUALLY TRIGGERED SNIPPETS
-{},
--- AUTOTRIGGERED SNIPPETS
 {
-  s({trig="LL"},
+  s({trig="LL", snippetType="autosnippet"},
     {
       t("& "),
     }
   ),
-  s({trig="qq"},
+  s({trig="qq", snippetType="autosnippet"},
     {
       t("\\qquad"),
     }
   ),
-  s({trig="and"},
+  s({trig="and", snippetType="autosnippet"},
     {
       t("\\quad \\text{and} \\quad"),
     },
     {condition = tex.in_mathzone}
   ),
-  s({trig = "^[%s]*toc", regTrig = true, wordTrig = false},
+  s({trig = "^[%s]*toc", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     {
       f( function(_, snip) return snip.captures[1] end ),
       t("\\tableofcontents"),
   }),
-  s({trig="^([%s]*)ii", regTrig = true},
+  s({trig="^([%s]*)ii", regTrig = true, snippetType="autosnippet"},
     {
       f( function(_, snip) return snip.captures[1] end ),
       t("\\item "),
   }),
-s({trig = "^([%s]*)h1", regTrig = true, wordTrig = false},
+s({trig = "^([%s]*)h1", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       [[<>\section{<>}]],
       {
@@ -56,7 +53,7 @@ s({trig = "^([%s]*)h1", regTrig = true, wordTrig = false},
       }
     )
   ),
-  s({trig = "^([%s]*)h2", regTrig = true, wordTrig = false},
+  s({trig = "^([%s]*)h2", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       [[<>\subsection{<>}]],
       {
@@ -65,7 +62,7 @@ s({trig = "^([%s]*)h1", regTrig = true, wordTrig = false},
       }
     )
   ),
-  s({trig = "^([%s]*)h3", regTrig = true, wordTrig = false},
+  s({trig = "^([%s]*)h3", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       [[<>\subsubsection{<>}]],
       {

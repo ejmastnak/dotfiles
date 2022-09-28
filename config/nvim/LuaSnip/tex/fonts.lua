@@ -13,12 +13,9 @@ tex.in_text = function() return not tex.in_mathzone() end
 
 -- Return snippet tables
 return
--- MANUALLY TRIGGERED SNIPPETS
-{},
--- AUTOTRIGGERED SNIPPETS
 {
   -- TYPEWRITER i.e. \texttt
-  s({trig = "([^%a])tt", regTrig = true, wordTrig = false},
+  s({trig = "([^%a])tt", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>\\texttt{<>}",
       {
@@ -28,7 +25,7 @@ return
     )
   ),
   -- ITALIC i.e. \textit
-  s({trig = "([^%a])tii", regTrig = true, wordTrig = false},
+  s({trig = "([^%a])tii", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>\\textit{<>}",
       {
@@ -38,7 +35,7 @@ return
     )
   ),
   -- BOLD i.e. \textbf
-  s({trig = "([^%a])tbb", regTrig = true, wordTrig = false},
+  s({trig = "([^%a])tbb", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>\\textbf{<>}",
       {
@@ -48,7 +45,7 @@ return
     )
   ),
   -- MATH ROMAN i.e. \mathrm
-  s({trig = "([^%a])rmm", regTrig = true, wordTrig = false},
+  s({trig = "([^%a])rmm", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>\\mathrm{<>}",
       {
@@ -58,7 +55,7 @@ return
     )
   ),
   -- MATH CALIGRAPHY i.e. \mathcal
-  s({trig = "([^%a])mcc", regTrig = true, wordTrig = false},
+  s({trig = "([^%a])mcc", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>\\mathcal{<>}",
       {
@@ -68,7 +65,7 @@ return
     )
   ),
   -- MATH BOLDFACE i.e. \mathbf
-  s({trig = "([^%a])mbf", regTrig = true, wordTrig = false},
+  s({trig = "([^%a])mbf", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>\\mathbf{<>}",
       {
@@ -78,7 +75,7 @@ return
     )
   ),
   -- MATH BLACKBOARD i.e. \mathbb
-  s({trig = "([^%a])mbb", regTrig = true, wordTrig = false},
+  s({trig = "([^%a])mbb", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>\\mathbb{<>}",
       {

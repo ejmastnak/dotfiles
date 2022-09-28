@@ -7,41 +7,37 @@ local get_visual = function(args, parent)
 end
 
 return
--- Manually triggered snippets
-{
-},
--- Autotriggered
 {
   -- Paired parentheses
-  s({trig="(", wordTrig = false},
+  s({trig="(", wordTrig = false, snippetType="autosnippet"},
     {
       t("("),
       d(1, get_visual),
       t(")"),
   }),
   -- Paired curly braces
-  s({trig="{", wordTrig = false},
+  s({trig="{", wordTrig = false, snippetType="autosnippet"},
     {
       t("{"),
       d(1, get_visual),
       t("}"),
   }),
   -- Paired square brackets
-  s({trig="[", wordTrig = false},
+  s({trig="[", wordTrig = false, snippetType="autosnippet"},
     {
       t("["),
       d(1, get_visual),
       t("]"),
   }),
   -- Paired back ticks
-  s({trig="sd"},
+  s({trig="sd", snippetType="autosnippet"},
     {
       t("`"),
       d(1, get_visual),
       t("`"),
   }),
   -- Paired double quotes
-  s({trig='([ =%{%(%[])"', regTrig = true, wordTrig = false},
+  s({trig='([ =%{%(%[])"', regTrig = true, wordTrig = false, snippetType="autosnippet"},
     {
       f( function(_, snip) return snip.captures[1] end ),
       t('"'),
@@ -49,7 +45,7 @@ return
       t('"'),
   }),
   -- Paired single quotes
-  s({trig="([ =%{%(%[])'", regTrig = true, wordTrig = false},
+  s({trig="([ =%{%(%[])'", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     {
       f( function(_, snip) return snip.captures[1] end ),
       t("'"),

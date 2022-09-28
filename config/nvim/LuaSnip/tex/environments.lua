@@ -13,12 +13,9 @@ tex.in_text = function() return not tex.in_mathzone() end
 
 -- Return snippet tables
 return
--- MANUALLY TRIGGERED SNIPPETS
-{},
--- AUTOTRIGGERED SNIPPETS
 {
   -- GENERIC ENVIRONMENT
-  s({trig="^([%s]*)new", regTrig = true},
+  s({trig="^([%s]*)new", regTrig = true, snippetType="autosnippet"},
     fmta(
       [[
         <>\begin{<>}
@@ -37,7 +34,7 @@ return
     )
   ),
   -- TCBTHEOREM ENVIRONMENT with two environment extra arguments
-  s({trig="^([%s]*)n3", regTrig = true},
+  s({trig="^([%s]*)n3", regTrig = true, snippetType="autosnippet"},
     fmta(
       [[
         <>\begin{<>}{<>}{<>}
@@ -58,7 +55,7 @@ return
     )
   ),
   -- TOPIC ENVIRONMENT (my custom tcbtheorem environment)
-  s({trig="^([%s]*)nt", regTrig = true},
+  s({trig="^([%s]*)nt", regTrig = true, snippetType="autosnippet"},
     fmta(
       [[
         <>\begin{topic}{<>}{<>}
@@ -77,7 +74,7 @@ return
     )
   ),
   -- EQUATION
-  s({trig="^([%s]*)nn", regTrig = true},
+  s({trig="^([%s]*)nn", regTrig = true, snippetType="autosnippet"},
     fmta(
       [[
         <>\begin{equation*}
@@ -94,7 +91,7 @@ return
     )
   ),
   -- SPLIT EQUATION
-  s({trig="^([%s]*)ns", regTrig = true},
+  s({trig="^([%s]*)ns", regTrig = true, snippetType="autosnippet"},
     fmta(
       [[
         <>\begin{equation*}
@@ -115,7 +112,7 @@ return
     )
   ),
   -- ALIGN
-  s({trig="^([%s]*)all", regTrig = true},
+  s({trig="^([%s]*)all", regTrig = true, snippetType="autosnippet"},
     fmta(
       [[
         <>\begin{align*}
@@ -132,7 +129,7 @@ return
     )
   ),
   -- ITEMIZE
-  s({trig="^([%s]*)itt", regTrig = true},
+  s({trig="^([%s]*)itt", regTrig = true, snippetType="autosnippet"},
     fmta(
       [[
         <>\begin{itemize}
@@ -150,7 +147,7 @@ return
     )
   ),
   -- ENUMERATE
-  s({trig="^([%s]*)enn", regTrig = true},
+  s({trig="^([%s]*)enn", regTrig = true, snippetType="autosnippet"},
     fmta(
       [[
         <>\begin{enumerate}
@@ -168,7 +165,7 @@ return
     )
   ),
   -- INLINE MATH
-  s({trig = "([^%l])mm", regTrig = true, wordTrig = false},
+  s({trig = "([^%l])mm", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "<>$<>$",
       {
@@ -176,7 +173,7 @@ return
         i(1, ""),
     })),
   -- INLINE MATH ON NEW LINE
-  s({trig = "^mm", regTrig = true, wordTrig = false},
+  s({trig = "^mm", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta(
       "$<>$",
       {

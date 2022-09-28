@@ -8,12 +8,9 @@ end
 
 -- Return snippet tables
 return
--- Manually triggered snippets
-{},
--- Autotriggered snippets
 {
   -- Fenced block of code
-  s({trig="^([%s]*)cc", regTrig = true},
+  s({trig="^([%s]*)cc", regTrig = true, snippetType="autosnippet"},
     fmta(
       [[
         <>```<>
@@ -30,13 +27,13 @@ return
     )
   ),
   -- TODO NOTE
-  s({trig="TODOO"},
+  s({trig="TODOO", snippetType="autosnippet"},
       {
         t("*TODO:* "),
       }
     ),
   -- LINK
-  s({trig="LL", wordTrig=true},
+  s({trig="LL", wordTrig=true, snippetType="autosnippet"},
     fmta(
       [[[<>](<>)]],
       {
@@ -46,7 +43,7 @@ return
     )
   ),
   -- BOLDFACE TEXT
-  s({trig="tbb"},
+  s({trig="tbb", snippetType="autosnippet"},
     fmta(
       [[**<>**]],
       {
@@ -55,7 +52,7 @@ return
     )
   ),
   -- ITALIC TEXT
-  s({trig="tii"},
+  s({trig="tii", snippetType="autosnippet"},
     fmta(
       [[*<>*]],
       {
