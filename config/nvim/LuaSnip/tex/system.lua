@@ -28,4 +28,12 @@ return
       }
     )
   ),
+  s({trig = "TODOO"},
+    fmta(
+      [[\TODO{<>}]],
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
 }

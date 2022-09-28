@@ -6,10 +6,14 @@ local get_visual = function(args, parent)
   end
 end
 
--- Math context detection 
+-- Environment/syntax context detection 
 local tex = {}
 tex.in_mathzone = function() return vim.fn['vimtex#syntax#in_mathzone']() == 1 end
 tex.in_text = function() return not tex.in_mathzone() end
+tex.in_tikz = function()
+  local is_inside = vim.fn['vimtex#env#is_inside']("tikzpicture")
+  return (is_inside[1] > 0 and is_inside[2] > 0)
+end
 
 -- Return snippet tables
 return
@@ -38,7 +42,7 @@ return
       f( function(_, snip) return snip.captures[1] end ),
       t("\\tableofcontents"),
   }),
-  s({trig="^([%s]*)%-%-", regTrig = true},
+  s({trig="^([%s]*)ii", regTrig = true},
     {
       f( function(_, snip) return snip.captures[1] end ),
       t("\\item "),

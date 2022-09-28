@@ -13,18 +13,54 @@ return
 -- Autotriggered snippets
 {
   -- Fenced block of code
-  s({trig="^cc", regTrig = true},
+  s({trig="^([%s]*)cc", regTrig = true},
     fmta(
       [[
-        ```<>
-        <>
-        ```
-        <>
+        <>```<>
+        <><>
+        <>```
       ]],
       {
+        f( function(_, snip) return snip.captures[1] end ),
         i(1, ""),
+        f( function(_, snip) return snip.captures[1] end ),
         d(2, get_visual),
-        i(0, ""),
+        f( function(_, snip) return snip.captures[1] end ),
       }
-    )),
+    )
+  ),
+  -- TODO NOTE
+  s({trig="TODOO"},
+      {
+        t("*TODO:* "),
+      }
+    ),
+  -- LINK
+  s({trig="LL", wordTrig=true},
+    fmta(
+      [[[<>](<>)]],
+      {
+        d(1, get_visual),
+        i(2),
+      }
+    )
+  ),
+  -- BOLDFACE TEXT
+  s({trig="tbb"},
+    fmta(
+      [[**<>**]],
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
+  -- ITALIC TEXT
+  s({trig="tii"},
+    fmta(
+      [[*<>*]],
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
 }

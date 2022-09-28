@@ -1,1 +1,1 @@
-require('luasnip').filetype_extend("all", { "tex" })
+require('luasnip').filetype_extend("ankitex", {"tex"})

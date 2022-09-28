@@ -57,6 +57,25 @@ return
       }
     )
   ),
+  -- TOPIC ENVIRONMENT (my custom tcbtheorem environment)
+  s({trig="^([%s]*)nt", regTrig = true},
+    fmta(
+      [[
+        <>\begin{topic}{<>}{<>}
+        <>    <>
+        <>\end{topic}<>
+      ]],
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        i(1, ""),
+        i(2, ""),
+        f( function(_, snip) return snip.captures[1] end ),
+        d(3, get_visual),
+        f( function(_, snip) return snip.captures[1] end ),
+        i(0),
+      }
+    )
+  ),
   -- EQUATION
   s({trig="^([%s]*)nn", regTrig = true},
     fmta(
@@ -75,7 +94,7 @@ return
     )
   ),
   -- SPLIT EQUATION
-  s({trig="^([%s]*)sn", regTrig = true},
+  s({trig="^([%s]*)ns", regTrig = true},
     fmta(
       [[
         <>\begin{equation*}
@@ -88,7 +107,7 @@ return
         f( function(_, snip) return snip.captures[1] end ),
         f( function(_, snip) return snip.captures[1] end ),
         f( function(_, snip) return snip.captures[1] end ),
-        i(1, ""),
+        d(1, get_visual),
         f( function(_, snip) return snip.captures[1] end ),
         f( function(_, snip) return snip.captures[1] end ),
         i(0),

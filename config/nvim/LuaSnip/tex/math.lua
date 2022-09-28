@@ -109,6 +109,17 @@ return
     ),
     {condition = tex.in_mathzone}
   ),
+  -- J SUBSCRIPT SHORTCUT (since jk triggers snippet jump forward)
+  s({trig = '([%a%)%]%}])JJ', regTrig = true, wordTrig = false},
+    fmta(
+      "<>_{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        t("j")
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
   -- VECTOR, i.e. \vec
   s({trig = "([^%a])vv", regTrig = true, wordTrig = false},
     fmta(
@@ -150,6 +161,28 @@ return
         f( function(_, snip) return snip.captures[1] end ),
         d(1, get_visual),
         i(2, ""),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- ABSOLUTE VALUE
+  s({trig = "([^%a])aa", regTrig = true, wordTrig = false},
+    fmta(
+      "<>\\abs{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- SQUARE ROOT
+  s({trig = "([^%a])sq", regTrig = true, wordTrig = false},
+    fmta(
+      "<>\\sqrt{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
       }
     ),
     {condition = tex.in_mathzone}
@@ -260,14 +293,14 @@ return
     {condition = tex.in_mathzone}
   ),
   -- CLOSED SINGLE INTEGRAL, i.e. \oint
-  s({trig = "io1"},
+  s({trig = "oi1"},
     {
       t("\\oint"),
     },
     {condition = tex.in_mathzone}
   ),
   -- CLOSED DOUBLE INTEGRAL, i.e. \oiint
-  s({trig = "io2"},
+  s({trig = "oi2"},
     {
       t("\\oiint"),
     },
@@ -288,43 +321,49 @@ return
     {condition = tex.in_mathzone}
   ),
   -- GRADIENT OPERATOR, i.e. \grad
-  s({trig = "GD"},
+  s({trig = "gdd"},
     {
-      t("\\grad"),
+      t("\\grad "),
     },
     {condition = tex.in_mathzone}
   ),
   -- CURL OPERATOR, i.e. \curl
   s({trig = "cll"},
     {
-      t("\\curl"),
+      t("\\curl "),
     },
     {condition = tex.in_mathzone}
   ),
   -- DIVERGENCE OPERATOR, i.e. \divergence
   s({trig = "DI"},
     {
-      t("\\div"),
+      t("\\div "),
     },
     {condition = tex.in_mathzone}
   ),
   -- LAPLACIAN OPERATOR, i.e. \laplacian
-  s({trig = "LA"},
+  s({trig = "laa"},
     {
-      t("\\laplacian"),
+      t("\\laplacian "),
     },
     {condition = tex.in_mathzone}
   ),
   -- SUBSET, i.e. \subset
   s({trig = "sbb"},
     {
-      t("\\subset"),
+      t("\\subset "),
+    }
+  ),
+  -- COLON, i.e. \colon
+  s({trig = "::"},
+    {
+      t("\\colon "),
     }
   ),
   -- IMPLIES, i.e. \implies
   s({trig = ">>"},
     {
-      t("\\implies"),
+      t("\\implies "),
     }
   ),
   -- DOT PRODUCT, i.e. \cdot

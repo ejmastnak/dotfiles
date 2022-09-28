@@ -8,7 +8,8 @@ end
 
 return
 -- Manually triggered snippets
-{},
+{
+},
 -- Autotriggered
 {
   -- Paired parentheses
