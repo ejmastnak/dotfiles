@@ -1,12 +1,26 @@
+local disable_for_markdown = function(lang, bufnr)
+  return lang == "markdown"
+end
+
+local disable_for_large_markdown = function(lang, bufnr)
+  return lang == "markdown" and vim.api.nvim_buf_line_count(bufnr) > 500
+end
+
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {"c", "python", "vim"},
 
   highlight = {
     enable = true,
+    disable = disable_for_large_markdown,
+  },
+  indent = {
+    enable = true,
+    disable = disable_for_large_markdown,
   },
   textobjects = {
     select = {
       enable = true,
+      disable = disable_for_markdown,
 
       -- Automatically jump forward to textobj, similar to targets.vim
       lookahead = true,
@@ -18,12 +32,16 @@ require'nvim-treesitter.configs'.setup {
         ["ii"] = "@conditional.inner",
         ["al"] = "@loop.outer",
         ["il"] = "@loop.inner",
-        ["ac"] = "@comment.outer",
-        ["ic"] = "@comment.outer",
+        -- ["ac"] = "@comment.outer",
+        -- ["ic"] = "@comment.inner",
+        ["ac"] = "@block.outer",
+        ["ic"] = "@block.inner",
       },
     },
     move = {
       enable = true,
+      disable = disable_for_markdown,
+
       -- Set jumps in the jumplist
       set_jumps = true, 
       goto_next_start = {
