@@ -1,0 +1,9 @@
+% Override some physics package derivative commands
+\newcommand{\diff}{\ensuremath{\operatorname{d}\!}}
+\renewcommand{\dv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\dvOne}[1]{\frac{\mathrm{d}}{\mathrm{d} #1}}
+\newcommand{\dvN}[3]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}
+\renewcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdvOne}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\pdvN}[3]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
+\newcommand{\pdvThree}[3]{\frac{\partial^{2} #1}{\partial #2 \partial #3}}

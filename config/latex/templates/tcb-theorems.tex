@@ -1,0 +1,59 @@
+\usepackage{tcolorbox, xcolor}
+\tcbuselibrary{theorems, breakable}
+
+\definecolor{nord0}{HTML}{2e3440}   % dark
+\definecolor{nord1}{HTML}{3b4252}   % dark
+\definecolor{nord2}{HTML}{434c5e}   % dark
+\definecolor{nord3}{HTML}{4c566a}   % dark
+\definecolor{nord4}{HTML}{d8dee9}   % light
+\definecolor{nord5}{HTML}{e5e9f0}   % light
+\definecolor{nord6}{HTML}{eceff4}   % light
+\definecolor{nord7}{HTML}{8fbcbb}   % teal
+\definecolor{nord8}{HTML}{88c0d0}   % ice-blue
+\definecolor{nord9}{HTML}{81a1c1}   % sky-blue
+\definecolor{nord10}{HTML}{5e81ac}  % blue
+\definecolor{nord11}{HTML}{bf616a}  % red
+\definecolor{nord12}{HTML}{d08770}  % orange
+\definecolor{nord13}{HTML}{ebcb8b}  % yellow
+\definecolor{nord14}{HTML}{a3be8c}  % green
+\definecolor{nord15}{HTML}{b48ead}  % magenta
+
+\tcbset{
+    theorem_style/.style={breakable,
+        parbox=false,
+        fonttitle=\bfseries,
+        colback=nord10!5!white,
+        colframe=nord10},
+    newsec_style/.style={breakable,
+        parbox=false,
+        fonttitle=\bfseries,
+        colback=nord3!5!white,
+        colframe=nord3},
+}
+
+% Theorem
+\newtcbtheorem[number within=section]{theorem}{Theorem}{theorem_style}{}
+
+% Proposition
+\newtcbtheorem[number within=section, use counter from=theorem]{prop}{Proposition}{theorem_style}{}
+
+% Lemma
+\newtcbtheorem[number within=section, use counter from=theorem]{lemma}{Lemma}{theorem_style}{}
+
+% Definition
+\newtcbtheorem[number within=section, use counter from=theorem]{define}{Definition}{theorem_style}{}
+
+% Example
+\newtcbtheorem[number within=section, use counter from=theorem]{example}{Example}{theorem_style}{}
+
+% Corollary
+\newtcbtheorem[number within=section, use counter from=theorem]{corollary}{Corollary}{theorem_style}{}
+
+% Remark
+\newtcbtheorem[number within=section, use counter from=theorem]{remark}{Remark}{theorem_style}{}
+
+% Topic
+\newtcbtheorem[number within=section]{topic}{Topic}{newsec_style}{}
+
+% New section
+\newtcbtheorem{newsec}{}{newsec_style}{}
