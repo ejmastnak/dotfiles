@@ -32,7 +32,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # ------------------------------------ #
 
 # Float matplotlib windows
+for_window [class="R_x11"] floating enable
 for_window [class="matplotlib"] floating enable
+for_window [class="PacketTracer"] floating enable
 
 # GAPS
 # --------------------------------------------- #
@@ -147,9 +149,11 @@ exec --no-startup-id dex --autostart --environment i3
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
 exec --no-startup-id xss-lock -- i3lock --nofork \
   --radius 110 \
-  --color=81a1c1ff \
+  --image=/home/ej/Pictures/wallpapers/lock-screen.png \
+  --fill \
   --inside-color=d8dee9ff \
   --ring-color=5e81acff \
   --verif-color=2e3440ff \
