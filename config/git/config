@@ -14,3 +14,5 @@
 	credentialStore = gpg
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[pull]
+	ff = only
