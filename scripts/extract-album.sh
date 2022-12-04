@@ -19,12 +19,14 @@
 #   $2 <timestamp-file>
 #      Path to plain text file holding space-separated time stamps
 #      and song names in the following format (for example)
+#
+#      ```
+#      # Comments are allowed
 #      00:00 My Favorite Things
 #      13:43 Everytime We Say Goodbye
 #      19:27 Summertime
 #      31:03 But Not For Me
-#
-#
+#      ```
 
 # Converts input to lowercase and replaces spaces with hyphens
 # Example input:  "My Favorite Things"
