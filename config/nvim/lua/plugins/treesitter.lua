@@ -6,6 +6,19 @@ local disable_for_large_markdown = function(lang, bufnr)
   return lang == "markdown" and vim.api.nvim_buf_line_count(bufnr) > 500
 end
 
+local disable_for_lua = function(lang, bufnr)
+  return lang == "lua"
+end
+
+local disable_indent = function(lang, bufnr)
+  return lang == "python" or disable_for_large_markdown(lang, bufnr)
+end
+
+local disable_textobjects = function(lang, bufnr)
+  return lang == "python" or lang == "markdown"
+end
+
+
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {"c", "python", "vim"},
 
@@ -15,12 +28,12 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true,
-    disable = disable_for_large_markdown,
+    disable = disable_indent,
   },
   textobjects = {
     select = {
       enable = true,
-      disable = disable_for_markdown,
+      disable = disable_textobjects,
 
       -- Automatically jump forward to textobj, similar to targets.vim
       lookahead = true,
@@ -32,10 +45,8 @@ require'nvim-treesitter.configs'.setup {
         ["ii"] = "@conditional.inner",
         ["al"] = "@loop.outer",
         ["il"] = "@loop.inner",
-        -- ["ac"] = "@comment.outer",
-        -- ["ic"] = "@comment.inner",
-        ["ac"] = "@block.outer",
-        ["ic"] = "@block.inner",
+        ["ac"] = "@comment.outer",
+        ["ic"] = "@comment.inner",
       },
     },
     move = {
