@@ -126,9 +126,9 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="574.371"
-         height="278.252"
-         ry="0" />
+         width="663.417930302666"
+         height="372.428507166578"
+         ry="110.499233936698" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -164,8 +164,8 @@
          end="0"
          start="0"
          usecurrent="1"
-         rx="53.1252"
-         ry="46.25" />
+         rx="227.141238235113"
+         ry="227.141238235116" />
       <eventcontext
          id="star"
          magnitude="5"
@@ -315,7 +315,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="px"
+       unit="mm"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -402,6 +402,13 @@
        id="paintbucket"
        style="fill:#a0a0a0;stroke:none;"
        usecurrent="1" />
+    <eventcontext
+       id="marker"
+       selcue="1"
+       gradientdrag="1" />
+    <group
+       id="geometric"
+       mode="drag" />
   </group>
   <group
      id="palette">
@@ -522,7 +529,8 @@
   </group>
   <group
      id="colorselector"
-     page="0" />
+     page="0"
+     switcher="1" />
   <group
      id="embedded">
     <group
@@ -577,13 +585,20 @@
        id="export"
        default=""
        append_extension="1"
-       path="">
+       path=""
+       defaultopts="1">
       <group
          id="exportarea"
          value="drawing" />
       <group
          id="defaultxdpi"
          value="300" />
+      <group
+         id="batchexportarea"
+         value="layer" />
+      <group
+         id="defaultdpi"
+         value="96" />
     </group>
     <group
        id="save_as"
@@ -615,9 +630,11 @@
        id="debug"
        redirect="0" />
     <group
-       id="clonetiler" />
+       id="clonetiler"
+       dotrace="0" />
     <group
-       id="gridtiler" />
+       id="gridtiler"
+       SpacingType="20" />
     <group
        id="extension-error"
        show-on-startup="0" />
@@ -659,7 +676,8 @@
        add-label-comments="0" />
   </group>
   <group
-     id="options">
+     id="options"
+     rotationlock="1">
     <group
        id="renderingcache"
        size="512" />
@@ -838,7 +856,8 @@
     <group
        id="maskobject"
        topmost="1"
-       remove="1" />
+       remove="1"
+       grouping="0" />
     <group
        id="blurquality"
        value="0" />
@@ -929,8 +948,8 @@
        id="rendering" />
     <group
        id="boot"
-       canvas="dark"
        theme="classic"
+       canvas="dark"
        enabled="0">
       <group
          id="shown"
@@ -943,16 +962,19 @@
        id="kbshortcuts" />
   </group>
   <group
-     id="extensions" />
+     id="extensions"
+     org.inkscape.output.png.inkscape.png_bitdepth="99"
+     org.inkscape.output.png.inkscape.png_compression="6"
+     org.inkscape.output.png.inkscape.png_antialias="2" />
   <group
      id="desktop"
-     style="fill:#fbfbfc;font-size:16px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Latin Modern Roman, ';font-family:'Latin Modern Roman';line-height:1.1;stroke-width:0.69999999;stroke-dasharray:0.69999999, 0.69999999">
+     style="fill:#fbfbfc;font-size:53.33333333px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Latin Modern Roman, ';font-family:'Latin Modern Roman';line-height:1.1;stroke-width:0.69999999;stroke-dasharray:0.69999999, 0.69999999">
     <group
-       width="1880"
-       height="1016"
-       x="20"
-       y="20"
-       maximized="0"
+       width="470"
+       height="1036"
+       x="965"
+       y="10"
+       maximized="1"
        fullscreen="0"
        id="geometry" />
     <group
@@ -974,11 +996,20 @@
      id="toolbox"
      icononly="1"
      secondary="1"
+     simplesnap="1"
      small="1">
     <group
        id="tools"
        icononly="1"
-       small="0" />
+       small="0"
+       iconsize="16"
+       width="32">
+      <group
+         id="buttons" />
+    </group>
+    <group
+       id="controlbars"
+       iconsize="16" />
   </group>
   <group
      id="iconpreview"
@@ -1054,19 +1085,25 @@
   <group
      id="theme"
      defaultPreferDarkTheme="0"
-     defaultGtkTheme="Adwaita"
      defaultIconTheme="Adwaita"
+     defaultGtkTheme="Adwaita"
+     narrowSpinButton="1"
+     preferDarkTheme="1"
+     darkTheme="1"
      symbolicIcons="0"
+     symbolicDefaultBaseColors="1"
+     symbolicDefaultHighColors="1"
      menuIcons_canvas="0"
      menuIcons_layers="0"
      menuIcons_objects="0"
-     darkTheme="1"
-     preferDarkTheme="1"
      iconTheme="hicolor"
-     symbolicDefaultBaseColors="1"
-     symbolicDefaultHighColors="1"
      gtkTheme="HighContrastInverse" />
   <group
      id="live_effects"
      flattening="0" />
+  <group
+     id="statusbar">
+    <group
+       id="visibility" />
+  </group>
 </inkscape>
