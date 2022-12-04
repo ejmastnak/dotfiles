@@ -11,6 +11,8 @@
 /config/Signal
 /config/iterm2
 /config/dconf
+/config/composer
+/config/psysh
 /config/syncthing
 /config/tmux/plugins
 /config/tmux/resurrect
