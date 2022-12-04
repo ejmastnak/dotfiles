@@ -18,7 +18,6 @@ else
   compinit -C
 fi
 
-
 # Set vi mode and configure cursor
 # Source https://github.com/lervag/dotfiles/blob/2e9a760897d5246c0f02e30c997b23f3894c688d/zsh/.zshrc#L241
 # --------------------------------------------- #
