@@ -6,6 +6,8 @@ local get_visual = function(args, parent)
   end
 end
 
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
+
 -- Environment/syntax context detection 
 local tex = {}
 tex.in_mathzone = function() return vim.fn['vimtex#syntax#in_mathzone']() == 1 end
@@ -17,58 +19,76 @@ end
 
 -- Return snippet tables
 return
-{
-  s({trig="LL", snippetType="autosnippet"},
-    {
-      t("& "),
-    }
-  ),
-  s({trig="qq", snippetType="autosnippet"},
-    {
-      t("\\qquad"),
-    }
-  ),
-  s({trig="and", snippetType="autosnippet"},
-    {
-      t("\\quad \\text{and} \\quad"),
-    },
-    {condition = tex.in_mathzone}
-  ),
-  s({trig = "^[%s]*toc", regTrig = true, wordTrig = false, snippetType="autosnippet"},
-    {
-      f( function(_, snip) return snip.captures[1] end ),
-      t("\\tableofcontents"),
-  }),
-  s({trig="^([%s]*)ii", regTrig = true, snippetType="autosnippet"},
-    {
-      f( function(_, snip) return snip.captures[1] end ),
-      t("\\item "),
-  }),
-s({trig = "^([%s]*)h1", regTrig = true, wordTrig = false, snippetType="autosnippet"},
-    fmta(
-      [[<>\section{<>}]],
+  {
+    s({trig="LL", snippetType="autosnippet"},
       {
-        f( function(_, snip) return snip.captures[1] end ),
-        d(1, get_visual),
+        t("& "),
       }
-    )
-  ),
-  s({trig = "^([%s]*)h2", regTrig = true, wordTrig = false, snippetType="autosnippet"},
-    fmta(
-      [[<>\subsection{<>}]],
+    ),
+    s({trig="q"},
       {
-        f( function(_, snip) return snip.captures[1] end ),
-        d(1, get_visual),
+        t("\\quad "),
       }
-    )
-  ),
-  s({trig = "^([%s]*)h3", regTrig = true, wordTrig = false, snippetType="autosnippet"},
-    fmta(
-      [[<>\subsubsection{<>}]],
+    ),
+    s({trig="qq", snippetType="autosnippet"},
       {
-        f( function(_, snip) return snip.captures[1] end ),
-        d(1, get_visual),
+        t("\\qquad "),
       }
-    )
-  ),
-}
+    ),
+    s({trig="np"},
+      {
+        t("\\newpage"),
+      },
+      {condition = line_begin}
+    ),
+    s({trig="which", snippetType="autosnippet"},
+      {
+        t("\\text{ for which } "),
+      },
+      {condition = tex.in_mathzone}
+    ),
+    s({trig="all", snippetType="autosnippet"},
+      {
+        t("\\text{ for all } "),
+      },
+      {condition = tex.in_mathzone}
+    ),
+    s({trig="and", snippetType="autosnippet"},
+      {
+        t("\\quad \\text{and} \\quad"),
+      },
+      {condition = tex.in_mathzone}
+    ),
+    s({trig="forall", snippetType="autosnippet"},
+      {
+        t("\\text{ for all } "),
+      },
+      {condition = tex.in_mathzone}
+    ),
+    s({trig = "toc", snippetType="autosnippet"},
+      {
+        t("\\tableofcontents"),
+      },
+      { condition = line_begin }
+    ),
+    s({trig="inff", snippetType="autosnippet"},
+      {
+        t("\\infty"),
+      }
+    ),
+    s({trig="ii", snippetType="autosnippet"},
+      {
+        t("\\item "),
+      },
+      { condition = line_begin }
+    ),
+    s({trig = "--", snippetType="autosnippet"},
+      {t('% --------------------------------------------- %')},
+      {condition = line_begin}
+    ),
+    -- HLINE WITH EXTRA VERTICAL SPACE
+    s({trig = "hl"},
+      {t('\\hline {\\rule{0pt}{2.5ex}} \\hspace{-7pt}')},
+      {condition = line_begin}
+    ),
+  }

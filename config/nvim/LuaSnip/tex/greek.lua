@@ -59,11 +59,11 @@ return
   }),
   s({trig=";l", snippetType="autosnippet"},
     {
-      t("\\lamba"),
+      t("\\lambda"),
   }),
   s({trig=";L", snippetType="autosnippet"},
     {
-      t("\\Lamba"),
+      t("\\Lambda"),
   }),
   s({trig=";m", snippetType="autosnippet"},
     {
