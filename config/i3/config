@@ -152,7 +152,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 exec --no-startup-id xss-lock -- i3lock --nofork \
   --radius 110 \
-  --image=/home/ej/Pictures/wallpapers/lock-screen.png \
+  --image=/home/ej/Documents/pictures/lock-screen/lock-screen.png \
   --fill \
   --inside-color=d8dee9ff \
   --ring-color=5e81acff \
