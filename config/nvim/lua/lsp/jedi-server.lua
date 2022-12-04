@@ -4,4 +4,4 @@ vim.keymap.set('i', '<CR>', function()
     return vim.fn.pumvisible() == 1 and '<C-y>' or '<C-g>u<CR>'
 end, {expr = true})
 
-vim.opt.completeopt = {"longest", "menuone"}
+-- vim.opt.completeopt = {"longest", "menuone"}

@@ -1,9 +1,7 @@
 -- Configuration for navigation through a file and between buffers
 
--- Useful for jumping to the end of nested snippets.
--- The silly jump to the line start via ^ is a hack to ensure cursor exits 
--- a possible UltiSnips snippet scope
-vim.keymap.set('i', '<C-L>', '<ESC>^$a')
+-- Useful for jumping to the end of the current line in insert mode
+vim.keymap.set('i', '<C-L>', '<ESC>A')
 
 -- Mappings for navigating wrapped lines
 vim.keymap.set('n', 'j', 'gj')
@@ -11,7 +9,8 @@ vim.keymap.set('n', 'k', 'gk')
 
 -- Reach start of line a bit more conveniently
 vim.keymap.set('', '0', '^')
-vim.keymap.set('', 'I', '^i')
+vim.keymap.set('n', 'I', '^i')
+vim.keymap.set('', '^', '0')
 
 -- Hacky way to stay inside current paragraph
 vim.keymap.set('', '}', 'j}k')

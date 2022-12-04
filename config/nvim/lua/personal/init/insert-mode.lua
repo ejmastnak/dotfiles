@@ -18,7 +18,7 @@ function DeletePairedDelimiter()
     return '<BS>'
   else
     -- Get characters on either side of cursor
-    pair = string.sub(vim.fn.getline('.'), vim.fn.col('.')-1, vim.fn.col('.'))
+    local pair = string.sub(vim.fn.getline('.'), vim.fn.col('.')-1, vim.fn.col('.'))
     -- Check if cursor is placed inside a paired delimiter
     if math.fmod(vim.fn.stridx('\'\'""()[]$$<>{}``', pair), 2) == 0 then
       return "<Right><BS><BS>" -- Deletes paired delimiter

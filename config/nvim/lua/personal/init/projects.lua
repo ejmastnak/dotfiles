@@ -15,8 +15,8 @@ function ProjectRunJob()
     return
   end
 
-  -- Run project command
-  vim.cmd('TermExec cmd="./' .. vim.g.project_command_file .. '"')
+  -- Run project command; pass it the current file name
+  vim.cmd('2TermExec size=8 cmd="./' .. vim.g.project_command_file .. ' %"')
 end
 
 vim.keymap.set('', '<Leader>p', ProjectRunJob, {desc = 'Run project-wide command file.'})

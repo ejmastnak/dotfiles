@@ -14,5 +14,5 @@ function ToggleSloveneSpell()
   end
 end
 
-vim.keymap.set('n', '<Leader>z', '<Cmd>set spell!<CR>')
-vim.keymap.set('n', '<Leader>ts', ToggleSloveneSpell)
+vim.keymap.set('n', '<Leader>zz', '<Cmd>set spell!<CR>')
+vim.keymap.set('n', '<Leader>zs', ToggleSloveneSpell)

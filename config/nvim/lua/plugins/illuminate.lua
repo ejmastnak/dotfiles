@@ -1,6 +1,6 @@
 vim.cmd [[
   let g:Illuminate_useDeprecated = 1
-  let g:Illuminate_ftwhitelist = ['python, c']
+  let g:Illuminate_ftwhitelist = ['python, c, php']
 ]]
 
 -- require('illuminate').configure({
@@ -20,6 +20,7 @@ vim.cmd [[
 --     require 'illuminate'.on_attach(client)
 --   end,
 -- }
+
 -- -- require'lspconfig'.phpactor.setup{
 -- --   on_attach = function(client)
 -- --     require 'illuminate'.on_attach(client)
