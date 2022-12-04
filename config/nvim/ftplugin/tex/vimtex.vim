@@ -80,7 +80,6 @@ let g:vimtex_compiler_latexmk = {
 
 " Toggle shell escape on an off when using minted package
 " ---------------------------------------------
-
 " Toggles shell escape compilation on and off
 function! s:TexToggleShellEscape() abort
   if g:vimtex_compiler_latexmk.options[0] ==# '-shell-escape'
@@ -97,6 +96,13 @@ endfunction
 nmap <leader>te <Plug>TexToggleShellEscape
 nnoremap <script> <Plug>TexToggleShellEscape <SID>TexToggleShellEscape
 nnoremap <SID>TexToggleShellEscape :call <SID>TexToggleShellEscape()<CR>
+
+" When loading new buffers, search for references to minted package in the
+" document preamble and enable shell escape if minted is detected.
+silent execute '!head -n 20 ' . expand('%') . ' | grep "minted" > /dev/null'
+if ! v:shell_error  " 'minted' found in preamble
+  call insert(g:vimtex_compiler_latexmk.options, '-shell-escape', 0)
+endif
 " ---------------------------------------------
 
 " Close viewers when VimTeX buffers are closed (see :help vimtex-events)
