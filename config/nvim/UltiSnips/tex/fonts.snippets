@@ -12,14 +12,6 @@ snippet "(^|[^a-zA-Z])tbb" "\textbf{} " rA
 `!p snip.rv = match.group(1)`\textbf{${1:${VISUAL:}}}$0
 endsnippet
 
-snippet "(^|[^a-zA-Z])ul" "\underline{} (underline)" r
-`!p snip.rv = match.group(1)`\underline{${1:${VISUAL:}}}$0
-endsnippet
-
-snippet "(^|[^a-zA-Z])tee" "\text{} (math environment)" rA
-`!p snip.rv = match.group(1)`\text{${1:${VISUAL:}}}$0
-endsnippet
-
 snippet "(^|[^a-zA-Z])rmm" "\mathrm{} (math roman font)" rA
 `!p snip.rv = match.group(1)`\mathrm{${1:${VISUAL:}}}$0
 endsnippet

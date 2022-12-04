@@ -47,7 +47,7 @@ endsnippet
 
 context "math()"
 snippet "([^a-zA-Z])ee" "e^{} supercript" rA
-`!p snip.rv = match.group(1)`e^{${1:${VISUAL:}}} $0
+`!p snip.rv = match.group(1)`e^{${1:${VISUAL:}}}$0
 endsnippet
 
 context "math()"
@@ -102,7 +102,12 @@ snippet "([\W_])vv" "\vec" rA
 endsnippet
 
 context "math()"
-snippet "([\W_])uv" "\uvec" rA
+snippet "([\W_])uv" "Default unit vector with subscript" rA
+`!p snip.rv = match.group(1)`\unitvector_{${1:${VISUAL:}}}$0
+endsnippet
+
+context "math()"
+snippet "([\W_])uV" "\uvec" rA
 `!p snip.rv = match.group(1)`\uvec{${1:${VISUAL:}}}$0
 endsnippet
 
@@ -144,31 +149,31 @@ snippet "([^a-zA-Z\\])dd" "\ddot" r
 endsnippet
 
 snippet "([^a-zA-Z\\])pV" "\pdv{}" rA
-`!p snip.rv = match.group(1)`\pdvOne{${1:${VISUAL:}}} $0
+`!p snip.rv = match.group(1)`\pdvOne{${1:${VISUAL:}}}$0
 endsnippet
 
 snippet "([^a-zA-Z\\])pvv" "\pdv{}{}" rA
-`!p snip.rv = match.group(1)`\pdv{$1}{$2} $0
+`!p snip.rv = match.group(1)`\pdv{$1}{$2}$0
 endsnippet
 
 snippet "([^a-zA-Z\\])ppv" "\pdvN{}{}{}" rA
-`!p snip.rv = match.group(1)`\pdvN{$1}{$2}{$3} $0
+`!p snip.rv = match.group(1)`\pdvN{$1}{$2}{$3}$0
 endsnippet
 
 snippet "([^a-zA-Z\\])pv3" "\pdvThree{}{}" rA
-`!p snip.rv = match.group(1)`\pdvThree{$1}{$2}{$3} $0
+`!p snip.rv = match.group(1)`\pdvThree{$1}{$2}{$3}$0
 endsnippet
 
 snippet "([^a-zA-Z\\])dV" "\dvOne{}" rA
-`!p snip.rv = match.group(1)`\dvOne{${1:${VISUAL:}}} $0
+`!p snip.rv = match.group(1)`\dvOne{${1:${VISUAL:}}}$0
 endsnippet
  
 snippet "([^a-zA-Z\\])([dD])vv" "\dv{}{} or \Dv{}{}" rA
-`!p snip.rv = match.group(1)`\\`!p snip.rv = match.group(2)`v{$1}{$2} $0
+`!p snip.rv = match.group(1)`\\`!p snip.rv = match.group(2)`v{$1}{$2}$0
 endsnippet
 
 snippet "([^a-zA-Z\\])ddv" "\dvN[]{}{}" rA
-`!p snip.rv = match.group(1)`\dvN[$1]{$2}{$3} $0
+`!p snip.rv = match.group(1)`\dvN{$1}{$2}{$3}$0
 endsnippet
 
 context "math()"
@@ -328,7 +333,7 @@ endsnippet
 
 context "math()"
 snippet "([^a-zA-Z0-9\\])df" "\diff" rA
-`!p snip.rv = match.group(1)`\diff 
+`!p snip.rv = match.group(1)`\diff
 endsnippet
 
 snippet "([^a-zA-Z0-9\\])gd" "\grad" r

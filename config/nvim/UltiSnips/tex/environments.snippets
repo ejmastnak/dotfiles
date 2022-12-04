@@ -30,6 +30,15 @@ snippet nn "Equation environment with suppressed numbering" bA
 $0
 endsnippet
 
+snippet ss "Split equaiton environment with suppressed numbering" bA
+\begin{equation*}
+	\begin{split}
+		$1
+	\end{split}
+\end{equation*}
+$0
+endsnippet
+
 snippet all "Align environment with suppressed numbering" bA
 \begin{align*}
 	$1
@@ -43,13 +52,6 @@ snippet itt "Itemize environment" bA
 	\item $0
 
 \end{itemize}
-endsnippet
-
-snippet rit "Reversed itemize environment, used to split up an existing itemize environment" b
-\end{itemize}
-
-$0
-\begin{itemize}
 endsnippet
 
 snippet enn "Enumerate environment" bA
@@ -67,10 +69,10 @@ snippet tc "tcolorbox environment" bA
 $0
 endsnippet
 
-snippet pm "Parentheses matrix pmatrix" bA
-\begin{pmatrix}
-	$1
-\end{pmatrix}$0
+snippet "^([\s]*)([bpv])m" "[bvp] matrix environment" rA
+`!p snip.rv = match.group(1)`\begin{`!p snip.rv = match.group(2)`matrix}
+`!p snip.rv = match.group(1)`	$1
+`!p snip.rv = match.group(1)`\end{`!p snip.rv = match.group(2)`matrix}$0
 endsnippet
 
 snippet mq "\mqty() (matrix for inline math)" A
