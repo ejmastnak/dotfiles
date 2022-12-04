@@ -3,17 +3,22 @@
 " Config and dotfiles
 " --------------------------------------------- "
 nnoremap gcc :cd ~/dotfiles/config<CR>
+nnoremap gcs :cd ~/dotfiles/config/shell<CR>
 nnoremap gcd :cd ~/dotfiles<CR>
 nnoremap gcv :cd ~/dotfiles/config/vifm<CR>
 nnoremap gcn :cd ~/dotfiles/config/nvim<CR>
 nnoremap gci :cd ~/dotfiles/config/i3<CR>
-nnoremap gnn :goto ~/dotfiles/config/vifm/personal/navigation.vifm<CR>
+nnoremap gcn :goto ~/dotfiles/config/vifm/personal/navigation.vifm<CR>
 " --------------------------------------------- "
 
-" System
+nnoremap gll :cd ~/.local<CR>
+
+" For USB drives
+nnoremap guu :cd /run/media/ej<CR>
+
+" Documents
 " --------------------------------------------- "
-" Bookmarks
-nnoremap gsb :cd ~/Documents/bookmarks<CR>
+nnoremap gdd :cd ~/Documents<CR>
 " --------------------------------------------- "
 
 " Basics
@@ -21,69 +26,76 @@ nnoremap gsb :cd ~/Documents/bookmarks<CR>
 nnoremap gbb :cd ~/Documents/basics<CR>
 nnoremap gbf :cd ~/Documents/basics/food<CR>
 nnoremap gbt :cd ~/Documents/basics/transportation<CR>
+nnoremap gbh :cd ~/Documents/basics/home<CR>
 " --------------------------------------------- "
 
+
+" Ruminations
+" --------------------------------------------- "
+nnoremap grr :cd ~/Documents/basics/ruminations<CR>
+" --------------------------------------------- "
+
+nnoremap gam :cd ~/Documents/about<CR>
 
 " Plans
 " --------------------------------------------- "
 nnoremap gpp :cd ~/Documents/plans<CR>
-nnoremap gpq :goto ~/Documents/plans/queue.md<CR>
+nnoremap gpq :goto ~/Documents/plans/todo.md<CR>
 " --------------------------------------------- "
 
 " Projects
 " --------------------------------------------- "
-nnoremap gpr :cd ~/Documents/projects<CR>
-nnoremap gpf :cd ~/Documents/projects/finances<CR>
-nnoremap gpt :cd ~/Documents/projects/tmg-bmc<CR>
-nnoremap gpl :cd ~/Documents/projects/pcl<CR>
+nnoremap goo :cd ~/Documents/projects<CR>
+nnoremap gog :cd ~/Documents/projects/ml/jgavro<CR>
+nnoremap gof :cd ~/Documents/projects/finances<CR>
+nnoremap goc :cd ~/Documents/projects/finances/cashflow<CR>
+nnoremap got :cd ~/Documents/projects/tmg-bmc<CR>
+nnoremap gol :cd ~/Documents/projects/pcl<CR>
+nnoremap go4 :cd ~/Documents/projects/tv47<CR>
+nnoremap gob :cd ~/Documents/projects/fitness-biomechanics<CR>
 " --------------------------------------------- "
 
 " Software notes
 " --------------------------------------------- "
-" Root directory
 nnoremap gss :cd ~/Documents/notes/software<CR>
 nnoremap gsa :cd ~/Documents/notes/software/arch<CR>
-
-" C notes
+nnoremap gsh :cd ~/Documents/notes/software/hugo<CR>
+nnoremap gsp :cd ~/Documents/notes/software/python<CR>
 nnoremap gsc :cd ~/Documents/notes/software/c<CR>
-
-" Vim
 nnoremap gsn :cd ~/Documents/notes/software/vim<CR>
+nnoremap gst :cd ~/Documents/notes/software/torch-ai<CR>
+nnoremap gsl :cd ~/Documents/notes/software/laravel<CR>
 " --------------------------------------------- "
 
+" Notes
+" --------------------------------------------- "
+nnoremap gnn :cd ~/Documents/notes<CR>
+nnoremap gnb :cd ~/Documents/notes/bookmarks<CR>
+" --------------------------------------------- "
 
 " Academics
 " --------------------------------------------- "
-" Root directory
 nnoremap gaa :cd ~/Documents/academics<CR>
-
-" QAP
 nnoremap gaq :cd ~/Documents/academics/qap<CR>
-
-" FMF
 nnoremap gaf :cd ~/Documents/academics/fmf<CR>
-
-" FE
 nnoremap gae :cd ~/Documents/academics/fe<CR>
-
-" Courses
 nnoremap gac :cd ~/Documents/academics/courses<CR>
-
-" Matematika 1
 nnoremap ga1 :cd ~/Documents/academics/courses/mat1<CR>
 " --------------------------------------------- "
 
 
 " Music
 " --------------------------------------------- "
-nnoremap gmm :cd ~/Media/music/music-library<CR>
-nnoremap gma :cd ~/Media/music/ambient/music<CR>
-nnoremap gmc :cd ~/Media/music/music-library/classical<CR>
-nnoremap gmj :cd ~/Media/music/music-library/jazz<CR>
-nnoremap gmr :cd ~/Media/music/music-library/reggae-classics<CR>
-nnoremap gmb :cd ~/Media/music/music-library/bgm<CR>
-nnoremap gmh :cd ~/Media/music/music-library/hip-hop-beats<CR>
+nnoremap gmm :cd ~/Documents/music/media/library<CR>
+nnoremap gma :cd ~/Documents/music/media/ambient/music<CR>
+nnoremap gmc :cd ~/Documents/music/media/library/classical<CR>
+nnoremap gmj :cd ~/Documents/music/media/library/jazz<CR>
+nnoremap gmr :cd ~/Documents/music/media/library/reggae-classics<CR>
+nnoremap gmb :cd ~/Documents/music/media/library/bgm<CR>
+nnoremap gmh :cd ~/Documents/music/media/library/hip-hop-beats<CR>
 
-nnoremap gzz :cd ~/Media/music/music-library/unsorted<CR>
-nnoremap gzj :cd ~/Media/music/music-library/unsorted/jazz<CR>
+nnoremap gmz :cd ~/Documents/music/media/library/unsorted<CR>
+nnoremap gzz :cd ~/Documents/music/media/library/unsorted<CR>
+nnoremap gzj :cd ~/Documents/music/media/library/unsorted/jazz<CR>
+nnoremap gzs :cd ~/Documents/music/media/library/unsorted/soul-and-motown<CR>
 " --------------------------------------------- "
