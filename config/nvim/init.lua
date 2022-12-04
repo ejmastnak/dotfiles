@@ -50,8 +50,11 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug('kylechui/nvim-surround', {tag = '*'})
+Plug 'wellle/targets.vim'
+-- Plug 'andymass/vim-matchup'
+Plug 'kana/vim-textobj-user'
+Plug 'coachshea/vim-textobj-markdown'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/fzf'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-fugitive'
@@ -60,8 +63,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dispatch'
 Plug('akinsho/toggleterm.nvim', {tag = '*'})
 Plug 'airblade/vim-rooter'
-Plug 'SirVer/ultisnips'
--- Plug('L3MON4D3/LuaSnip', {tag = 'v<CurrentMajor>.*'})
+Plug 'L3MON4D3/LuaSnip'
 
 -- Filetype-specific
 Plug('iamcco/markdown-preview.nvim', {['do'] = 'cd app && yarn install'})
@@ -69,9 +71,12 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'lervag/vimtex'
+Plug 'nathangrigg/vim-beancount'
 
 -- LSP-like
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+Plug('nvim-telescope/telescope.nvim', {['tag'] = '0.1.0'})
 Plug 'RRethy/vim-illuminate'
 Plug('nvim-Treesitter/nvim-Treesitter', {['do'] = ':TSUpdate'})
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -96,19 +101,24 @@ require('plugins/illuminate')
 require('plugins/Comment')
 require('plugins/dispatch')
 require('plugins/easy-align')
-require('plugins/fzf')
+require('plugins/telescope')
 require('plugins/nvim-surround')
 require('plugins/toggle-term')
 require('plugins/rooter')
 require('plugins/lualine')
 require('plugins/lightspeed')
-require('plugins/ultisnips')
--- require('plugins/LuaSnip')
+require('plugins/LuaSnip')
+
+-- LSP config
+require('lsp/lsp')
 
 -- BEGIN MISCELLANEOUS
 -- --------------------------------------------- "
 -- Easier write command
 vim.keymap.set('n', '<Leader>w', '<Cmd>write<CR>')
+
+-- Change default fold command
+vim.keymap.set('n', 'zf', 'zc')
 
 -- Easier edit command
 vim.keymap.set('n', '<Leader>e', ':edit ')
@@ -155,9 +165,21 @@ vim.keymap.set('n', '<Leader>q',
   end,
   {desc = 'Write and quit if possible/applicable, force quit otherwise.'})
 
+-- Sort text by paragraph (useful for e.g. for Beancount files)
+-- Implements https://stackoverflow.com/a/24099468
+vim.api.nvim_create_user_command('SortByParagraph', ':%s/\\(.\\+\\)\\n/\\1@/ | :sort | :%s/@/\\r/g', {})
+
 -- Source my spelling configurations.
 -- Important: make sure to set mapleader before sourcing my_spell,
 -- so that my_spell mappings use the correct leader key.
 require('personal/spell/my_spell')
+
+-- Use `d` (delimiter) for targets.vim block text objects
+-- (Requires targets.vim)
+vim.cmd[[
+autocmd User targets#mappings#user call targets#mappings#extend({
+    \ 'd': {'pair': [{'o':'(', 'c':')'}, {'o':'[', 'c':']'}, {'o':'{', 'c':'}'}]},
+    \ })
+]]
 
 -- END MISCELLANEOUS
