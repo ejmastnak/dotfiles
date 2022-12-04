@@ -17,9 +17,15 @@ export PATH="${PATH}:$HOME/.local/bin"
 
 # Personal scripts
 export PATH="${PATH}:$HOME/scripts"
+# --------------------------------------------- #
 
-# Julia language
-export PATH="${PATH}:$HOME/src/julia-1.7.2/bin"
+# Configuration for pyenv
+# --------------------------------------------- #
+export PYENV_ROOT="${HOME}/.pyenv"
+command -v pyenv >/dev/null || export PATH="${PATH}:${PYENV_ROOT}/bin"
+
+# Install pyenv into shell
+eval "$(pyenv init -)"
 # --------------------------------------------- #
 
 # Set Ruby version with chruby
@@ -27,6 +33,6 @@ export PATH="${PATH}:$HOME/src/julia-1.7.2/bin"
 if [[ -e "/usr/local/share/chruby/chruby.sh" && -e "/usr/local/share/chruby/auto.sh" ]]; then
   source /usr/local/share/chruby/chruby.sh
   source /usr/local/share/chruby/auto.sh
-  chruby ruby-2.7.4
+  chruby ruby-3.1.0
 fi
 # --------------------------------------------- #
