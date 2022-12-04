@@ -4,6 +4,9 @@
 # Example after: "my-favorite-things.mp3"
 # Remaining song information should be moved to ID3 tags
 
+# Note to self: useful for removing yt-dlp tags:
+# perl-rename -n 's/ \[.*\]//' *.opus
+
 # Usage: music-rename.sh <directory>
 # Arguments:
 # $1 <directory> is full path to a directory containing *.mp3 files
@@ -42,4 +45,3 @@ do
   rename_and_tag "${filename}"
 done
 shopt -u nullglob
-
