@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{geometry, microtype, xspace}
+\usepackage{xcolor}
 \usepackage{parskip}
 \usepackage[shortlabels]{enumitem}
 \usepackage{amsmath, amssymb, amsthm, mathtools, bm, esint}
@@ -10,9 +11,12 @@
 
 \geometry{margin=3.0cm}
 \sisetup{separate-uncertainty=true, exponent-product=\cdot, range-units=single}
-\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan}
+
+\definecolor{linkblue}{HTML}{0079c0}
+\definecolor{nord8}{HTML}{88c0d0}
+\hypersetup{colorlinks=true, linkcolor=linkblue, urlcolor=nord8}
+
 \setlength{\parindent}{0pt}
-\numberwithin{equation}{section}
 
 \newcommand{\myhref}[2]{\hyperref[#1]{\textcolor{blue}{\underline{#2}}}}
 \newcommand{\TODO}[1]{{\textbf{TODO:} {\color{red} #1}}}
