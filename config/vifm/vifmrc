@@ -39,7 +39,6 @@ set smartcase
 set wildmenu         " show list of matches on tab completion in command-line mode
 set wildstyle=popup  " display completions as a popup with descriptions of the matches
 
-
 " What should be saved automatically between vifm sessions.  Drop "savedirs"
 " value if you don't want vifm to remember last visited directories for you.
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
@@ -58,6 +57,8 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 " END BASIC SETTINGS
 
 source ~/.config/vifm/personal/navigation.vifm
+
+" nnoremap <Space>q :quit<CR>
 
 " BEGIN MARKS
 " --------------------------------------------- "
@@ -92,7 +93,7 @@ mark r ~/Documents/basics/food/recipes
 mark s ~/Documents/notes/software
 mark n ~/Documents/notes
 mark t ~/Documents/academics/telecomm
-mark u ~/dotfiles/config/nvim/UltiSnips
+mark u ~/dotfiles/config/nvim/LuaSnip
 mark v ~/dotfiles/config/nvim
 mark w ~/Documents/projects/ejmastnak
 " --------------------------------------------- "
@@ -134,6 +135,9 @@ nnoremap e :edit<space>
 
 " Shortcut for mkdir command
 nnoremap m :mkdir<space>
+
+" Create a README.md file
+nnoremap RM :edit README.md<CR>
 
 " " Display sorting dialog
 " nnoremap S :sort<cr>
