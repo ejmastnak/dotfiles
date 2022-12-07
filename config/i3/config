@@ -136,6 +136,12 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# move focused container one workspace left
+bindsym $mod+Shift+comma move container to workspace prev
+
+# move focused container one workspace right
+bindsym $mod+Shift+period move container to workspace next
+
 
 # BEGIN DEFAULT CONFIGURATION
 # -------------------------------------------- #
