@@ -1,18 +1,18 @@
 -- Basic configuration settings
 -- -----------------------------------------------
-vim.opt.number     = true   -- show line numbers
-vim.opt.cursorline = true   -- highlight current line
-vim.opt.ruler      = true	  -- shows cursor position in current line
-vim.opt.showcmd    = true	  -- shows partially typed commands
-vim.opt.hlsearch   = false  -- don't highlight search results
-vim.opt.incsearch  = false  -- don't jump to search results as search string is being typed
-vim.opt.showmode   = false  -- disable in favor of lualine/lightline statusline
-vim.opt.foldenable = false  -- don't fold text by default when opening files
-vim.opt.foldmethod = "marker"
-vim.opt.autowrite  = true   -- write current buffer when moving buffers
-vim.opt.wrap       = true   -- wrap long lines
-vim.opt.linebreak  = true   -- break lines at words
-vim.opt.signcolumn = "no"   -- disable LSP diagnostic symbols in left column
+vim.opt.number       = true   -- show line numbers
+vim.opt.cursorline   = true   -- highlight current line
+vim.opt.ruler        = true	  -- shows cursor position in current line
+vim.opt.showcmd      = true	  -- shows partially typed commands
+vim.opt.hlsearch     = false  -- don't highlight search results
+vim.opt.incsearch    = false  -- don't jump to search results as search string is being typed
+vim.opt.showmode     = false  -- disable in favor of lualine/lightline statusline
+vim.opt.foldenable   = false  -- don't fold text by default when opening files
+vim.opt.foldmethod   = "marker"
+vim.opt.autowriteall = true   -- write current buffer when moving buffers
+vim.opt.wrap         = true   -- wrap long lines
+vim.opt.linebreak    = true   -- break lines at words
+vim.opt.signcolumn   = "no"   -- disable LSP diagnostic symbols in left column
 
 vim.g.mapleader = " "  -- set global leader key
 
@@ -64,6 +64,7 @@ Plug 'tpope/vim-dispatch'
 Plug('akinsho/toggleterm.nvim', {tag = '*'})
 Plug 'airblade/vim-rooter'
 Plug 'L3MON4D3/LuaSnip'
+Plug 'brenoprata10/nvim-highlight-colors'
 
 -- Filetype-specific
 Plug('iamcco/markdown-preview.nvim', {['do'] = 'cd app && yarn install'})
@@ -181,5 +182,8 @@ autocmd User targets#mappings#user call targets#mappings#extend({
     \ 'd': {'pair': [{'o':'(', 'c':')'}, {'o':'[', 'c':']'}, {'o':'{', 'c':'}'}]},
     \ })
 ]]
+
+
+vim.keymap.set('', '<Leader>hc', '<Cmd>HighlightColorsToggle<CR>')
 
 -- END MISCELLANEOUS
