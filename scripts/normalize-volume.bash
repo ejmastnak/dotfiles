@@ -4,8 +4,8 @@
 # SYNOPSIS
 #     normalize-volume.bash opus|mp3|wav
 # DESCRIPTION
-# Input a set of opus/mp3 files (or any audio file understood by loudgain and
-# ffmpeg) with potentially varying sound levels. Output a normalized version of
+# Input a set of opus/mp3/wav files (or any audio file understood by loudgain
+# and ffmpeg) with potentially varying sound levels. Output a normalized version of
 # each track such that every track now sounds "equally loud".
 #
 # Dependencies: loudgain, ffmpeg
@@ -15,7 +15,7 @@ if [[ "$#" != 1 ]]; then
   exit 1
 fi
 
-# Generate gain tags for album
+# Generate gain tags for album from RECOMMENDATIONS in `man loudgain`.
 if [[ ${1} == "mp3" ]]; then
   loudgain -I3 -S -L -a -k -s e *.mp3 > gaintags.txt
 elif [[ ${1} == "opus" ]]; then
