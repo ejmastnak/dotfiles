@@ -2,7 +2,7 @@
 # NAME
 #     normalize-volume - Normalize volume across tracks in an album
 # SYNOPSIS
-#     normalize-volume.bash opus|mp3
+#     normalize-volume.bash opus|mp3|wav
 # DESCRIPTION
 # Input a set of opus/mp3 files (or any audio file understood by loudgain and
 # ffmpeg) with potentially varying sound levels. Output a normalized version of
@@ -16,10 +16,18 @@ if [[ "$#" != 1 ]]; then
 fi
 
 # Generate gain tags for album
-loudgain -a -k -s e *.${1} > tags.txt
+if [[ ${1} == "mp3" ]]; then
+  loudgain -I3 -S -L -a -k -s e *.mp3 > gaintags.txt
+elif [[ ${1} == "opus" ]]; then
+  loudgain -a -k -s e *.opus > gaintags.txt
+elif [[ ${1} == "wav" ]]; then
+  loudgain -I3 -L -a -k -s e *.wav > gaintags.txt
+else
+  echo "Unrecognized extension: ${1}. Exiting"
+fi
 
 # Convert tags into parseable format
-awk -F ' ' -v n=4 '/^Track:/ { printf "%s,", $2; for (i = 1; i <= n; i++) getline; print $2}' tags.txt > gain.csv
+awk -F ' ' -v n=4 '/^Track:/ { printf "%s,", $2; for (i = 1; i <= n; i++) getline; print $2}' gaintags.txt > gain.csv
 
 # Directory to hold normalized album tracks
 output_dir="normalized"
@@ -33,4 +41,4 @@ do
 done < gain.csv
 
 # Clean-up
-rm tags.txt gain.csv
+rm gaintags.txt gain.csv
