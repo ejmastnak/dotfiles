@@ -36,8 +36,30 @@ return
       ),
       {condition = line_begin}
     ),
+    -- IMG
+    s({trig="img"},
+      fmt(
+        [[
+          <img src="{}"/>
+        ]],
+        {
+          d(1, get_visual),
+        }
+      )
+    ),
+    -- CLASS
+    s({trig=";c", snippetType="autosnippet"},
+      fmt(
+        [[
+          class="{}"
+        ]],
+        {
+          d(1, get_visual),
+        }
+      )
+    ),
     -- UNORDERED LIST
-    s({trig="itt", snippetType="autosnippet"},
+    s({trig="ull", snippetType="autosnippet"},
       fmt(
         [[
           <ul>
@@ -70,7 +92,8 @@ return
         <!doctype HTML>
         <html lang="en">
         <head>
-          <meta charset="UTF-8">
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>{}</title>
         </head>
         <body>
@@ -81,6 +104,38 @@ return
         {
           i(1, "FooBar"),
           i(0)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- GENERIC ELEMENT
+    s({trig = "ee", snippetType="autosnippet"},
+      fmt(
+        [[
+          <{}{}>
+            {}
+          </{}>
+        ]],
+        {
+          i(1),
+          i(2),
+          d(3, get_visual),
+          rep(1)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- DIV
+    s({trig = "dd", snippetType="autosnippet"},
+      fmt(
+        [[
+          <div{}>
+            {}
+          </div>
+        ]],
+        {
+          i(1),
+          d(2, get_visual),
         }
       ),
       {condition = line_begin}
@@ -98,8 +153,15 @@ return
         }
       )
     ),
+    -- STRONG ELEMENT
+    s({trig = "tbb", snippetType="autosnippet"},
+      fmt(
+        [[
+          <strong>{}</strong>
+        ]],
+        {
+          d(1, get_visual),
+        }
+      )
+    ),
   }
-
-
-
-

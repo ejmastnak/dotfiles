@@ -1,10 +1,6 @@
-local function get_visual(args, parent)
-  if (#parent.snippet.env.SELECT_RAW > 0) then
-    return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
-  else
-    return sn(nil, i(1, ''))
-  end
-end
+local helpers = require('personal.luasnip-helper-funcs')
+local get_date = helpers.get_ISO_8601_date
+local get_visual = helpers.get_visual
 
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
@@ -43,6 +39,22 @@ return
       ),
       {condition = line_begin}
     ),
+    -- INCLUDE
+    s({trig="inn", snippetType="autosnippet"},
+      {t("include ")},
+      {condition = line_begin}
+    ),
+    -- PUSHTAG
+    s({trig="ps", snippetType="autosnippet"},
+      {t("pushtag #")},
+      {condition = line_begin}
+    ),
+    -- POPTAG
+    s({trig="pp", snippetType="autosnippet"},
+      {t("poptag #")},
+      {condition = line_begin}
+    ),
+
     -- ACCOUNT SCHOOLS FIRST CHECKING
     s({trig=";sf", snippetType="autosnippet"},
       {t("Assets:SchoolsFirst:Checking")},
@@ -65,29 +77,33 @@ return
     ),
     -- CASH USD
     s({trig=";cu", snippetType="autosnippet"},
-      {t("Assets:Cash:USD")},
+      {t("Assets:USD:Cash")},
       {condition = line_begin}
     ),
     -- CASH EUR
     s({trig=";ce", snippetType="autosnippet"},
-      {t("Assets:Cash:EUR")},
+      {t("Assets:EUR:Cash")},
       {condition = line_begin}
     ),
     -- EXPENSE MARKET
     s({trig=";m", snippetType="autosnippet"},
-      {t("Expenses:Food:Market:EUR")},
+      {t("Expenses:EUR:Food:Market")},
       {condition = line_begin}
     ),
     -- EXPENSE GROCERIES
     s({trig=";g", snippetType="autosnippet"},
-      {t("Expenses:Food:Groceries:EUR")},
+      {t("Expenses:EUR:Food:Groceries")},
       {condition = line_begin}
     ),
     -- EXPENSE UNKNOWN
     s({trig=";u", snippetType="autosnippet"},
-      {t("Expenses:Other:Unknown:EUR")},
+      {t("Expenses:EUR:Other:Unknown")},
       {condition = line_begin}
     ),
 
+    s({trig = "--", snippetType="autosnippet"},
+      {t('; --------------------------------------------- ;')},
+      {condition = line_begin}
+    ),
 }
 

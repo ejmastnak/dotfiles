@@ -33,6 +33,23 @@ return
       ),
       {condition = line_begin}
     ),
+    -- CLASS
+    s({trig="class"},
+      fmta(
+        [[
+        class <>(<>):
+            def __init__(self<>):
+                <>
+        ]],
+        {
+          i(1),
+          i(2),
+          i(3),
+          i(4),
+        }
+      ),
+      {condition = line_begin}
+    ),
     -- EXIT MAIN FUNCTION with sys.exit()
     s({trig="XX", snippetType="autosnippet"},
       { t("sys.exit()") },
@@ -103,6 +120,10 @@ return
     ),
     -- SELF (for use in classes)
     s({trig = ";s", snippetType = "autosnippet"},
+      { t("self.") }
+    ),
+    -- SELF (for use in classes) without dot
+    s({trig = ";S", snippetType = "autosnippet"},
       { t("self") }
     ),
   }

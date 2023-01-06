@@ -1,5 +1,3 @@
-require('luasnip').filetype_extend("vue", {"html"})
-
 local get_visual = function(args, parent)
   if (#parent.snippet.env.SELECT_RAW > 0) then
     return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
@@ -12,15 +10,15 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return
   {
-    s({trig = "log", snippetType="autosnippet"},
+    -- NP.LOADTXT
+    s({trig="nlt", snippetType="autosnippet"},
       fmta(
         [[
-        console.log(<>);
+          np.loadtxt(<>)
         ]],
         {
           d(1, get_visual),
         }
-      ),
-      {condition = line_begin}
+      )
     ),
   }
