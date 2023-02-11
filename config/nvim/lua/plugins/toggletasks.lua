@@ -37,7 +37,26 @@ end
 -- Open Telescope task picker
 vim.keymap.set('n', '<space>ts', require('telescope').extensions.toggletasks.spawn)
 
--- Run "Project" task
-vim.keymap.set('n', '<Leader>tp', function() spawn_by_name("Project") end)
+-- Run all tasks with #the project tag
+vim.keymap.set('n', '<Leader>tp', function()
+  vim.cmd("Rooter")  -- switch to project root directory
+  spawn_tasks_with_tag("project") 
+  vim.cmd("wincmd k")  -- Return cursor to original window
+  vim.cmd("stopinsert")  -- Return to normal mode
+end)
 
-vim.keymap.set('n', '<Leader>tg', function() spawn_tasks_with_tag("auto") end)
+-- Run all tasks with the #compile tag
+vim.keymap.set('n', '<Leader>to', function()
+  vim.cmd("Rooter")  -- switch to project root directory
+  spawn_tasks_with_tag("compile") 
+  vim.cmd("wincmd k")  -- Return cursor to original window
+  vim.cmd("stopinsert")  -- Return to normal mode
+end)
+
+-- Run all tasks with the #view tag
+vim.keymap.set('n', '<Leader>ti', function()
+  vim.cmd("Rooter")  -- switch to project root directory
+  spawn_tasks_with_tag("view") 
+  vim.cmd("wincmd k")  -- Return cursor to original window
+  vim.cmd("stopinsert")  -- Return to normal mode
+end)
