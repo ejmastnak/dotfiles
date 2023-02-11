@@ -1,0 +1,26 @@
+" Navigation shortcuts for Laravel projects relative to project root directory
+
+nnoremap ;h :cd $VIFM_CONTEXT<CR>
+
+nnoremap ;dd :cd $VIFM_CONTEXT/database<CR>
+nnoremap ;df :cd $VIFM_CONTEXT/database/factories<CR>
+nnoremap ;dm :cd $VIFM_CONTEXT/database/migrations<CR>
+nnoremap ;ds :cd $VIFM_CONTEXT/database/seeders<CR>
+
+nnoremap ;aa :cd $VIFM_CONTEXT/app<CR>
+nnoremap ;am :cd $VIFM_CONTEXT/app/Models<CR>
+nnoremap ;ac :cd $VIFM_CONTEXT/app/Http/Controllers<CR>
+nnoremap ;ar :cd $VIFM_CONTEXT/app/Http/Resources<CR>
+nnoremap ;aR :cd $VIFM_CONTEXT/app/Repositories<CR>
+
+nnoremap ;rr :cd $VIFM_CONTEXT/resources/<CR>
+nnoremap ;rc :cd $VIFM_CONTEXT/resources/css<CR>
+nnoremap ;rv :cd $VIFM_CONTEXT/resources/views<CR>
+nnoremap ;rj :cd $VIFM_CONTEXT/resources/js<CR>
+
+nnoremap ;jj :cd $VIFM_CONTEXT/resources/js/<CR>
+nnoremap ;jp :cd $VIFM_CONTEXT/resources/js/Pages<CR>
+nnoremap ;jc :cd $VIFM_CONTEXT/resources/js/Components<CR>
+nnoremap ;jl :cd $VIFM_CONTEXT/resources/js/Layouts<CR>
+
+nnoremap ;rw :goto $VIFM_CONTEXT/routes/web.php<CR>
