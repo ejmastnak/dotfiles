@@ -5,6 +5,9 @@
 # v for caron
 # u for diaeresis (umlaut)
 
+# Since I usually use v to prefix Slovene
+<Multi_key> <v> <4> : "€" EuroSign # EURO SIGN
+
 # BEGIN ACUTE
 # --------------------------------------------- #
 <Multi_key> <e> <A> : "Á" Aacute # LATIN CAPITAL LETTER A WITH ACUTE
