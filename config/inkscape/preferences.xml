@@ -30,7 +30,7 @@
        state="1" />
     <group
        id="rulers"
-       state="0" />
+       state="1" />
     <group
        id="scrollbars"
        state="1" />
@@ -63,7 +63,7 @@
        state="1" />
     <group
        id="rulers"
-       state="0" />
+       state="1" />
     <group
        id="scrollbars"
        state="1" />
@@ -126,9 +126,9 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="663.417930302666"
-         height="372.428507166578"
-         ry="110.499233936698" />
+         width="880.707200418319"
+         height="1020.87014025591"
+         ry="66.2789676696298" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -164,8 +164,8 @@
          end="0"
          start="0"
          usecurrent="1"
-         rx="227.141238235113"
-         ry="227.141238235116" />
+         rx="28.5408530648299"
+         ry="30.2226984219292" />
       <eventcontext
          id="star"
          magnitude="5"
@@ -193,7 +193,8 @@
          mode="drag"
          selcue="1"
          style="stroke-width:1px;"
-         usecurrent="0" />
+         usecurrent="0"
+         freehand-mode="0" />
     </group>
     <eventcontext
        id="calligraphic"
@@ -324,7 +325,7 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:sans-serif;font-size:40px;text-anchor:middle;text-align:center"
+       style="line-height:1.25;font-family:sans-serif;font-size:10.66666667px;text-anchor:middle;text-align:center;-inkscape-font-specification:'sans-serif Bold';font-weight:bold"
        selcue="1"
        align_mode="1" />
     <eventcontext
@@ -342,8 +343,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="628.771"
-       y="77.3126"
+       x="207.356780532963"
+       y="86.1011291798494"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -543,7 +544,8 @@
        panel_border="0" />
   </group>
   <group
-     id="dialogs">
+     id="dialogs"
+     traceliveUpdate="1">
     <group
        id="toolbox" />
     <group
@@ -576,7 +578,7 @@
     <group
        id="preferences"
        state="1"
-       page="28" />
+       page="29" />
     <group
        id="gradienteditor" />
     <group
@@ -586,10 +588,10 @@
        default=""
        append_extension="1"
        path=""
-       defaultopts="1">
+       defaultopts="0">
       <group
          id="exportarea"
-         value="drawing" />
+         value="selection" />
       <group
          id="defaultxdpi"
          value="300" />
@@ -606,7 +608,8 @@
        append_extension="1"
        enable_preview="1"
        path=""
-       use_current_dir="1" />
+       use_current_dir="1"
+       enable_svgexport="1" />
     <group
        id="save_copy"
        default=""
@@ -620,12 +623,13 @@
     <group
        id="import"
        enable_preview="1"
-       path=""
+       path="/home/ej/Downloads/"
        ask="1"
        ask_svg="1"
-       link="link"
+       link="embed"
        scale="auto"
-       import_mode_svg="include" />
+       import_mode_svg="include"
+       forcexdpi="0" />
     <group
        id="debug"
        redirect="0" />
@@ -666,6 +670,8 @@
        id="colorpickerwindow" />
     <group
        id="undo-history" />
+    <group
+       id="objects" />
   </group>
   <group
      id="printing">
@@ -677,7 +683,8 @@
   </group>
   <group
      id="options"
-     rotationlock="1">
+     rotationlock="1"
+     onimport="0">
     <group
        id="renderingcache"
        size="512" />
@@ -948,7 +955,7 @@
        id="rendering" />
     <group
        id="boot"
-       theme="classic"
+       theme="custom"
        canvas="dark"
        enabled="0">
       <group
@@ -959,7 +966,8 @@
        id="font"
        unitType="2" />
     <group
-       id="kbshortcuts" />
+       id="kbshortcuts"
+       value="redo" />
   </group>
   <group
      id="extensions"
@@ -968,7 +976,7 @@
      org.inkscape.output.png.inkscape.png_antialias="2" />
   <group
      id="desktop"
-     style="fill:#fbfbfc;font-size:53.33333333px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Latin Modern Roman, ';font-family:'Latin Modern Roman';line-height:1.1;stroke-width:0.69999999;stroke-dasharray:0.69999999, 0.69999999">
+     style="fill:#81a1c1;font-size:128px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Source Code Pro Medium';font-family:'Source Code Pro';line-height:1.1;stroke:#ffffff;stroke-width:0;font-weight:500">
     <group
        width="470"
        height="1036"
@@ -1003,7 +1011,7 @@
        icononly="1"
        small="0"
        iconsize="16"
-       width="32">
+       width="51">
       <group
          id="buttons" />
     </group>
@@ -1090,14 +1098,19 @@
      narrowSpinButton="1"
      preferDarkTheme="1"
      darkTheme="1"
-     symbolicIcons="0"
-     symbolicDefaultBaseColors="1"
-     symbolicDefaultHighColors="1"
+     symbolicIcons="1"
+     symbolicDefaultBaseColors="0"
+     symbolicDefaultHighColors="0"
      menuIcons_canvas="0"
      menuIcons_layers="0"
-     menuIcons_objects="0"
-     iconTheme="hicolor"
-     gtkTheme="HighContrastInverse" />
+     menuIcons_objects="0">
+    <group
+       id="Adwaita"
+       symbolicBaseColor="-286331137"
+       symbolicSuccessColor="648766207"
+       symbolicWarningColor="4118348031"
+       symbolicErrorColor="3422552319" />
+  </group>
   <group
      id="live_effects"
      flattening="0" />

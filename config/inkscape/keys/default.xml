@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<keys name="User Shortcuts">
-
-  <!-- Align selected objects vertically/horizontally -->
-  <bind key="backslash" modifiers="Ctrl" action="AlignHorizontalCenter" display="false" />
-  <bind key="minus" modifiers="Ctrl" action="AlignVerticalCenter" display="false" />
-
-  <!-- Undo and redo -->
-  <bind key="u" modifiers="" action="EditUndo" display="false" />
-  <bind key="r" modifiers="Ctrl" action="EditRedo" display="false" />
-
-  <!-- Save -->
-  <bind key="w" modifiers="" action="FileSave" display="false" />
-
-  <!-- Copy and paste -->
-  <bind key="y" modifiers="" action="EditCopy" />
-  <bind key="p" modifiers="" action="EditPaste" />
-
-  <!-- Group and ungroup -->
-  <bind key="g" modifiers="" action="SelectionGroup" />
-  <bind key="u" modifiers="Shift" action="SelectionUnGroup" />
-
-  <!-- Lower/raise layers -->
-  <bind key="u" modifiers="Ctrl" action="SelectionRaise" />
-  <bind key="d" modifiers="Ctrl" action="SelectionLower" />
-
-  <!-- Dropper tool to pick colors -->
-  <bind key="c" action="ToolDropper" />
-
+<keys
+   name="User Shortcuts">
+  <bind
+     gaction="app.copy"
+     keys="&lt;Primary&gt;c,&lt;Primary&gt;Insert,y" />
+  <bind
+     gaction="app.object-align('hcenter pref')"
+     keys="&lt;Primary&gt;backslash" />
+  <bind
+     gaction="app.object-align('vcenter pref')"
+     keys="&lt;Primary&gt;minus" />
+  <bind
+     gaction="app.selection-group"
+     keys="&lt;Primary&gt;g,&lt;Primary&gt;&lt;Shift&gt;u,g" />
+  <bind
+     gaction="app.selection-ungroup"
+     keys="&lt;Primary&gt;&lt;Shift&gt;g,&lt;Primary&gt;u,&lt;Shift&gt;g" />
+  <bind
+     gaction="doc.redo"
+     keys="&lt;Primary&gt;r" />
+  <bind
+     gaction="doc.undo"
+     keys="u" />
+  <bind
+     gaction="win.paste"
+     keys="&lt;Primary&gt;v,&lt;Shift&gt;Insert,p" />
 </keys>
