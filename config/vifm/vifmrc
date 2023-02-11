@@ -57,8 +57,7 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 " END BASIC SETTINGS
 
 source ~/.config/vifm/personal/navigation.vifm
-
-" nnoremap <Space>q :quit<CR>
+nnoremap ;; :source .vifm-context.vifm<CR>
 
 " BEGIN MARKS
 " --------------------------------------------- "
@@ -69,7 +68,7 @@ mark h ~
 mark W ~/Downloads
 mark u ~/dotfiles/config/nvim/LuaSnip
 mark v ~/dotfiles/config/nvim
-mark w ~/Documents/projects/ejmastnak-hugo
+mark w ~/Documents/projects/ejmastnak
 " --------------------------------------------- "
 " END MARKS
 
@@ -104,6 +103,9 @@ command! reload :write | restart full
 " Start shell in current directory
 nnoremap s :shell<cr>
 
+" Find files
+nnoremap F :find<space>
+
 " Shortcut for edit command
 nnoremap e :edit<space>
 
@@ -112,6 +114,9 @@ nnoremap m :mkdir<space>
 
 " Create a README.md file
 nnoremap RM :edit README.md<CR>
+
+" Create a blah.md file
+nnoremap BB :edit blah.md<CR>
 
 " " Display sorting dialog
 " nnoremap S :sort<cr>
@@ -139,10 +144,15 @@ nnoremap P :!mpv %c<CR>
 
 " Play file under cursor with ambient.sh script
 " and ignore background process warning.
-nnoremap M :!ambient.sh %c &<CR><CR>
+nnoremap M :!ambient.bash %c &<CR><CR>
 
 " Open file under cursor with Neovim
-nnoremap N :!nvim %c<CR>
+nnoremap NN :!nvim %c<CR>
+
+" Open with Neovim in preparation for editing timestamps
+" Call with cursor on e.g. song.mp3 and open a file song.timestamps with Neovim.
+" with 
+nnoremap NT :!nvim -c "let g:mpv_file_to_auto_open='%c'" %c:r.timestamps<CR>
 
 " Run file under cursor as a shell script
 nnoremap S :!sh %c<CR>
