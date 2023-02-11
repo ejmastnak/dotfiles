@@ -14,6 +14,9 @@ filetype {*.apng},<image/apng> mpv %c
 " SVG
 filetype {*.svg},<image/svg> inkscape %c &
 
+" XCF
+filetype {*.xcf},<image/xcf> gimp %c
+
 " Image
 filetype {*.jpg,*.jpeg,*.png},<image/*> feh %c &
 
