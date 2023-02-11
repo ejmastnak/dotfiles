@@ -1,10 +1,5 @@
-local function get_visual(args, parent)
-  if (#parent.snippet.env.SELECT_RAW > 0) then
-    return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
-  else
-    return sn(nil, i(1, ''))
-  end
-end
+local helpers = require('personal.luasnip-helper-funcs')
+local get_visual = helpers.get_visual
 
 local function get_lilypond_version()
   -- The call to `tr` removes trailing newline character
@@ -82,17 +77,6 @@ return
         { 
           f(get_lilypond_version)
         }
-      )
-    ),
-    -- CURLY BRACES
-    s({trig = "df", snippetType="autosnippet"},
-      fmta(
-        [[
-        {
-          <>
-        }
-        ]],
-        { i(0) }
       )
     ),
   }

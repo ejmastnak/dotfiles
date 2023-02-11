@@ -1,10 +1,5 @@
-local function get_visual(args, parent)
-  if (#parent.snippet.env.SELECT_RAW > 0) then
-    return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
-  else
-    return sn(nil, i(1, ''))
-  end
-end
+local helpers = require('personal.luasnip-helper-funcs')
+local get_visual = helpers.get_visual
 
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
@@ -77,17 +72,6 @@ return
         { i(1) }
       ),
       {condition = line_begin}
-    ),
-    -- CURLY BRACES
-    s({trig = "df", snippetType="autosnippet"},
-      fmta(
-        [[
-      {
-          <>
-      }
-      ]],
-        { i(0) }
-      )
     ),
     -- DATA STRUCTURE
     s({trig = "ss", snippetType="autosnippet"},

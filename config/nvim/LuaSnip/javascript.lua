@@ -1,15 +1,25 @@
 local helpers = require('personal.luasnip-helper-funcs')
 local get_visual = helpers.get_visual
-
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return
   {
-    -- PRINT
-    s({trig="pp", snippetType="autosnippet"},
+    -- ALERT
+    s({trig = "all", snippetType="autosnippet"},
       fmta(
         [[
-        print(<>)
+        alert(<>);
+        ]],
+        {
+          d(1, get_visual)
+        }
+      )
+    ),
+    -- LOG TO CONSOLE
+    s({trig = "log", snippetType="autosnippet"},
+      fmta(
+        [[
+        console.log(<>);
         ]],
         {
           d(1, get_visual),
@@ -17,16 +27,9 @@ return
       ),
       {condition = line_begin}
     ),
-    -- DO RETURN END
-    s({trig="XX", snippetType="autosnippet"},
-      fmta(
-        [[
-        do return end
-        ]],
-        {
-        }
-      ),
-      {condition = line_begin}
-    ),
   }
+
+
+
+
 

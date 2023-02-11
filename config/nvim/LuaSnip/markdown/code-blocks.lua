@@ -1,10 +1,5 @@
-local function get_visual(args, parent)
-  if (#parent.snippet.env.SELECT_RAW > 0) then
-    return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
-  else
-    return sn(nil, i(1, ''))
-  end
-end
+local helpers = require('personal.luasnip-helper-funcs')
+local get_visual = helpers.get_visual
 
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
@@ -98,10 +93,24 @@ return
       {condition = line_begin}
     ),
     -- SQL CODE BLOCK
-    s({trig="sql"},
+    s({trig="qq"},
       fmt(
         [[
         ```sql
+        {}
+        ```
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- JAVASCRIPT CODE BLOCK
+    s({trig="js"},
+      fmt(
+        [[
+        ```javascript
         {}
         ```
         ]],
