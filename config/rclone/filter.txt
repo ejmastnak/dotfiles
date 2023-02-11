@@ -1,6 +1,13 @@
+# Media files would exceed Google Drive capacity
+- media/**
+- data-media/**
+- gaia/dump-documents/**
+
+# Ignore Git directories and Syncthing backups
 - .git/**
 - .stversions/**
 
+# Various software build-related folders
 - .jekyll-cache/**
 - _site/**
 - vendor/**
@@ -8,11 +15,14 @@
 - .old-java/**
 - .venv/**
 - __pycache__/**
+- env/**
+- public/**
 
 - *.tar.gz
 - *.bak
 - *.DS_Store
 
+# LaTeX-related files
 - *.aux
 - *.bbl
 - *.bcf
