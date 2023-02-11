@@ -3,4 +3,4 @@
 
 directory="anime-nature"
 
-DISPLAY=:0 feh --no-fehbg --bg-fill --randomize ~/Documents/pictures/media/wallpapers/${directory}/*.jpg
+DISPLAY=:0 feh --no-fehbg --bg-fill --randomize ~/Documents/pictures/wallpapers/${directory}/*.jpg

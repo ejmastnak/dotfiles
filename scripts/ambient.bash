@@ -26,6 +26,11 @@
 #      folder/quiet-song.wav,50
 #      ```
 
+if [[ ${1##*.} != "csv" ]]; then
+  echo "Input should be a CSV file."
+  exit
+fi
+
 # Read through all lines in tracks-to-play.csv
 line_num=0
 while read line

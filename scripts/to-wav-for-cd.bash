@@ -1,8 +1,8 @@
 #!/bin/bash
 # NAME
-#     prep-album-for-cd - Convert album tracks to CD-playable format
+#     to-wav-for-cd.bash - Convert album tracks to CD-playable format
 # SYNOPSIS
-#     prep-album-for-cd.bash playlist.m3u
+#     to-wav-for-cd.bash playlist.m3u
 # DESCRIPTION
 # Input an M3U playlist file containing the paths to the album tracks, e.g.
 # 
@@ -15,7 +15,7 @@
 # numbered in the order they appeared in the M3U playlist, into a directory
 # whose name is the basename of the M3U playlist file, e.g.
 #
-#   # `prep-album-for-cd.bash SAX.m3u` produces
+#   # to-wav-for-cd.bash SAX.m3u` produces
 #   SAX/01-in-the-moment.wav
 #   SAX/02-better-days-ahead.wav
 #   SAX/03-g-and-lee.wav
@@ -23,7 +23,7 @@
 # Dependencies: mpg123 (for mp3 files), opusdec (for opus files)
 
 if [[ "$#" != 1 ]]; then
-  echo "Usage: prep-album-for-cd.bash playlist.m3u"
+  echo "Usage: to-wav-for-cd.bash playlist.m3u"
   exit 1
 fi
 

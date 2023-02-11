@@ -1,8 +1,10 @@
 #!/bin/sh
 # Goal: rename music file names from my pre-Unix naming convention days
-# Example before: "1 My Favorite Things - John Coltrane.mp3"
-# Example after: "my-favorite-things.mp3"
-# Remaining song information should be moved to ID3 tags
+# Remaining song information should be moved to ID3 tags.
+#
+# EXAMPLES
+#   Before: "1 My Favorite Things - John Coltrane.mp3"
+#   After: "my-favorite-things.mp3"
 
 # Note to self: useful for removing yt-dlp tags:
 # perl-rename -n 's/ \[.*\]//' *.opus
