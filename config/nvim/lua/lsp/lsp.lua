@@ -19,3 +19,21 @@ require('lspconfig').clangd.setup {
     require('illuminate').on_attach(client)
   end,
 }
+require('lspconfig').sumneko_lua.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        -- version = 'Lua 5.1',
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+  on_attach = function(client)
+    vim.diagnostic.disable(0)
+    require('illuminate').on_attach(client)
+  end,
+}
