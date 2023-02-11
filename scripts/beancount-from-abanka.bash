@@ -1,9 +1,9 @@
 #!/bin/bash
 # NAME
-#     abanka-to-beancount - convert Abanka CSV report to beancount
+#     beancount-from-abanka.bash - convert Abanka CSV report to beancount
 # 
 # SYNOPSIS
-#     abanka-to-beancount abanka-report.csv
+#     beancount-from-abanka.bash abanka-report.csv
 
 # Convert input to utf-8
 iconv -f CP1250 -t UTF-8 -o "${1}.utf8.tmp" "${1}"

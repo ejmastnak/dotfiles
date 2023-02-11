@@ -1,9 +1,9 @@
 #!/bin/bash
 # NAME
-#     dh-to-beancount - convert DH CSV report to beancount
+#     beancount-from-dh.bash - convert DH CSV report to beancount
 # 
 # SYNOPSIS
-#     dh-to-beancount dh-report.csv
+#     beancount-from-dh.bash dh-report.csv
 
 # Convert input to utf-8
 iconv -f CP1250 -t UTF-8 -o "${1}.utf8.tmp" "${1}"
