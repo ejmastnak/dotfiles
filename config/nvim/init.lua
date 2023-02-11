@@ -14,6 +14,7 @@ vim.opt.wrap         = true   -- wrap long lines
 vim.opt.linebreak    = true   -- break lines at words
 vim.opt.signcolumn   = "no"   -- disable LSP diagnostic symbols in left column
 
+vim.keymap.set('', '<Space>', '<NOP>')
 vim.g.mapleader = " "  -- set global leader key
 
 if vim.fn.has('termguicolors') == 1 then
@@ -51,7 +52,6 @@ Plug 'ggandor/lightspeed.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug('kylechui/nvim-surround', {tag = '*'})
 Plug 'wellle/targets.vim'
--- Plug 'andymass/vim-matchup'
 Plug 'kana/vim-textobj-user'
 Plug 'coachshea/vim-textobj-markdown'
 Plug 'junegunn/vim-easy-align'
@@ -61,7 +61,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dispatch'
-Plug('akinsho/toggleterm.nvim', {tag = '*'})
+Plug 'akinsho/toggleterm.nvim'
+Plug 'jedrzejboczar/toggletasks.nvim'
 Plug 'airblade/vim-rooter'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'brenoprata10/nvim-highlight-colors'
@@ -82,6 +83,11 @@ Plug 'RRethy/vim-illuminate'
 Plug('nvim-Treesitter/nvim-Treesitter', {['do'] = ':TSUpdate'})
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
+
+-- Local plugins
+Plug '~/.config/nvim/personal/vim-mpv'
+Plug '~/.config/nvim/personal/vim-beanquery'
+
 vim.call('plug#end')
 -- --------------------------------------------- --
 -- End loading plugins
@@ -104,7 +110,8 @@ require('plugins/dispatch')
 require('plugins/easy-align')
 require('plugins/telescope')
 require('plugins/nvim-surround')
-require('plugins/toggle-term')
+require('plugins/toggleterm')
+require('plugins/toggletasks')
 require('plugins/rooter')
 require('plugins/lualine')
 require('plugins/lightspeed')
@@ -120,6 +127,7 @@ vim.keymap.set('n', '<Leader>w', '<Cmd>write<CR>')
 
 -- Change default fold command
 vim.keymap.set('n', 'zf', 'zc')
+vim.keymap.set('n', 'zc', 'zf')
 
 -- Easier edit command
 vim.keymap.set('n', '<Leader>e', ':edit ')
@@ -135,6 +143,20 @@ vim.keymap.set('n', '<Leader>g', ':Git ')
 
 -- Rough analog of `:join` or `J` for lines above cursor
 vim.keymap.set('n', 'K', 'kdd$')
+
+-- Move current line up and down
+-- See https://www.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/
+vim.keymap.set('n', '<C-S-j>', '<Cmd>move .+1<CR>')
+vim.keymap.set('n', '<C-S-k>', '<Cmd>move .-2<CR>')
+
+-- Move selected lines up and down
+-- See https://stackoverflow.com/questions/41084565/moving-multiple-lines-in-vim-visual-mode
+vim.cmd([[
+xnoremap <C-S-j> :m'>+<CR>gv=gv
+xnoremap <C-S-k>  :m-2<CR>gv=gv
+]])
+
+
 
 -- Global substitute
 vim.keymap.set('n', '<Leader>s', ':%s/')
@@ -165,6 +187,9 @@ vim.keymap.set('n', '<Leader>q',
     end
   end,
   {desc = 'Write and quit if possible/applicable, force quit otherwise.'})
+
+-- Save and close all buffers
+vim.keymap.set('n', '<Leader>Q', '<Cmd>wqa<CR>')
 
 -- Sort text by paragraph (useful for e.g. for Beancount files)
 -- Implements https://stackoverflow.com/a/24099468
