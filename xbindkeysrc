@@ -1,14 +1,18 @@
 # Use XF86Tools (F9 on T460) to play/pause firefox
-"playerctl --player=firefox play-pause"
+"playerctl --player=chromium play-pause"
    XF86Tools
 
 # Use XF86Search (F10 on T460) to play/pause MPV
 "playerctl --player=mpv play-pause"
    XF86Search
 
-# Use XF86LaunchA (F11 on T460) to skip to next track on current player
-"playerctl next"
+# Use XF86LaunchA (F11 on T460) to skip to previous track on current player
+"playerctl previous"
    XF86LaunchA
+
+# Use XF86Explorer (F12 on T460) to skip to next track on current player
+"playerctl next"
+   XF86Explorer
 
 # Mute volume
 "${HOME}/scripts/volume-pulse.sh mute"
