@@ -7,7 +7,7 @@ font pango:DejaVu Sans Mono 10
 # SYSTEM COMMANDS
 # ------------------------------------ #
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty --command vifm
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -137,10 +137,10 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # move focused container one workspace left
-bindsym $mod+Shift+comma move container to workspace prev
+bindsym $mod+Shift+comma move container to workspace prev workspace prev
 
 # move focused container one workspace right
-bindsym $mod+Shift+period move container to workspace next
+bindsym $mod+Shift+period move container to workspace next workspace next
 
 
 # BEGIN DEFAULT CONFIGURATION
@@ -274,8 +274,16 @@ bar {
 # --------------------------------------------- #
 # Open Vim to edit LaTeX for use in Anki notes
 bindsym $mod+Shift+a exec --no-startup-id "${HOME}/.config/anki/ankitex.sh"
-# --------------------------------------------- #
 
+# Call the xcolor color picker and save the result to CLIPBOARD
+bindsym --release $mod+Shift+p exec --no-startup-id xcolor --selection clipboard
+
+# Screenshot a selected region with maim and slop
+bindsym Print exec --no-startup-id "${HOME}/scripts/screenshot.bash -s"
+
+# Screenshot root window with maim
+bindsym Shift+Print exec --no-startup-id "${HOME}/scripts/screenshot.bash -r"
+# --------------------------------------------- #
 # Autostarting
 # --------------------------------------------- #
 # Set display temperature to 3500K
