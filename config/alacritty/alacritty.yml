@@ -133,9 +133,14 @@ cursor:
 
 key_bindings:
   # Key bindings to control font size from keyboard 
+  # For J and K see https://www.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/
+  # Goal is ultimately to use Control+Shift modifiers in Neovim keymaps
+
   - { key: Minus,   mods: Control,   action: DecreaseFontSize }
   - { key: Plus,    mods: Control,   action: IncreaseFontSize }
   - { key: Key0,    mods: Control,   action: ResetFontSize    }
+  - { key: J,        mods: Control|Shift, chars: "\x1b[74;5u" }
+  - { key: K,        mods: Control|Shift, chars: "\x1b[75;5u" }
 # # Use for Alt to work as Mod key on macOS
 # # See https://github.com/alacritty/alacritty/issues/62
 #   - { key: Key1,    mods: Alt,       chars: "\x1b1"           }
