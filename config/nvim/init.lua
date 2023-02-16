@@ -157,10 +157,13 @@ xnoremap <C-S-k>  :m-2<CR>gv=gv
 ]])
 
 
-
 -- Global substitute
 vim.keymap.set('n', '<Leader>s', ':%s/')
 vim.keymap.set('v', '<Leader>s', ':s/')
+-- Search/replace current word under cursor
+vim.cmd([[
+nnoremap <expr> <C-s> ':%s/' . expand('<cword>') . '/'
+]])
 
 -- Set swap file directory to within Vim directory
 vim.opt.directory:prepend(os.getenv("HOME") .. "/.config/nvim/swap//")
