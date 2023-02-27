@@ -37,3 +37,8 @@ vim.keymap.set('', '<C-l>', '<C-w>l')
 -- Mappings for navigating buffers
 vim.keymap.set('', '<Leader>b', '<Cmd>bnext<CR>')
 vim.keymap.set('', '<Leader>B', '<Cmd>bprevious<CR>')
+
+-- Mappings for navigating QuickFix entries
+vim.keymap.set('', '<Leader>cc', '<Cmd>cc<CR>')
+vim.keymap.set('', '<Leader>cn', '<Cmd>cnext<CR>')
+vim.keymap.set('', '<Leader>cp', '<Cmd>cprevious<CR>')
