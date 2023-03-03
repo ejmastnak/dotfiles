@@ -10,6 +10,9 @@ font pango:DejaVu Sans Mono 10
 # start a terminal
 bindsym $mod+Return exec alacritty --command vifm
 
+# Open a web browser
+bindsym $mod+Shift+o exec chromium
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $shift
 
