@@ -1,5 +1,6 @@
 # use <Alt> as the Modifier key
 set $mod Mod1
+set $shift Shift
 
 # Font for window titles status bar
 font pango:DejaVu Sans Mono 10
@@ -10,7 +11,7 @@ font pango:DejaVu Sans Mono 10
 bindsym $mod+Return exec alacritty --command vifm
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier $shift
 
 # Kill focused window
 bindsym $mod+Shift+q kill
