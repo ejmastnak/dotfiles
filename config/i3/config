@@ -38,7 +38,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Float matplotlib windows
 for_window [class="R_x11"] floating enable
 for_window [class="matplotlib"] floating enable
-for_window [class="PacketTracer"] floating enable
+for_window [class="gnuplot_qt"] floating enable
 
 # GAPS
 # --------------------------------------------- #
