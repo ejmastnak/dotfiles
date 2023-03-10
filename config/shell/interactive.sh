@@ -6,11 +6,6 @@ alias spu="sudo pacman -Syu"
 
 alias s="systemctl"
 
-# Back up selected documents to Google Drive with rclone
-alias backup_docs_to_google="rclone sync -v --filter-from ~/.config/rclone/filter.txt /home/ej/Documents/ google-drive:Documents/"
-
-alias backup_docs_to_mega="rclone sync -v --filter-from ~/.config/rclone/filter.txt /home/ej/Documents/ mega:Documents/"
-
 alias grep='grep -n --color=auto'
 
 # Recursive grep starting in current directory
