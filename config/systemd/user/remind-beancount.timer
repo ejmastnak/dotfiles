@@ -1,0 +1,10 @@
+[Unit]
+Description=Run monthly reminder to update Beancount records
+Requires=remind-beancount.service
+
+# Run on the third of every month at 12 o'clack
+[Timer]
+OnCalendar=*-*-03 12:00:00
+
+[Install]
+WantedBy=timers.target

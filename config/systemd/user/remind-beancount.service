@@ -1,0 +1,10 @@
+[Unit]
+Description=Monthly reminder to update Beancount records
+Wants=remind-beancount.timer
+
+[Service]
+Type=oneshot
+ExecStart=notify-send -t 300000 "Update your Beancount records!"
+
+[Install]
+WantedBy=graphical.target
