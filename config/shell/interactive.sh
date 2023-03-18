@@ -1,7 +1,3 @@
-# Aliases
-# --------------------------------------------- #
-alias grep='grep -n --color=auto'
-
 # Recursive grep starting in current directory
 rgrep() {
   if [ "$#" -eq 1 ]; then
@@ -36,6 +32,11 @@ display-off() {
     xrandr --output HDMI-2 --off
   fi
 }
+
+alias grep='grep -n --color=auto'
+
+# Activate Python virtual environment
+alias venv="source ./venv/bin/activate"
 
 # Download and extract audio from YouTube videos
 alias dlp='yt-dlp -x'
