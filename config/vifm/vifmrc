@@ -45,11 +45,15 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " Set status line; add marker for Python virtual environments
+highlight User1 ctermbg=blue ctermfg=white cterm=bold
+highlight User2 ctermbg=yellow ctermfg=black cterm=bold
 if $VIRTUAL_ENV != ""
-  set statusline="  VENV %= %A %10u:%-7g %15s %20d  "
+  set statusline="%2*  VENV  %1* %= %A %10u:%-7g %15s %20d  "
 else
-  set statusline="  %A %10u:%-7g %15s %20d  "
+  set statusline="%1*  %A %10u:%-7g %15s %20d  "
 endif
+
+" set statusline="%1* %-26t %2* %= %1* %A %2* %7u:%-7g %1* %-5s %2* %d "
 
 
 
