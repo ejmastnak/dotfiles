@@ -1,11 +1,5 @@
 # Aliases
 # --------------------------------------------- #
-alias sudo="sudo "
-alias sps="sudo pacman -S"
-alias spu="sudo pacman -Syu"
-
-alias s="systemctl"
-
 alias grep='grep -n --color=auto'
 
 # Recursive grep starting in current directory
@@ -58,14 +52,6 @@ alias udmnt='udisksctl mount --block-device'
 alias udumnt='udisksctl unmount --block-device'
 alias udpwr='udisksctl power-off --block-device'
 
-# improved ls
-alias l="exa"
-alias L="exa -la"
-
-# Jupyter notebook and lab
-alias jnb="jupyter notebook"
-alias jnl="jupyter lab"
-
 # Some Git alias
 alias gg="git status"
 alias ggd="git diff"
@@ -81,5 +67,3 @@ alias artrl="php artisan route:list"
 
 # Network
 alias lswifi="nmcli device wifi list"
-
-alias sus="systemctl suspend"
