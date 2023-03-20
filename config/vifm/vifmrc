@@ -48,14 +48,13 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 highlight User1 ctermbg=blue ctermfg=white cterm=bold
 highlight User2 ctermbg=yellow ctermfg=black cterm=bold
 if $VIRTUAL_ENV != ""
-  set statusline="%2*  VENV  %1* %= %A %10u:%-7g %15s %20d  "
+  " The rev | cut | rev call extracts VENV folder; see "https://unix.stackexchange.com/a/217630
+  execute 'set' 'statusline="%2*  VENV ' . 
+        \ system("echo $VIRTUAL_ENV | rev | cut --delimiter='/' --fields=2 | rev") .
+        \ '  %1* %A %10u:%-7g %15s %20d  %="'
 else
-  set statusline="%1*  %A %10u:%-7g %15s %20d  "
+  let &statusline = '%1*  %A %10u:%-7g %15s %20d  %='
 endif
-
-" set statusline="%1* %-26t %2* %= %1* %A %2* %7u:%-7g %1* %-5s %2* %d "
-
-
 
 " format for time in file list
 set timefmt=%m/%d\ %H:%M  
