@@ -144,6 +144,17 @@ function M.play(file_to_play, opts, socket)
 
   -- Open terminal and spawn `cmd`
   mpvterm:toggle()
+  vim.cmd("wincmd k")  -- Return cursor to original window
+  vim.cmd("stopinsert")  -- Return to normal mode
+
+  -- Refocus Vim window (e.g. when opening videos)
+  if vim.fn.exists("g:vim_window_id") ~= 0 then
+    -- Give window manager time to recognize focus moved to video window
+    vim.cmd('sleep 400m')
+    vim.fn.system("xdotool windowfocus " .. vim.g.vim_window_id)
+    vim.cmd('redraw!')
+  end
+
 end
 
 -- Closes current connection to mpv and shuts down associated terminal
