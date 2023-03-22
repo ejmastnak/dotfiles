@@ -39,9 +39,8 @@ set smartcase
 set wildmenu         " show list of matches on tab completion in command-line mode
 set wildstyle=popup  " display completions as a popup with descriptions of the matches
 
-" What should be saved automatically between vifm sessions.  Drop "savedirs"
-" value if you don't want vifm to remember last visited directories for you.
-set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+" What should be saved automatically between vifm sessions.
+set vifminfo=dhistory,chistory,savedirs,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " Set status line; add marker for Python virtual environments
@@ -151,6 +150,10 @@ nnoremap NN :!nvim %c<CR>
 
 " Run file under cursor as a shell script
 nnoremap S :!sh %c<CR>
+
+" Activate Python virtual environment
+nnoremap EE :!activate-venv.bash<CR>
+
 " --------------------------------------------- "
 " END MAPPINGS
 
