@@ -7,4 +7,6 @@
 # Works: nnoremap EE :!activate-venv.bash<CR>
 # Doesn't work: nnoremap EE :!source ./venv/bin/activate && vifm ./ ./<CR>
 
-source ./venv/bin/activate && vifm ./ ./
+if [[ -e "./venv/bin/activate" ]]; then
+  source ./venv/bin/activate && vifm ./ ./
+fi
