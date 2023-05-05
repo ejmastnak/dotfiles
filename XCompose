@@ -5,8 +5,13 @@
 # v for caron
 # u for diaeresis (umlaut)
 
-# Since I usually use v to prefix Slovene
-<Multi_key> <v> <4> : "€" EuroSign # EURO SIGN
+<Multi_key> <4> <4>:                  "€" EuroSign     # EURO SIGN
+<Multi_key> <exclam> <exclam>:        "¡"	exclamdown   # INVERTED EXCLAMATION MARK
+<Multi_key> <question> <question>:    "¿"	questiondown # INVERTED QUESTION MARK
+<Multi_key> <minus> <minus> <period>: "–"	U2013        # EN DASH
+<Multi_key> <minus> <minus> <minus>:  "—"	U2014        # EM DASH
+
+<dead_tilde> <n>			: "ñ"	ntilde # LATIN SMALL LETTER N WITH TILDE
 
 # BEGIN ACUTE
 # --------------------------------------------- #
@@ -190,3 +195,25 @@
 <Multi_key> <u> <t> : "ẗ" U1E97          # LATIN SMALL LETTER T WITH DIAERESIS
 # --------------------------------------------- #
 # END DIAERESIS
+
+
+# BELOW TILDE
+# --------------------------------------------- #
+<Multi_key> <n> <a> : "ã"	atilde # LATIN SMALL LETTER A WITH TILDE
+<Multi_key> <n> <A> : "Ã"	Atilde # LATIN CAPITAL LETTER A WITH TILDE
+<Multi_key> <n> <e> : "ẽ"	U1EBD # LATIN SMALL LETTER E WITH TILDE
+<Multi_key> <n> <E> : "Ẽ"	U1EBC # LATIN CAPITAL LETTER E WITH TILDE
+<Multi_key> <n> <i> : "ĩ"	U0129 # LATIN SMALL LETTER I WITH TILDE
+<Multi_key> <n> <I> : "Ĩ"	U0128 # LATIN CAPITAL LETTER I WITH TILDE
+<Multi_key> <n> <n> : "ñ"	ntilde # LATIN SMALL LETTER N WITH TILDE
+<Multi_key> <n> <N> : "Ñ"	Ntilde # LATIN CAPITAL LETTER N WITH TILDE
+<Multi_key> <n> <o> : "õ"	otilde # LATIN SMALL LETTER O WITH TILDE
+<Multi_key> <n> <O> : "Õ"	Otilde # LATIN CAPITAL LETTER O WITH TILDE
+<Multi_key> <n> <u> : "ũ"	U0169 # LATIN SMALL LETTER U WITH TILDE
+<Multi_key> <n> <U> : "Ũ"	U0168 # LATIN CAPITAL LETTER U WITH TILDE
+<Multi_key> <n> <v> : "ṽ"	U1E7D # LATIN SMALL LETTER V WITH TILDE
+<Multi_key> <n> <V> : "Ṽ"	U1E7C # LATIN CAPITAL LETTER V WITH TILDE
+<Multi_key> <n> <y> : "ỹ"	U1EF9 # LATIN SMALL LETTER Y WITH TILDE
+<Multi_key> <n> <Y> : "Ỹ"	U1EF8 # LATIN CAPITAL LETTER Y WITH TILDE
+# --------------------------------------------- #
+# END TILDE
