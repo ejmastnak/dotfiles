@@ -15,11 +15,6 @@ end
 -- Return snippet tables
 return
   {
-    s({trig="LL", snippetType="autosnippet"},
-      {
-        t("& "),
-      }
-    ),
     s({trig="q"},
       {
         t("\\quad "),

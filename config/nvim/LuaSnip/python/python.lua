@@ -68,20 +68,6 @@ return
       ),
       {condition = line_begin}
     ),
-    -- __INIT__ METHOD/CONSTRUCTOR
-    s({trig="__", snippetType="autosnippet"},
-      fmta(
-        [[
-        def __init__(self<>):
-            <>
-      ]],
-        {
-          i(1),
-          d(2, get_visual),
-        }
-      ),
-      {condition = line_begin}
-    ),
     -- TIME, i.e. snippet for timing code execution
     s({trig="time"},
       fmta(
@@ -113,6 +99,22 @@ return
       { t("return") },
       { condition = line_begin }
     ),
+    -- KWARGS STATEMENT
+    s({trig = ";k", snippetType = "autosnippet", wordTrig=false},
+      { t("kwargs") }
+    ),
+    -- KWARGS.GET
+    s({trig="kgg", snippetType = "autosnippet"},
+      fmta(
+        [[
+        kwargs.get('<>', '<>')
+        ]],
+        {
+          d(1, get_visual),
+          i(2)
+        }
+      )
+    ),
     -- SELF (for use in classes)
     s({trig = ";s", snippetType = "autosnippet"},
       { t("self.") }
@@ -121,4 +123,10 @@ return
     s({trig = ";S", snippetType = "autosnippet"},
       { t("self") }
     ),
+    -- TRACEBACK
+    s({trig = "tbb", snippetType = "autosnippet"},
+      { t("print(traceback.format_exc())") },
+      { condition = line_begin }
+    ),
+
   }

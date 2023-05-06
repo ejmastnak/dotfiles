@@ -129,11 +129,32 @@ return
         }
       )
     ),
+    -- URL 
     s({trig="url"},
       fmta(
         [[\url{<>}]],
         {
           d(1, get_visual),
+        }
+      )
+    ),
+    -- href command with URL in visual selection
+    s({trig="LU", snippetType="autosnippet"},
+      fmta(
+        [[\href{<>}{<>}]],
+        {
+          d(1, get_visual),
+          i(2)
+        }
+      )
+    ),
+    -- href command with text in visual selection
+    s({trig="LL", snippetType="autosnippet"},
+      fmta(
+        [[\href{<>}{<>}]],
+        {
+          i(1),
+          d(2, get_visual)
         }
       )
     ),

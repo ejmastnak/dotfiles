@@ -36,7 +36,7 @@ return
       {condition = line_begin}
     ),
     -- PHP CODE BLOCK
-    s({trig="php"},
+    s({trig="phpp", snippetType="autosnippet"},
       fmt(
         [[
         ```php
@@ -51,7 +51,7 @@ return
       {condition = line_begin}
     ),
     -- PYTHON CODE BLOCK
-    s({trig="py"},
+    s({trig="pyy", snippetType="autosnippet"},
       fmt(
         [[
         ```python
@@ -79,7 +79,7 @@ return
       {condition = line_begin}
     ),
     -- BASH CODE BLOCK
-    s({trig="sh"},
+    s({trig="shh", snippetType="autosnippet"},
       fmt(
         [[
         ```bash
@@ -93,7 +93,7 @@ return
       {condition = line_begin}
     ),
     -- SQL CODE BLOCK
-    s({trig="qq"},
+    s({trig="qq", snippetType="autosnippet"},
       fmt(
         [[
         ```sql
@@ -107,7 +107,7 @@ return
       {condition = line_begin}
     ),
     -- JAVASCRIPT CODE BLOCK
-    s({trig="js"},
+    s({trig="jss", snippetType="autosnippet"},
       fmt(
         [[
         ```javascript
@@ -116,6 +116,23 @@ return
         ]],
         {
           d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- VUE CODE BLOCK
+    s({trig="vuu", snippetType="autosnippet"},
+      fmt(
+        [[
+        ```vue
+        {}<script setup>
+        {}
+        </script>
+        ```
+        ]],
+        {
+          i(1),
+          d(2, get_visual)
         }
       ),
       {condition = line_begin}

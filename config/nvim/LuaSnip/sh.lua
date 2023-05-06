@@ -61,7 +61,7 @@ return
     s({trig = "iff", snippetType="autosnippet"},
       fmta(
         [=[
-          if [[ <> ]]
+          if [[ <> ]]; then
             <>
           fi
         ]=],

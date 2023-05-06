@@ -36,20 +36,34 @@ return
         }
       )
     ),
-    -- PHP ARTISAN SERVE
-    s({trig = "php"},
+    -- LARAVEL projects
+    s({trig = "laravel"},
       fmta(
         [[
         {
-          "name": "Project",
-          "cmd": "xdg-open http://127.0.0.1:8000/ && php artisan serve",
-          "tags": ["project"],
-          "count": <>
+          "tasks": [
+            {
+              "name": "Start PHP server",
+              "cmd": "php artisan serve",
+              "tags": ["project"],
+              "count": 1
+            },
+            {
+              "name": "Run",
+              "cmd": "npm run dev",
+              "tags": ["project"],
+              "count": 2
+            },
+            {
+              "name": "Open browser",
+              "cmd": "xdg-open http://127.0.0.1:8000",
+              "tags": ["view"],
+              "count": 3
+            }
+          ]
         }
         ]],
-        {
-          i(1, "2")
-        }
+        { }
       )
     ),
     -- NPM RUN DEV

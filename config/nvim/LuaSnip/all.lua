@@ -65,7 +65,7 @@ return
     {f(get_date)}
     -- {f(get_ISO_8601_date)}
     ),
-    -- CURLY BRACES
+    -- Curly braces
     s({trig = "df", snippetType="autosnippet"},
       fmta(
         [[
@@ -75,6 +75,21 @@ return
         ]],
         { d(1, get_visual) }
       )
+    ),
+    -- Square braces
+    s({trig = "dg", snippetType="autosnippet"},
+      fmta(
+        [[
+        [
+          <>
+        ]
+        ]],
+        { d(1, get_visual) }
+      )
+    ),
+    -- em dash
+    s({trig = "---", wordTrig=false},
+      {t("—")}
     ),
     -- Lorem ipsum
     s({trig = "lipsum"},

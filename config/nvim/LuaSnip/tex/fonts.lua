@@ -22,7 +22,7 @@ end
 return
   {
     -- TYPEWRITER i.e. \texttt
-    s({trig = "([^%a])sd", regTrig = true, wordTrig = false, snippetType="autosnippet", priority=2000},
+    s({trig = "([^%a])tt", regTrig = true, wordTrig = false, snippetType="autosnippet", priority=2000},
       fmta(
         "<>\\texttt{<>}",
         {

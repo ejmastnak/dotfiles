@@ -15,6 +15,20 @@ return
       ),
       {condition = line_begin}
     ),
+    -- plt.
+    s({trig=";p", snippetType="autosnippet"},
+      {t("plt.")}
+    ),
+    -- plt.plot
+    s({trig="pll", snippetType="autosnippet"},
+      fmta(
+        [[plt.plot(<>)]],
+        {
+          d(1, get_visual),
+        }
+      ),
+      {condition = line_begin}
+    ),
     -- AXIS PLOT
     s({trig="xp", snippetType="autosnippet"},
       fmta(
@@ -83,6 +97,10 @@ return
       fmta(
         [[
         def remove_spines(ax):
+            """
+            Removes top and right spines from the inputted Matplotlib axis. This is for
+            aesthetic purposes only and has no practical function.
+            """
             ax.spines['top'].set_visible(False)
             ax.spines['right'].set_visible(False)
             ax.get_xaxis().tick_bottom()

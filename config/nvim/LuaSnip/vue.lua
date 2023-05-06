@@ -30,19 +30,18 @@ return
       {condition = line_begin}
     ),
     -- Inertia Link using Ziggy route binding
-    s({trig = "lzz", snippetType="autosnippet"},
+    s({trig = "LL", snippetType="autosnippet"},
       fmt(
         [[
-          <Link :href="route('{}'{})">{}</Link>
+          <Link :href="route({})">{}</Link>
         ]],
         {
           i(1),
-          i(2),
-          d(3, get_visual),
+          d(2, get_visual),
         }
       )
     ),
-    -- SCRIPT SETUP
+    -- script setup
     s({trig = "vss", snippetType="autosnippet"},
       fmt(
         [[
@@ -55,7 +54,7 @@ return
         }
       )
     ),
-    -- TEMPLATE
+    -- template
     s({trig = "vtt", snippetType="autosnippet"},
       fmt(
         [[
@@ -68,7 +67,7 @@ return
         }
       )
     ),
-    -- DEFINEPROPS
+    -- defineProps
     s({trig = "vdp", snippetType="autosnippet"},
       fmta(
         [[
@@ -77,26 +76,41 @@ return
           })
         ]],
         {
-          i(0)
+          i(1)
         }
       )
     ),
-    -- ON MOUNTED SET TIMEOUT
-    s({trig = "onn", snippetType="autosnippet"},
+    -- Import and set a persistent layout
+    s({trig = "layout"},
       fmt(
         [[
-          onMounted(() => {{
-            setTimeout(() => {{
-              {}
-            }}, {});
-          }})
+          <script>
+          import () from "@/Layouts/().vue";
+          export default {
+            layout: (),
+          }
+          </script>
         ]],
         {
-          i(2),
-          i(1, "1000"),
-        }
-      )
+          i(1, "AppLayout"),
+          rep(1),
+          rep(1),
+        },
+        { delimiters = "()"}
+      ),
+      {condition = line_begin}
     ),
-    
+    -- Head meta tag
+    s({trig = "hh", snippetType="autosnippet"},
+      fmt(
+        [[
+          <Head title="{}" />
+        ]],
+        {
+          i(1),
+        }
+      ),
+      {condition = line_begin}
+    ),
   }
 

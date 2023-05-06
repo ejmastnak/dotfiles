@@ -21,7 +21,7 @@ return
       {condition = line_begin}
     ),
     -- GENERTIC INLINE ELEMENT
-    s({trig = "([^%l])tt", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    s({trig = "([^%a])tt", regTrig = true, wordTrig = false, snippetType="autosnippet"},
       fmt(
         [[
           {}<{} class="{}">{}</{}>
@@ -76,19 +76,19 @@ return
           i(1),
           d(2, get_visual)
         }
-      )
+      ),
+      {condition = line_begin}
     ),
     -- PRE TAG
     s({trig = "prr", snippetType="autosnippet"},
       fmt(
         [[
-          <pre{}>
-            {}
+          <pre>
+            {{{{{}}}}}
           </pre>
         ]],
         {
-          i(1),
-          d(2, get_visual)
+          d(1, get_visual)
         }
       )
     ),
@@ -232,25 +232,11 @@ return
       ),
       {condition = line_begin}
     ),
-    -- ANCHOR TAG
-    s({trig = "([^%l])aa", regTrig = true, wordTrig = false, snippetType="autosnippet"},
-      fmt(
-        [[
-          {}<a class="{}" href="{}">{}</a>
-        ]],
-        {
-          f( function(_, snip) return snip.captures[1] end ),
-          i(1),
-          i(3),
-          d(2, get_visual),
-        }
-      )
-    ),
     -- INPUT ELEMENT
     s({trig = "inn", snippetType="autosnippet"},
       fmt(
         [[
-          <input type="{}" id="{}"/>
+          <input type="{}" id="{}" />
         ]],
         {
           i(1),
