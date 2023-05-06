@@ -14,6 +14,10 @@ mv "${1}.utf8.tmp" "${1}"
 dh_header_lines=10
 output_file="${1%.csv}.beancount"
 
+A1_INTERNET="SI56290000001941991"
+A1_MOBILE="SI56290000159800373"
+GENI="SI56029220260092885"
+
 printf "" > "${output_file}"
 
 # DH column              Bash varable               Example
@@ -68,13 +72,32 @@ function swap_separators ()
     # Log payee information; use xargs to trim trailing whitespace
     printf " \"$(echo "${payee}" | xargs)\"" >> "${output_file}"
 
-    # Leave description of transaction empty
+    # Log description of transaction
     echo " \"${description}\"" >> "${output_file}"
 
     # If amount_in is blank, assume the transaction is an expense
     if [[ -z "${amount_in}" ]]; then
       echo "  Assets:DH:Checking -$(swap_separators ${amount_out}) ${currency}" >> "${output_file}"
-      echo "  Expenses:TODO" >> "${output_file}"
+      if [[ ${description} == "ODLIVNA PROVIZIJA" ]]; then
+        echo "  Expenses:OperatingCosts:Bank:OdProv" >> "${output_file}"
+      elif [[ ${description} == "PRILIVNA PROVIZIJA" ]]; then
+        echo "  Expenses:OperatingCosts:Bank:PriProv" >> "${output_file}"
+      elif [[ ${description% *} == "PROVIZIJA DH-MOBILNI" ]]; then
+        echo "  Expenses:OperatingCosts:Bank:MobProv" >> "${output_file}"
+      elif [[ ${description% *} == "UPORABNINA DH-POSLOVNI" ]]; then
+        echo "  Expenses:OperatingCosts:Bank:UsageFee" >> "${output_file}"
+      elif [[ ${description% *} == "VODENJE RAČUNA" ]]; then
+        echo "  Expenses:OperatingCosts:Bank:AccountFee" >> "${output_file}"
+      elif [[ ${payee##* } == "SI56290000001941991" ]]; then
+        echo "  Expenses:OperatingCosts:A1:Internet" >> "${output_file}"
+      elif [[ ${payee##* } == "SI56290000159800373" ]]; then
+        echo "  Expenses:OperatingCosts:A1:Mobile" >> "${output_file}"
+      elif [[ ${payee##* } == "SI56029220260092885" ]]; then
+        echo "  Expenses:OperatingCosts:Electricity" >> "${output_file}"
+      else
+        echo "  Expenses:TODO" >> "${output_file}"
+      fi
+
       # If amount_in is not blank, assume transaction is income
     else
       echo "  Assets:DH:Checking +$(swap_separators ${amount_in}) ${currency}" >> "${output_file}"
