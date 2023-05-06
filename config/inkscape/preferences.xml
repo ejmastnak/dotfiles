@@ -126,9 +126,9 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="880.707200418319"
-         height="1020.87014025591"
-         ry="66.2789676696298" />
+         width="2559.99992310527"
+         height="422.999988465803"
+         ry="0" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -976,7 +976,7 @@
      org.inkscape.output.png.inkscape.png_antialias="2" />
   <group
      id="desktop"
-     style="fill:#81a1c1;font-size:128px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Source Code Pro Medium';font-family:'Source Code Pro';line-height:1.1;stroke:#ffffff;stroke-width:0;font-weight:500">
+     style="fill:#489eb7;font-size:266.66666667px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Source Code Pro Medium';font-family:'Source Code Pro';line-height:1.1;stroke:#ffffff;stroke-width:0;font-weight:500">
     <group
        width="470"
        height="1036"
