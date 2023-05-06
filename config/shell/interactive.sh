@@ -33,10 +33,10 @@ display-off() {
   fi
 }
 
-alias grep='grep -n --color=auto'
+alias grep='grep --color=auto'
 
 # Activate Python virtual environment
-alias venv="source ./venv/bin/activate"
+alias venv="source ./venv/bin/activate && vifm ./ ./"
 
 # Download and extract audio from YouTube videos
 alias dlp='yt-dlp -x'
@@ -59,6 +59,9 @@ alias ggd="git diff"
 alias gga="git add"
 alias ggc="git commit"
 alias ggp="git push"
+alias ggl="git log"
+alias ggb="git branch"
+alias ggr="git restore"
 
 # Some PHP/Laravel aliases
 alias art="php artisan"

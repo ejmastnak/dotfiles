@@ -14,4 +14,3 @@ source ${HOME}/.config/himalaya/himalaya-completions.bash
 
 # Use VI keybindings in the Bash shell
 set -o vi
-
