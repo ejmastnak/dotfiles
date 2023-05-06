@@ -24,12 +24,3 @@ NODE_MODULES="${HOME}/.node_modules"
 export NODE_PATH="${NODE_MODULES}/lib/node_modules:${NODE_PATH}"
 export PATH="${PATH}:${NODE_MODULES}/bin"
 export MANPATH="${NODE_MODULES}/share/man:$(manpath)"
-
-# Configuration for pyenv
-# --------------------------------------------- #
-export PYENV_ROOT="${HOME}/.pyenv"
-command -v pyenv >/dev/null || export PATH="${PATH}:${PYENV_ROOT}/bin"
-
-# Install pyenv into shell
-eval "$(pyenv init -)"
-# --------------------------------------------- #
