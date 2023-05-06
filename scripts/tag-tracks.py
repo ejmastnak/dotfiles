@@ -23,12 +23,16 @@ implemented for these keys.
 """
 import sys, yaml, taglib, subprocess
 
-if len(sys.argv) != 2:
+tagfile = "_TAGS.yaml"  # default value
+
+if len(sys.argv) == 2:
+    tagfile = sys.argv[1]
+
+if len(sys.argv) > 2:
     print("Error: incorrect number of command line arguments.")
     print("Usage: tag-tracks.py tag-file.yaml")
     sys.exit()
 
-tagfile = sys.argv[1]
     
 with open(tagfile, "r") as stream:
     try:
