@@ -23,10 +23,12 @@ do
   # --recursive recurse into subdirectories
   # --perms preserve permissions
   # --times preserve modification times
+  # --delete files on receiver end that don't exist on sender's end
   rsync \
     --recursive \
     --perms \
     --times \
+    --delete \
     --exclude-from="${home}/.config/rsync/${exclude_list}" \
     "${home}/${dir_to_backup}" "${backup}"
 
