@@ -2,12 +2,18 @@
 
 nnoremap ;h :cd $VIFM_CONTEXT<CR>
 
+nnoremap ;ee :goto $VIFM_CONTEXT/.env<CR>
+
+nnoremap ;pp :cd $VIFM_CONTEXT/public<CR>
+
 nnoremap ;dd :cd $VIFM_CONTEXT/database<CR>
 nnoremap ;df :cd $VIFM_CONTEXT/database/factories<CR>
 nnoremap ;dm :cd $VIFM_CONTEXT/database/migrations<CR>
 nnoremap ;ds :cd $VIFM_CONTEXT/database/seeders<CR>
 
 nnoremap ;aa :cd $VIFM_CONTEXT/app<CR>
+nnoremap ;ap :cd $VIFM_CONTEXT/app/Policies<CR>
+nnoremap ;ah :cd $VIFM_CONTEXT/app/Http<CR>
 nnoremap ;am :cd $VIFM_CONTEXT/app/Models<CR>
 nnoremap ;ac :cd $VIFM_CONTEXT/app/Http/Controllers<CR>
 nnoremap ;ar :cd $VIFM_CONTEXT/app/Http/Resources<CR>
@@ -21,6 +27,11 @@ nnoremap ;rj :cd $VIFM_CONTEXT/resources/js<CR>
 nnoremap ;jj :cd $VIFM_CONTEXT/resources/js/<CR>
 nnoremap ;jp :cd $VIFM_CONTEXT/resources/js/Pages<CR>
 nnoremap ;jc :cd $VIFM_CONTEXT/resources/js/Components<CR>
+nnoremap ;js :cd $VIFM_CONTEXT/resources/js/Shared<CR>
 nnoremap ;jl :cd $VIFM_CONTEXT/resources/js/Layouts<CR>
 
 nnoremap ;rw :goto $VIFM_CONTEXT/routes/web.php<CR>
+
+nnoremap ;ss :cd $VIFM_CONTEXT/storage<CR>
+nnoremap ;sa :cd $VIFM_CONTEXT/storage/app<CR>
+nnoremap ;as :cd $VIFM_CONTEXT/storage/app<CR>

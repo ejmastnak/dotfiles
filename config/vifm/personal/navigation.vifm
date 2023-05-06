@@ -3,7 +3,8 @@
 " Config and dotfiles
 " --------------------------------------------- "
 nnoremap gcc :cd ~/dotfiles/config<CR>
-nnoremap gcs :cd ~/dotfiles/scripts<CR>
+nnoremap gcS :cd ~/dotfiles/scripts<CR>
+nnoremap gcs :cd ~/dotfiles/config/shell<CR>
 nnoremap gcd :cd ~/dotfiles<CR>
 nnoremap gcv :cd ~/dotfiles/config/vifm<CR>
 nnoremap gci :cd ~/dotfiles/config/i3<CR>
@@ -20,6 +21,7 @@ nnoremap gvm :cd ~/dotfiles/config/nvim/personal/vim-mpv<CR>
 
 nnoremap gjl :cd ~/.local<CR>
 nnoremap gjp :cd ~/.password-store<CR>
+nnoremap gjs :cd ~/.ssh<CR>
 nnoremap gjP :cd ~/Pictures<CR>
 nnoremap gjt :cd ~/tmp<CR>
 nnoremap gjT :cd /tmp<CR>
@@ -37,14 +39,15 @@ nnoremap gbh :cd ~/Documents/basics/home<CR>
 " Finances
 " --------------------------------------------- "
 nnoremap gff :cd ~/Documents/basics/finances<CR>
-nnoremap gfl :goto ~/Documents/basics/finances/accounting/ledger.beancount<CR>
+nnoremap gfd :cd ~/Documents/basics/finances/doc<CR>
+nnoremap gfu :cd ~/Documents/basics/finances/doc/how-to-update<CR>
+nnoremap gfl :goto ~/Documents/basics/finances/beancount/ledger.beancount<CR>
 " --------------------------------------------- "
 
-
-" Ruminations
-" --------------------------------------------- "
 nnoremap grr :cd ~/Documents/basics/ruminations<CR>
-" --------------------------------------------- "
+
+nnoremap gMM :cd ~/Documents/music<CR>
+nnoremap gMN :cd ~/Documents/music/media/niquibestia<CR>
 
 nnoremap gam :cd ~/Documents/about<CR>
 
@@ -63,10 +66,12 @@ nnoremap gok :cd ~/Documents/projects/klf<CR>
 nnoremap god :goto ~/Documents/projects/diet/app<CR>
 nnoremap goj :cd ~/Documents/projects/juliaelyachar<CR>
 nnoremap goe :cd ~/Documents/projects/ejmastnak<CR>
-nnoremap goc :cd ~/Documents/projects/finances/cashflow<CR>
+nnoremap goc :cd ~/Documents/projects/casino<CR>
 nnoremap got :cd ~/Documents/projects/tmg-bmc<CR>
-nnoremap gop :goto ~/Documents/projects/pcl/aplikacija<CR>
-nnoremap gol :cd ~/Documents/projects/ottoman-landmarks<CR>
+nnoremap gos :goto ~/Documents/projects/tmg-bmc/toolkit/app<CR>
+nnoremap gor :cd ~/Documents/projects/rof<CR>
+nnoremap gop :cd ~/Documents/projects/tutor/pano<CR>
+nnoremap gol :goto ~/Documents/projects/landmarks/app<CR>
 nnoremap gog :goto ~/Documents/projects/gaia/app<CR>
 nnoremap gob :cd ~/Documents/projects/fitness-biomechanics<CR>
 
@@ -101,11 +106,11 @@ nnoremap gnb :cd ~/Documents/notes/bookmarks<CR>
 nnoremap gaa :cd ~/Documents/academics<CR>
 nnoremap gaq :cd ~/Documents/academics/qap<CR>
 nnoremap gaf :cd ~/Documents/academics/fmf<CR>
-nnoremap gar :cd ~/Documents/academics/rof<CR>
 nnoremap gae :cd ~/Documents/academics/fe<CR>
 nnoremap gak :cd ~/Documents/academics/klf<CR>
 nnoremap gac :cd ~/Documents/academics/courses<CR>
 nnoremap ga1 :cd ~/Documents/academics/courses/mat1<CR>
+nnoremap gaj :cd ~/Documents/academics/courses/algs<CR>
 " --------------------------------------------- "
 
 
