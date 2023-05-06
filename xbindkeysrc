@@ -1,4 +1,4 @@
-# Use XF86Tools (F9 on T460) to play/pause firefox
+# Use XF86Tools (F9 on T460) to play/pause browser
 "playerctl --player=chromium play-pause"
    XF86Tools
 
