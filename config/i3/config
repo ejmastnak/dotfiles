@@ -14,7 +14,7 @@ bindsym $mod+Return exec alacritty --command vifm
 bindsym $mod+Shift+o exec chromium
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $shift
+floating_modifier $mod
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -38,6 +38,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Float matplotlib windows
 for_window [class="R_x11"] floating enable
 for_window [class="matplotlib"] floating enable
+for_window [class="Matplotlib"] floating enable
 for_window [class="gnuplot_qt"] floating enable
 
 # GAPS
@@ -162,7 +163,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 exec --no-startup-id xss-lock -- i3lock --nofork \
   --radius 110 \
-  --image=/home/ej/Documents/pictures/lock-screen/lock-screen.png \
+  --image=/home/ej/Documents/design/lock-screen/lock-screen.png \
   --fill \
   --inside-color=d8dee9ff \
   --ring-color=5e81acff \
