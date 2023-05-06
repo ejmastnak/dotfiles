@@ -12,7 +12,6 @@ vim.opt.foldmethod   = "marker"
 vim.opt.autowriteall = true   -- write current buffer when moving buffers
 vim.opt.wrap         = true   -- wrap long lines
 vim.opt.linebreak    = true   -- break lines at words
-vim.opt.signcolumn   = "no"   -- disable LSP diagnostic symbols in left column
 
 vim.keymap.set('', '<Space>', '<NOP>')
 vim.g.mapleader = " "  -- set global leader key
@@ -74,6 +73,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'lervag/vimtex'
 Plug 'nathangrigg/vim-beancount'
+Plug 'habamax/vim-rst'
 
 -- LSP-like
 Plug 'neovim/nvim-lspconfig'
@@ -83,10 +83,11 @@ Plug 'RRethy/vim-illuminate'
 Plug('nvim-Treesitter/nvim-Treesitter', {['do'] = ':TSUpdate'})
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
+Plug 'mfussenegger/nvim-dap'
+Plug 'mfussenegger/nvim-jdtls'
 
 -- Local plugins
 Plug '~/.config/nvim/personal/vim-mpv'
-Plug '~/.config/nvim/personal/vim-beanquery'
 
 vim.call('plug#end')
 -- --------------------------------------------- --
@@ -116,6 +117,7 @@ require('plugins/rooter')
 require('plugins/lualine')
 require('plugins/lightspeed')
 require('plugins/LuaSnip')
+require('plugins/dap')
 
 -- LSP config
 require('lsp/lsp')
@@ -192,11 +194,11 @@ vim.keymap.set('n', '<Leader>q',
   {desc = 'Write and quit if possible/applicable, force quit otherwise.'})
 
 -- Save and close all buffers
-vim.keymap.set('n', '<Leader>Q', '<Cmd>wqa<CR>')
+vim.keymap.set('n', '<Leader>Q', '<Cmd>quitall<CR>')
 
 -- Sort text by paragraph (useful for e.g. for Beancount files)
 -- Implements https://stackoverflow.com/a/24099468
-vim.api.nvim_create_user_command('SortByParagraph', ':%s/\\(.\\+\\)\\n/\\1@/ | :sort | :%s/@/\\r/g', {})
+vim.api.nvim_create_user_command('SortByParagraph', ':%s/\\(.\\+\\)\\n/\\1@@@/ | :sort | :%s/@@@/\\r/g', {})
 
 -- Source my spelling configurations.
 -- Important: make sure to set mapleader before sourcing my_spell,
@@ -211,7 +213,5 @@ autocmd User targets#mappings#user call targets#mappings#extend({
     \ })
 ]]
 
-
 vim.keymap.set('', '<Leader>hc', '<Cmd>HighlightColorsToggle<CR>')
-
 -- END MISCELLANEOUS
