@@ -48,11 +48,6 @@ alias lg_opus='loudgain -a -k -s e *.opus'
 # bean-query command from Beancount
 alias bq='bean-query'
 
-# Easier mount and unmount with udisksctl
-alias udmnt='udisksctl mount --block-device'
-alias udumnt='udisksctl unmount --block-device'
-alias udpwr='udisksctl power-off --block-device'
-
 # Some Git alias
 alias gg="git status"
 alias ggd="git diff"
@@ -71,3 +66,6 @@ alias artrl="php artisan route:list"
 
 # Network
 alias lswifi="nmcli device wifi list"
+
+# More ergonomic shortcut for ambient.bash script
+alias asdf="ambient.bash"
