@@ -4,6 +4,7 @@
 # c for cedilla
 # v for caron
 # u for diaeresis (umlaut)
+# n for tilde
 
 <Multi_key> <4> <4>:                  "€" EuroSign     # EURO SIGN
 <Multi_key> <exclam> <exclam>:        "¡"	exclamdown   # INVERTED EXCLAMATION MARK
@@ -196,8 +197,7 @@
 # --------------------------------------------- #
 # END DIAERESIS
 
-
-# BELOW TILDE
+# BEGIN TILDE
 # --------------------------------------------- #
 <Multi_key> <n> <a> : "ã"	atilde   # LATIN SMALL LETTER A WITH TILDE
 <Multi_key> <n> <A> : "Ã"	Atilde   # LATIN CAPITAL LETTER A WITH TILDE
