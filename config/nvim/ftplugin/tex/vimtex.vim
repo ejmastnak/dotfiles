@@ -29,7 +29,7 @@ let g:vimtex_complete_enabled = 1
 let g:vimtex_syntax_conceal_disable = 1  
 
 " Default is 500 lines and gave me lags on missed key presses
-let g:vimtex_delim_stopline = 5
+let g:vimtex_delim_stopline = 50
 
 " VimTeX toggle delimeter configuration
 " ------------------------------- "

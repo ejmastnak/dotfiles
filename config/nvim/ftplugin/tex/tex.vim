@@ -20,6 +20,7 @@ setlocal shiftwidth=4
 let g:tex_indent_items=0
 
 " Compilation
+noremap <leader>c <Cmd>update<CR><Cmd>VimtexCompileSS<CR>
 noremap <leader>r <Cmd>update<CR><Cmd>VimtexCompileSS<CR>
 
 " Write the line "TEX" to the file "/tmp/inverse-search-target.txt".
