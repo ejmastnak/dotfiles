@@ -370,6 +370,16 @@ return
     ),
     {condition = tex.in_mathzone}
   ),
+  -- INTEGRAL from positive to negative infinity
+  s({trig = "([^%a])intf", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\int_{\\infty}^{\\infty}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
   -- BOXED command
   s({trig = "([^%a])bb", wordTrig = false, regTrig = true, snippetType="autosnippet"},
     fmta(

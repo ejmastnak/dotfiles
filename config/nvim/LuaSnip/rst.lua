@@ -82,10 +82,6 @@ return
       )
     ),
     -- Hack to remove indentation in bulleted lists
-    s({trig="  ii", snippetType="autosnippet"},
-      {t("- ")},
-      {condition = line_begin}
-    ),
     s({trig="  --", snippetType="autosnippet"},
       {t("- ")},
       {condition = line_begin}

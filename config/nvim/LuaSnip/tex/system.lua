@@ -158,8 +158,17 @@ return
         }
       )
     ),
+    -- HSPACE
+    s({trig="hss", snippetType="autosnippet"},
+      fmta(
+        [[\hspace{<>}]],
+        {
+          d(1, get_visual),
+        }
+      )
+    ),
     -- VSPACE
-    s({trig="vs"},
+    s({trig="vss", snippetType="autosnippet"},
       fmta(
         [[\vspace{<>}]],
         {
