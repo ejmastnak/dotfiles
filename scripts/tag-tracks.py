@@ -6,7 +6,9 @@ SYNOPSIS
     tag-tracks.py tagfile.yaml
 DESCRIPTION
 Input a YAML file (format below) with ID3 tag information for a set of tracks.
-Uses pytaglib (a wrapper around taglib) to add the ID3 tags to the tracks.
+Uses both id3tag and pytaglib to add the ID3 tags and metadata to the tracks.
+
+DEPENDENCIES: id3tag, pytaglib
 
 Expects an inputted tagfile.yaml file with the following form:
 
@@ -21,7 +23,8 @@ track; will fail ungracefully if they are not---no error checking is
 implemented for these keys.
 
 """
-import sys, yaml, taglib, subprocess
+import sys, yaml, subprocess
+import taglib
 
 tagfile = "_TAGS.yaml"  # default value
 
@@ -32,7 +35,6 @@ if len(sys.argv) > 2:
     print("Error: incorrect number of command line arguments.")
     print("Usage: tag-tracks.py tag-file.yaml")
     sys.exit()
-
     
 with open(tagfile, "r") as stream:
     try:
@@ -47,19 +49,23 @@ for track_file in tag_dict:
     artist = tag_dict[track_file]["artist"]
     album = tag_dict[track_file]["album"]
     year = tag_dict[track_file]["year"]
+    track_num = tag_dict[track_file]["track"]
 
     print(track_file)
 
-    # track = taglib.File(track_file)
-    # track.tags["TITLE"] = [title]
-    # track.tags["ARTIST"] = [artist]
-    # track.tags["ALBUM"] = [album]
-    # track.tags["YEAR"] = [str(year)]
-    # track.save()
+    track = taglib.File(track_file)
+    track.tags["TITLE"] = [title]
+    track.tags["ARTIST"] = [artist]
+    track.tags["ALBUM"] = [album]
+    track.tags["YEAR"] = [str(year)]
+    track.tags["TRACKNUMBER"] = [str(track_num)]
+    # track.tags["TRACKNUMBER"] = [str(track_num) + "/" + str(len(tag_dict))]
+    track.save()
 
     subprocess.run(["id3tag",
                     "--song", title,
                     "--artist", artist,
                     "--album", album,
                     "--year", str(year),
+                    "--track", str(track_num),
                     track_file])
