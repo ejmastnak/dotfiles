@@ -19,7 +19,6 @@ BASEDIR="$(pwd)"
 [[ ! -e "${HOME}/.xbindkeysrc" ]]  && ln -s ${BASEDIR}/xbindkeysrc ~/.xbindkeysrc || echo '~/.xbindkeysrc exists; skipping and not overwriting.'
 [[ ! -e "${HOME}/.xmodmaprc" ]]    && ln -s ${BASEDIR}/xmodmaprc ~/.xmodmaprc || echo '~/.xmodmaprc exists; skipping and not overwriting.'
 [[ ! -e "${HOME}/.XCompose" ]]     && ln -s ${BASEDIR}/XCompose ~/.XCompose || echo '~/.XCompose exists; skipping and not overwriting.'
-[[ ! -e "${HOME}/.gemrc" ]]        && ln -s ${BASEDIR}/gemrc ~/.gemrc || echo '~/.gemrc exists; skipping and not overwriting.'
 
 # If using ZSH as login shell, clone Zsh autosuggestions if not already installed
 if [[ "${SHELL}" == "/usr/bin/zsh" ]]; then
