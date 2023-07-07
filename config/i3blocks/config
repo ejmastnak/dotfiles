@@ -10,10 +10,14 @@
 separator=true
 separator_block_width=20
 
+[keys]
+command=scripts/keys
+LABEL=KEYS:
+interval=30
+
 [disk]
 command=scripts/disk
 LABEL=HOME:
-# DIR=$HOME
 interval=30
 
 [memory]
