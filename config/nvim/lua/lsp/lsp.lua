@@ -21,30 +21,8 @@ require('lspconfig').clangd.setup {
   end,
 }
 
--- require('jdtls').start_or_attach({
---     cmd = {'/home/ej/.local/bin/jdtls'},
---     root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw', '.root'}, { upward = true })[1]),
---   on_attach = function(client)
---     vim.diagnostic.disable(0)
---     require('illuminate').on_attach(client)
---   end,
--- })
-
--- require('lspconfig').sumneko_lua.setup {
---   settings = {
---     Lua = {
---       runtime = {
---         version = 'LuaJIT',
---         -- version = 'Lua 5.1',
---       },
---       -- Do not send telemetry data containing a randomized but unique identifier
---       telemetry = {
---         enable = false,
---       },
---     },
---   },
---   on_attach = function(client)
---     vim.diagnostic.disable(0)
---     require('illuminate').on_attach(client)
---   end,
--- }
+require'lspconfig'.jdtls.setup{
+  on_attach = function(client)
+    require('illuminate').on_attach(client)
+  end,
+}
