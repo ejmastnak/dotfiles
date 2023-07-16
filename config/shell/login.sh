@@ -17,6 +17,9 @@ export PATH="${PATH}:$HOME/.local/bin"
 
 # Personal scripts
 export PATH="${PATH}:$HOME/scripts"
+
+# Beancount conversion scripts
+export PATH="${PATH}:$HOME/Documents/basics/finances/scripts/src"
 # --------------------------------------------- #
 
 # User-local node module directory
