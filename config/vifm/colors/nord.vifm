@@ -21,4 +21,4 @@ highlight  Fifo         cterm=bold      ctermfg=6       ctermbg=default
 highlight  Executable   cterm=bold      ctermfg=6       ctermbg=default
 highlight  Selected     cterm=bold      ctermfg=white   ctermbg=default
 highlight  CurrLine     cterm=bold      ctermfg=white   ctermbg=blue
-highlight  OtherLine    cterm=default   ctermfg=default ctermbg=default
+highlight  OtherLine    cterm=none   ctermfg=default ctermbg=default
