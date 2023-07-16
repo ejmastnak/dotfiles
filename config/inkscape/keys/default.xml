@@ -1,28 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<keys
-   name="User Shortcuts">
-  <bind
-     gaction="app.copy"
-     keys="&lt;Primary&gt;c,&lt;Primary&gt;Insert,y" />
-  <bind
-     gaction="app.object-align('hcenter pref')"
-     keys="&lt;Primary&gt;backslash" />
-  <bind
-     gaction="app.object-align('vcenter pref')"
-     keys="&lt;Primary&gt;minus" />
-  <bind
-     gaction="app.selection-group"
-     keys="&lt;Primary&gt;g,&lt;Primary&gt;&lt;Shift&gt;u,g" />
-  <bind
-     gaction="app.selection-ungroup"
-     keys="&lt;Primary&gt;&lt;Shift&gt;g,&lt;Primary&gt;u,&lt;Shift&gt;g" />
-  <bind
-     gaction="doc.redo"
-     keys="&lt;Primary&gt;r" />
-  <bind
-     gaction="doc.undo"
-     keys="u" />
-  <bind
-     gaction="win.paste"
-     keys="&lt;Primary&gt;v,&lt;Shift&gt;Insert,p" />
+<keys name="User Shortcuts">
+
+  <!-- Window -->
+  <!-- ==================================================================== -->
+  <!-- Save -->
+  <bind gaction="win.document-save" keys="&lt;primary&gt;s" />
+  <!-- Close window -->
+  <bind gaction="win.document-close" keys="&lt;primary&gt;w" />
+  <!-- Quit Inkscape -->
+  <bind gaction="app.quit" keys="&lt;primary&gt;q" />
+
+  <!-- Select all -->
+  <bind gaction="win.select-all" keys="&lt;primary&gt;a" />
+  <!-- Clear selection -->
+  <bind gaction="win.select-none" keys="Escape"/>
+
+  <!-- Zoom in -->
+  <bind gaction="win.canvas-zoom-in"                     keys="plus"      />
+  <!-- Zoom out -->
+  <bind gaction="win.canvas-zoom-out"                    keys="minus" />
+  <!-- ==================================================================== -->
+
+  <!-- Dialogs -->
+  <!-- ==================================================================== -->
+  <!-- Open Preferences -->
+  <bind gaction="app.preferences" keys="&lt;primary&gt;&lt;shift&gt;p" />
+  <!-- Open Document Properties -->
+  <bind gaction="win.dialog-open('DocumentProperties')" keys="&lt;primary&gt;&lt;shift&gt;d" />
+  <!-- Open Align and Distribute menu -->
+  <bind gaction="win.dialog-open('AlignDistribute')" keys="&lt;primary&gt;&lt;shift&gt;a" />
+  <!-- Open Text menu -->
+  <bind gaction="win.dialog-open('Text')" keys="&lt;primary&gt;&lt;shift&gt;t"/>
+  <!-- Open Fill and Stroke menu -->
+  <bind gaction="win.dialog-open('FillStroke')" keys="&lt;primary&gt;&lt;shift&gt;f" />
+  <!-- Open Export menu -->
+  <bind gaction="win.dialog-open('Export')" keys="&lt;primary&gt;&lt;shift&gt;e" />
+  <!-- Show/hide dialog panel -->
+  <bind gaction="win.dialog-toggle" keys="question"/>
+  <!-- ==================================================================== -->
+
+
+  <!-- Editor -->
+  <!-- ==================================================================== -->
+  <!-- Undo -->
+  <bind gaction="doc.undo" keys="u" />
+  <!-- Redo -->
+  <bind gaction="doc.redo" keys="&lt;primary&gt;r" />
+
+  <!-- Copy -->
+  <bind gaction="app.copy" keys="y"/>
+  <!-- Cut -->
+  <bind gaction="app.cut" keys="d" />
+  <!-- Paste -->
+  <bind gaction="win.paste" keys="p"/>
+  <!-- Delete -->
+  <bind gaction="app.delete" keys="BackSpace" />
+  <!-- ==================================================================== -->
+
+  <!-- Tools -->
+  <!-- ==================================================================== -->
+  <!-- Color picker tool -->
+  <bind gaction="win.tool-switch('Dropper')" keys="&lt;shift&gt;p"/>
+  <!-- Select tool -->
+  <bind gaction="win.tool-switch('Select')" keys="s"/>
+  <!-- Node tool -->
+  <bind gaction="win.tool-switch('Node')" keys="n"/>
+  <!-- Rectangle tool -->
+  <bind gaction="win.tool-switch('Rect')" keys="r"/>
+  <!-- Ellipse tool -->
+  <bind gaction="win.tool-switch('Arc')" keys="e"/>
+  <!-- Bezier pen tool -->
+  <bind gaction="win.tool-switch('Pen')" keys="b"/>
+  <!-- Text tool -->
+  <bind gaction="win.tool-switch('Text')" keys="t"/>
+  <!-- ==================================================================== -->
+
+  <!-- Objects -->
+  <!-- ==================================================================== -->
+  <!-- Group selected objects -->
+  <bind gaction="app.selection-group" keys="g" />
+  <!-- Ungroup selected objects -->
+  <bind gaction="app.selection-ungroup" keys="&lt;shift&gt;u" />
+
+  <!-- (We must preserve Ctrl-j and Ctrl-k for scrolling canvas) -->
+  <!-- Lower selected object -->
+  <bind gaction="app.selection-lower" keys="&lt;primary&gt;&lt;shift&gt;j" />
+  <!-- Raise selected object -->
+  <bind gaction="app.selection-raise" keys="&lt;primary&gt;&lt;shift&gt;k" />
+  <!-- Lower to bottom -->
+  <bind gaction="app.selection-bottom" keys="&lt;primary&gt;&lt;shift&gt;Down" />
+  <!-- Raise to top -->
+  <bind gaction="app.selection-top" keys="&lt;primary&gt;&lt;shift&gt;Up" />
+
+
+  <!-- Reflect object about a vertical axis (think |) -->
+  <bind gaction="app.object-flip-horizontal" keys="h" />
+  <!-- Reflect object about a horizontal axis (think –) -->
+  <bind gaction="app.object-flip-vertical" keys="v" />
+
+  <!-- Center selected objects along vertical axis  -->
+  <bind gaction="app.object-align('hcenter pref')" keys="&lt;primary&gt;backslash" />
+  <!-- Center selected objects along horizontal axis  -->
+  <bind gaction="app.object-align('vcenter pref')" keys="&lt;primary&gt;minus" />
+  <!-- ==================================================================== -->
+
 </keys>

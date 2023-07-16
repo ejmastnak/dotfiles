@@ -126,8 +126,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="2559.99992310527"
-         height="422.999988465803"
+         width="201.111008050873"
+         height="161.359834445743"
          ry="0" />
       <eventcontext
          id="3dbox"
@@ -164,8 +164,8 @@
          end="0"
          start="0"
          usecurrent="1"
-         rx="28.5408530648299"
-         ry="30.2226984219292" />
+         rx="28"
+         ry="28" />
       <eventcontext
          id="star"
          magnitude="5"
@@ -343,8 +343,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="207.356780532963"
-       y="86.1011291798494"
+       x="1.88976377952756"
+       y="1.7576774485045"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -557,10 +557,12 @@
        id="textandfont" />
     <group
        id="transformation"
-       applyseparately="0" />
+       applyseparately="1"
+       rotateCounterClockwise="1" />
     <group
        id="align"
-       align-to="1" />
+       align-to="1"
+       objects-align-to="page" />
     <group
        id="xml"
        h="500"
@@ -600,14 +602,14 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="96" />
+         value="300" />
     </group>
     <group
        id="save_as"
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path=""
+       path="/home/ej/Documents"
        use_current_dir="1"
        enable_svgexport="1" />
     <group
@@ -964,10 +966,14 @@
     </group>
     <group
        id="font"
-       unitType="2" />
+       unitType="2"
+       scaleLineHeightFromFontSIze="1" />
     <group
        id="kbshortcuts"
-       value="redo" />
+       value="node" />
+    <group
+       id="snapindicatorpersistence"
+       value="1" />
   </group>
   <group
      id="extensions"
@@ -976,7 +982,7 @@
      org.inkscape.output.png.inkscape.png_antialias="2" />
   <group
      id="desktop"
-     style="fill:#489eb7;font-size:266.66666667px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Source Code Pro Medium';font-family:'Source Code Pro';line-height:1.1;stroke:#ffffff;stroke-width:0;font-weight:500">
+     style="fill:#000000;font-size:10.66669655px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Latin Modern Sans, Bold';font-family:'Latin Modern Sans';line-height:1.1;stroke-width:3.77952756;font-weight:bold">
     <group
        width="470"
        height="1036"
@@ -1099,14 +1105,14 @@
      preferDarkTheme="1"
      darkTheme="1"
      symbolicIcons="1"
-     symbolicDefaultBaseColors="0"
+     symbolicDefaultBaseColors="1"
      symbolicDefaultHighColors="0"
      menuIcons_canvas="0"
      menuIcons_layers="0"
      menuIcons_objects="0">
     <group
        id="Adwaita"
-       symbolicBaseColor="-286331137"
+       symbolicBaseColor="4008635647"
        symbolicSuccessColor="648766207"
        symbolicWarningColor="4118348031"
        symbolicErrorColor="3422552319" />
