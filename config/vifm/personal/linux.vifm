@@ -12,7 +12,7 @@ filetype {*.gif},<image/gif> mpv %c
 filetype {*.apng},<image/apng> mpv %c
 
 " SVG
-filetype {*.svg},<image/svg> inkscape %c &
+filetype {*.svg},<image/svg> nvim %c
 
 " XCF
 filetype {*.xcf},<image/xcf> gimp %c
@@ -27,7 +27,7 @@ filetype {*.ps,*.eps,*.ps.gz},<application/postscript> zathura
 filetype {*.xls,*.xlsx},<application/msexcel> gnumeric %c &
 
 " Word files
-filetype {*.doc,*.docx},<application/msword> libreoffice --writer %c &
+filetype {*.doc,*.docx},<application/msword> abiword %c &
 
 " M3U files
 filetype {*.m3u},<text/m3u> mpv %c
@@ -51,4 +51,7 @@ nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') 
 
 " yank root of current file's name into the clipboard
 nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
+
+" yank directory listing into clipboard
+nnoremap yl :!ls %d | xclip -selection clipboard %i<cr>:echo "directory listing is yanked to clipboard"<cr>
 " ---------------------------------------------
