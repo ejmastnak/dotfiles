@@ -37,7 +37,7 @@ do
   [[ -z "${track}" ]] && continue
   [[ "${track}" = \#* ]] && continue
   
-  # E.g. extract "mp3" and "g-and-lee" from "saxophone/gerald-albright/g-and-lee.mp3"
+  # Extract "mp3" and "bar" from "foo/bar.mp3"
   ext=${track##*.}
   basename="$(basename "${track}" .${ext})"
 
