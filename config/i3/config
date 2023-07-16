@@ -11,7 +11,7 @@ font pango:DejaVu Sans Mono 10
 bindsym $mod+Return exec alacritty --command vifm
 
 # Reset desired typematic rate
-bindsym $mod+Shift+x exec --no-startup-id xset r rate 200 30
+bindsym $mod+Shift+x exec --no-startup-id xset r rate 200 30 && xmodmap ~/.xmodmaprc
 
 # Open a web browser
 bindsym $mod+Shift+o exec chromium
