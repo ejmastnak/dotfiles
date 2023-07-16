@@ -124,6 +124,9 @@ nnoremap m :mkdir<space>
 " Create a README.md file
 nnoremap RM :edit README.md<CR>
 
+" Create a TODO.md file
+nnoremap TT :edit TODO.md<CR>
+
 " Create a blah.md file
 nnoremap BB :edit blah.md<CR>
 
@@ -139,7 +142,7 @@ nnoremap RR :restart<CR>
 nnoremap cm :!chmod 644 *.
 
 " Play file under cursor with mpv
-nnoremap P :!mpv %c<CR>
+nnoremap P :!mpv --keep-open=yes %c<CR>
 
 " Play file under cursor with ambient.sh script
 " and ignore background process warning.
@@ -148,12 +151,17 @@ nnoremap M :!ambient.bash %c &<CR><CR>
 " Open file under cursor with Neovim
 nnoremap NN :!nvim %c<CR>
 
+" Open file under cursor with Inkscape
+nnoremap II :!inkscape.bash %c &<CR>
+
 " Run file under cursor as a shell script
 nnoremap S :!sh %c<CR>
 
+" Create symbolic link to file selected in inactve pane
+nnoremap gl :!ln -s %C %d/%C:t<CR>
+
 " Activate Python virtual environment
 nnoremap EE :!activate-venv.bash<CR>
-
 " --------------------------------------------- "
 " END MAPPINGS
 
@@ -177,22 +185,14 @@ filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*> mpv
 
 " Video
-filetype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-         \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-         \*.as[fx]},
-        \<video/*>
-       \ {Play using mpv}
-       \ mpv,
-fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-           \*.as[fx]},
-          \<video/*>
-         \ ffprobe -pretty %c 2>&1
+" filetype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx, *.as[fx]},
+filetype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.webm,*.mov,*.m4v,*.qt},
+      \<video/*> mpv --keep-open=yes
 
 " HTML files
 filetype {*.html,*.htm},<text/html>
-       \ {Open with NeoVim}
-       \ nvim,
+      \ {Open with NeoVim}
+      \ nvim,
 
 " Object
 filetype {*.o},<application/x-object> nm %f | less
@@ -203,23 +203,23 @@ fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 
 " MD5
 filetype *.md5
-       \ {Check MD5 hash sum}
-       \ md5sum -c %f %S,
+      \ {Check MD5 hash sum}
+      \ md5sum -c %f %S,
 
 " SHA1
 filetype *.sha1
-       \ {Check SHA1 hash sum}
-       \ sha1sum -c %f %S,
+      \ {Check SHA1 hash sum}
+      \ sha1sum -c %f %S,
 
 " SHA256
 filetype *.sha256
-       \ {Check SHA256 hash sum}
-       \ sha256sum -c %f %S,
+      \ {Check SHA256 hash sum}
+      \ sha256sum -c %f %S,
 
 " SHA512
 filetype *.sha512
-       \ {Check SHA512 hash sum}
-       \ sha512sum -c %f %S,
+      \ {Check SHA512 hash sum}
+      \ sha512sum -c %f %S,
 
 " Torrent
 filetype {*.torrent},<application/x-bittorrent> open -a Transmission.app
@@ -228,14 +228,14 @@ fileviewer {*.torrent},<application/x-bittorrent> dumptorrent -v %c
 " Extract zip files
 filetype {*.zip},<application/zip,application/java-archive> unzip %f
 fileviewer {*.zip,*.jar,*.war,*.ear},
-          \<application/zip,application/java-archive>
-          \ zip -sf %c
+      \<application/zip,application/java-archive>
+      \ zip -sf %c
 
 " Extract tar archives
 filetype {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz},<application/x-tar>
-       \ tar -xf %f
+      \ tar -xf %f
 fileviewer {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz},<application/x-tar>
-         \ tar -tf %f
+      \ tar -tf %f
 
 " Extract .bz2 archives
 filetype *.bz2 bzip2 -d %f
