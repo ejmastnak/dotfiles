@@ -81,6 +81,21 @@ return
         }
       )
     ),
+    -- for _ in range()
+    s({trig="frr", snippetType = "autosnippet"},
+      fmta(
+        [[
+        for <> in range(<>):
+            <>
+      ]],
+        {
+          i(1),
+          i(2),
+          i(3)
+        }
+      ),
+      {condition = line_begin}
+    ),
     -- IF STATEMENT
     s({trig="iff", snippetType = "autosnippet"},
       fmta(
@@ -92,7 +107,23 @@ return
           i(1),
           d(2, get_visual),
         }
-      )
+      ),
+      {condition = line_begin}
+    ),
+    -- with open(filename) as file
+    s({trig="wof", snippetType = "autosnippet"},
+      fmta(
+        [[
+        with open(<>) as <>:
+            <>
+      ]],
+        {
+          i(1),
+          i(2, 'file'),
+          i(0),
+        }
+      ),
+      {condition = line_begin}
     ),
     -- RETURN STATEMENT
     s({trig = ";r", snippetType = "autosnippet"},

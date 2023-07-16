@@ -61,17 +61,17 @@ return
       ),
       {condition = line_begin}
     ),
-    -- POST-CONDITION docstring section
-    s({trig="pss", snippetType="autosnippet"},
-      fmta(
-        [[
-          Post-Conditions
-          ---------------
-        ]],
-        { }
-      ),
-      {condition = line_begin}
-    ),
+    -- -- POST-CONDITION docstring section
+    -- s({trig="pss", snippetType="autosnippet"},
+    --   fmta(
+    --     [[
+    --       Post-Conditions
+    --       ---------------
+    --     ]],
+    --     { }
+    --   ),
+    --   {condition = line_begin}
+    -- ),
     -- FUNCTION PARAMETER for use in docstrings
     s({trig="::", snippetType="autosnippet"},
       fmta(

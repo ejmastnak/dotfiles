@@ -23,6 +23,11 @@ return
       ),
       {condition = line_begin}
     ),
+    -- /bin/bash shebang
+    s({trig = "!!", snippetType="autosnippet"},
+      {t("#!/bin/bash")},
+      {condition = line_begin}
+    ),
     s({trig = "fl", snippetType="autosnippet"},
       fmt(
         [[

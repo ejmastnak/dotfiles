@@ -19,13 +19,21 @@ return
     s({trig=";p", snippetType="autosnippet"},
       {t("plt.")}
     ),
-    -- plt.plot
+    -- plt.plot()
     s({trig="pll", snippetType="autosnippet"},
       fmta(
         [[plt.plot(<>)]],
         {
           d(1, get_visual),
         }
+      ),
+      {condition = line_begin}
+    ),
+    -- plt.show()
+    s({trig="pss", snippetType="autosnippet"},
+      fmta(
+        [[plt.show()]],
+        { }
       ),
       {condition = line_begin}
     ),
