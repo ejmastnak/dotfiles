@@ -24,4 +24,7 @@ augroup filetypedetect
 
   " VIFM
   au BufNewFile,BufRead *.vifm set filetype=vim
+
+  " GPG
+  au BufNewFile,BufRead *.gpg set filetype=gpg
 augroup END
