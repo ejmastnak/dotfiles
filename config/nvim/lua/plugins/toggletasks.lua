@@ -34,13 +34,10 @@ local function spawn_tasks_with_tag(tag)
 
 end
 
--- Open Telescope task picker
-vim.keymap.set('n', '<space>ts', require('telescope').extensions.toggletasks.spawn)
-
 -- Run all tasks with the #serve tag
 vim.keymap.set('n', '<Leader>ts', function()
   vim.cmd("Rooter")  -- switch to project root directory
-  spawn_tasks_with_tag("serve") 
+  spawn_tasks_with_tag("serve")
   vim.cmd("wincmd k")  -- Return cursor to original window
   vim.cmd("stopinsert")  -- Return to normal mode
 end)
@@ -48,15 +45,7 @@ end)
 -- Run all tasks with the #run tag
 vim.keymap.set('n', '<Leader>tp', function()
   vim.cmd("Rooter")  -- switch to project root directory
-  spawn_tasks_with_tag("run") 
-  vim.cmd("wincmd k")  -- Return cursor to original window
-  vim.cmd("stopinsert")  -- Return to normal mode
-end)
-
--- Run all tasks with the #build tag
-vim.keymap.set('n', '<Leader>to', function()
-  vim.cmd("Rooter")  -- switch to project root directory
-  spawn_tasks_with_tag("build")
+  spawn_tasks_with_tag("run")
   vim.cmd("wincmd k")  -- Return cursor to original window
   vim.cmd("stopinsert")  -- Return to normal mode
 end)
@@ -64,7 +53,15 @@ end)
 -- Run all tasks with the #view tag
 vim.keymap.set('n', '<Leader>ti', function()
   vim.cmd("Rooter")  -- switch to project root directory
-  spawn_tasks_with_tag("view") 
+  spawn_tasks_with_tag("view")
+  vim.cmd("wincmd k")  -- Return cursor to original window
+  vim.cmd("stopinsert")  -- Return to normal mode
+end)
+
+-- Run all tasks with the #viewfile tag
+vim.keymap.set('n', '<Leader>to', function()
+  vim.cmd("Rooter")  -- switch to project root directory
+  spawn_tasks_with_tag("viewfile")
   vim.cmd("wincmd k")  -- Return cursor to original window
   vim.cmd("stopinsert")  -- Return to normal mode
 end)
