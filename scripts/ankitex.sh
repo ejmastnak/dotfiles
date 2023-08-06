@@ -8,7 +8,7 @@ file="${HOME}/tmp/scratchpad-`date "+%4Y%m%d%H%M%S"`.ankitex"
 printf "[latex]\\n\\n[/latex]" > "${file}"
 
 # Edit the scratchpad file in Vim
-alacritty -e nvim -c "let g:anki_scratchpad_file = \"${file}\"" "${file}" &
+alacritty -e nvim -c "let g:anki_scratchpad_file = \"${file}\"" "${file}" -c ":autocmd BufWinLeave * %y<CR>" &
 alacritty_pid="$!"
 
 # Give Alacritty time to open
