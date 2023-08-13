@@ -57,3 +57,12 @@ omap <buffer> <plug> <plug>(textobj-markdown-chunk-n)
 omap <buffer> <plug> <plug>(textobj-markdown-chunk-p)
 omap <buffer> <plug> <plug>(textobj-markdown-chunk-N)
 omap <buffer> <plug> <plug>(textobj-markdown-chunk-P)
+
+" All levels but top-level headers, to avoid interpretting comments in code
+" blocks as headers. Required modifying the plugin source code to add Header.
+map <buffer> ]] <Plug>(textobj-markdown-Header-n)
+map <buffer> [[ <Plug>(textobj-markdown-Header-p)
+xmap <buffer> ]] <Plug>(textobj-markdown-Header-n)
+xmap <buffer> [[ <Plug>(textobj-markdown-Header-p)
+omap <buffer> ]] <Plug>(textobj-markdown-Header-n)
+omap <buffer> [[ <Plug>(textobj-markdown-Header-p)
