@@ -9,19 +9,24 @@
 #     Input: Foo Bar [SDfj323jsls].mp4
 #     Output: foo-bar.mp4
 
-if [[ ${#} -ne 2 ]]
-then
-  echo "Usage: rename-dlp.bash ./ ext"
+if [[ ${#} -eq 0 ]]; then
+  DIR="./"
+  EXT="opus"
+elif [[ ${#} -ne 2 ]]; then
+  DIR="${1}"
+  EXT="${2}"
+else
+  echo "Usage: rename-dlp.bash directory extension"
   exit
 fi
 
-cd "${1}"
+cd "${DIR}"
 
 # Remove YouTube ID
-perl-rename 's/ \[.*\]//' *.${2}
+perl-rename 's/ \[.*\]//' *.${EXT}
 
 # # Replace spaces with hyphens
-perl-rename 's/\s+/-/g' *.${2}
+perl-rename 's/\s+/-/g' *.${EXT}
 #
 # # Change to lowercase
-perl-rename 'y/A-Z/a-z/' *.${2}
+perl-rename 'y/A-Z/a-z/' *.${EXT}
