@@ -28,6 +28,7 @@ set noincsearch         " don't jump to match while type
 set scrolloff=4         " add space between cursor and border in lists
 set slowfs=curlftpfs    " don't do too many requests to slow file systems
 set norunexec           " don't automatically run executable files on l or Enter
+set cpoptions=fs        " to make <C-I> move forward in view history
 colorscheme nord solarized-dark Default-256 Default
 
 " Ignore case in search patterns unless the pattern 
@@ -151,8 +152,11 @@ nnoremap M :!ambient.bash %c &<CR><CR>
 " Open file under cursor with Neovim
 nnoremap NN :!nvim %c<CR>
 
+" Open file under cursor with sudoedit
+nnoremap SS :!sudoedit %c<CR>
+
 " Open file under cursor with Inkscape
-nnoremap II :!inkscape.bash %c &<CR>
+nnoremap II :!inkscape %c > /dev/null 2>&1 &<CR>
 
 " Run file under cursor as a shell script
 nnoremap S :!sh %c<CR>
