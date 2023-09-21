@@ -1,4 +1,5 @@
 " Navigation shortcuts for Hugo projects relative to project root directory
+nnoremap ;h :goto $VIFM_CONTEXT/.vifm-context.vifm<CR>
 
 nnoremap ;ll :cd $VIFM_CONTEXT/layouts<CR>
 nnoremap ;ld :cd $VIFM_CONTEXT/layouts/_default<CR>

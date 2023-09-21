@@ -1,12 +1,16 @@
 " Navigation shortcuts for Laravel projects relative to project root directory
 
-nnoremap ;h :cd $VIFM_CONTEXT<CR>
-
-nnoremap ;tt :goto $VIFM_CONTEXT/../TODO.md<CR>
+nnoremap ;hh :cd $VIFM_CONTEXT<CR>
+nnoremap ;hv :goto $VIFM_CONTEXT/.vifm-context.vifm<CR>
+nnoremap ;ht :goto $VIFM_CONTEXT/../TODO.md<CR>
+nnoremap ;hp :goto $VIFM_CONTEXT/package.json<CR>
+nnoremap ;hc :goto $VIFM_CONTEXT/composer.json<CR>
 
 nnoremap ;ee :goto $VIFM_CONTEXT/.env<CR>
 
 nnoremap ;pp :cd $VIFM_CONTEXT/public<CR>
+
+nnoremap ;cc :cd $VIFM_CONTEXT/config<CR>
 
 nnoremap ;dd :cd $VIFM_CONTEXT/database<CR>
 nnoremap ;df :cd $VIFM_CONTEXT/database/factories<CR>

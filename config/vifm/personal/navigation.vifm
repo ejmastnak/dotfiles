@@ -7,6 +7,7 @@ nnoremap gcS :cd ~/dotfiles/scripts<CR>
 nnoremap gcs :cd ~/dotfiles/config/shell<CR>
 nnoremap gcd :cd ~/dotfiles<CR>
 nnoremap gcv :cd ~/dotfiles/config/vifm<CR>
+nnoremap gcp :cd ~/dotfiles/config/picom<CR>
 nnoremap gcm :cd ~/dotfiles/config/mpv<CR>
 nnoremap gci :cd ~/dotfiles/config/i3<CR>
 nnoremap gck :cd ~/dotfiles/config/inkscape/keys<CR>
@@ -25,6 +26,7 @@ nnoremap ghh :cd ~<CR>
 nnoremap ghp :cd ~/podcasts<CR>
 
 nnoremap gjl :cd ~/.local<CR>
+nnoremap gjn :cd ~/.local/share/nvim<CR>
 nnoremap gjp :cd ~/.password-store<CR>
 nnoremap gjs :cd ~/.ssh<CR>
 nnoremap gjP :cd ~/Pictures<CR>
@@ -36,7 +38,6 @@ nnoremap gjd :cd ~/Documents<CR>
 " Basics
 " --------------------------------------------- "
 nnoremap gbb :cd ~/Documents/basics<CR>
-nnoremap gbf :cd ~/Documents/basics/food<CR>
 nnoremap gbt :cd ~/Documents/basics/transportation<CR>
 nnoremap gbh :cd ~/Documents/basics/home<CR>
 " --------------------------------------------- "
@@ -65,13 +66,16 @@ nnoremap gdd :cd ~/Documents/design<CR>
 " --------------------------------------------- "
 nnoremap gpp :cd ~/Documents/notes/plans<CR>
 nnoremap gpq :goto ~/Documents/notes/plans/todo.md<CR>
+nnoremap gpn :goto ~/Documents/notes/plans/now.md<CR>
 " --------------------------------------------- "
 
 " Projects
 " --------------------------------------------- "
 nnoremap goo :cd ~/Documents/projects<CR>
+nnoremap gof :goto ~/Documents/projects/fitness-biomechanics-2/app<CR>
+nnoremap goF :cd ~/Documents/projects/fitness<CR>
 nnoremap gok :cd ~/Documents/projects/klf<CR>
-nnoremap god :goto ~/Documents/projects/diet/app<CR>
+nnoremap gon :goto ~/Documents/projects/nutria/app<CR>
 nnoremap goj :cd ~/Documents/projects/juliaelyachar<CR>
 nnoremap goe :cd ~/Documents/projects/ejmastnak<CR>
 nnoremap goc :cd ~/Documents/projects/casino<CR>
@@ -81,7 +85,6 @@ nnoremap gor :cd ~/Documents/projects/rof<CR>
 nnoremap gop :cd ~/Documents/projects/tutor/pano<CR>
 nnoremap gol :goto ~/Documents/projects/landmarks/app<CR>
 nnoremap gog :goto ~/Documents/projects/gaia/app<CR>
-nnoremap gob :cd ~/Documents/projects/fitness-biomechanics<CR>
 
 nnoremap gom :cd ~/Documents/projects/ml<CR>
 nnoremap gomg :cd ~/Documents/projects/ml/jgavro<CR>
@@ -99,7 +102,7 @@ nnoremap gsh :cd ~/Documents/notes/tech/software/hugo<CR>
 nnoremap gsp :cd ~/Documents/notes/tech/software/python<CR>
 nnoremap gsc :cd ~/Documents/notes/tech/software/c<CR>
 nnoremap gsq :cd ~/Documents/notes/tech/software/sql<CR>
-nnoremap gsv :cd ~/Documents/notes/tech/software/vim<CR>
+nnoremap gsv :cd ~/Documents/notes/tech/software/web/vue<CR>
 nnoremap gst :cd ~/Documents/notes/tech/software/web/tailwind<CR>
 nnoremap gsl :cd ~/Documents/notes/tech/software/web/laravel<CR>
 nnoremap gsw :cd ~/Documents/notes/tech/software/web<CR>
@@ -108,6 +111,7 @@ nnoremap gsw :cd ~/Documents/notes/tech/software/web<CR>
 " Notes
 " --------------------------------------------- "
 nnoremap gnn :cd ~/Documents/notes<CR>
+nnoremap gnw :goto ~/Documents/notes/watch-this.md<CR>
 nnoremap gnb :cd ~/Documents/notes/bookmarks<CR>
 nnoremap gnf :cd ~/Documents/notes/food<CR>
 " --------------------------------------------- "
