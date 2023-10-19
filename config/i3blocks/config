@@ -10,6 +10,10 @@
 separator=true
 separator_block_width=20
 
+[5mates]
+command=scripts/5mates
+interval=3000
+
 [disk]
 command=scripts/disk
 LABEL=HOME:

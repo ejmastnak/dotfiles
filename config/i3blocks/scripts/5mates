@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# NAME
+#     5mates - Display a new 5mates in i3 status bar
+# 
+# DESCRIPTION
+#     Just a home-rolled script to prominently display a new "5 minute
+#     actionable task or exercise" in the i3 status bar.
+
+# Totally hacky but does the job well for my use case:
+# Space-delimited list of indictor_file,status key,value pairs (this technique
+# only works, of course, if file names don't contain spaces or commas).
+
+FG="#EEEEEE"
+BG="#81a1c1"  # Nord 9
+
+LIST=~/Documents/projects/5mates/list.md
+
+# Picks a new 5MATE at random from list.
+# Leading white space is intentional---for padding.
+echo " `shuf -n 1 ${LIST}` "  # i3 block long text
+echo " `shuf -n 1 ${LIST}` "  # i3 block short text
+
+echo ${FG}  # i3 block foreground (text) color
+echo ${BG}  # i3 block background color
