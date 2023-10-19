@@ -10,12 +10,6 @@
 separator=true
 separator_block_width=20
 
-[keys]
-command=scripts/keys
-LABEL=KEYS:
-signal=1
-interval=60
-
 [disk]
 command=scripts/disk
 LABEL=HOME:
