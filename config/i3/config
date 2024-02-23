@@ -11,10 +11,10 @@ font pango:DejaVu Sans Mono 10
 bindsym $mod+Return exec alacritty --command vifm
 
 # Reset desired typematic rate
-bindsym $mod+Shift+x exec --no-startup-id xset r rate 200 30 && xmodmap ~/.xmodmaprc
+bindsym $mod+Shift+x exec --no-startup-id xset r rate 200 40 && xmodmap ~/.xmodmaprc
 
 # Open a web browser
-bindsym $mod+Shift+o exec chromium
+bindsym $mod+Shift+o exec firefox
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -158,9 +158,9 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-exec --no-startup-id xss-lock -- i3lock --nofork \
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork \
   --radius 110 \
-  --image=/home/ej/Documents/design/lock-screen/lock-screen.png \
+  --image=/home/ej/Pictures/lock-screen.png \
   --fill \
   --inside-color=d8dee9ff \
   --ring-color=5e81acff \
@@ -278,12 +278,17 @@ bindsym --release $mod+Shift+p exec --no-startup-id xcolor --selection clipboard
 
 # Screenshot a selected region with maim and slop
 bindsym Print exec --no-startup-id "${HOME}/scripts/screenshot.bash -s"
+# # Screenshot root window with maim
+# bindsym Shift+Print exec --no-startup-id "${HOME}/scripts/screenshot.bash -r"
 
-# Screenshot root window with maim
-bindsym Shift+Print exec --no-startup-id "${HOME}/scripts/screenshot.bash -r"
+# # Screencast a selected region
+# bindsym $Shift+Print exec "${HOME}/scripts/screencast.bash"
 
-# Toggle Inkscape key interception layer
-bindsym $mod+Shift+i exec --no-startup-id "inkscape-keys-toggle.bash"
+# # Toggle Inkscape key interception layer
+# bindsym $mod+Shift+i exec --no-startup-id "inkscape-keys-toggle.bash"
+
+# Toggle internal display (as a safeguard against turning it off)
+bindsym $mod+Shift+d exec "${HOME}/scripts/toggle-internal-display.bash"
 # --------------------------------------------- #
 # Autostarting
 # --------------------------------------------- #

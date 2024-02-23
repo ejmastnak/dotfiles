@@ -10,15 +10,30 @@
   <!-- Quit Inkscape -->
   <bind gaction="app.quit" keys="&lt;primary&gt;q" />
 
+  <!-- Import -->
+  <bind gaction="win.document-import" keys="&lt;primary&gt;i" />
+
   <!-- Select all -->
   <bind gaction="win.select-all" keys="&lt;primary&gt;a" />
   <!-- Clear selection -->
   <bind gaction="win.select-none" keys="Escape"/>
 
   <!-- Zoom in -->
-  <bind gaction="win.canvas-zoom-in"                     keys="plus"      />
+  <bind gaction="win.canvas-zoom-in" keys="plus" />
   <!-- Zoom out -->
-  <bind gaction="win.canvas-zoom-out"                    keys="minus" />
+  <bind gaction="win.canvas-zoom-out" keys="minus" />
+
+  <!-- Zoom to 100% -->
+  <bind gaction="win.canvas-zoom-1-1" keys="1"/>
+  <!-- Zoom to drawing (everything you've drawn) -->
+  <bind gaction="win.canvas-zoom-drawing" keys="2"/>
+  <!-- Zoom to page -->
+  <bind gaction="win.canvas-zoom-page" keys="3"/>
+  <!-- Zoom to selection -->
+  <bind gaction="win.canvas-zoom-selection" keys="0"/>
+
+  <!-- Toggle snapping -->
+  <bind gaction="win.snap-global-toggle" keys="percent" />
   <!-- ==================================================================== -->
 
   <!-- Dialogs -->
@@ -71,6 +86,10 @@
   <bind gaction="win.tool-switch('Arc')" keys="e"/>
   <!-- Bezier pen tool -->
   <bind gaction="win.tool-switch('Pen')" keys="b"/>
+  <!-- Bucket tool -->
+  <bind gaction="win.tool-switch('PaintBucket')" keys="&lt;shift&gt;b"/>
+  <!-- Freehand pencil tool -->
+  <bind gaction="win.tool-switch('Pencil')" keys="f"/>
   <!-- Text tool -->
   <bind gaction="win.tool-switch('Text')" keys="t"/>
   <!-- ==================================================================== -->
@@ -102,6 +121,23 @@
   <bind gaction="app.object-align('hcenter pref')" keys="&lt;primary&gt;backslash" />
   <!-- Center selected objects along horizontal axis  -->
   <bind gaction="app.object-align('vcenter pref')" keys="&lt;primary&gt;minus" />
+  <!-- Align selected objects along left edge  -->
+  <bind gaction="app.object-align('left pref')" keys="&lt;primary&gt;comma" />
+  <!-- Align selected objects along right edge  -->
+  <bind gaction="app.object-align('right pref')" keys="&lt;primary&gt;period" />
+  <!-- Align selected objects along top edge  -->
+  <bind gaction="app.object-align('top pref')" keys="&lt;primary&gt;t" />
+  <!-- Align selected objects along bottom edge  -->
+  <bind gaction="app.object-align('bottom pref')" keys="&lt;primary&gt;b" />
+
+  <!-- Evenly distribute selected objects along vertical axis -->
+  <bind gaction="app.object-distribute('hcenter')" keys="&lt;primary&gt;h" />
+  <!-- Evenly distribute selected objects along horizontal axis -->
+  <bind gaction="app.object-distribute('vcenter')" keys="&lt;primary&gt;v" />
+  <!-- Evenly distribute selected objects along vertical axis -->
+  <bind gaction="app.object-distribute('hgap')" keys="&lt;primary&gt;&lt;shift&gt;h" />
+  <!-- Evenly distribute selected objects along horizontal axis -->
+  <bind gaction="app.object-distribute('vgap')" keys="&lt;primary&gt;&lt;shift&gt;v" />
   <!-- ==================================================================== -->
 
 </keys>

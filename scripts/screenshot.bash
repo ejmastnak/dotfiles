@@ -15,7 +15,7 @@ SELECT=2
 method=${ROOT}
 
 # Use timestamp to ensure unique filename
-output="${HOME}/Pictures/cap-$(date +%Y-%m-%d-%S-%N).png"
+output="${HOME}/Documents/pictures/cap-$(date +%Y-%m-%d-%S-%N).png"
 
 while getopts ":rs" flag
 do

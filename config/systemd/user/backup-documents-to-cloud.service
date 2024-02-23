@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup documents to cloud each day
+
+[Service]
+Type=oneshot
+ExecStart=/home/ej/dotfiles/scripts/backup-documents.bash
+
+[Install]
+WantedBy=multi-user.target

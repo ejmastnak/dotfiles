@@ -1,7 +1,7 @@
 vim.keymap.set('', '<Leader>c', '<Cmd>Make<CR>')
 vim.api.nvim_set_option('foldmethod', 'marker')
 
-local sort_script = os.getenv("HOME") .. "/Documents/basics/finances/scripts/src/sort-beancount.py"
+local sort_script = os.getenv("HOME") .. "/Documents/finances/scripts/src/sort-beancount.py"
 
 vim.api.nvim_create_user_command('SortBeancount',
   function(opts)
@@ -14,4 +14,4 @@ vim.api.nvim_create_user_command('SortBeancount',
     end
   end, {})
 
-vim.keymap.set('', '<Leader>S', '<Cmd>SortBeancount<CR>')
+vim.keymap.set('', '<Leader>S', '<Cmd>update<CR><Cmd>SortBeancount<CR>')

@@ -1,0 +1,1 @@
+/home/ej/Documents/projects/music/src/sync2foobar.py

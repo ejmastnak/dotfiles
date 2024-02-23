@@ -196,9 +196,13 @@ function M.get_current_time()
 
   local stdout_response = _write_command_to_mpv_socket('{ "command": ["get_property", "playback-time"] }\n')
 
+  print("Here:")
+  print(stdout_response)
+  print(stdout_response[1])
+
   if #stdout_response ~= 1 then
     print("Error extracting timestamp. Aborting.")
-    do return end
+    return {0, 0, 0, 0, 0}
   end
 
   -- E.g. extract the '67.136230' from a result of the form

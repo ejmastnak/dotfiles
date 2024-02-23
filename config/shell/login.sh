@@ -8,18 +8,22 @@ export GPG_TTY=$(tty)
 
 # For LilyPond inverse search
 export LYEDITOR="nvr --servername=/tmp/lilypondsocket +%(line)s %(file)s"
+
+# Path to my music library database
+export MUSIC_LIBRARY_DB="${HOME}/Music/library/.sqlite/library.sqlite"
+export MUSIC_LIBRARY_ROOT="${HOME}/Music/library"
 # --------------------------------------------- #
 
 # Additions to PATH
 # --------------------------------------------- #
 # Python modules installed by Pip
-export PATH="${PATH}:$HOME/.local/bin"
+export PATH="${PATH}:${HOME}/.local/bin"
 
 # Personal scripts
-export PATH="${PATH}:$HOME/scripts"
+export PATH="${PATH}:${HOME}/scripts"
 
 # Beancount conversion scripts
-export PATH="${PATH}:$HOME/Documents/basics/finances/scripts/src"
+export PATH="${PATH}:${HOME}/Documents/finances/scripts/src"
 # --------------------------------------------- #
 
 # User-local node module directory

@@ -12,9 +12,9 @@ vim.keymap.set('', '0', '^')
 vim.keymap.set('n', 'I', '^i')
 vim.keymap.set('', '^', '0')
 
--- Hacky way to stay inside current paragraph
-vim.keymap.set('', '}', 'j}k')
-vim.keymap.set('', '{', 'k{j')
+-- -- Hacky way to stay inside current paragraph
+-- vim.keymap.set('', '}', 'j}k')
+-- vim.keymap.set('', '{', 'k{j')
 
 -- Navigate to line start and end from home row; note that this overrides 
 -- H and L to move the cursor to page top and page bottom.

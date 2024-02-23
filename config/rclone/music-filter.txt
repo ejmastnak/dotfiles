@@ -1,0 +1,6 @@
+- bgm/**
+- classical/**
+- hip-hop-beats/**
+- unsorted/**
+- working-on.md
+- .vifm-context.vifm

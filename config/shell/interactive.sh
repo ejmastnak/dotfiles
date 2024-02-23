@@ -33,13 +33,19 @@ display-off() {
   fi
 }
 
+alias tbird='thunderbird'
+alias py='python'
+alias se='sudoedit'
+alias mpvs='mpv --shuffle ./'
+
 alias grep='grep --color=auto'
 
 # Activate Python virtual environment
 alias venv="source ./venv/bin/activate && vifm ./ ./"
 
 # Download and extract audio from YouTube videos
-alias dlp='yt-dlp -x'
+alias dlp='yt-dlp --extract-audio --audio-format mp3'
+alias ydlp='yt-dlp -S res:720'
 
 # Use loudgain to normalize opus or mp3 albums
 alias lg_mp3='loudgain -I3 -S -L -a -k -s e *.mp3'
@@ -54,9 +60,13 @@ alias ggd="git diff"
 alias gga="git add"
 alias ggc="git commit"
 alias ggp="git push"
+alias ggpm="git push prod main"
 alias ggl="git log"
 alias ggb="git branch"
 alias ggr="git restore"
+alias ggs="git switch"
+alias ggi="git init"
+alias ggls="git ls-files"
 
 # Some PHP/Laravel aliases
 alias art="php artisan"
@@ -67,5 +77,9 @@ alias artrl="php artisan route:list"
 # Network
 alias lswifi="nmcli device wifi list"
 
-# More ergonomic shortcut for ambient.bash script
-alias asdf="ambient.bash"
+# Easier shortcut for music.py script
+alias mp="music.py"
+alias mpy="music.py youtube"
+
+# Easier shortcut for backup-documents.bash script
+alias bdb="backup-documents.bash"

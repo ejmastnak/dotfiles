@@ -30,7 +30,7 @@ filetype {*.xls,*.xlsx},<application/msexcel> gnumeric %c &
 filetype {*.doc,*.docx},<application/msword> abiword %c &
 
 " M3U files
-filetype {*.m3u},<text/m3u> mpv %c
+filetype {*.m3u,*.m3u8},<text/m3u> mpv %c
 
 " CSV files
 " filetype {*.csv},<text/csv> sc-im --import_delimited_as_text
@@ -50,7 +50,7 @@ nnoremap yp :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:
 nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
 
 " yank root of current file's name into the clipboard
-nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
+nnoremap yN :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
 
 " yank directory listing into clipboard
 nnoremap yl :!ls %d | xclip -selection clipboard %i<cr>:echo "directory listing is yanked to clipboard"<cr>

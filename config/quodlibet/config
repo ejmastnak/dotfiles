@@ -1,0 +1,52 @@
+[settings]
+columns = ~#track,~people,~title~version,~album~discsubtitle,~#length
+	
+default_rating = 0.5
+
+[memory]
+browser = PanedBrowser
+chooser_dir = /home/ej/test
+column_expands = ~people,1,~title~version,1,~album~discsubtitle,1
+	
+column_widths = ~people,-1,~title~version,-1,~album~discsubtitle,-1
+	
+open_browsers = 
+prefs_page = songlist
+queue_disable = False
+queue_expanded = False
+quodlibet_last_active_version = 4.6.0
+quodlibet_maximized = 0
+quodlibet_position = 1445 10
+quodlibet_properties_maximized = 0
+quodlibet_properties_pos = 0.3993174061433447
+quodlibet_properties_position = -774 367
+quodlibet_properties_size_single = 586 400
+quodlibet_size_ = 465 1036
+seek = 0
+sidebar_pos = 0.24946236559139784
+sortby = 1~title~version
+	
+
+[player]
+replaygain_mode = auto
+
+[browsers]
+pane_selection = 0	Bob Marley	.
+	0	<b><i>1977</i></b> - Exodus	.
+panedbrowser_pane_widths = 0.4989247311827957
+	
+panedbrowser_pos = 0.4025670945157526
+query_text = 
+
+[library]
+refresh_on_start = false
+
+[__config__]
+version = 0
+
+[rename]
+windows = true
+
+[plugins]
+active_plugins = 
+

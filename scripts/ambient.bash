@@ -1,22 +1,23 @@
 #!/bin/bash
 #
 # NAME 
-#     ambient.bash - Play multiple audio tracks simultaneously with mpv
+#     ambient.bash - Play multiple audio tracks in separate i3 windows
 # SYNOPSIS
-#     ambient.bash <tracks-to-play.csv>
+#     ambient.bash <tracks.csv>
 # DESCRIPTION
-# Plays multiple audio tracks simultaneously using multiple instances of mpv
-# running in the background. Motivation is mostly playing overlayed ambient
-# nature sounds and relaxing music in a single command, instead of using a
-# separate shell for each track.
+# For each audio track in tracks.csv, spawns a new terminal window running mpv
+# playing the track at the relative volume specified in tracks.csv. Motivation
+# is mostly playing overlayed ambient nature sounds and relaxing music in a
+# single command, instead of manually opening up new terminals and media player
+# instances for each track.
 
 # Usage: 
 # Arguments:
-#   $1 <tracks-to-play.csv> 
+#   $1 <tracks.csv> 
 #      Path to an CSV file holding at least one
-#      (path-to-track,relative-volume) tuple.
-#      `path-to-track` is a path to any track understood by mpv
-#      `relative-volume` is an integer from 0 to 100;
+#      (path-to-track,volume) tuple.
+#      `path-to-track` is a path to any audio file understood by mpv.
+#      `volume` is an integer from 0 to 100;
 #      this allows playing some tracks louder than others.
 # 
 #      ```
@@ -31,22 +32,24 @@ if [[ ${1##*.} != "csv" ]]; then
   exit
 fi
 
-# Read through all lines in tracks-to-play.csv
-line_num=0
+i3-msg "split v"
 while read line
 do
-  # See docstring of $2 <timestamp-file> for example lines
   [[ -z "$line" ]] && continue    # skip blank lines
   [[ $line = \#* ]] && continue   # skip commented lines
 
   track=${line%%,*}
   volume=${line##*,}
 
-  mpv --volume="${volume}" "${track}" &
-  track_pid=$!
-  printf "[${track_pid}]\t${track}\n"
+  if [[ -f ${track} ]]; then
+    # Note to future self: use alacritty --hold to debug; realpath seems to
+    # be necessary for undiscovered reasons. Also: disabling scripts to avoid
+    # mpv-cut clogging up screen space and hiding track title, so I can
+    # actually see which track is playing in which terminal, but manually
+    # loading mpris to allow play-pause.
+    i3-msg "exec --no-startup-id alacritty --command mpv --volume="${volume}" --load-scripts=no --script=/etc/mpv/scripts/mpris.so $(realpath "${track}")"
+  else
+    echo "No file found at ${track}. Skipping."
+  fi
 
 done < "${1}"
-
-# Give time for mpv output to appear on stdout
-sleep 0.5

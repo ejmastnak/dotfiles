@@ -65,3 +65,11 @@ vim.keymap.set('n', '<Leader>to', function()
   vim.cmd("wincmd k")  -- Return cursor to original window
   vim.cmd("stopinsert")  -- Return to normal mode
 end)
+
+-- Run all tasks with the #build tag
+vim.keymap.set('n', '<Leader>tb', function()
+  vim.cmd("Rooter")  -- switch to project root directory
+  spawn_tasks_with_tag("build")
+  vim.cmd("wincmd k")  -- Return cursor to original window
+  vim.cmd("stopinsert")  -- Return to normal mode
+end)

@@ -27,22 +27,33 @@ xmap <buffer> <plug> <plug>(textobj-markdown-Btext-a)
 " Header movement
 map <buffer> <plug> <Plug>(textobj-markdown-header-n)
 map <buffer> <plug> <Plug>(textobj-markdown-header-p)
-map <buffer> <plug> <Plug>(textobj-markdown-Sheader-n)
-map <buffer> <plug> <Plug>(textobj-markdown-Sheader-p)
-map <buffer> <plug> <Plug>(textobj-markdown-SSheader-n)
-map <buffer> <plug> <Plug>(textobj-markdown-SSheader-p)
 xmap <buffer> <plug> <Plug>(textobj-markdown-header-n)
 xmap <buffer> <plug> <Plug>(textobj-markdown-header-p)
-xmap <buffer> <plug> <Plug>(textobj-markdown-Sheader-n)
-xmap <buffer> <plug> <Plug>(textobj-markdown-Sheader-p)
-xmap <buffer> <plug> <Plug>(textobj-markdown-SSheader-n)
-xmap <buffer> <plug> <Plug>(textobj-markdown-SSheader-p)
 omap <buffer> <plug> <Plug>(textobj-markdown-header-n)
 omap <buffer> <plug> <Plug>(textobj-markdown-header-p)
-omap <buffer> <plug> <Plug>(textobj-markdown-Sheader-n)
-omap <buffer> <plug> <Plug>(textobj-markdown-Sheader-p)
-omap <buffer> <plug> <Plug>(textobj-markdown-SSheader-n)
-omap <buffer> <plug> <Plug>(textobj-markdown-SSheader-p)
+
+map <buffer> ]2 <Plug>(textobj-markdown-Sheader-n)
+map <buffer> [2 <Plug>(textobj-markdown-Sheader-p)
+xmap <buffer> ]2 <Plug>(textobj-markdown-Sheader-n)
+xmap <buffer> [2 <Plug>(textobj-markdown-Sheader-p)
+omap <buffer> ]2 <Plug>(textobj-markdown-Sheader-n)
+omap <buffer> [2 <Plug>(textobj-markdown-Sheader-p)
+
+map <buffer> ]3 <Plug>(textobj-markdown-SSheader-n)
+map <buffer> [3 <Plug>(textobj-markdown-SSheader-p)
+xmap <buffer> ]3 <Plug>(textobj-markdown-SSheader-n)
+xmap <buffer> [3 <Plug>(textobj-markdown-SSheader-p)
+omap <buffer> ]3 <Plug>(textobj-markdown-SSheader-n)
+omap <buffer> [3 <Plug>(textobj-markdown-SSheader-p)
+
+" All levels but top-level headers, to avoid interpretting comments in code
+" blocks as headers. Required modifying the plugin source code to add Header.
+map <buffer> ]] <Plug>(textobj-markdown-Header-n)
+map <buffer> [[ <Plug>(textobj-markdown-Header-p)
+xmap <buffer> ]] <Plug>(textobj-markdown-Header-n)
+xmap <buffer> [[ <Plug>(textobj-markdown-Header-p)
+omap <buffer> ]] <Plug>(textobj-markdown-Header-n)
+omap <buffer> [[ <Plug>(textobj-markdown-Header-p)
 
 " Fence block movement
 map <buffer> <plug> <plug>(textobj-markdown-chunk-n)
@@ -57,12 +68,3 @@ omap <buffer> <plug> <plug>(textobj-markdown-chunk-n)
 omap <buffer> <plug> <plug>(textobj-markdown-chunk-p)
 omap <buffer> <plug> <plug>(textobj-markdown-chunk-N)
 omap <buffer> <plug> <plug>(textobj-markdown-chunk-P)
-
-" All levels but top-level headers, to avoid interpretting comments in code
-" blocks as headers. Required modifying the plugin source code to add Header.
-map <buffer> ]] <Plug>(textobj-markdown-Header-n)
-map <buffer> [[ <Plug>(textobj-markdown-Header-p)
-xmap <buffer> ]] <Plug>(textobj-markdown-Header-n)
-xmap <buffer> [[ <Plug>(textobj-markdown-Header-p)
-omap <buffer> ]] <Plug>(textobj-markdown-Header-n)
-omap <buffer> [[ <Plug>(textobj-markdown-Header-p)

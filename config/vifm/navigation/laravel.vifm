@@ -16,20 +16,27 @@ nnoremap ;dd :cd $VIFM_CONTEXT/database<CR>
 nnoremap ;df :cd $VIFM_CONTEXT/database/factories<CR>
 nnoremap ;dm :cd $VIFM_CONTEXT/database/migrations<CR>
 nnoremap ;ds :cd $VIFM_CONTEXT/database/seeders<CR>
+nnoremap ;dq :cd $VIFM_CONTEXT/database/sqlite<CR>
 
 nnoremap ;aa :cd $VIFM_CONTEXT/app<CR>
 nnoremap ;ap :cd $VIFM_CONTEXT/app/Policies<CR>
+nnoremap ;aP :cd $VIFM_CONTEXT/app/Providers<CR>
+nnoremap ;aj :cd $VIFM_CONTEXT/app/Jobs<CR>
 nnoremap ;ah :cd $VIFM_CONTEXT/app/Http<CR>
 nnoremap ;am :cd $VIFM_CONTEXT/app/Models<CR>
+nnoremap ;aM :cd $VIFM_CONTEXT/app/Http/Middleware<CR>
 nnoremap ;ac :cd $VIFM_CONTEXT/app/Http/Controllers<CR>
 nnoremap ;ar :cd $VIFM_CONTEXT/app/Http/Requests<CR>
+nnoremap ;aR :cd $VIFM_CONTEXT/app/Rules<CR>
 
 nnoremap ;rr :cd $VIFM_CONTEXT/resources/<CR>
 nnoremap ;rc :cd $VIFM_CONTEXT/resources/css<CR>
 nnoremap ;rv :cd $VIFM_CONTEXT/resources/views<CR>
 nnoremap ;rj :cd $VIFM_CONTEXT/resources/js<CR>
+nnoremap ;rs :cd $VIFM_CONTEXT/resources/scripts<CR>
 
 nnoremap ;jj :cd $VIFM_CONTEXT/resources/js/<CR>
+nnoremap ;ju :cd $VIFM_CONTEXT/resources/js/utils<CR>
 nnoremap ;jp :cd $VIFM_CONTEXT/resources/js/Pages<CR>
 nnoremap ;jc :cd $VIFM_CONTEXT/resources/js/Components<CR>
 nnoremap ;js :cd $VIFM_CONTEXT/resources/js/Shared<CR>
@@ -37,8 +44,9 @@ nnoremap ;jl :cd $VIFM_CONTEXT/resources/js/Layouts<CR>
 
 nnoremap ;rw :goto $VIFM_CONTEXT/routes/web.php<CR>
 
+nnoremap ;as :cd $VIFM_CONTEXT/app/Services<CR>
+
 nnoremap ;ss :cd $VIFM_CONTEXT/storage<CR>
 nnoremap ;sa :cd $VIFM_CONTEXT/storage/app<CR>
-nnoremap ;as :cd $VIFM_CONTEXT/storage/app<CR>
 
 nnoremap ;vv :cd $VIFM_CONTEXT/vendor/laravel/framework/src/Illuminate<CR>

@@ -1,0 +1,10 @@
+[Unit]
+Description=Change wallpaper to display a new 5MATE
+Requires=5mates.service
+
+[Timer]
+OnActiveSec=5m
+OnUnitActiveSec=50m
+
+[Install]
+WantedBy=timers.target

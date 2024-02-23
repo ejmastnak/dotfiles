@@ -78,7 +78,7 @@ Plug 'habamax/vim-rst'
 -- LSP-like
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
-Plug('nvim-telescope/telescope.nvim', {['tag'] = '0.1.0'})
+Plug('nvim-telescope/telescope.nvim')
 Plug 'RRethy/vim-illuminate'
 Plug('nvim-Treesitter/nvim-Treesitter', {['do'] = ':TSUpdate'})
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -94,6 +94,8 @@ vim.call('plug#end')
 -- End loading plugins
 
 vim.cmd('colorscheme nord')
+vim.cmd('hi Visual guifg=#2E3440 guibg=#88C0D0 gui=none')
+vim.cmd('hi VisualNOS guifg=#2E3440 guibg=#88C0D0 gui=none')
 
 -- Personal configuration
 require('personal/init/copy-paste')
@@ -131,8 +133,10 @@ vim.keymap.set('n', '<Leader>w', '<Cmd>write<CR>')
 vim.keymap.set('n', 'zf', 'zc')
 vim.keymap.set('n', 'zc', 'zf')
 
--- Easier edit command
-vim.keymap.set('n', '<Leader>e', ':edit ')
+-- Easier edit commands
+vim.keymap.set('n', '<Leader>ee', ':edit ')
+vim.keymap.set('n', '<Leader>es', ':split ')
+vim.keymap.set('n', '<Leader>ev', ':vsplit ')
 
 -- Easier help command
 vim.keymap.set('n', '<Leader>h', ':help ')
@@ -194,7 +198,7 @@ vim.keymap.set('n', '<Leader>q',
   {desc = 'Write and quit if possible/applicable, force quit otherwise.'})
 
 -- Save and close all buffers
-vim.keymap.set('n', '<Leader>Q', '<Cmd>quitall<CR>')
+vim.keymap.set('n', '<Leader>Q', '<Cmd>quitall<CR><Cmd>stopinsert<CR>')
 
 -- Sort text by paragraph (useful for e.g. for Beancount files)
 -- Implements https://stackoverflow.com/a/24099468
@@ -214,4 +218,13 @@ autocmd User targets#mappings#user call targets#mappings#extend({
 ]]
 
 vim.keymap.set('', '<Leader>hc', '<Cmd>HighlightColorsToggle<CR>')
+
+-- Enter/leave insert mode when entering/leaving a terminal
+-- You could use nvim_list_bufs
+vim.cmd[[
+  autocmd BufEnter term://* startinsert
+  autocmd BufLeave term://* stopinsert
+]]
+
+
 -- END MISCELLANEOUS

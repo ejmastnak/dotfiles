@@ -1,0 +1,10 @@
+[Unit]
+Description=Backup documents to cloud each day
+Requires=backup-documents-to-cloud.service
+
+[Timer]
+# Run every day at e.g. 9 am
+OnCalendar=*-*-* 9:00:00
+
+[Install]
+WantedBy=timers.target

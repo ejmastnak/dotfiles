@@ -109,7 +109,7 @@
 # BEGIN CEDILLA
 # --------------------------------------------- #
 <Multi_key> <c> <C> : "Ç" Ccedilla # LATIN CAPITAL LETTER C WITH CEDILLA
-<Multi_key> <c> <c> : "ç" ccedilla # LATIN SMALL LETTER C WITH CEDILLA
+# <Multi_key> <c> <c> : "ç" ccedilla # LATIN SMALL LETTER C WITH CEDILLA
 <Multi_key> <c> <G> : "Ģ" U0122    # LATIN CAPITAL LETTER G WITH CEDILLA
 <Multi_key> <c> <g> : "ģ" U0123    # LATIN SMALL LETTER G WITH CEDILLA
 <Multi_key> <c> <K> : "Ķ" U0136    # LATIN CAPITAL LETTER K WITH CEDILLA
@@ -217,3 +217,11 @@
 <Multi_key> <n> <Y> : "Ỹ"	U1EF8    # LATIN CAPITAL LETTER Y WITH TILDE
 # --------------------------------------------- #
 # END TILDE
+
+# Overriding standard rules to accomodate Slovene letters I use all the time
+<Multi_key> <s> <s> : "š" U0161 # LATIN SMALL LETTER S WITH CARON
+<Multi_key> <S> <S> : "Š" U0160 # LATIN CAPITAL LETTER S WITH CARON
+<Multi_key> <c> <c> : "č" U010D # LATIN SMALL LETTER C WITH CARON
+<Multi_key> <C> <C> : "Č" U010C # LATIN CAPITAL LETTER C WITH CARON
+<Multi_key> <z> <z> : "ž" U017E # LATIN SMALL LETTER Z WITH CARON
+<Multi_key> <Z> <Z> : "Ž" U017D # LATIN CAPITAL LETTER Z WITH CARON

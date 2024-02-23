@@ -17,6 +17,7 @@ let s:nord6_term = "15"
 
 function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
   if a:guifg != ""
+    " highlight texDelim guibg=#a3be8c
     exec "hi " . a:group . " guifg=" . a:guifg
   endif
   if a:guibg != ""

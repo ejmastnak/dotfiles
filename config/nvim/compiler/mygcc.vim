@@ -16,7 +16,8 @@ set cpo&vim
 
 " Compile current C file with GCC and use the file's base name, minus the .c
 " extension, as the program name.
-setlocal makeprg=gcc\ %\ --output\ %:r
+" setlocal makeprg=gcc\ %\ --output\ %:r
+setlocal makeprg=gcc\ -lm\ -lportaudio\ %\ --output\ %:r
 
 CompilerSet errorformat=
       \%*[^\"]\"%f\"%*\\D%l:%c:\ %m,

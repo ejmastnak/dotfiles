@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <inkscape
-   version="1"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+   version="1">
   <group
      id="window">
     <group
@@ -102,9 +101,10 @@
   </group>
   <group
      id="template">
-    <sodipodi:namedview
+    <group
        id="base"
        pagecolor="#505050"
+       deskcolor="#d1d1d1"
        pageopacity="0"
        pagecheckerboard="0"
        bordercolor="#eeeeee"
@@ -125,14 +125,14 @@
       <eventcontext
          id="rect"
          style="fill:blue;"
-         usecurrent="1"
-         width="201.111008050873"
-         height="161.359834445743"
-         ry="0" />
+         usecurrent="0"
+         width="894.699341781496"
+         height="329.699332169665"
+         ry="37.00318584292" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
-         usecurrent="1">
+         usecurrent="0">
         <side
            id="XYfront"
            style="fill:#8686bf;stroke:none;stroke-linejoin:round;"
@@ -163,14 +163,14 @@
          style="fill:red;"
          end="0"
          start="0"
-         usecurrent="1"
-         rx="28"
-         ry="28" />
+         usecurrent="0"
+         rx="193.792846679688"
+         ry="193.792846679688" />
       <eventcontext
          id="star"
          magnitude="5"
          style="fill:yellow;"
-         usecurrent="1" />
+         usecurrent="0" />
       <eventcontext
          id="spiral"
          style="fill:none;stroke:black"
@@ -182,19 +182,21 @@
        style="fill:none;stroke:black;stroke-opacity:1;stroke-linejoin:miter;stroke-linecap:butt;">
       <eventcontext
          id="pencil"
-         tolerance="4.0"
+         tolerance="100"
          selcue="1"
          style="stroke-width:1px;"
          usecurrent="0"
          average_all_sketches="1"
-         pressure="0" />
+         pressure="0"
+         shape="3" />
       <eventcontext
          id="pen"
          mode="drag"
          selcue="1"
          style="stroke-width:1px;"
          usecurrent="0"
-         freehand-mode="0" />
+         freehand-mode="0"
+         shape="0" />
     </group>
     <eventcontext
        id="calligraphic"
@@ -325,7 +327,7 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:sans-serif;font-size:10.66666667px;text-anchor:middle;text-align:center;-inkscape-font-specification:'sans-serif Bold';font-weight:bold"
+       style="line-height:1.25;font-family:sans-serif;font-size:12px;text-anchor:middle;text-align:center;-inkscape-font-specification:'sans-serif Bold';font-weight:bold"
        selcue="1"
        align_mode="1" />
     <eventcontext
@@ -343,8 +345,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="1.88976377952756"
-       y="1.7576774485045"
+       x="278.528716218958"
+       y="255.270645091416"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -362,6 +364,10 @@
        dos="1"
        dol="1"
        doo="1" />
+    <eventcontext
+       id="marker"
+       selcue="1"
+       gradientdrag="1" />
     <eventcontext
        id="spray"
        selcue="1"
@@ -391,22 +397,18 @@
        pick="1"
        setalpha="1" />
     <eventcontext
-       id="select"
-       selcue="1"
-       gradientdrag="0" />
-    <eventcontext
        id="connector"
        style="fill:none;fill-rule:evenodd;stroke:black;stroke-opacity:1;stroke-linejoin:miter;stroke-width:1px;stroke-linecap:butt;"
        selcue="1"
        curvature="0" />
     <eventcontext
+       id="select"
+       selcue="1"
+       gradientdrag="0" />
+    <eventcontext
        id="paintbucket"
        style="fill:#a0a0a0;stroke:none;"
        usecurrent="1" />
-    <eventcontext
-       id="marker"
-       selcue="1"
-       gradientdrag="1" />
     <group
        id="geometric"
        mode="drag" />
@@ -531,7 +533,31 @@
   <group
      id="colorselector"
      page="0"
-     switcher="1" />
+     switcher="1">
+    <group
+       id="RGB"
+       visible="1" />
+    <group
+       id="HSL"
+       visible="1" />
+    <group
+       id="CMYK"
+       visible="1" />
+    <group
+       id="HSV"
+       visible="1" />
+    <group
+       id="HSLuv"
+       visible="1" />
+    <group
+       id="OKLAB"
+       visible="1" />
+    <group
+       id="CMS"
+       visible="1" />
+    <group
+       id="OKHSL" />
+  </group>
   <group
      id="embedded">
     <group
@@ -541,7 +567,17 @@
        panel_ratio="100"
        panel_wrap="0"
        palette="Inkscape default"
-       panel_border="0" />
+       panel_border="0">
+      <group
+         id="pinned"
+         none="1"
+         rgb000000="1"
+         black="1"
+         rgb808080="1"
+         gray-50="1"
+         rgbffffff="1"
+         white="1" />
+    </group>
   </group>
   <group
      id="dialogs"
@@ -562,7 +598,7 @@
     <group
        id="align"
        align-to="1"
-       objects-align-to="page" />
+       objects-align-to="last" />
     <group
        id="xml"
        h="500"
@@ -580,7 +616,7 @@
     <group
        id="preferences"
        state="1"
-       page="29" />
+       page="14" />
     <group
        id="gradienteditor" />
     <group
@@ -593,7 +629,7 @@
        defaultopts="0">
       <group
          id="exportarea"
-         value="selection" />
+         value="drawing" />
       <group
          id="defaultxdpi"
          value="300" />
@@ -602,14 +638,14 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="300" />
+         value="96" />
     </group>
     <group
        id="save_as"
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/ej/Documents"
+       path="/home/ej/Documents/projects/ejmastnak/layouts/partials/logo"
        use_current_dir="1"
        enable_svgexport="1" />
     <group
@@ -625,7 +661,7 @@
     <group
        id="import"
        enable_preview="1"
-       path="/home/ej/Downloads/"
+       path="/home/ej/"
        ask="1"
        ask_svg="1"
        link="embed"
@@ -649,7 +685,8 @@
     <group
        id="messages" />
     <group
-       id="swatches" />
+       id="swatches"
+       palette="Auto" />
     <group
        id="iconpreview" />
     <group
@@ -673,7 +710,14 @@
     <group
        id="undo-history" />
     <group
-       id="objects" />
+       id="objects"
+       expand_to_layer="1" />
+    <group
+       id="layerProp"
+       addLayerPosition="0" />
+    <group
+       id="filters"
+       handlePos="233" />
   </group>
   <group
      id="printing">
@@ -686,7 +730,9 @@
   <group
      id="options"
      rotationlock="1"
-     onimport="0">
+     onimport="0"
+     onungroup="0"
+     displaymode="0">
     <group
        id="renderingcache"
        size="512" />
@@ -719,7 +765,7 @@
        value="12" />
     <group
        id="cursortolerance"
-       value="8.0" />
+       value="8" />
     <group
        id="dragtolerance"
        value="4.0" />
@@ -739,8 +785,8 @@
        gamutcolor="#808080"
        gamutwarn="0"
        bpc="0"
-       preserveblack="0"
-       uri="" />
+       uri=""
+       preserveblack="0" />
     <group
        id="savewindowgeometry"
        value="1" />
@@ -932,13 +978,13 @@
        no_emphasize_when_zoomedout="0">
       <group
          id="xy"
-         units="px"
          origin_x="0.0"
          origin_y="0.0"
          spacing_x="1.0"
          spacing_y="1.0"
          empspacing="5"
-         dotted="0" />
+         dotted="0"
+         units="px" />
       <group
          id="axonom"
          units="mm"
@@ -970,10 +1016,35 @@
        scaleLineHeightFromFontSIze="1" />
     <group
        id="kbshortcuts"
-       value="node" />
+       value="align" />
     <group
        id="snapindicatorpersistence"
        value="1" />
+    <group
+       id="snapping"
+       snap-global-toggle="0"
+       snap-node-category="1"
+       snap-path="1"
+       snap-path-intersection="0"
+       snap-node-cusp="1"
+       snap-node-smooth="1"
+       snap-line-midpoint="1"
+       snap-line-tangential="0"
+       snap-line-perpendicular="0"
+       simple-snap-nodes="1"
+       snap-others="1"
+       snap-object-midpoint="0"
+       snap-rotation-center="0"
+       snap-text-baseline="1"
+       snap-path-mask="1"
+       snap-path-clip="1"
+       snap-page-border="1"
+       snap-grid="1"
+       snap-guide="1" />
+    <group
+       id="threading" />
+    <group
+       id="ruler" />
   </group>
   <group
      id="extensions"
@@ -982,11 +1053,11 @@
      org.inkscape.output.png.inkscape.png_antialias="2" />
   <group
      id="desktop"
-     style="fill:#000000;font-size:10.66669655px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Latin Modern Sans, Bold';font-family:'Latin Modern Sans';line-height:1.1;stroke-width:3.77952756;font-weight:bold">
+     style="fill:none;font-size:120px;-inkscape-font-specification:'Latin Modern Sans';font-family:'Latin Modern Sans';line-height:1;stroke-miterlimit:10;letter-spacing:-0.5px;stroke-width:3.77952756;text-anchor:middle;text-align:center;opacity:0.55;stroke:#000000;fill-opacity:0">
     <group
-       width="470"
+       width="1900"
        height="1036"
-       x="965"
+       x="10"
        y="10"
        maximized="1"
        fullscreen="0"
@@ -1024,6 +1095,17 @@
     <group
        id="controlbars"
        iconsize="16" />
+  </group>
+  <group
+     id="statusbar">
+    <group
+       id="visibility" />
+  </group>
+  <group
+     id="debug">
+    <group
+       id="latency"
+       skew="1" />
   </group>
   <group
      id="iconpreview"
@@ -1088,15 +1170,6 @@
     </group>
   </group>
   <group
-     id="debug">
-    <group
-       id="latency"
-       skew="1" />
-  </group>
-  <group
-     id="ui"
-     language="" />
-  <group
      id="theme"
      defaultPreferDarkTheme="0"
      defaultIconTheme="Adwaita"
@@ -1109,7 +1182,8 @@
      symbolicDefaultHighColors="0"
      menuIcons_canvas="0"
      menuIcons_layers="0"
-     menuIcons_objects="0">
+     menuIcons_objects="0"
+     syntax-color-theme="inkscape-dark">
     <group
        id="Adwaita"
        symbolicBaseColor="4008635647"
@@ -1119,10 +1193,27 @@
   </group>
   <group
      id="live_effects"
-     flattening="0" />
-  <group
-     id="statusbar">
+     flattening="0">
     <group
-       id="visibility" />
+       id="skeletal"
+       width="100" />
+    <group
+       id="powerstroke"
+       width="0.734016746380977" />
+    <group
+       id="bend_path"
+       width="1" />
   </group>
+  <group
+     id="ui"
+     language="" />
+  <group
+     id="color_scales"
+     wheel_vis_hsl="1" />
+  <group
+     id="gradient-edit"
+     stoplist="1" />
+  <group
+     id="pattern-edit"
+     currentSet="0" />
 </inkscape>

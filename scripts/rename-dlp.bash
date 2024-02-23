@@ -12,7 +12,7 @@
 if [[ ${#} -eq 0 ]]; then
   DIR="./"
   EXT="opus"
-elif [[ ${#} -ne 2 ]]; then
+elif [[ ${#} -eq 2 ]]; then
   DIR="${1}"
   EXT="${2}"
 else

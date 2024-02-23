@@ -25,6 +25,9 @@ augroup filetypedetect
   " VIFM
   au BufNewFile,BufRead *.vifm set filetype=vim
 
+  " SQlite
+  au BufNewFile,BufRead *.sqlite set filetype=sqlite
+
   " GPG
   au BufNewFile,BufRead *.gpg set filetype=gpg
 augroup END

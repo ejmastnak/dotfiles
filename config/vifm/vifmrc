@@ -2,9 +2,9 @@
 " OS-specific settings
 " ---------------------------------------------
 if system('uname -s') == "Linux"
-  source ~/.config/vifm/personal/linux.vifm
+  source ~/.config/vifm/os/linux.vifm
 elseif system('uname -s') == "Darwin"
-  source ~/.config/vifm/personal/mac.vifm
+  source ~/.config/vifm/os/mac.vifm
 else
   echo "Error: the current OS won't support all of my Vifm configurations."
 endif
@@ -18,7 +18,7 @@ set vimhelp             " use Vim-style help file instead of plain text
 set syscalls            " perform file operations with vifm instead of cp
 set trash               " use a temporary trash directory
 set dotdirs=rootparent  " show ../ only when directory is empty
-set confirm-=delete     " disable confirmation when deleting files
+" set confirm-=delete     " disable confirmation when deleting files
 set history=100         " directories to store in directory history
 set undolevels=100      " maximum number of changes that can be undone
 set nofollowlinks       " automatically resolve symbolic links on l or Enter.
@@ -65,7 +65,7 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 " ---------------------------------------------
 " END BASIC SETTINGS
 
-source ~/.config/vifm/personal/navigation.vifm
+source ~/.config/vifm/navigation/navigation.vifm
 nnoremap ;; :source .vifm-context.vifm<CR>
 
 " BEGIN MARKS
@@ -139,15 +139,17 @@ nnoremap A cw
 " restart Vifm
 nnoremap RR :restart<CR>
 
-" give file under cursor 644 permissions
+" Permission reset for files matching glob
 nnoremap cm :!chmod 644 *.
+
+" Make file under cursor executable
+nnoremap cx :!chmod +x %c<CR>
 
 " Play file under cursor with mpv
 nnoremap P :!mpv --keep-open=yes %c<CR>
 
-" Play file under cursor with ambient.sh script
-" and ignore background process warning.
-nnoremap M :!ambient.bash %c &<CR><CR>
+" Play ambient audio tracks
+nnoremap AA :!ambient.bash %c<CR>
 
 " Open file under cursor with Neovim
 nnoremap NN :!nvim %c<CR>
@@ -162,7 +164,7 @@ nnoremap II :!inkscape %c > /dev/null 2>&1 &<CR>
 nnoremap S :!sh %c<CR>
 
 " Create symbolic link to file selected in inactve pane
-nnoremap gl :!ln -s %C %d/%C:t<CR>
+nnoremap gl :!ln -s %C %d/%C:t || ln -s %C %d/%C:t.bak<CR>
 
 " Activate Python virtual environment
 nnoremap EE :!activate-venv.bash<CR>
@@ -192,6 +194,9 @@ filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
 " filetype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx, *.as[fx]},
 filetype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.webm,*.mov,*.m4v,*.qt},
       \<video/*> mpv --keep-open=yes
+
+" SQLite
+filetype {*.sqlite,*.db},<application/x-sqlite3> litecli
 
 " HTML files
 filetype {*.html,*.htm},<text/html>

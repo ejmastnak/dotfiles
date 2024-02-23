@@ -1,0 +1,10 @@
+[Unit]
+Description=Change wallpaper to display a new 5MATE
+Wants=5mates.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash /home/ej/scripts/5mates.bash
+
+[Install]
+WantedBy=graphical.target

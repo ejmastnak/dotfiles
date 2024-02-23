@@ -1,6 +1,7 @@
 #!/bin/sh
 # Sets wallpaper on X display :0 to a random jpg file in my wallpapers directory
 
-directory="anime-nature"
+WALLPAPERS="${HOME}/Documents/pictures/wallpapers/active"
 
-DISPLAY=:0 feh --no-fehbg --bg-fill --randomize ~/Documents/pictures/wallpapers/${directory}/*.jpg
+# Redirect warnings about missing png/jpg files if none are present
+DISPLAY=:0 feh --no-fehbg --bg-fill --randomize "${WALLPAPERS}/"*.{png,jpg} 2> /dev/null

@@ -3,7 +3,7 @@
 set selection-clipboard   clipboard
 set window-title-basename true
 set statusbar-home-tilde  true
-set recolor               true
+# set recolor               true
 
 # NORD THEME
 # https://github.com/arcticicestudio/nord/issues/143
@@ -72,8 +72,6 @@ set default-bg                "#fbfbfc"    # markdown body background
 set recolor-lightcolor        "#2e3440"    # markdown body background
 set recolor-darkcolor         "#fbfbfc"    # nord0
 set default-bg                "#2e3440"    # markdown body background
-
-set recolor true
 
 # Switch to light recolored mode
 map L feedkeys ':set recolor-lightcolor "#fbfbfc"<Return>:set recolor-darkcolor "#2e3440"<Return>:set default-bg "#fbfbfc"<Return>:set recolor true<Return>'

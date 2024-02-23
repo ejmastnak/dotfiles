@@ -60,3 +60,6 @@ then
 
 fi
 # --------------------------------------------- #
+
+# Register autocompletions for music.py
+eval "$(register-python-argcomplete music.py)"
