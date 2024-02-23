@@ -66,7 +66,7 @@ return
     -- {f(get_ISO_8601_date)}
     ),
     -- Curly braces
-    s({trig = "df", snippetType="autosnippet"},
+    s({trig = "fds", snippetType="autosnippet"},
       fmta(
         [[
         {

@@ -107,7 +107,7 @@ return
       {condition = line_begin}
     ),
     -- JAVASCRIPT CODE BLOCK
-    s({trig="jss", snippetType="autosnippet"},
+    s({trig="jvs", snippetType="autosnippet"},
       fmt(
         [[
         ```javascript
@@ -120,19 +120,62 @@ return
       ),
       {condition = line_begin}
     ),
-    -- VUE CODE BLOCK
+    -- JSON code block
+    s({trig="jss", snippetType="autosnippet"},
+      fmta(
+        [[
+        ```json
+        {
+          <>
+        }
+        ```
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- JSON code block with array
+    s({trig="jsa", snippetType="autosnippet"},
+      fmta(
+        [[
+        ```json
+        [
+          <>
+        ]
+        ```
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Vue code block
     s({trig="vuu", snippetType="autosnippet"},
       fmt(
         [[
         ```vue
-        {}<script setup>
         {}
-        </script>
         ```
         ]],
         {
-          i(1),
-          d(2, get_visual)
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Text code block
+    s({trig="xx", snippetType="autosnippet"},
+      fmt(
+        [[
+        ```txt
+        {}
+        ```
+        ]],
+        {
+          d(1, get_visual)
         }
       ),
       {condition = line_begin}

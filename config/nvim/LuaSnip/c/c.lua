@@ -93,17 +93,27 @@ return
         t("->")
       }
     ),
-    -- NULL POINTER SYMBOLIC CONSTANT
-    s({trig = "00", snippetType="autosnippet", wordTrig=false},
-      {
-        t("NULL")
-      }
-    ),
     -- RETURN
     s({trig = "rr", snippetType="autosnippet", wordTrig=false},
       {
         t("return")
       },
       { condition = line_begin }
+    ),
+
+    -- MAIN FUNCTION
+    s({trig = "dff", snippetType="autosnippet"},
+      fmta(
+        [[
+          #define <>
+        ]],
+        { i(1) }
+      ),
+      {condition = line_begin}
+    ),
+    -- LONG STRING OF DASHES FOR COMMENTS
+    s({trig = "--", snippetType="autosnippet"},
+      {t('// ------------------------------------------------------------------ //')},
+      {condition = line_begin}
     ),
   }

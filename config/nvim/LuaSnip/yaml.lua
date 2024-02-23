@@ -5,20 +5,98 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return
   {
-    -- For ID3 tag files
+    -- File name for music metadata files
+    s({trig = "fll", snippetType="autosnippet"},
+      fmt(
+        [[
+          file: "{}"
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Title for music metadata files
     s({trig = "tt", snippetType="autosnippet"},
       fmt(
         [[
-          title: {}
-          artist: {}
-          album: {}
+          title: "{}"
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Artist for music metadata files
+    s({trig = "aa", snippetType="autosnippet"},
+      fmt(
+        [[
+          artist: "{}"
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Album for music metadata files
+    s({trig = "all", snippetType="autosnippet"},
+      fmt(
+        [[
+          album: "{}"
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Year for music metadata files
+    s({trig = "yy", snippetType="autosnippet"},
+      fmt(
+        [[
           year: {}
         ]],
         {
-          i(1),
-          i(2),
-          i(3),
-          i(4),
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Genre for music metadata files
+    s({trig = "gg", snippetType="autosnippet"},
+      fmt(
+        [[
+          genre: "{}"
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Featured artist for music metadata files
+    s({trig = "ftt", snippetType="autosnippet"},
+      fmt(
+        [[
+          featured_artist: "{}"
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- URL for music metadata files
+    s({trig = "uu", snippetType="autosnippet"},
+      fmt(
+        [[
+          url: "{}"
+        ]],
+        {
+          d(1, get_visual)
         }
       ),
       {condition = line_begin}

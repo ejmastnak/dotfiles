@@ -5,6 +5,11 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return
   {
+    -- shebang for scripts
+    s({trig = "!!", snippetType="autosnippet"},
+      {t("#!/usr/bin/env python")},
+      {condition = line_begin}
+    ),
     -- PRINT STATEMENT
     s({trig="pp", snippetType="autosnippet"},
       fmta(
@@ -29,18 +34,13 @@ return
       {condition = line_begin}
     ),
     -- CLASS
-    s({trig="class"},
+    s({trig="cll", snippetType="autosnippet"},
       fmta(
         [[
-        class <>(<>):
-            def __init__(self<>):
-                <>
+        class <>:
         ]],
         {
           i(1),
-          i(2),
-          i(3),
-          i(4),
         }
       ),
       {condition = line_begin}
@@ -81,8 +81,23 @@ return
         }
       )
     ),
-    -- for _ in range()
+    -- for in
     s({trig="frr", snippetType = "autosnippet"},
+      fmta(
+        [[
+        for <> in <>:
+            <>
+      ]],
+        {
+          i(1),
+          i(2),
+          i(3)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- for _ in range()
+    s({trig="fir", snippetType = "autosnippet"},
       fmta(
         [[
         for <> in range(<>):
@@ -150,14 +165,45 @@ return
     s({trig = ";s", snippetType = "autosnippet"},
       { t("self.") }
     ),
-    -- SELF (for use in classes) without dot
-    s({trig = ";S", snippetType = "autosnippet"},
-      { t("self") }
+    -- Open a filew
+    s({trig="wfo", snippetType = "autosnippet"},
+      fmta(
+        [[
+        with open(<>, '<>', encoding="<>") as <>:
+          <>
+        ]],
+        {
+          i(1),
+          i(2),
+          i(3, "utf-8"),
+          i(4, "f"),
+          i(0),
+        }
+      )
     ),
-    -- TRACEBACK
-    s({trig = "tbb", snippetType = "autosnippet"},
-      { t("print(traceback.format_exc())") },
-      { condition = line_begin }
+    -- except
+    s({trig="exx", snippetType = "autosnippet"},
+      fmt(
+        [[
+        except {}:
+            {}
+        ]],
+        {
+          i(1),
+          i(0),
+        }
+      )
     ),
-
+    -- Path.as_posix()
+    s({trig="PAP", snippetType = "autosnippet"},
+      {t("path.as_posix()")}
+    ),
+    -- as_posix()
+    s({trig="APP", snippetType = "autosnippet", wordTrig=false},
+      {t("as_posix()")}
+    ),
+    -- Path.name
+    s({trig="PNN", snippetType = "autosnippet"},
+      {t("path.name")}
+    ),
   }

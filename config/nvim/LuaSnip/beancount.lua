@@ -22,22 +22,6 @@ return
       ),
       {condition = line_begin}
     ),
-    -- OPEN ACCOUNT
-    s({trig="oo", snippetType="autosnippet"},
-      fmta(
-        [[
-        <>-<>-<> open <> <>
-        ]],
-        {
-          i(1),
-          i(2),
-          i(3),
-          i(4),
-          i(5),
-        }
-      ),
-      {condition = line_begin}
-    ),
     -- INCLUDE
     s({trig="inn", snippetType="autosnippet"},
       {t("include ")},
@@ -54,51 +38,76 @@ return
       {condition = line_begin}
     ),
 
-    -- ACCOUNT SCHOOLS FIRST CHECKING
-    s({trig=";sf", snippetType="autosnippet"},
-      {t("Assets:SchoolsFirst:Checking")},
+    -- Groceries
+    s({trig="EFG", snippetType="autosnippet"},
+      {t("Expenses:EUR:OpEx:Food:Groceries")},
       {condition = line_begin}
     ),
-    -- ACCOUNT VANGUARD MONEY MARKET
-    s({trig=";vm", snippetType="autosnippet"},
-      {t("Assets:Vanguard:MoneyMarket")},
+    -- Home Upkeep
+    s({trig="EIH", snippetType="autosnippet"},
+      {t("Expenses:EUR:OpEx:Infrastructure:HomeUpkeep")},
       {condition = line_begin}
     ),
-    -- ACCOUNT NLB CHECKING
-    s({trig=";n", snippetType="autosnippet"},
-      {t("Assets:NLB:Checking")},
+    -- Bicycle
+    s({trig="ETB", snippetType="autosnippet"},
+      {t("Expenses:EUR:OpEx:Transportation:Bicycle")},
       {condition = line_begin}
     ),
-    -- ACCOUNT ABANKA CHECKING
-    s({trig=";a", snippetType="autosnippet"},
-      {t("Assets:Abanka:Checking")},
+    -- Phone
+    s({trig="EIP", snippetType="autosnippet"},
+      {t("Expenses:EUR:OpEx:Infrastructure:Phone")},
       {condition = line_begin}
     ),
-    -- CASH USD
-    s({trig=";cu", snippetType="autosnippet"},
-      {t("Assets:USD:Cash")},
+    -- Internet
+    s({trig="EII", snippetType="autosnippet"},
+      {t("Expenses:EUR:OpEx:Infrastructure:Internet")},
       {condition = line_begin}
     ),
-    -- CASH EUR
-    s({trig=";ce", snippetType="autosnippet"},
-      {t("Assets:EUR:Cash")},
+    -- Home improvements
+    s({trig="EAH", snippetType="autosnippet"},
+      {t("Expenses:EUR:AdHoc:HomeImprovements")},
       {condition = line_begin}
     ),
-    -- EXPENSE MARKET
-    s({trig=";m", snippetType="autosnippet"},
-      {t("Expenses:EUR:Food:Market")},
+    -- Entertaining
+    s({trig="EAE", snippetType="autosnippet"},
+      {t("Expenses:EUR:AdHoc:Entertaining")},
       {condition = line_begin}
     ),
-    -- EXPENSE GROCERIES
-    s({trig=";g", snippetType="autosnippet"},
-      {t("Expenses:EUR:Food:Groceries")},
+    -- Dance
+    s({trig="ELD", snippetType="autosnippet"},
+      {t("Expenses:EUR:Leisure:Dance")},
       {condition = line_begin}
     ),
-    -- EXPENSE UNKNOWN
-    s({trig=";u", snippetType="autosnippet"},
-      {t("Expenses:EUR:Other:Unknown")},
+    -- Unknown
+    s({trig="EUU", snippetType="autosnippet"},
+      {t("Expenses:EUR:AdHoc:Unknown")},
       {condition = line_begin}
     ),
+    -- Kitchen
+    s({trig="EGK", snippetType="autosnippet"},
+      {t("Expenses:EUR:Goods:Kitchen")},
+      {condition = line_begin}
+    ),
+    -- Tools
+    s({trig="EGT", snippetType="autosnippet"},
+      {t("Expenses:EUR:Goods:Tools")},
+      {condition = line_begin}
+    ),
+
+    -- Bolha Income
+    s({trig="IEB", snippetType="autosnippet"},
+      {t("Income:EUR:Bolha")},
+      {condition = line_begin}
+    ),
+
+
+
+    -- Pano Income
+    s({trig="IUP", snippetType="autosnippet"},
+      {t("Income:USD:Tutoring:Pano")},
+      {condition = line_begin}
+    ),
+
 
     s({trig = "--", snippetType="autosnippet"},
       {t('; --------------------------------------------- ;')},

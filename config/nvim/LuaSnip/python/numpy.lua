@@ -5,14 +5,28 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return
   {
-    -- NP.LOADTXT
-    s({trig="nlt", snippetType="autosnippet"},
+    -- np.loadtxt()
+    s({trig="nplt", snippetType="autosnippet"},
       fmta(
         [[
-          np.loadtxt(<>)
+          np.loadtxt(<>, delimiter='<>')
         ]],
         {
-          d(1, get_visual),
+          i(1, 'fname'),
+          i(2, ',')
+        }
+      )
+    ),
+    -- np.savetxt()
+    s({trig="npst", snippetType="autosnippet"},
+      fmta(
+        [[
+          np.savetxt(<>, <>, delimiter='<>')
+        ]],
+        {
+          i(1, 'fname'),
+          i(2, 'ndarray'),
+          i(3, ',')
         }
       )
     ),

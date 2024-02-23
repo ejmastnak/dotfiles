@@ -1,3 +1,5 @@
+require('luasnip').filetype_extend("markdown", {"hugo"})
+
 local helpers = require('personal.luasnip-helper-funcs')
 local get_visual = helpers.get_visual
 

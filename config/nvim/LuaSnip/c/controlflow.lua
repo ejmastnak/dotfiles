@@ -21,7 +21,7 @@ return
     {condition = line_begin}
   ),
   -- FOR LOOP
-  s({trig = "fll", snippetType="autosnippet"},
+  s({trig = "frr", snippetType="autosnippet"},
     fmta(
       [[
       for (<>) {

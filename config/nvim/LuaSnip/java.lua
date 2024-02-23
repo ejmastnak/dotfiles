@@ -18,7 +18,7 @@ return
       {condition = line_begin}
     ),
     -- CURLY BRACES
-    s({trig = "df", snippetType="autosnippet", priority=1000},
+    s({trig = "fds", snippetType="autosnippet", priority=1000},
       fmta(
         [[
         {

@@ -1,3 +1,5 @@
+require('luasnip').filetype_extend("html", {"hugo", "tailwind"})
+
 local helpers = require('personal.luasnip-helper-funcs')
 local get_visual = helpers.get_visual
 
@@ -19,6 +21,20 @@ return
         }
       ),
       {condition = line_begin}
+    ),
+    -- Anchor tag (i.e. link)
+    s({trig="aa", regTrig=true, wordTrig=false, snippetType="autosnippet"},
+      fmt(
+        [[
+          <a href={} class="{}{}">{}</a>
+        ]],
+        {
+          c(1, {sn(nil, {t('"'), i(1, ""), t('"')}), sn(nil, {t("'"), i(1, ""), t("'")})}),
+          i(2),
+          i(4),
+          d(3, get_visual),
+        }
+      )
     ),
     -- GENERTIC INLINE ELEMENT
     s({trig = "([^%a])tt", regTrig = true, wordTrig = false, snippetType="autosnippet"},
@@ -52,7 +68,7 @@ return
       )
     ),
     -- SPAN ELEMENT
-    s({trig = "([^%l])ss", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    s({trig = "([^%l])spp", regTrig = true, wordTrig = false, snippetType="autosnippet"},
       fmt(
         [[
           {}<span class="{}">{}</span>
@@ -92,15 +108,30 @@ return
         }
       )
     ),
-    -- PARAGRAPH
+    -- Paragraph
     s({trig="pp", snippetType="autosnippet"},
       fmt(
         [[
-          <p class="{}">{}</p>
+          <p{}>
+            {}
+          </p>
         ]],
         {
-          i(2),
-          d(1, get_visual),
+          c(1, {sn(nil, {t(' class="'), i(1, ""), t('"')}), t("")}),
+          d(2, get_visual),
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Inline paragraph
+    s({trig="pii", snippetType="autosnippet"},
+      fmt(
+        [[
+          <p{}>{}</p>
+        ]],
+        {
+          i(1),
+          d(2, get_visual),
         }
       ),
       {condition = line_begin}
@@ -129,35 +160,34 @@ return
         }
       )
     ),
-    -- UNORDERED LIST
+    -- Tailwind class set I usually apply to icons neseted in buttons
+    s({trig="bcc", snippetType="autosnippet"},
+      t("-ml-1 w-6 h-6 text-gray-600 shrink-0")
+    ),
+    -- Unordered list
     s({trig="ull", snippetType="autosnippet"},
       fmt(
         [[
-          <ul>
-            <li {}>
-              {}
-            </li>{}
+          <ul{}>
+            {}
           </ul>
         ]],
         {
           i(2),
-          i(1),
-          i(0)
+          d(1, get_visual),
         }
       ),
       {condition = line_begin}
     ),
-    -- LIST ITEM
+    -- List item
     s({trig="ii", snippetType="autosnippet"},
       fmt(
         [[
-            <li {}>
-              {}
-            </li>
+          <li{}>{}</li>
         ]],
         {
           i(2),
-          d(1, get_visual)
+          d(1, get_visual),
         }
       ),
       {condition = line_begin}
@@ -185,13 +215,13 @@ return
       ),
       {condition = line_begin}
     ),
-    -- SCRIPT
+    -- Section
     s({trig = "SS", snippetType="autosnippet"},
       fmt(
         [[
-          <script{}>
+          <section{}>
             {}{}
-          </script>
+          </section>
         ]],
         {
           i(1),
@@ -262,7 +292,7 @@ return
     s({trig = "bb", snippetType="autosnippet"},
       fmt(
         [[
-          <button type="{}" {}>
+          <button type="{}"{}>
             {}
           </button>
         ]],
@@ -278,9 +308,10 @@ return
     s({trig = "tbb", snippetType="autosnippet"},
       fmt(
         [[
-          <strong>{}</strong>
+          <strong class="{}">{}</strong>
         ]],
         {
+          i(2, "font-medium"),
           d(1, get_visual),
         }
       )

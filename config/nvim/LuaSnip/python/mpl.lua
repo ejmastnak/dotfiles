@@ -6,7 +6,7 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 return
   {
     -- NEW FIGURE, AXES
-    s({trig="fx", snippetType="autosnippet"},
+    s({trig="faxx", snippetType="autosnippet"},
       fmta(
         [[fig, ax = plt.subplots(<>)]],
         {

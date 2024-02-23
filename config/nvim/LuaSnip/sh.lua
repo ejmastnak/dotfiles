@@ -114,4 +114,8 @@ return
     {t("exit")},
     {condition = line_begin}
     ),
+    s({trig = "---", snippetType="autosnippet"},
+    {t("# --------------------------------------------------------------------------- #")},
+    {condition = line_begin}
+    ),
   }
