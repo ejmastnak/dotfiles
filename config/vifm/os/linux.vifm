@@ -3,7 +3,7 @@
 " BEGIN FILE OPENING CONFIGURATION
 " ---------------------------------------------
 " PDF
-filetype {*.pdf},<application/pdf> zathura %c &
+filetype {*.pdf},<application/pdf> zathura %c 2> /dev/null &
 
 " GIF
 filetype {*.gif},<image/gif> mpv %c
@@ -24,7 +24,7 @@ filetype {*.jpg,*.jpeg,*.png},<image/*> feh %c &
 filetype {*.ps,*.eps,*.ps.gz},<application/postscript> zathura
 
 " Office spreadsheet files
-filetype {*.xls,*.xlsx},<application/msexcel> gnumeric %c &
+filetype {*.xls,*.xlsx},<application/msexcel> gnumeric %c 2> /dev/null &
 
 " Word files
 filetype {*.doc,*.docx},<application/msword> abiword %c &

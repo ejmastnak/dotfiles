@@ -88,6 +88,17 @@ return
         }
       )
     ),
+    -- Shell interpolation
+    s({trig = "VV", wordTrig=false, snippetType="autosnippet"},
+      fmta(
+        [[
+        $(<>)
+        ]],
+        {
+          d(1, get_visual),
+        }
+      )
+    ),
     -- ECHO
     s({trig = "pp", snippetType="autosnippet"},
       fmta(

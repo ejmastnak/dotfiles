@@ -68,17 +68,20 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 source ~/.config/vifm/navigation/navigation.vifm
 nnoremap ;; :source .vifm-context.vifm<CR>
 
+" nnoremap ;vv :goto $VIFM_CONTEXT/.vifm-context.vifm<CR>
+" nnoremap ;hh :cd $VIFM_CONTEXT<CR>
+" To be able to use another command after one of these, wrap it with the
+" |vifm-:execute| command.  An example: >
+"   if filetype('.') == 'reg' | execute '!!echo regular file' | endif
+
 " BEGIN MARKS
 " --------------------------------------------- "
 " Syntax: mark {mark} {directory} [filename]
 mark T ~/.local/share/vifm/Trash
-mark b ~/Documents/bookmarks
 mark h ~
 mark W ~/Downloads
 mark u ~/dotfiles/config/nvim/LuaSnip
 mark U ~/dotfiles/config/nvim/LuaSnip
-mark v ~/dotfiles/config/nvim
-mark w ~/Documents/projects/ejmastnak
 " --------------------------------------------- "
 " END MARKS
 
@@ -164,7 +167,7 @@ nnoremap II :!inkscape %c > /dev/null 2>&1 &<CR>
 nnoremap S :!sh %c<CR>
 
 " Create symbolic link to file selected in inactve pane
-nnoremap gl :!ln -s %C %d/%C:t || ln -s %C %d/%C:t.bak<CR>
+nnoremap gL :!ln -s %C %d/%C:t || ln -s %C %d/%C:t.bak<CR>
 
 " Activate Python virtual environment
 nnoremap EE :!activate-venv.bash<CR>

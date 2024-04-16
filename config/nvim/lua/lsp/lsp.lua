@@ -3,14 +3,13 @@ require('lspconfig').phpactor.setup {
   filetypes = {"php"},
   root_dir = require("lspconfig/util").root_pattern("composer.json", ".git"),
   on_attach = function()
-    vim.diagnostic.disable(0)
     require('illuminate').on_attach(client)
+    vim.diagnostic.disable(0)
   end
 }
 
 require('lspconfig').jedi_language_server.setup {
   on_attach = function(client)
-    vim.diagnostic.disable(0)
     require('illuminate').on_attach(client)
   end,
 }

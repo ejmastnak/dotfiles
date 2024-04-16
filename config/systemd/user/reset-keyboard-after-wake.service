@@ -1,0 +1,11 @@
+# Called after system unit reset-input-devices-after-wake.service
+
+[Unit]
+Description=Reset keyboard and mouse settings after waking
+            
+[Service]
+Type=simple
+ExecStart=/home/ej/scripts/reset-keyboard-after-wake.bash
+           
+[Install]
+WantedBy=default.target

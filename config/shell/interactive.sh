@@ -83,3 +83,17 @@ alias mpy="music.py youtube"
 
 # Easier shortcut for backup-documents.bash script
 alias bdb="backup-documents.bash"
+
+# apy
+alias aph="apy --help"
+alias apa="apy add"
+
+# For mounting/unmounting iPhone
+alias ifmnt="ifuse ${HOME}/mnt/iPhone"
+alias ifumnt="fusermount -u ${HOME}/mnt/iPhone"
+
+# Fuzzy find with pass
+alias fpc='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf-copy'
+alias fpe='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf-edit'
+alias fps='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf-edit'
+alias fpo='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf-otp'

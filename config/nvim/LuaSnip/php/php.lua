@@ -5,9 +5,17 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return
   {
-    -- THIS
+    -- $this keyword
     s({trig = ";t", snippetType="autosnippet"},
       {t("$this->")}
+    ),
+    -- $self keyword
+    s({trig = ";s", snippetType="autosnippet"},
+      {t("$self::")}
+    ),
+    -- A variable
+    s({trig = "vv", snippetType="autosnippet"},
+      {t("$")}
     ),
     -- Curly braces
     s({trig = "fds", snippetType="autosnippet", priority=1000},
@@ -21,7 +29,7 @@ return
       )
     ),
     -- Square brackets
-    s({trig = "dg", snippetType="autosnippet", priority=1000},
+    s({trig = "gds", snippetType="autosnippet", priority=1000},
       fmta(
         [[
         [
@@ -32,7 +40,7 @@ return
       )
     ),
     -- try/catch
-    s({trig = "tcc", snippetType="autosnippet"},
+    s({trig = "trr", snippetType="autosnippet"},
       fmta(
         [[
         try {
@@ -272,7 +280,6 @@ return
           i(1),
           i(2),
         }
-      ),
-      {condition = line_begin}
+      )
     ),
   }

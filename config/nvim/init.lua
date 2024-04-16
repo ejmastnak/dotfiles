@@ -84,6 +84,7 @@ Plug('nvim-Treesitter/nvim-Treesitter', {['do'] = ':TSUpdate'})
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
 Plug 'mfussenegger/nvim-dap'
+Plug 'mfussenegger/nvim-dap-python'
 Plug 'mfussenegger/nvim-jdtls'
 
 -- Local plugins
@@ -162,13 +163,15 @@ xnoremap <C-S-j> :m'>+<CR>gv=gv
 xnoremap <C-S-k>  :m-2<CR>gv=gv
 ]])
 
+-- Shortcut for reading in contents of ls
+vim.keymap.set('n', '<Leader>R', ':r!ls ')
 
 -- Global substitute
 vim.keymap.set('n', '<Leader>s', ':%s/')
 vim.keymap.set('v', '<Leader>s', ':s/')
 -- Search/replace current word under cursor
 vim.cmd([[
-nnoremap <expr> <C-s> ':%s/' . expand('<cword>') . '/'
+nnoremap <expr> <C-s> ':%s/\<' . expand('<cword>') . '\>/'
 ]])
 
 -- Set swap file directory to within Vim directory

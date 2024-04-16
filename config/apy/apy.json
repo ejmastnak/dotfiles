@@ -1,0 +1,9 @@
+{
+  "base_path": "/home/ej/.local/share/Anki2/",
+  "profile_name": "EJ",
+  "img_viewers_default": ["feh"],
+  "query": "flag:0",
+  "pngCommands": [
+    ["latex", "-interaction=nonstopmode", "tmp.tex"]
+  ]
+}

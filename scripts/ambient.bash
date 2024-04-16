@@ -14,13 +14,14 @@
 # Usage: 
 # Arguments:
 #   $1 <tracks.csv> 
-#      Path to an CSV file holding at least one
-#      (path-to-track,volume) tuple.
-#      `path-to-track` is a path to any audio file understood by mpv.
-#      `volume` is an integer from 0 to 100;
-#      this allows playing some tracks louder than others.
+#      Path to an CSV file holding at least one (path-to-track,volume) tuple.
+#      - `path-to-track` is a path to any audio file understood by mpv.
+#      - `volume` is an integer from 0 to 100; this allows playing some tracks
+#        louder than others.
 # 
-#      ```
+#      Example tracks.csv file:
+#
+#      ```csv
 #      # Comments and blank lines are allowed
 #      song1.mp3,80
 #      louder-song.opus,100

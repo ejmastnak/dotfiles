@@ -1,10 +1,9 @@
 " Navigation shortcuts for Laravel projects relative to project root directory
 
 nnoremap ;hh :cd $VIFM_CONTEXT<CR>
-nnoremap ;hv :goto $VIFM_CONTEXT/.vifm-context.vifm<CR>
-nnoremap ;ht :goto $VIFM_CONTEXT/../TODO.md<CR>
-nnoremap ;hp :goto $VIFM_CONTEXT/package.json<CR>
-nnoremap ;hc :goto $VIFM_CONTEXT/composer.json<CR>
+nnoremap ;vv :goto $VIFM_CONTEXT/.vifm-context.vifm<CR>
+nnoremap ;pj :goto $VIFM_CONTEXT/package.json<CR>
+nnoremap ;cj :goto $VIFM_CONTEXT/composer.json<CR>
 
 nnoremap ;ee :goto $VIFM_CONTEXT/.env<CR>
 
@@ -48,5 +47,3 @@ nnoremap ;as :cd $VIFM_CONTEXT/app/Services<CR>
 
 nnoremap ;ss :cd $VIFM_CONTEXT/storage<CR>
 nnoremap ;sa :cd $VIFM_CONTEXT/storage/app<CR>
-
-nnoremap ;vv :cd $VIFM_CONTEXT/vendor/laravel/framework/src/Illuminate<CR>

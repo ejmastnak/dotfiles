@@ -103,6 +103,16 @@ return
       ),
       {condition = line_begin}
     ),
+    -- Use Log facade
+    s({trig = "ufl", snippetType="autosnippet"},
+      fmt(
+        [[
+        use Illuminate\Support\Facades\Log;
+        ]],
+        { }
+      ),
+      {condition = line_begin}
+    ),
     -- Use DB facade
     s({trig = "ufd", snippetType="autosnippet"},
       fmt(
@@ -179,17 +189,6 @@ return
       ),
       {condition = line_begin}
     ),
-    -- $validated, for accessing validated form data
-    s({trig = ";v", snippetType="autosnippet"},
-      fmt(
-        [[
-        $validated['{}']
-        ]],
-        {
-          i(1),
-        }
-      )
-    ),
     -- Assign a model property to a $validated request key
     s({trig = ">V", snippetType="autosnippet"},
       fmt(
@@ -203,7 +202,7 @@ return
       )
     ),
     -- Database transaction
-    s({trig = "trr", snippetType="autosnippet"},
+    s({trig = "dbtrr", snippetType="autosnippet"},
       fmta(
         [[
         DB::transaction(function () {
@@ -216,7 +215,7 @@ return
       )
     ),
     -- Database transaction with use of outside scope
-    s({trig = "tru", snippetType="autosnippet"},
+    s({trig = "dbtru", snippetType="autosnippet"},
       fmta(
         [[
         DB::transaction(function () use (<>) {
@@ -245,16 +244,80 @@ return
       ),
       {condition = line_begin}
     ),
-    -- Log info to console for Artisan commands, e.g. when seeding DB
-    s({trig = "cii", snippetType="autosnippet"},
+    -- Log an error
+    s({trig = "lge", snippetType="autosnippet"},
       fmt(
         [[
-        $this->command->info({});
+        Log::error({});
         ]],
         {
           d(1, get_visual)
         }
       ),
       {condition = line_begin}
+    ),
+    -- Log a warning
+    s({trig = "lgw", snippetType="autosnippet"},
+      fmt(
+        [[
+        Log::warning({});
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Log a notice
+    s({trig = "lgn", snippetType="autosnippet"},
+      fmt(
+        [[
+        Log::notice({});
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Log an info message
+    s({trig = "lgi", snippetType="autosnippet"},
+      fmt(
+        [[
+        Log::info({});
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Log a debug message
+    s({trig = "lgd", snippetType="autosnippet"},
+      fmt(
+        [[
+        Log::debug({});
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Abort
+    s({trig = "abb", snippetType="autosnippet"},
+      fmt(
+        [[
+        abort({});
+        ]],
+        {
+          d(1, get_visual)
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Auth::id()
+    s({trig = "AID", snippetType="autosnippet"},
+      {t("Auth::id()")}
     ),
   }

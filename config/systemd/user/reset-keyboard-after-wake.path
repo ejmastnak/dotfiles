@@ -1,0 +1,13 @@
+# This unit is part of a signalling mechanism to make a user unit run (to reset
+# keyboard settings wiped out by `modprobe atkbd reset=1`) after the system
+# unit reset-input-devices-after-wake.service completes.
+            
+
+[Unit]
+Description=Monitor after system wake signal
+
+[Path]
+PathChanged=/tmp/reset-input-devices-after-wake-complete
+
+[Install]
+WantedBy=default.target

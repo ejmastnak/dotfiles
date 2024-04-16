@@ -4,7 +4,7 @@
 # 		to clipboard on exit.
 # 
 
-file="${HOME}/tmp/scratchpad-`date "+%4Y%m%d%H%M%S"`.txt"
+file="${HOME}/tmp/scratchpad-`date "+%4Y%m%d%H%M%S"`.md"
 
 # Edit the scratchpad file in Vim; save buffer contents to clipboard on exit
 alacritty -e nvim  \

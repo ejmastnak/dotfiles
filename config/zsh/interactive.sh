@@ -7,6 +7,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 # End of lines added by zsh-newuser-install
 
+# For apy ZSH completions
+fpath=($fpath ~/.local/zsh-functions)
+
 # Enable completion
 zstyle :compinstall filename '${HOME}/.zshrc'
 autoload -Uz compinit
@@ -46,6 +49,9 @@ if [[ ! "$TERM" =~ 'linux' ]]; then
 fi
 # --------------------------------------------- #
 
+# Register autocompletions for music.py
+eval "$(register-python-argcomplete music.py)"
+
 # Configure Zsh autosuggestion features
 # --------------------------------------------- #
 if [ -d "${HOME}/.config/zsh/zsh-autosuggestions" ]
@@ -57,9 +63,5 @@ then
 
   # Use history and completion for suggestions
   ZSH_AUTOSUGGEST_STRATEGY=(completion)
-
 fi
 # --------------------------------------------- #
-
-# Register autocompletions for music.py
-eval "$(register-python-argcomplete music.py)"

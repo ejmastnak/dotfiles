@@ -47,8 +47,8 @@ set notification-error-bg      "#bf616a"    # nord11
 set notification-error-fg      "#eceff4"    # nord6
 set notification-warning-bg    "#ebcb8b"    # nord13
 set notification-warning-fg    "#2e3440"    # nord0
-set highlight-color            "#88c0d0"    # nord8
-set highlight-active-color     "#88c0d0"    # nord8
+set highlight-color            "rgba(136, 192, 208, 0.5)"  # nord8
+set highlight-active-color     "rgba(136, 192, 208, 0.5)"  # nord8
 set index-bg                   "#2e3440"    # nord0
 set index-fg                   "#d8dee9"    # nord4
 
@@ -60,8 +60,8 @@ set recolor-lightcolor         "#2e3440"    # nord0
 set render-loading-bg          "#2e3440"    # nord0
 set render-loading-fg          "#d8dee9"    # nord4
 
-# Decrease highlight prominence (e.g. after Vim forward search)
-set highlight-transparency 0.25
+# # Decrease highlight prominence (e.g. after Vim forward search)
+# set highlight-transparency 0.8
 
 # Light
 set recolor-lightcolor        "#fbfbfc"    # markdown body background

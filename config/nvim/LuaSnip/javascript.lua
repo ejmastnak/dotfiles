@@ -90,5 +90,18 @@ return
       {condition = line_begin}
     ),
 
+    -- new "key-value pair" in Javascript object
+    s({trig = ">>", snippetType="autosnippet"},
+      fmt(
+        [[
+          {}: {},
+        ]],
+        {
+          i(1),
+          i(2),
+        }
+      ),
+      {condition = line_begin}
+    ),
   }
 

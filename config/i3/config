@@ -95,7 +95,6 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+Shift+T layout tabbed
 bindsym $mod+t layout toggle split
 
 # toggle tiling / floating
@@ -267,8 +266,9 @@ bar {
 
 # Key bindings to launch programs and similar
 # --------------------------------------------- #
-# Open Vim to edit LaTeX for use in Anki notes
-bindsym $mod+Shift+a exec --no-startup-id "${HOME}/scripts/ankitex.bash"
+# Open Anki
+bindsym $mod+Shift+a exec anki
+# bindsym $mod+Shift+a exec --no-startup-id "${HOME}/scripts/ankitex.bash"
 
 # Open a temporary Vim scratchpad
 bindsym $mod+Shift+v exec --no-startup-id "${HOME}/scripts/vim-anywhere.bash"
@@ -289,6 +289,11 @@ bindsym Print exec --no-startup-id "${HOME}/scripts/screenshot.bash -s"
 
 # Toggle internal display (as a safeguard against turning it off)
 bindsym $mod+Shift+d exec "${HOME}/scripts/toggle-internal-display.bash"
+
+# Play timba :D
+bindsym $mod+Shift+t exec alacritty --working-directory ${HOME}/Music/library/latin/cuba/timba --command bash -c "walkandplay.py ./"
+
+# bindsym $mod+Shift+t exec alacritty --command "cd ${HOME}/Music/library/latin/cuba/timba && walkandplay.py ./"
 # --------------------------------------------- #
 # Autostarting
 # --------------------------------------------- #

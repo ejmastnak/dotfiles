@@ -77,7 +77,7 @@ return
       )
     ),
     -- Square braces
-    s({trig = "dg", snippetType="autosnippet"},
+    s({trig = "gds", snippetType="autosnippet"},
       fmta(
         [[
         [

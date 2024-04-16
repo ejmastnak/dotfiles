@@ -24,6 +24,10 @@ export PATH="${PATH}:${HOME}/scripts"
 
 # Beancount conversion scripts
 export PATH="${PATH}:${HOME}/Documents/finances/scripts/src"
+
+# PHP env
+export PATH="${PATH}:${HOME}/.phpenv/bin"
+eval "$(phpenv init -)"
 # --------------------------------------------- #
 
 # User-local node module directory
@@ -31,3 +35,8 @@ NODE_MODULES="${HOME}/.node_modules"
 export NODE_PATH="${NODE_MODULES}/lib/node_modules:${NODE_PATH}"
 export PATH="${PATH}:${NODE_MODULES}/bin"
 export MANPATH="${NODE_MODULES}/share/man:$(manpath)"
+
+# Start ssh-agent
+if [[ -z "${SSH_AUTH_SOCK}" ]]; then
+  eval "$(ssh-agent -s)"
+fi

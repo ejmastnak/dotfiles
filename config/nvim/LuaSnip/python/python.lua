@@ -20,6 +20,19 @@ return
       ),
       {condition = line_begin}
     ),
+    -- Print to stderr and exit
+    s({trig="pse", snippetType="autosnippet"},
+      fmt(
+        [[
+          print({}, file=sys.stderr)
+          sys.exit(1)
+        ]],
+        {
+          d(1, get_visual),
+        }
+      ),
+      {condition = line_begin}
+    ),
     -- MAIN FUNCTION
     s({trig="main", snippetType="autosnippet"},
       fmta(
@@ -86,21 +99,6 @@ return
       fmta(
         [[
         for <> in <>:
-            <>
-      ]],
-        {
-          i(1),
-          i(2),
-          i(3)
-        }
-      ),
-      {condition = line_begin}
-    ),
-    -- for _ in range()
-    s({trig="fir", snippetType = "autosnippet"},
-      fmta(
-        [[
-        for <> in range(<>):
             <>
       ]],
         {
@@ -205,5 +203,33 @@ return
     -- Path.name
     s({trig="PNN", snippetType = "autosnippet"},
       {t("path.name")}
+    ),
+    -- Square brackets
+    s({trig = "gds", snippetType="autosnippet", priority=1000},
+      fmta(
+        [[
+        [
+            <>
+        ]
+        ]],
+        { d(1, get_visual) }
+      )
+    ),
+    -- Dictionary key-value pair
+    s({trig = ">>", snippetType="autosnippet"},
+      fmt(
+        [[
+        '{}': {},
+        ]],
+        { i(1), i(2) }
+      ),
+      {condition = line_begin}
+    ),
+    -- Get kwargs key-value
+    s({trig = 'kwg', snippetType="autosnippet"},
+      fmt(
+        [[kwargs.get('{}'{})]],
+        { d(1, get_visual), i(2) }
+      )
     ),
   }

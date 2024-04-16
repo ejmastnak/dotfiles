@@ -57,6 +57,18 @@ return
         }
       )
     ),
+    -- v-for directive
+    s({trig = "vfrr", snippetType="autosnippet"},
+      fmt(
+        [[
+          v-for="{}" :key="{}"
+        ]],
+        {
+          i(1),
+          i(2),
+        }
+      )
+    ),
     -- v-if directive
     s({trig = "viff", snippetType="autosnippet"},
       fmt(

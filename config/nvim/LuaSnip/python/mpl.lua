@@ -19,26 +19,24 @@ return
     s({trig=";p", snippetType="autosnippet"},
       {t("plt.")}
     ),
-    -- plt.plot()
-    s({trig="pll", snippetType="autosnippet"},
-      fmta(
-        [[plt.plot(<>)]],
-        {
-          d(1, get_visual),
-        }
-      ),
-      {condition = line_begin}
-    ),
     -- plt.show()
-    s({trig="pss", snippetType="autosnippet"},
+    s({trig="plss", snippetType="autosnippet"},
       fmta(
         [[plt.show()]],
         { }
       ),
       {condition = line_begin}
     ),
+    -- plt.tight_layout()
+    s({trig="pltl", snippetType="autosnippet"},
+      fmta(
+        [[plt.tight_layout()]],
+        { }
+      ),
+      {condition = line_begin}
+    ),
     -- AXIS PLOT
-    s({trig="xp", snippetType="autosnippet"},
+    s({trig="axpl", snippetType="autosnippet"},
       fmta(
         [[ax.plot(<>)]],
         {
@@ -48,7 +46,7 @@ return
       {condition = line_begin}
     ),
     -- AXIS SET_XLABEL
-    s({trig="xxl", snippetType="autosnippet"},
+    s({trig="axxl", snippetType="autosnippet"},
       fmta(
         [[ax.set_xlabel(<>)]],
         {
@@ -58,7 +56,7 @@ return
       {condition = line_begin}
     ),
     -- AXIS SET_YLABEL
-    s({trig="xyl", snippetType="autosnippet"},
+    s({trig="axyl", snippetType="autosnippet"},
       fmta(
         [[ax.set_ylabel(<>)]],
         {
@@ -68,7 +66,7 @@ return
       {condition = line_begin}
     ),
     -- AXIS SET_TITLE
-    s({trig="xt", snippetType="autosnippet"},
+    s({trig="axst", snippetType="autosnippet"},
       fmta(
         [[ax.set_title(<>)]],
         {

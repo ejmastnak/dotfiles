@@ -126,9 +126,9 @@
          id="rect"
          style="fill:blue;"
          usecurrent="0"
-         width="894.699341781496"
-         height="329.699332169665"
-         ry="37.00318584292" />
+         width="323.965984251969"
+         height="245.669291338583"
+         ry="0" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -164,8 +164,8 @@
          end="0"
          start="0"
          usecurrent="0"
-         rx="193.792846679688"
-         ry="193.792846679688" />
+         rx="314.238050565949"
+         ry="314.238050565949" />
       <eventcontext
          id="star"
          magnitude="5"
@@ -598,7 +598,7 @@
     <group
        id="align"
        align-to="1"
-       objects-align-to="last" />
+       objects-align-to="page" />
     <group
        id="xml"
        h="500"
@@ -629,7 +629,7 @@
        defaultopts="0">
       <group
          id="exportarea"
-         value="drawing" />
+         value="page" />
       <group
          id="defaultxdpi"
          value="300" />
@@ -661,7 +661,7 @@
     <group
        id="import"
        enable_preview="1"
-       path="/home/ej/"
+       path="/home/ej/Documents/pictures/"
        ask="1"
        ask_svg="1"
        link="embed"
@@ -1012,7 +1012,7 @@
     </group>
     <group
        id="font"
-       unitType="2"
+       unitType="4"
        scaleLineHeightFromFontSIze="1" />
     <group
        id="kbshortcuts"
@@ -1053,7 +1053,7 @@
      org.inkscape.output.png.inkscape.png_antialias="2" />
   <group
      id="desktop"
-     style="fill:none;font-size:120px;-inkscape-font-specification:'Latin Modern Sans';font-family:'Latin Modern Sans';line-height:1;stroke-miterlimit:10;letter-spacing:-0.5px;stroke-width:3.77952756;text-anchor:middle;text-align:center;opacity:0.55;stroke:#000000;fill-opacity:0">
+     style="fill:none;font-size:283.46456693px;-inkscape-font-specification:'Latin Modern Sans';font-family:'Latin Modern Sans';line-height:1;stroke-miterlimit:10;letter-spacing:-0.5px;stroke-width:7;text-anchor:middle;text-align:center;opacity:0.55;fill-opacity:0;stroke:#000000">
     <group
        width="1900"
        height="1036"

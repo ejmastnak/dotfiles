@@ -32,6 +32,13 @@ xmap <buffer> <plug> <Plug>(textobj-markdown-header-p)
 omap <buffer> <plug> <Plug>(textobj-markdown-header-n)
 omap <buffer> <plug> <Plug>(textobj-markdown-header-p)
 
+map <buffer> ]1 <Plug>(textobj-markdown-header-n)
+map <buffer> [1 <Plug>(textobj-markdown-header-p)
+xmap <buffer> ]1 <Plug>(textobj-markdown-header-n)
+xmap <buffer> [1 <Plug>(textobj-markdown-header-p)
+omap <buffer> ]1 <Plug>(textobj-markdown-header-n)
+omap <buffer> [1 <Plug>(textobj-markdown-header-p)
+
 map <buffer> ]2 <Plug>(textobj-markdown-Sheader-n)
 map <buffer> [2 <Plug>(textobj-markdown-Sheader-p)
 xmap <buffer> ]2 <Plug>(textobj-markdown-Sheader-n)
