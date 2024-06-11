@@ -16,6 +16,21 @@ return
       ),
       {condition = line_begin}
     ),
+    -- ALERT
+    s({trig = "frr", snippetType="autosnippet", priority=10000},
+      fmta(
+        [[
+        for (<>) {
+          <>
+        }
+        ]],
+        {
+          i(1),
+          i(0),
+        }
+      ),
+      {condition = line_begin}
+    ),
     -- LOG TO CONSOLE
     s({trig = "cll", snippetType="autosnippet"},
       fmta(
@@ -62,7 +77,7 @@ return
         ]],
         { 
           i(1),
-          c(2, {sn(nil, {t("{"), t({"", "    "}), d(1, get_visual), t({"", "}"})}), t("")}),
+          c(2, {sn(nil, {t("{"), t({"", "  "}), d(1, get_visual), t({"", "}"})}), t("")}),
         }
       ),
       {condition = line_begin}

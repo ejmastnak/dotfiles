@@ -1,7 +1,7 @@
 -- Configuration related to copying and pasting
 
 -- Delete character to the right of the cursor
-vim.keymap.set('i', '<C-K>', '<Right><BS>')
+vim.keymap.set('i', '<C-K>', '<Delete>')
 -- <C-E> to delete word to the right of cursor (converse of <C-W>)
 vim.keymap.set('i', '<C-E>', '<C-O>dw')
 -- <C-D> (control+D) to delete line to the right of cursor (converse of <C-U>)

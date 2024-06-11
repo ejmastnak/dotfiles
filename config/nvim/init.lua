@@ -45,13 +45,14 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.local/share/nvim/plugged')
 
 Plug 'junegunn/vim-plug'
-Plug 'shaunsingh/nord.nvim'
+Plug 'folke/tokyonight.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug('kylechui/nvim-surround', {tag = '*'})
 Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
+-- Plug 'andymass/vim-matchup'
 Plug 'coachshea/vim-textobj-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/goyo.vim'
@@ -64,7 +65,7 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'jedrzejboczar/toggletasks.nvim'
 Plug 'airblade/vim-rooter'
 Plug 'L3MON4D3/LuaSnip'
-Plug 'brenoprata10/nvim-highlight-colors'
+Plug 'norcalli/nvim-colorizer.lua'
 
 -- Filetype-specific
 Plug('iamcco/markdown-preview.nvim', {['do'] = 'cd app && yarn install'})
@@ -80,9 +81,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim')
 Plug 'RRethy/vim-illuminate'
-Plug('nvim-Treesitter/nvim-Treesitter', {['do'] = ':TSUpdate'})
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'nvim-treesitter/playground'
 Plug 'mfussenegger/nvim-dap'
 Plug 'mfussenegger/nvim-dap-python'
 Plug 'mfussenegger/nvim-jdtls'
@@ -94,7 +94,8 @@ vim.call('plug#end')
 -- --------------------------------------------- --
 -- End loading plugins
 
-vim.cmd('colorscheme nord')
+vim.cmd('colorscheme tokyonight-storm')
+
 vim.cmd('hi Visual guifg=#2E3440 guibg=#88C0D0 gui=none')
 vim.cmd('hi VisualNOS guifg=#2E3440 guibg=#88C0D0 gui=none')
 
@@ -121,6 +122,7 @@ require('plugins/lualine')
 require('plugins/lightspeed')
 require('plugins/LuaSnip')
 require('plugins/dap')
+require('plugins/nvim-colorizer')
 
 -- LSP config
 require('lsp/lsp')

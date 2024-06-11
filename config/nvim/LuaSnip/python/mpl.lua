@@ -21,9 +21,17 @@ return
     ),
     -- plt.show()
     s({trig="plss", snippetType="autosnippet"},
-      fmta(
+      fmt(
         [[plt.show()]],
         { }
+      ),
+      {condition = line_begin}
+    ),
+    -- plt.savefig()
+    s({trig="plsf", snippetType="autosnippet"},
+      fmt(
+        [[plt.savefig({})]],
+        {i(1)}
       ),
       {condition = line_begin}
     ),

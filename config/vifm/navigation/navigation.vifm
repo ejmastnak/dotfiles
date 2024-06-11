@@ -24,10 +24,14 @@ nnoremap gvp :cd ~/dotfiles/config/nvim/plugged<CR>
 nnoremap gvm :cd ~/dotfiles/config/nvim/personal/vim-mpv<CR>
 " --------------------------------------------- "
 
+" Videos
+nnoremap gvc :cd ~/Documents/notes/transportation/howacarworks/media<CR>
+
 nnoremap ghh :cd ~<CR>
 nnoremap ghd :cd ~/Documents<CR>
-nnoremap ghp :cd ~/podcasts<CR>
+nnoremap ghg :cd ~/Games<CR>
 
+nnoremap gjh :cd ~<CR>
 nnoremap gjl :cd ~/.local<CR>
 nnoremap gjn :cd ~/.local/share/nvim<CR>
 nnoremap gjp :cd ~/.password-store<CR>
@@ -38,6 +42,7 @@ nnoremap gjv :cd ~/Videos<CR>
 nnoremap gjg :cd ~/Games<CR>
 nnoremap gjt :cd ~/tmp<CR>
 nnoremap gjm :cd ~/mnt<CR>
+nnoremap gjb :cd ~/Documents/bolha-craigslist<CR>
 nnoremap gjT :cd /tmp<CR>
 nnoremap gju :cd /run/media/ej<CR>
 
@@ -80,12 +85,13 @@ nnoremap gon :goto ~/Documents/projects/nutria/app/TODO.md<CR>
 nnoremap goj :cd ~/Documents/projects/juliaelyachar<CR>
 nnoremap goe :cd ~/Documents/projects/ejmastnak<CR>
 nnoremap goc :goto ~/Documents/projects/casino/app<CR>
+nnoremap goh :cd ~/Documents/projects/croatian<CR>
 nnoremap got :cd ~/Documents/projects/tmg-bmc<CR>
 nnoremap gos :cd ~/Documents/projects/tmg-bmc/sensemotion<CR>
-nnoremap gor :cd ~/Documents/projects/randall<CR>
+nnoremap gor :goto ~/Documents/projects/randall/www<CR>
 nnoremap gol :goto ~/Documents/projects/landmarks/app<CR>
 nnoremap gog :goto ~/Documents/projects/gaia/app<CR>
-nnoremap go4 :cd ~/Documents/projects/tv47<CR>
+nnoremap go4 :goto ~/Documents/projects/tv47/TODO.md<CR>
 nnoremap go5 :cd ~/Documents/projects/5mates<CR>
 " --------------------------------------------- "
 

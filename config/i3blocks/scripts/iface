@@ -53,7 +53,7 @@ done
 if [[ "$IF" = "" ]] || [[ "$(cat /sys/class/net/$IF/operstate)" = 'down' ]]; then
   echo "${LABEL} down" # full text
   echo "${LABEL} down" # short text
-  echo \#FF0000 # color
+  echo \#F7768E # color
   exit
 fi
 
@@ -86,4 +86,6 @@ fi
 
 #------------------------------------------------------------------------
 
-echo "$message"
+echo "$message"  # long message
+echo "$message"  # short message
+echo "#9ece6a"  # text color

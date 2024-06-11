@@ -8,5 +8,5 @@
 # Doesn't work: nnoremap EE :!source ./venv/bin/activate && vifm ./ ./<CR>
 
 if [[ -e "./venv/bin/activate" ]]; then
-  source ./venv/bin/activate && vifm ./ ./
+  source ./venv/bin/activate && vifm -c "goto ${VIFM_FILE_UNDER_CURSOR}" ./ ./
 fi

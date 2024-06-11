@@ -1,3 +1,5 @@
+# Source: /usr/share/X11/locale/en_US.UTF-8/Compose
+
 # e for acute
 # ` for grave
 # i for circumflex
@@ -7,12 +9,15 @@
 # n for tilde
 
 <Multi_key> <4> <4>:                  "€" EuroSign     # EURO SIGN
-<Multi_key> <exclam> <exclam>:        "¡"	exclamdown   # INVERTED EXCLAMATION MARK
-<Multi_key> <question> <question>:    "¿"	questiondown # INVERTED QUESTION MARK
-<Multi_key> <minus> <minus> <period>: "–"	U2013        # EN DASH
-<Multi_key> <minus> <minus> <minus>:  "—"	U2014        # EM DASH
+<Multi_key> <exclam> <exclam>:        "¡" exclamdown   # INVERTED EXCLAMATION MARK
+<Multi_key> <question> <question>:    "¿" questiondown # INVERTED QUESTION MARK
+<Multi_key> <minus> <minus> <period>: "–" U2013        # EN DASH
+<Multi_key> <minus> <minus> <minus>:  "—" U2014        # EM DASH
 
-<dead_tilde> <n>			: "ñ"	ntilde # LATIN SMALL LETTER N WITH TILDE
+<dead_tilde> <n>   : "ñ" ntilde # LATIN SMALL LETTER N WITH TILDE
+
+<Multi_key> <d> <D> : "Đ" Dstroke  # LATIN CAPITAL LETTER D WITH STROKE
+<Multi_key> <d> <d> : "đ" dstroke  # LATIN SMALL LETTER D WITH STROKE
 
 # BEGIN ACUTE
 # --------------------------------------------- #
@@ -199,38 +204,38 @@
 
 # BEGIN TILDE
 # --------------------------------------------- #
-<Multi_key> <n> <a> : "ã"	atilde   # LATIN SMALL LETTER A WITH TILDE
-<Multi_key> <n> <A> : "Ã"	Atilde   # LATIN CAPITAL LETTER A WITH TILDE
-<Multi_key> <n> <e> : "ẽ"	U1EBD    # LATIN SMALL LETTER E WITH TILDE
-<Multi_key> <n> <E> : "Ẽ"	U1EBC    # LATIN CAPITAL LETTER E WITH TILDE
-<Multi_key> <n> <i> : "ĩ"	U0129    # LATIN SMALL LETTER I WITH TILDE
-<Multi_key> <n> <I> : "Ĩ"	U0128    # LATIN CAPITAL LETTER I WITH TILDE
-<Multi_key> <n> <n> : "ñ"	ntilde   # LATIN SMALL LETTER N WITH TILDE
-<Multi_key> <n> <N> : "Ñ"	Ntilde   # LATIN CAPITAL LETTER N WITH TILDE
-<Multi_key> <n> <o> : "õ"	otilde   # LATIN SMALL LETTER O WITH TILDE
-<Multi_key> <n> <O> : "Õ"	Otilde   # LATIN CAPITAL LETTER O WITH TILDE
-<Multi_key> <n> <u> : "ũ"	U0169    # LATIN SMALL LETTER U WITH TILDE
-<Multi_key> <n> <U> : "Ũ"	U0168    # LATIN CAPITAL LETTER U WITH TILDE
-<Multi_key> <n> <v> : "ṽ"	U1E7D    # LATIN SMALL LETTER V WITH TILDE
-<Multi_key> <n> <V> : "Ṽ"	U1E7C    # LATIN CAPITAL LETTER V WITH TILDE
-<Multi_key> <n> <y> : "ỹ"	U1EF9    # LATIN SMALL LETTER Y WITH TILDE
-<Multi_key> <n> <Y> : "Ỹ"	U1EF8    # LATIN CAPITAL LETTER Y WITH TILDE
+<Multi_key> <n> <a> : "ã" atilde   # LATIN SMALL LETTER A WITH TILDE
+<Multi_key> <n> <A> : "Ã" Atilde   # LATIN CAPITAL LETTER A WITH TILDE
+<Multi_key> <n> <e> : "ẽ" U1EBD    # LATIN SMALL LETTER E WITH TILDE
+<Multi_key> <n> <E> : "Ẽ" U1EBC    # LATIN CAPITAL LETTER E WITH TILDE
+<Multi_key> <n> <i> : "ĩ" U0129    # LATIN SMALL LETTER I WITH TILDE
+<Multi_key> <n> <I> : "Ĩ" U0128    # LATIN CAPITAL LETTER I WITH TILDE
+<Multi_key> <n> <n> : "ñ" ntilde   # LATIN SMALL LETTER N WITH TILDE
+<Multi_key> <n> <N> : "Ñ" Ntilde   # LATIN CAPITAL LETTER N WITH TILDE
+<Multi_key> <n> <o> : "õ" otilde   # LATIN SMALL LETTER O WITH TILDE
+<Multi_key> <n> <O> : "Õ" Otilde   # LATIN CAPITAL LETTER O WITH TILDE
+<Multi_key> <n> <u> : "ũ" U0169    # LATIN SMALL LETTER U WITH TILDE
+<Multi_key> <n> <U> : "Ũ" U0168    # LATIN CAPITAL LETTER U WITH TILDE
+<Multi_key> <n> <v> : "ṽ" U1E7D    # LATIN SMALL LETTER V WITH TILDE
+<Multi_key> <n> <V> : "Ṽ" U1E7C    # LATIN CAPITAL LETTER V WITH TILDE
+<Multi_key> <n> <y> : "ỹ" U1EF9    # LATIN SMALL LETTER Y WITH TILDE
+<Multi_key> <n> <Y> : "Ỹ" U1EF8    # LATIN CAPITAL LETTER Y WITH TILDE
 # --------------------------------------------- #
 # END TILDE
 
 # Overriding standard rules to accomodate Slovene letters I use all the time
-<Multi_key> <s> <s> : "š" U0161 # LATIN SMALL LETTER S WITH CARON
-<Multi_key> <S> <S> : "Š" U0160 # LATIN CAPITAL LETTER S WITH CARON
-<Multi_key> <c> <c> : "č" U010D # LATIN SMALL LETTER C WITH CARON
-<Multi_key> <C> <C> : "Č" U010C # LATIN CAPITAL LETTER C WITH CARON
-<Multi_key> <z> <z> : "ž" U017E # LATIN SMALL LETTER Z WITH CARON
-<Multi_key> <Z> <Z> : "Ž" U017D # LATIN CAPITAL LETTER Z WITH CARON
+<Multi_key> <s> <s> : "š" U0161  # LATIN SMALL LETTER S WITH CARON
+<Multi_key> <S> <S> : "Š" U0160  # LATIN CAPITAL LETTER S WITH CARON
+<Multi_key> <c> <c> : "č" U010D  # LATIN SMALL LETTER C WITH CARON
+<Multi_key> <C> <C> : "Č" U010C  # LATIN CAPITAL LETTER C WITH CARON
+<Multi_key> <z> <z> : "ž" U017E  # LATIN SMALL LETTER Z WITH CARON
+<Multi_key> <Z> <Z> : "Ž" U017D  # LATIN CAPITAL LETTER Z WITH CARON
 
 # Overriding standard rules for accents I use all the time
-<Multi_key> <a> <a> : "á" aacute # LATIN SMALL LETTER A WITH ACUTE
-<Multi_key> <e> <e> : "é" eacute # LATIN SMALL LETTER E WITH ACUTE
-<Multi_key> <i> <i> : "í" iacute # LATIN SMALL LETTER I WITH ACUTE
-<Multi_key> <I> <i> : "î" iacute # to compensate for overriding default
-<Multi_key> <o> <o> : "ó" oacute # LATIN SMALL LETTER O WITH ACUTE
-<Multi_key> <u> <u> : "ú" uacute # LATIN SMALL LETTER U WITH ACUTE
-<Multi_key> <U> <u> : "ü" uacute # to compensate for overriding default
+<Multi_key> <a> <a> : "á" aacute  # LATIN SMALL LETTER A WITH ACUTE
+<Multi_key> <e> <e> : "é" eacute  # LATIN SMALL LETTER E WITH ACUTE
+<Multi_key> <i> <i> : "í" iacute  # LATIN SMALL LETTER I WITH ACUTE
+<Multi_key> <I> <i> : "î" iacute  # to compensate for overriding default
+<Multi_key> <o> <o> : "ó" oacute  # LATIN SMALL LETTER O WITH ACUTE
+<Multi_key> <u> <u> : "ú" uacute  # LATIN SMALL LETTER U WITH ACUTE
+<Multi_key> <U> <u> : "ü" uacute  # to compensate for overriding default

@@ -7,7 +7,7 @@ nnoremap ;cj :goto $VIFM_CONTEXT/composer.json<CR>
 
 nnoremap ;ee :goto $VIFM_CONTEXT/.env<CR>
 
-nnoremap ;pp :cd $VIFM_CONTEXT/public<CR>
+nnoremap ;pu :cd $VIFM_CONTEXT/public<CR>
 
 nnoremap ;cc :cd $VIFM_CONTEXT/config<CR>
 

@@ -103,6 +103,16 @@ return
       ),
       {condition = line_begin}
     ),
+    -- Use Hash facade
+    s({trig = "ufh", snippetType="autosnippet"},
+      fmt(
+        [[
+        use Illuminate\Support\Facades\Hash;
+        ]],
+        { }
+      ),
+      {condition = line_begin}
+    ),
     -- Use Log facade
     s({trig = "ufl", snippetType="autosnippet"},
       fmt(
@@ -319,5 +329,29 @@ return
     -- Auth::id()
     s({trig = "AID", snippetType="autosnippet"},
       {t("Auth::id()")}
+    ),
+    -- $this->command->info()
+    s({trig = "tci", snippetType="autosnippet"},
+      fmt(
+        [[ $this->command->info({}); ]],
+        { d(1, get_visual) }
+      ),
+      {condition = line_begin}
+    ),
+    -- $this->command->warn()
+    s({trig = "tcw", snippetType="autosnippet"},
+      fmt(
+        [[ $this->command->warn({}); ]],
+        { d(1, get_visual) }
+      ),
+      {condition = line_begin}
+    ),
+    -- $this->command->error()
+    s({trig = "tce", snippetType="autosnippet"},
+      fmt(
+        [[ $this->command->error({}); ]],
+        { d(1, get_visual) }
+      ),
+      {condition = line_begin}
     ),
   }

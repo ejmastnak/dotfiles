@@ -25,7 +25,6 @@ return
       fmt(
         [[
           print({}, file=sys.stderr)
-          sys.exit(1)
         ]],
         {
           d(1, get_visual),
@@ -34,7 +33,7 @@ return
       {condition = line_begin}
     ),
     -- MAIN FUNCTION
-    s({trig="main", snippetType="autosnippet"},
+    s({trig="MM", snippetType="autosnippet"},
       fmta(
         [[
       if __name__ == "__main__":
@@ -46,11 +45,25 @@ return
       ),
       {condition = line_begin}
     ),
-    -- CLASS
+    -- Class
     s({trig="cll", snippetType="autosnippet"},
       fmta(
         [[
         class <>:
+            <>
+        ]],
+        {
+          i(1),
+          i(0),
+        }
+      ),
+      {condition = line_begin}
+    ),
+    -- Exit with sys.exit()
+    s({trig="XX", snippetType="autosnippet"},
+      fmt(
+        [[
+        sys.exit({})
         ]],
         {
           i(1),
@@ -58,12 +71,7 @@ return
       ),
       {condition = line_begin}
     ),
-    -- EXIT MAIN FUNCTION with sys.exit()
-    s({trig="XX", snippetType="autosnippet"},
-      { t("sys.exit()") },
-      {condition = line_begin}
-    ),
-    -- FUNCTION DEFINITION WITH CHOICE NODE DOCSTRING
+    -- Function definition with choice node docstring
     -- The idea is to let you choose if you want to use the docstring or not
     s({trig="ff", snippetType="autosnippet"},
       fmta(
@@ -192,17 +200,10 @@ return
         }
       )
     ),
-    -- Path.as_posix()
-    s({trig="PAP", snippetType = "autosnippet"},
-      {t("path.as_posix()")}
-    ),
-    -- as_posix()
-    s({trig="APP", snippetType = "autosnippet", wordTrig=false},
-      {t("as_posix()")}
-    ),
-    -- Path.name
-    s({trig="PNN", snippetType = "autosnippet"},
-      {t("path.name")}
+    -- assert statement
+    s({trig=";a", snippetType = "autosnippet"},
+      {t("assert ")},
+      {condition = line_begin}
     ),
     -- Square brackets
     s({trig = "gds", snippetType="autosnippet", priority=1000},
@@ -231,5 +232,22 @@ return
         [[kwargs.get('{}'{})]],
         { d(1, get_visual), i(2) }
       )
+    ),
+    -- Try/except block
+    s({trig = 'tryy', snippetType="autosnippet"},
+      fmt(
+        [[
+        try:
+          {}
+        except {}:
+          {}
+        ]],
+        {
+          i(1),
+          i(2, "Exception as e"),
+          i(0),
+        }
+      ),
+      {condition = line_begin}
     ),
   }

@@ -16,6 +16,9 @@ bindsym $mod+Shift+x exec --no-startup-id xset r rate 200 40 && xmodmap ~/.xmodm
 # Open a web browser
 bindsym $mod+Shift+o exec firefox
 
+# Open a GUI file browser
+bindsym $mod+Shift+n exec nautilus
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -46,9 +49,6 @@ for_window [class="gnuplot_qt"] floating enable
 
 # GAPS
 # --------------------------------------------- #
-# Disable 
-for_window [class=.*] border pixel 0
-
 gaps inner 10
 
 # Setting globally
@@ -125,17 +125,29 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+# move focused container to workspace and switch workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1 workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2 workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3 workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4 workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5 workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6 workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7 workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8 workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9 workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10 workspace number $ws10
+
+# move focused container to workspace without switching workspace
+bindsym $mod+Control+1 move container to workspace number $ws1
+bindsym $mod+Control+2 move container to workspace number $ws2
+bindsym $mod+Control+3 move container to workspace number $ws3
+bindsym $mod+Control+4 move container to workspace number $ws4
+bindsym $mod+Control+5 move container to workspace number $ws5
+bindsym $mod+Control+6 move container to workspace number $ws6
+bindsym $mod+Control+7 move container to workspace number $ws7
+bindsym $mod+Control+8 move container to workspace number $ws8
+bindsym $mod+Control+9 move container to workspace number $ws9
+bindsym $mod+Control+0 move container to workspace number $ws10
 
 # Move focused container one workspace left
 bindsym $mod+Shift+comma move container to workspace prev workspace prev
@@ -238,11 +250,27 @@ set $nord_yellow  #ebcb8b
 set $nord_green   #a3be8c
 set $nord_lilac   #b48ead
 
+# Number progressions go from darker to lighter
+set $tokyonight_black #1d202f
+set $tokyonight_dark #24283b
+set $tokyonight_light #a9b1d6
+set $tokyonight_white #c0caf5
+set $tokyonight_red #f7768e
+set $tokyonight_green #5e81ac
+set $tokyonight_yellow #e0af68
+set $tokyonight_blue #7aa2f7
+set $tokyonight_magenta #bb9af7
+set $tokyonight_cyan #7dcfff
+
+# Set border for all windows
+for_window [class=.*] border pixel 0
+
 # Setting window colors (see https://i3wm.org/docs/userguide.html#_changing_colors)
-# class                 border        background    text           indicator      child_border
-client.focused          $nord_blue3   $nord_blue3   $nord_dark2    $nord_light2   $nord_dark1
-client.unfocused        $nord_dark2   $nord_dark2   $nord_light3   $nord_light1   $nord_dark1
-client.urgent           $nord_red     $nord_red     $nord_light1   $nord_light2   $nord_dark1
+# Note: when using `border pixel`, it seems the `child_border` color changes border color
+# class          border            background        text               indicator      child_border
+client.focused   $tokyonight_blue  $tokyonight_blue  $tokyonight_dark   $tokyonight_light   $tokyonight_blue
+client.unfocused $tokyonight_dark  $tokyonight_dark  $tokyonight_light  $tokyonight_light   $tokyonight_dark
+client.urgent    $tokyonight_red   $tokyonight_red   $tokyonight_dark   $tokyonight_light   $tokyonight_dark
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -251,16 +279,16 @@ bar {
 	status_command i3blocks
 	font pango:Source Code Pro 10
 	colors {
-	background $nord_dark3
-	statusline $nord_light3
-	separator  $nord_blue2
+	background $tokyonight_dark
+	statusline $tokyonight_white
+	separator  $tokyonight_blue
 
-        # colorclass       border       background   text
-	focused_workspace  $nord_blue1  $nord_blue1  $nord_light3
-	active_workspace   $nord_blue1  $nord_blue1  $nord_light3
-	inactive_workspace $nord_dark2  $nord_dark2  $nord_blue2
-	urgent_workspace   $nord_dark1  $nord_red    $nord_light1
-	binding_mode       $nord_dark1  $nord_red    $nord_dark2
+  # colorclass       border           background       text
+	focused_workspace  $tokyonight_blue $tokyonight_blue $tokyonight_black
+	active_workspace   $tokyonight_blue $tokyonight_blue $tokyonight_white
+	inactive_workspace $tokyonight_dark $tokyonight_dark $tokyonight_white
+	urgent_workspace   $tokyonight_dark $tokyonight_red  $tokyonight_dark
+	binding_mode       $tokyonight_dark $tokyonight_red  $tokyonight_dark
 	}
 }
 

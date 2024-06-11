@@ -48,7 +48,7 @@ do
     # mpv-cut clogging up screen space and hiding track title, so I can
     # actually see which track is playing in which terminal, but manually
     # loading mpris to allow play-pause.
-    i3-msg "exec --no-startup-id alacritty --command mpv --volume="${volume}" --load-scripts=no --script=/etc/mpv/scripts/mpris.so $(realpath "${track}")"
+    i3-msg "exec --no-startup-id alacritty --command mpv --loop=inf --volume="${volume}" --load-scripts=no --script=/etc/mpv/scripts/mpris.so $(realpath "${track}")"
   else
     echo "No file found at ${track}. Skipping."
   fi

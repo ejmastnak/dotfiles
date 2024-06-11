@@ -10,8 +10,8 @@
 # Space-delimited list of indictor_file,status key,value pairs (this technique
 # only works, of course, if file names don't contain spaces or commas).
 
-FG="#EEEEEE"
-BG="#81a1c1"  # Nord 9
+FG="#1d202f"  # Tokyo Night black
+BG="#7aa2f7"  # Tokyo Night blue
 
 LIST=~/Documents/projects/5mates/list.md
 

@@ -126,8 +126,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="0"
-         width="323.965984251969"
-         height="245.669291338583"
+         width="371.323040338951"
+         height="260.774829293799"
          ry="0" />
       <eventcontext
          id="3dbox"
@@ -164,8 +164,8 @@
          end="0"
          start="0"
          usecurrent="0"
-         rx="314.238050565949"
-         ry="314.238050565949" />
+         rx="170.116615595782"
+         ry="170.11661559578" />
       <eventcontext
          id="star"
          magnitude="5"
@@ -329,7 +329,7 @@
        use_svg2="1"
        style="line-height:1.25;font-family:sans-serif;font-size:12px;text-anchor:middle;text-align:center;-inkscape-font-specification:'sans-serif Bold';font-weight:bold"
        selcue="1"
-       align_mode="1" />
+       align_mode="0" />
     <eventcontext
        id="nodes"
        selcue="1"
@@ -345,8 +345,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="278.528716218958"
-       y="255.270645091416"
+       x="988.614727559056"
+       y="942.556922272976"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -598,7 +598,7 @@
     <group
        id="align"
        align-to="1"
-       objects-align-to="page" />
+       objects-align-to="last" />
     <group
        id="xml"
        h="500"
@@ -661,7 +661,7 @@
     <group
        id="import"
        enable_preview="1"
-       path="/home/ej/Documents/pictures/"
+       path="/home/ej/"
        ask="1"
        ask_svg="1"
        link="embed"
@@ -718,6 +718,10 @@
     <group
        id="filters"
        handlePos="233" />
+    <group
+       id="selectors"
+       vertical="1"
+       panedpos="405" />
   </group>
   <group
      id="printing">
@@ -1012,7 +1016,7 @@
     </group>
     <group
        id="font"
-       unitType="4"
+       unitType="2"
        scaleLineHeightFromFontSIze="1" />
     <group
        id="kbshortcuts"
@@ -1022,7 +1026,7 @@
        value="1" />
     <group
        id="snapping"
-       snap-global-toggle="0"
+       snap-global-toggle="1"
        snap-node-category="1"
        snap-path="1"
        snap-path-intersection="0"
@@ -1053,7 +1057,7 @@
      org.inkscape.output.png.inkscape.png_antialias="2" />
   <group
      id="desktop"
-     style="fill:none;font-size:283.46456693px;-inkscape-font-specification:'Latin Modern Sans';font-family:'Latin Modern Sans';line-height:1;stroke-miterlimit:10;letter-spacing:-0.5px;stroke-width:7;text-anchor:middle;text-align:center;opacity:0.55;fill-opacity:0;stroke:#000000">
+     style="fill:#fff7ed;font-size:18.66666667px;-inkscape-font-specification:'Latin Modern Roman,  Italic';font-family:'Latin Modern Roman';line-height:1.2;stroke-miterlimit:10;letter-spacing:0px;opacity:0.55;stroke-width:0.79151243;stroke:#000000;font-style:italic">
     <group
        width="1900"
        height="1036"

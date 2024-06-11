@@ -18,7 +18,7 @@ filetype {*.svg},<image/svg> nvim %c
 filetype {*.xcf},<image/xcf> gimp %c
 
 " Image
-filetype {*.jpg,*.jpeg,*.png},<image/*> feh %c &
+filetype {*.jpg,*.jpeg,*.png},<image/*> nsxiv %c &
 
 " PostScript
 filetype {*.ps,*.eps,*.ps.gz},<application/postscript> zathura

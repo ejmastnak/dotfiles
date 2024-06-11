@@ -1,0 +1,1 @@
+/home/ej/Documents/projects/gaia/finances/invoices/src/txt2upnqr.py

@@ -87,6 +87,14 @@ return
         { d(1, get_visual) }
       )
     ),
+    -- Vim modeline
+    s({trig = "vml", snippetType="autosnippet"},
+      fmt(
+        [[ vim: set filetype={}: ]],
+        { d(1, get_visual) }
+      ),
+      {condition=line_begin}
+    ),
     -- em dash
     s({trig = "---", wordTrig=false},
       {t("—")}

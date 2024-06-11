@@ -36,7 +36,7 @@ get_public_key_blob() {
 if [[ ${add_keys_to_agent} -gt 0 ]]; then
   # Original SSH command host
   SSH_HOST=${1}
-  SSH_ADD_TIMEOUT=36000  # seconds
+  SSH_ADD_TIMEOUT=60000  # a bit over 16 hours (a work day)
 
   # Get the identity file for the host (and replace ~ with actual value of
   # ${HOME} to avoid problems with ~ not expanding in quotes down the line).

@@ -29,7 +29,7 @@ set scrolloff=4         " add space between cursor and border in lists
 set slowfs=curlftpfs    " don't do too many requests to slow file systems
 set norunexec           " don't automatically run executable files on l or Enter
 set cpoptions=fs        " to make <C-I> move forward in view history
-colorscheme nord solarized-dark Default-256 Default
+colorscheme tokyonight nord solarized-dark Default-256 Default
 
 " Ignore case in search patterns unless the pattern 
 " contains at least one uppercase letter.
@@ -45,7 +45,7 @@ set vifminfo=dhistory,chistory,savedirs,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " Set status line; add marker for Python virtual environments
-highlight User1 ctermbg=blue ctermfg=white cterm=bold
+highlight User1 ctermbg=blue ctermfg=black cterm=bold
 highlight User2 ctermbg=yellow ctermfg=black cterm=bold
 if $VIRTUAL_ENV != ""
   " The rev | cut | rev call extracts VENV folder; see "https://unix.stackexchange.com/a/217630
@@ -116,23 +116,24 @@ command! reload :write | restart full
 " Start shell in current directory
 nnoremap s :shell<cr>
 
-" Find files
-nnoremap F :find<space>
-
 " Shortcut for edit command
 nnoremap e :edit<space>
 
 " Shortcut for mkdir command
 nnoremap m :mkdir<space>
 
+" Rename files
+vnoremap RN :rename<CR>
+nnoremap RN :rename<CR>
+
 " Create a README.md file
-nnoremap RM :edit README.md<CR>
+nnoremap RM :edit README.md<CR>:goto README.md<CR>
 
 " Create a TODO.md file
-nnoremap TT :edit TODO.md<CR>
+nnoremap TT :edit TODO.md<CR>:goto TODO.md<CR>
 
 " Create a blah.md file
-nnoremap BB :edit blah.md<CR>
+nnoremap BB :edit blah.md<CR>:goto blah.md<CR>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
@@ -169,8 +170,17 @@ nnoremap S :!sh %c<CR>
 " Create symbolic link to file selected in inactve pane
 nnoremap gL :!ln -s %C %d/%C:t || ln -s %C %d/%C:t.bak<CR>
 
-" Activate Python virtual environment
-nnoremap EE :!activate-venv.bash<CR>
+" Convert directory under cursor to equally-named file
+nnoremap MF :!vifm_tmp_filename="%c"; rm -r "${vifm_tmp_filename}"; touch "${vifm_tmp_filename}"<CR>
+
+" Convert file under cursor to equally-named directory
+nnoremap MD :!vifm_tmp_filename="%c"; rm "${vifm_tmp_filename}"; mkdir "${vifm_tmp_filename}"<CR>
+
+" Add a .bak extension
+nnoremap MB cw.bak<CR>
+
+" Activate Python virtual environment, preserve files under cursor
+nnoremap EE :let $VIFM_FILE_UNDER_CURSOR = expand("%c:p")<CR>:let $VIFM_OTHER_FILE_UNDER_CURSOR = expand("%C:p")<CR>:!activate-venv.bash<CR>
 " --------------------------------------------- "
 " END MAPPINGS
 
@@ -178,6 +188,7 @@ nnoremap EE :!activate-venv.bash<CR>
 " BEGIN FILE OPENING CONFIGURATION
 " ---------------------------------------------
 " Image
+" filetype {*.jpg,*.jpeg,*.png},<image/*> nsxiv %c &
 filetype {*.jpg,*.jpeg,*.png},<image/*> feh %c &
 
 " TeX
@@ -256,3 +267,15 @@ filetype *.bz2 bzip2 -d %f
 filetype *.gz gunzip %f
 " ---------------------------------------------
 " END FILE OPENING CONFIGURATION
+
+" Find file with fzf
+command! FzfFind : set noquickview
+      \| let $FZF_PICK = term('find | fzf --height 10 2>/dev/tty')
+      \| if $FZF_PICK != ''
+      \|     execute 'goto' fnameescape($FZF_PICK)
+      \| endif
+nnoremap F :FzfFind<CR>
+
+
+" TEMPORARY: run extract.bash (for howacarworks) on file under cursor
+nnoremap XX :!./extract.bash %c<CR>

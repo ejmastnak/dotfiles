@@ -97,3 +97,12 @@ alias fpc='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf-copy'
 alias fpe='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf-edit'
 alias fps='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf-edit'
 alias fpo='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf-otp'
+
+# Register SSH keys with ssh-agent on first use
+alias ssha="ssh-with-agent.bash"
+
+# Shuffle and play music in child directories
+alias sap="shuffle-and-play.py"
+
+# Convert HEIC to jpg
+alias heic2jpg="for file in *.HEIC; do mogrify -format jpg ${file}; rm ${file}; done"

@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 # NAME 
-#     play-mix.bash - Play multiple audio tracks in separate tmux panes
+#     ambient-tmux.bash - Play multiple audio tracks in separate tmux panes
 # SYNOPSIS
-#     play-mix.bash <mix.csv>
+#     ambient-tmux.bash <mix.csv>
 # DESCRIPTION
 # For each audio track in mix.csv, spawns a new tmux pane running mpv
 # playing the track at the relative volume specified in mix.csv.
@@ -43,8 +43,8 @@ while IFS=, read -r track volume; do
 
 done < "${csv_file}"
 
-# Rearrange panes so all panes remain visible
-tmux select-layout tiled > /dev/null
+# # Rearrange panes so all panes remain visible
+# tmux select-layout tiled > /dev/null
 
 # Once done setting up, attach to the session
 tmux attach-session -t mix

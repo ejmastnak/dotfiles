@@ -15,6 +15,8 @@ application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
+image/jpeg=nsxiv.desktop
+image/heif=nsxiv.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-RZMX81.desktop;
@@ -29,3 +31,5 @@ application/x-extension-shtml=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
+image/jpeg=feh.desktop;nsxiv.desktop;
+image/heif=nsxiv.desktop;
