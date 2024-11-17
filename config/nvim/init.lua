@@ -95,6 +95,8 @@ vim.call('plug#end')
 -- End loading plugins
 
 vim.cmd('colorscheme tokyonight-storm')
+vim.keymap.set('', '<Leader>1d', '<Cmd>colorscheme tokyonight-storm<CR>')
+vim.keymap.set('', '<Leader>1l', '<Cmd>colorscheme tokyonight-day<CR>')
 
 vim.cmd('hi Visual guifg=#2E3440 guibg=#88C0D0 gui=none')
 vim.cmd('hi VisualNOS guifg=#2E3440 guibg=#88C0D0 gui=none')
@@ -231,5 +233,20 @@ vim.cmd[[
   autocmd BufLeave term://* stopinsert
 ]]
 
+
+-- Open file in MPV at given timestamp.
+-- Works with cursor over WORDs of the form "path/to/file.mp3;hh:mm:ss"
+vim.keymap.set('n', '<Leader>o',
+  function()
+    local word = vim.fn.expand("<cWORD>")
+    local file_path, timestamp = word:match("([^;]+);(.+)")
+    if file_path and timestamp then
+      local cmd = string.format("mpv --start=%s %s", timestamp, file_path)
+      vim.cmd('TermExec size=8 cmd="' .. cmd .. '"')
+    else
+      print("Invalid format. Expected: path/to/media-file.mp3;hh:mm:ss")
+    end
+  end,
+  {desc = 'Open file in MPV at given timestamp.'})
 
 -- END MISCELLANEOUS

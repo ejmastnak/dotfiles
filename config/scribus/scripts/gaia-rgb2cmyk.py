@@ -1,0 +1,1 @@
+/home/ej/Documents/projects/gaia/labels/colors/scripts/gaia-rgb2cmyk.py

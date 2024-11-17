@@ -44,8 +44,8 @@ alias grep='grep --color=auto'
 alias venv="source ./venv/bin/activate && vifm ./ ./"
 
 # Download and extract audio from YouTube videos
-alias dlp='yt-dlp --extract-audio --audio-format mp3'
-alias ydlp='yt-dlp -S res:720'
+alias dlp-video='yt-dlp -S res:720 --sponsorblock-remove all'
+alias dlp-audio='yt-dlp -S res:240 --extract-audio --sponsorblock-remove all'
 
 # Use loudgain to normalize opus or mp3 albums
 alias lg_mp3='loudgain -I3 -S -L -a -k -s e *.mp3'
@@ -101,8 +101,13 @@ alias fpo='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass fzf-otp'
 # Register SSH keys with ssh-agent on first use
 alias ssha="ssh-with-agent.bash"
 
+# SSH into Pis
+alias sshpi="ssh -i /home/ej/.ssh/Pi_id_ed25519"
+
 # Shuffle and play music in child directories
 alias sap="shuffle-and-play.py"
 
 # Convert HEIC to jpg
-alias heic2jpg="for file in *.HEIC; do mogrify -format jpg ${file}; rm ${file}; done"
+alias heic2jpg='for file in *.HEIC; do mogrify -format jpg ${file}; rm ${file}; done'
+
+alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"

@@ -33,7 +33,7 @@ return
         t("]"),
       }),
     -- Paired back ticks
-    s({trig="sd", snippetType="autosnippet"},
+    s({trig="sf", snippetType="autosnippet"},
       {
         f( function(_, snip) return snip.captures[1] end ),
         t("`"),

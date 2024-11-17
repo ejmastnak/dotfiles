@@ -7,6 +7,9 @@ augroup filetypedetect
   " I just use shell filetype for syntax highlighting
   au! BufNewFile,BufRead *.m3u	set filetype=sh
 
+  " Treat header files as C
+  au BufNewFile,BufRead *.h set filetype=c
+
   " Configuration
   au BufNewFile,BufRead *.conf set filetype=conf
 
@@ -30,4 +33,11 @@ augroup filetypedetect
 
   " GPG
   au BufNewFile,BufRead *.gpg set filetype=gpg
+
+  " Binary
+  au BufNewFile,BufRead *.bin,*.dat set filetype=bin
+
+  " XXD (text representation of hex)
+  au BufNewFile,BufRead *.xxd set filetype=xxd
+
 augroup END

@@ -3,8 +3,10 @@
 " Config and dotfiles
 " --------------------------------------------- "
 nnoremap gcc :cd ~/dotfiles/config<CR>
+nnoremap gca :cd ~/dotfiles/config/alacritty<CR>
 nnoremap gcS :cd ~/dotfiles/scripts<CR>
 nnoremap gcs :cd ~/dotfiles/config/shell<CR>
+nnoremap gcb :cd ~/dotfiles/config/scribus<CR>
 nnoremap gcd :cd ~/dotfiles<CR>
 nnoremap gcv :cd ~/dotfiles/config/vifm<CR>
 nnoremap gcr :cd ~/dotfiles/config/rclone<CR>
@@ -12,7 +14,7 @@ nnoremap gcp :cd ~/dotfiles/config/picom<CR>
 nnoremap gcz :cd ~/dotfiles/config/zsh<CR>
 nnoremap gcm :cd ~/dotfiles/config/mpv<CR>
 nnoremap gci :cd ~/dotfiles/config/i3<CR>
-nnoremap gck :cd ~/dotfiles/config/inkscape/keys<CR>
+nnoremap gcI :cd ~/dotfiles/config/inkscape<CR>
 nnoremap gcl :cd ~/dotfiles/config/latex<CR>
 nnoremap gcn :goto ~/dotfiles/config/vifm/navigation/navigation.vifm<CR>
 
@@ -52,7 +54,8 @@ nnoremap gwl :cd ~/Documents/pictures/wallpapers/wordlists<CR>
 " Finances
 " --------------------------------------------- "
 nnoremap gff :cd ~/Documents/finances<CR>
-nnoremap gfb :cd ~/Documents/finances/budget<CR>
+nnoremap gfc :cd ~/Documents/finances/cerity<CR>
+nnoremap gfr :cd ~/Documents/finances/records<CR>
 nnoremap gfs :cd ~/Documents/finances/scripts<CR>
 nnoremap gfd :cd ~/Documents/finances/doc<CR>
 nnoremap gfu :cd ~/Documents/finances/doc/how-to-update<CR>
@@ -64,10 +67,13 @@ nnoremap gfa :goto ~/Documents/finances/beancount/accounts.beancount<CR>
 nnoremap gam :cd ~/Documents/about<CR>
 nnoremap gFF :cd ~/Documents/fitness<CR>
 nnoremap gdd :cd ~/Documents<CR>
+nnoremap gdc :cd ~/Documents/design/colors<CR>
 
 " Plans
 " --------------------------------------------- "
 nnoremap gpp :cd ~/Documents/plans<CR>
+nnoremap gp6 :cd ~/Documents/plans/6wp<CR>
+nnoremap go6 :cd ~/Documents/plans/6wp<CR>
 nnoremap gpt :goto ~/Documents/plans/todo.md<CR>
 nnoremap gpq :goto ~/Documents/plans/todo.md<CR>
 nnoremap gpc :goto ~/Documents/plans/cool-person-things.md<CR>
@@ -78,21 +84,24 @@ nnoremap gpn :goto ~/Documents/plans/now.md<CR>
 " Projects
 " --------------------------------------------- "
 nnoremap goo :cd ~/Documents/projects<CR>
-nnoremap gom :cd ~/Documents/projects/music<CR>
-nnoremap gof :goto ~/Documents/projects/fitness-biomechanics-2/app<CR>
-nnoremap gok :cd ~/Documents/projects/klf<CR>
-nnoremap gon :goto ~/Documents/projects/nutria/app/TODO.md<CR>
-nnoremap goj :cd ~/Documents/projects/juliaelyachar<CR>
-nnoremap goe :cd ~/Documents/projects/ejmastnak<CR>
-nnoremap goc :goto ~/Documents/projects/casino/app<CR>
-nnoremap goh :cd ~/Documents/projects/croatian<CR>
-nnoremap got :cd ~/Documents/projects/tmg-bmc<CR>
-nnoremap gos :cd ~/Documents/projects/tmg-bmc/sensemotion<CR>
-nnoremap gor :goto ~/Documents/projects/randall/www<CR>
-nnoremap gol :goto ~/Documents/projects/landmarks/app<CR>
-nnoremap gog :goto ~/Documents/projects/gaia/app<CR>
 nnoremap go4 :goto ~/Documents/projects/tv47/TODO.md<CR>
 nnoremap go5 :cd ~/Documents/projects/5mates<CR>
+nnoremap goa :cd ~/Documents/projects/rpi-ambient<CR>
+nnoremap goc :goto ~/Documents/projects/casino/app<CR>
+nnoremap goe :cd ~/Documents/projects/ejmastnak<CR>
+nnoremap gof :goto ~/Documents/projects/found-my-phone/app<CR>
+nnoremap gog :goto ~/Documents/projects/gaia/app<CR>
+nnoremap goh :cd ~/Documents/projects/croatian<CR>
+nnoremap goj :cd ~/Documents/projects/juliaelyachar<CR>
+nnoremap gok :cd ~/Documents/projects/klf<CR>
+nnoremap gol :goto ~/Documents/projects/landmarks/app<CR>
+nnoremap gom :cd ~/Documents/projects/music<CR>
+nnoremap gon :goto ~/Documents/projects/nutria/app/<CR>
+nnoremap goN :goto ~/Documents/projects/nutria/prod/app/README.md<CR>
+nnoremap goq :cd ~/Documents/projects/upnqr<CR>
+nnoremap gor :goto ~/Documents/projects/randall/www<CR>
+nnoremap gos :cd ~/Documents/projects/tmg-bmc/sensemotion<CR>
+nnoremap got :cd ~/Documents/projects/tmg-bmc<CR>
 " --------------------------------------------- "
 
 " Notes
@@ -110,22 +119,25 @@ nnoremap gnr :cd ~/Documents/notes/ruminations<CR>
 " Software notes
 " --------------------------------------------- "
 nnoremap gss :cd ~/Documents/notes/tech/software<CR>
-nnoremap gsf :goto ~/Documents/notes/tech/software/ifuse.md<CR>
-nnoremap gso :cd ~/Documents/notes/tech/software/openai<CR>
-nnoremap gsm :cd ~/Documents/notes/tech/software/mixxx<CR>
-nnoremap gsi :cd ~/Documents/notes/tech/software/inkscape<CR>
-nnoremap gsg :cd ~/Documents/notes/tech/software/git<CR>
-nnoremap gsa :cd ~/Documents/notes/tech/software/arch<CR>
-nnoremap gsj :cd ~/Documents/notes/tech/software/joplin<CR>
+nnoremap gsS :cd ~/Documents/notes/tech/software/scribus<CR>
+nnoremap gsa :cd ~/Documents/notes/tech/software/algs<CR>
+nnoremap gsA :cd ~/Documents/notes/tech/software/audio-programming<CR>
 nnoremap gsb :cd ~/Documents/notes/tech/software/beancount<CR>
-nnoremap gsh :cd ~/Documents/notes/tech/software/web/hugo<CR>
-nnoremap gsp :cd ~/Documents/notes/tech/software/python<CR>
 nnoremap gsc :cd ~/Documents/notes/tech/software/c<CR>
-nnoremap gsq :cd ~/Documents/notes/tech/software/sql<CR>
+nnoremap gsf :goto ~/Documents/notes/tech/software/ifuse.md<CR>
+nnoremap gsg :cd ~/Documents/notes/tech/software/go/<CR>
+nnoremap gsG :cd ~/Documents/notes/tech/software/git<CR>
+nnoremap gsh :cd ~/Documents/notes/tech/software/web/hugo<CR>
+nnoremap gsi :cd ~/Documents/notes/tech/software/inkscape<CR>
+nnoremap gsj :cd ~/Documents/notes/tech/software/joplin<CR>
+nnoremap gsl :goto ~/Documents/notes/tech/software/web/laravel/birds-eye-view<CR>
+nnoremap gsm :cd ~/Documents/notes/tech/software/mixxx<CR>
 nnoremap gsn :cd ~/Documents/notes/tech/software/vim<CR>
-nnoremap gsv :cd ~/Documents/notes/tech/software/web/vue<CR>
+nnoremap gso :cd ~/Documents/notes/tech/software/openai<CR>
+nnoremap gsp :cd ~/Documents/notes/tech/software/python<CR>
+nnoremap gsq :cd ~/Documents/notes/tech/software/sql<CR>
 nnoremap gst :cd ~/Documents/notes/tech/software/web/tailwind<CR>
-nnoremap gsl :cd ~/Documents/notes/tech/software/web/laravel<CR>
+nnoremap gsv :cd ~/Documents/notes/tech/software/web/vue<CR>
 nnoremap gsw :cd ~/Documents/notes/tech/software/web<CR>
 " --------------------------------------------- "
 
@@ -144,16 +156,22 @@ nnoremap gaj :cd ~/Documents/academics/courses/algs<CR>
 
 " Music
 " --------------------------------------------- "
-nnoremap gmm :cd ~/Music/library<CR>
-nnoremap gml :cd ~/Music/library/latin<CR>
+nnoremap gmm :goto ~/Music/library/TODO.md<CR>
+nnoremap gmT :goto ~/Music/library/TODO.md<CR>
+nnoremap gmp :goto ~/Music/podcasts/left-off-at.md<CR>
 nnoremap gmf :cd ~/Music/library/lofi<CR>
-nnoremap gmq :goto ~/Music/library/.sqlite/library.sqlite<CR>
+nnoremap gmh :cd ~/Music/library/chillhop<CR>
 nnoremap gma :cd ~/Music/library/ambient<CR>
+nnoremap gmA :cd ~/Music/library/afrobeats<CR>
+nnoremap gmC :cd ~/Music/library/classical<CR>
+nnoremap gmn :cd ~/Music/library/norah-jones<CR>
+nnoremap gmb :cd ~/Music/library/bgm<CR>
+nnoremap gml :cd ~/Music/library/latin<CR>
 nnoremap gmc :cd ~/Music/library/latin/cuba<CR>
-nnoremap gms :cd ~/Music/library/latin/cuba/timba<CR>
+nnoremap gmr :cd ~/Music/library/latin/cuba/reparto<CR>
+nnoremap gms :cd ~/Music/library/latin/cuba/son<CR>
 nnoremap gmt :cd ~/Music/library/latin/cuba/timba<CR>
 nnoremap gmg :cd ~/Music/library/latin/jlg<CR>
 nnoremap gmj :cd ~/Music/library/jazz<CR>
-nnoremap gmr :cd ~/Music/library/reggae/reggae-classics<CR>
 nnoremap gmz :cd ~/Music/library/unsorted<CR>
 " --------------------------------------------- "

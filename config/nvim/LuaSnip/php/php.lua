@@ -192,6 +192,21 @@ return
       ),
       {condition = line_begin}
     ),
+    -- For loop
+    s({trig = "forr", snippetType="autosnippet"},
+      fmta(
+        [[
+          for (<>) {
+              <>
+          }
+        ]],
+        {
+          i(1),
+          i(2),
+        }
+      ),
+      {condition = line_begin}
+    ),
     -- Print
     s({trig = "pp", snippetType="autosnippet"},
       fmta(
@@ -279,6 +294,17 @@ return
         {
           i(1),
           i(2),
+        }
+      ),
+      { condition=line_begin }
+    ),
+    -- -> pointer dereferencing operator
+    s({trig = '([%w])>>', regTrig = true, wordTrig = false, snippetType="autosnippet"},
+      fmt(
+        "{}{}",
+        {
+          f( function(_, snip) return snip.captures[1] end ),
+          t("->")
         }
       )
     ),

@@ -5,30 +5,33 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return
   {
-    -- SoundDevice (to get around sd triggering ``)
-    s({trig = "SD", snippetType = "autosnippet"},
-      { t("sd.") }
-    ),
-    -- Query index of output device
-    s({trig="qod", snippetType="autosnippet"},
-      fmta(
-        [[
-          sd.query_devices(device=<>, kind='output')
-        ]],
-        {
-          i(1, 'None'),
-        }
-      ),
+    -- Query default output device
+    s({trig="sdqod", snippetType="autosnippet"},
+      {
+        t("device = sd.query_devices(device=None, kind='output')")
+      },
       {condition = line_begin}
     ),
-    -- Callback function
-    s({trig="cbb", snippetType="autosnippet"},
-      fmta(
+    -- Get index of audio device
+    s({trig="sdid", snippetType="autosnippet"},
+      {
+        t("device['index']")
+      }
+    ),
+    -- Get default sample rate of audio device
+    s({trig="sdfs", snippetType="autosnippet"},
+      {
+        t("device['default_samplerate']")
+      }
+    ),
+    -- Callback function for audio output
+    s({trig="sdoc", snippetType="autosnippet"},
+      fmt(
         [[
           def callback(outdata, frames, time, status):
               if status:
                   print(status, file=sys.stderr)
-              <>
+              {}
         ]],
         {
           i(0),
@@ -36,21 +39,19 @@ return
       ),
       {condition = line_begin}
     ),
-    -- Start an output stream
-    s({trig="sos", snippetType="autosnippet"},
+    -- Start output stream with a context manager
+    s({trig="sdwos", snippetType="autosnippet"},
       fmt(
         [[
           with sd.OutputStream(device={}, channels={}, callback={}, samplerate={}):
               print("Press Return to quit.")
               input()
-              {}
         ]],
         {
-          i(1),
-          i(2),
-          i(3),
-          i(4),
-          i(0)
+          i(1, "device_idx"),
+          i(2, "channels"),
+          i(3, "callback"),
+          i(4, "fs"),
         }
       ),
       {condition = line_begin}

@@ -5,14 +5,14 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return
   {
-    -- sys
-    s({trig = "isss", snippetType="autosnippet"},
-      {t("import sys")},
+    -- math
+    s({trig = "imm", snippetType="autosnippet"},
+      {t("import math")},
       {condition = line_begin}
     ),
-    -- Local constants file
-    s({trig = "icc", snippetType="autosnippet"},
-      {t("import constants")},
+    -- sys
+    s({trig = "iss", snippetType="autosnippet"},
+      {t("import sys")},
       {condition = line_begin}
     ),
     -- Numpy

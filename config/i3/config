@@ -7,8 +7,11 @@ font pango:DejaVu Sans Mono 10
 
 # SYSTEM COMMANDS
 # ------------------------------------ #
-# Start a terminal
+# Start a terminal running VIFM
 bindsym $mod+Return exec alacritty --command vifm
+
+# Start a terminal with music files open
+# bindsym $mod+Shift+m exec alacritty --command vifm ~/Music/library ~/Music/library
 
 # Reset desired typematic rate
 bindsym $mod+Shift+x exec --no-startup-id xset r rate 200 40 && xmodmap ~/.xmodmaprc
@@ -150,11 +153,10 @@ bindsym $mod+Control+9 move container to workspace number $ws9
 bindsym $mod+Control+0 move container to workspace number $ws10
 
 # Move focused container one workspace left
-bindsym $mod+Shift+comma move container to workspace prev workspace prev
+bindsym $mod+Shift+comma exec ${HOME}/scripts/i3-move-container-lr.py left
 
 # Move focused container one workspace right
-bindsym $mod+Shift+period move container to workspace next workspace next
-
+bindsym $mod+Shift+period exec ${HOME}/scripts/i3-move-container-lr.py right
 
 # BEGIN DEFAULT CONFIGURATION
 # -------------------------------------------- #
@@ -306,8 +308,12 @@ bindsym --release $mod+Shift+p exec --no-startup-id xcolor --selection clipboard
 
 # Screenshot a selected region with maim and slop
 bindsym Print exec --no-startup-id "${HOME}/scripts/screenshot.bash -s"
-# # Screenshot root window with maim
-# bindsym Shift+Print exec --no-startup-id "${HOME}/scripts/screenshot.bash -r"
+
+# Screenshot root window with maim
+bindsym Shift+Print exec --no-startup-id "${HOME}/scripts/screenshot.bash -r"
+
+# Measure dimension of a screen selection
+bindsym $mod+Shift+m exec  --no-startup-id "${HOME}/scripts/measure.bash"
 
 # # Screencast a selected region
 # bindsym $Shift+Print exec "${HOME}/scripts/screencast.bash"
@@ -318,8 +324,8 @@ bindsym Print exec --no-startup-id "${HOME}/scripts/screenshot.bash -s"
 # Toggle internal display (as a safeguard against turning it off)
 bindsym $mod+Shift+d exec "${HOME}/scripts/toggle-internal-display.bash"
 
-# Play timba :D
-bindsym $mod+Shift+t exec alacritty --working-directory ${HOME}/Music/library/latin/cuba/timba --command bash -c "walkandplay.py ./"
+# Play timba
+bindsym $mod+Shift+t exec alacritty --working-directory ${HOME}/Music/library/latin/cuba/timba --command bash -c "shuffle-and-play.py ./"
 
 # bindsym $mod+Shift+t exec alacritty --command "cd ${HOME}/Music/library/latin/cuba/timba && walkandplay.py ./"
 # --------------------------------------------- #

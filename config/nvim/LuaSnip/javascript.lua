@@ -16,7 +16,7 @@ return
       ),
       {condition = line_begin}
     ),
-    -- ALERT
+    -- for loop
     s({trig = "frr", snippetType="autosnippet", priority=10000},
       fmta(
         [[

@@ -22,6 +22,7 @@ nnoremap ;ap :cd $VIFM_CONTEXT/app/Policies<CR>
 nnoremap ;aP :cd $VIFM_CONTEXT/app/Providers<CR>
 nnoremap ;aj :cd $VIFM_CONTEXT/app/Jobs<CR>
 nnoremap ;ah :cd $VIFM_CONTEXT/app/Http<CR>
+nnoremap ;aH :cd $VIFM_CONTEXT/app/Helpers<CR>
 nnoremap ;am :cd $VIFM_CONTEXT/app/Models<CR>
 nnoremap ;aM :cd $VIFM_CONTEXT/app/Http/Middleware<CR>
 nnoremap ;ac :cd $VIFM_CONTEXT/app/Http/Controllers<CR>

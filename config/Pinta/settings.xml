@@ -1,0 +1,25 @@
+﻿<settings>
+  <setting name="jpg-quality" type="System.Int32">86</setting>
+  <setting name="dock-layers-minimized" type="System.Boolean">False</setting>
+  <setting name="dock-history-minimized" type="System.Boolean">False</setting>
+  <setting name="window-size-width" type="System.Int32">1920</setting>
+  <setting name="window-size-height" type="System.Int32">1080</setting>
+  <setting name="ruler-metric" type="System.Int32">0</setting>
+  <setting name="window-maximized" type="System.Boolean">False</setting>
+  <setting name="ruler-shown" type="System.Boolean">False</setting>
+  <setting name="image-tabs-shown" type="System.Boolean">True</setting>
+  <setting name="toolbar-shown" type="System.Boolean">True</setting>
+  <setting name="statusbar-shown" type="System.Boolean">True</setting>
+  <setting name="toolbox-shown" type="System.Boolean">True</setting>
+  <setting name="pixel-grid-shown" type="System.Boolean">False</setting>
+  <setting name="last-dialog-directory" type="System.String">file:///home/ej/tmp</setting>
+  <setting name="last-selected-tool" type="System.String">RectangleSelectTool</setting>
+  <setting name="primary-color" type="System.String">FF000000</setting>
+  <setting name="secondary-color" type="System.String">FFFFFFFF</setting>
+  <setting name="recently-used-colors" type="System.String">FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5,FFE5E5E5</setting>
+  <setting name="selection-combine-mode" type="System.Int32">0</setting>
+  <setting name="paintbrushtool-antialias" type="System.Int32">0</setting>
+  <setting name="paintbrushtool-brush-width" type="System.Int32">2</setting>
+  <setting name="paint-brush-brush" type="System.Int32">0</setting>
+  <setting name="color-picker-sample-size" type="System.Int32">0</setting>
+</settings>

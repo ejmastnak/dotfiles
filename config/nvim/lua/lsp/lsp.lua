@@ -20,6 +20,12 @@ require('lspconfig').clangd.setup {
   end,
 }
 
+require('lspconfig').gopls.setup {
+  on_attach = function(client)
+    require('illuminate').on_attach(client)
+  end,
+}
+
 require'lspconfig'.jdtls.setup{
   on_attach = function(client)
     require('illuminate').on_attach(client)

@@ -132,8 +132,13 @@ nnoremap RM :edit README.md<CR>:goto README.md<CR>
 " Create a TODO.md file
 nnoremap TT :edit TODO.md<CR>:goto TODO.md<CR>
 
-" Create a blah.md file
+" Create temporary blah files
 nnoremap BB :edit blah.md<CR>:goto blah.md<CR>
+nnoremap BP :edit blah.py<CR>:goto blah.py<CR>
+nnoremap BC :edit blah.c<CR>:goto blah.c<CR>
+
+" Create a Python virtual environment
+nnoremap MV :!python -m venv ./venv<CR>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
@@ -193,6 +198,9 @@ filetype {*.jpg,*.jpeg,*.png},<image/*> feh %c &
 
 " TeX
 filetype {*.tex},<text/tex> nvim
+
+" Scribus
+filetype {*.sla},<application/vnd.scribus> scribus %c 2> /dev/null &
 
 " LyTeX
 filetype {*.lytex},<text/tex> nvim --listen /tmp/lytexsocket

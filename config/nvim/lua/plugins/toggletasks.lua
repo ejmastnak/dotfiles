@@ -42,10 +42,10 @@ vim.keymap.set('n', '<Leader>ts', function()
   vim.cmd("stopinsert")  -- Return to normal mode
 end)
 
--- Run all tasks with the #run tag
-vim.keymap.set('n', '<Leader>tp', function()
+-- Run all tasks with the #send tag
+vim.keymap.set('n', '<Leader>tS', function()
   vim.cmd("Rooter")  -- switch to project root directory
-  spawn_tasks_with_tag("run")
+  spawn_tasks_with_tag("send")
   vim.cmd("wincmd k")  -- Return cursor to original window
   vim.cmd("stopinsert")  -- Return to normal mode
 end)
@@ -58,18 +58,3 @@ vim.keymap.set('n', '<Leader>ti', function()
   vim.cmd("stopinsert")  -- Return to normal mode
 end)
 
--- Run all tasks with the #viewfile tag
-vim.keymap.set('n', '<Leader>to', function()
-  vim.cmd("Rooter")  -- switch to project root directory
-  spawn_tasks_with_tag("viewfile")
-  vim.cmd("wincmd k")  -- Return cursor to original window
-  vim.cmd("stopinsert")  -- Return to normal mode
-end)
-
--- Run all tasks with the #build tag
-vim.keymap.set('n', '<Leader>tb', function()
-  vim.cmd("Rooter")  -- switch to project root directory
-  spawn_tasks_with_tag("build")
-  vim.cmd("wincmd k")  -- Return cursor to original window
-  vim.cmd("stopinsert")  -- Return to normal mode
-end)

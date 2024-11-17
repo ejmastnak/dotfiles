@@ -125,14 +125,14 @@
       <eventcontext
          id="rect"
          style="fill:blue;"
-         usecurrent="0"
-         width="371.323040338951"
-         height="260.774829293799"
+         usecurrent="1"
+         width="290.005126953125"
+         height="280.645935058594"
          ry="0" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
-         usecurrent="0">
+         usecurrent="1">
         <side
            id="XYfront"
            style="fill:#8686bf;stroke:none;stroke-linejoin:round;"
@@ -161,21 +161,22 @@
       <eventcontext
          id="arc"
          style="fill:red;"
-         end="0"
+         end="333.098244549384"
          start="0"
-         usecurrent="0"
-         rx="170.116615595782"
-         ry="170.11661559578" />
+         usecurrent="1"
+         rx="60.6745706393024"
+         ry="46.209703580601" />
       <eventcontext
          id="star"
          magnitude="5"
          style="fill:yellow;"
-         usecurrent="0" />
+         usecurrent="1" />
       <eventcontext
          id="spiral"
          style="fill:none;stroke:black"
          expansion="1"
-         usecurrent="0" />
+         usecurrent="1"
+         t0="0.32462892" />
     </group>
     <group
        id="freehand"
@@ -188,7 +189,8 @@
          usecurrent="0"
          average_all_sketches="1"
          pressure="0"
-         shape="3" />
+         shape="3"
+         freehand-mode="0" />
       <eventcontext
          id="pen"
          mode="drag"
@@ -327,9 +329,12 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:sans-serif;font-size:12px;text-anchor:middle;text-align:center;-inkscape-font-specification:'sans-serif Bold';font-weight:bold"
+       style="line-height:1;font-family:sans-serif;font-size:118.66666667px;text-anchor:middle;text-align:center;-inkscape-font-specification:'sans-serif Bold';font-weight:bold;text-orientation:auto"
        selcue="1"
-       align_mode="0" />
+       align_mode="1"
+       writing_mode="0"
+       orientation_mode="0"
+       direction_mode="0" />
     <eventcontext
        id="nodes"
        selcue="1"
@@ -345,10 +350,10 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="988.614727559056"
-       y="942.556922272976"
        edit_clipping_paths="0"
-       edit_masks="0" />
+       edit_masks="0"
+       x="56.2246971954631"
+       y="79.2643349597912" />
     <eventcontext
        id="tweak"
        selcue="0"
@@ -363,7 +368,8 @@
        doh="1"
        dos="1"
        dol="1"
-       doo="1" />
+       doo="1"
+       mode="0" />
     <eventcontext
        id="marker"
        selcue="1"
@@ -382,7 +388,9 @@
        mean="0" />
     <eventcontext
        id="gradient"
-       selcue="1" />
+       selcue="1"
+       newgradient="1"
+       newfillorstroke="1" />
     <eventcontext
        id="mesh"
        selcue="1" />
@@ -404,7 +412,9 @@
     <eventcontext
        id="select"
        selcue="1"
-       gradientdrag="0" />
+       gradientdrag="0"
+       changelayer="1"
+       changepage="1" />
     <eventcontext
        id="paintbucket"
        style="fill:#a0a0a0;stroke:none;"
@@ -532,7 +542,7 @@
   </group>
   <group
      id="colorselector"
-     page="0"
+     page="RGB"
      switcher="1">
     <group
        id="RGB"
@@ -556,7 +566,8 @@
        id="CMS"
        visible="1" />
     <group
-       id="OKHSL" />
+       id="OKHSL"
+       visible="0" />
   </group>
   <group
      id="embedded">
@@ -566,8 +577,15 @@
        panel_mode="1"
        panel_ratio="100"
        panel_wrap="0"
-       palette="Inkscape default"
-       panel_border="0">
+       palette="TailwindCSS"
+       panel_border="0"
+       tile_size="16"
+       tile_aspect="0"
+       tile_border="2"
+       rows="3"
+       tile_stretch="0"
+       enlarge_pinned="1"
+       show_labels="0">
       <group
          id="pinned"
          none="1"
@@ -616,7 +634,7 @@
     <group
        id="preferences"
        state="1"
-       page="14" />
+       page="23" />
     <group
        id="gradienteditor" />
     <group
@@ -629,7 +647,7 @@
        defaultopts="0">
       <group
          id="exportarea"
-         value="page" />
+         value="selection" />
       <group
          id="defaultxdpi"
          value="300" />
@@ -638,7 +656,7 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="96" />
+         value="300" />
     </group>
     <group
        id="save_as"
@@ -661,8 +679,8 @@
     <group
        id="import"
        enable_preview="1"
-       path="/home/ej/"
-       ask="1"
+       path="/home/ej/ean/png/"
+       ask="0"
        ask_svg="1"
        link="embed"
        scale="auto"
@@ -686,7 +704,10 @@
        id="messages" />
     <group
        id="swatches"
-       palette="Auto" />
+       palette="Auto">
+      <group
+         id="pinned" />
+    </group>
     <group
        id="iconpreview" />
     <group
@@ -714,7 +735,7 @@
        expand_to_layer="1" />
     <group
        id="layerProp"
-       addLayerPosition="0" />
+       addLayerPosition="1" />
     <group
        id="filters"
        handlePos="233" />
@@ -775,21 +796,21 @@
        value="4.0" />
     <group
        id="grabsize"
-       value="3" />
+       value="1" />
     <group
        id="displayprofile"
        enable="0"
        from_display="0"
        intent="0"
-       uri="" />
+       uri="/usr/local/share/color/icc/eciRGB_v2.icc" />
     <group
        id="softproof"
-       enable="0"
+       enable="1"
        intent="0"
        gamutcolor="#808080"
        gamutwarn="0"
-       bpc="0"
-       uri=""
+       bpc="1"
+       uri="/usr/local/share/color/icc/PSOcoated_v3.icc"
        preserveblack="0" />
     <group
        id="savewindowgeometry"
@@ -889,7 +910,7 @@
        value="2" />
     <group
        id="transform"
-       stroke="1"
+       stroke="0"
        rectcorners="1"
        pattern="1"
        gradient="1" />
@@ -998,11 +1019,22 @@
          angle_x="30.0"
          angle_z="30.0"
          empspacing="5" />
+      <group
+         id="modular"
+         units="mm"
+         origin_x="0.0"
+         origin_y="0.0"
+         spacing_x="40.0"
+         spacing_y="40.0"
+         gapx="10"
+         gapy="10"
+         marginx="0"
+         marginy="0" />
     </group>
     <group
        id="workarounds"
-       colorsontop="0"
-       partialdynamic="0" />
+       partialdynamic="0"
+       colorsontop="0" />
     <group
        id="rendering" />
     <group
@@ -1026,7 +1058,7 @@
        value="1" />
     <group
        id="snapping"
-       snap-global-toggle="1"
+       snap-global-toggle="0"
        snap-node-category="1"
        snap-path="1"
        snap-path-intersection="0"
@@ -1044,7 +1076,19 @@
        snap-path-clip="1"
        snap-page-border="1"
        snap-grid="1"
-       snap-guide="1" />
+       snap-guide="1"
+       snap-bbox="1"
+       snap-bbox-edge="1"
+       snap-bbox-corner="1"
+       snap-bbox-edge-midpoint="0"
+       snap-bbox-center="0"
+       simple-snap-bbox="1"
+       snap-alignment="0"
+       snap-alignment-self="0"
+       snap-distribution="0"
+       simple-snap-alignment="0"
+       snap-page-margin="1"
+       snap-grid-line="1" />
     <group
        id="threading" />
     <group
@@ -1054,17 +1098,18 @@
      id="extensions"
      org.inkscape.output.png.inkscape.png_bitdepth="99"
      org.inkscape.output.png.inkscape.png_compression="6"
-     org.inkscape.output.png.inkscape.png_antialias="2" />
+     org.inkscape.output.png.inkscape.png_antialias="2"
+     org.inkscape.input.gdkpixbuf.png.do_not_ask="1" />
   <group
      id="desktop"
-     style="fill:#fff7ed;font-size:18.66666667px;-inkscape-font-specification:'Latin Modern Roman,  Italic';font-family:'Latin Modern Roman';line-height:1.2;stroke-miterlimit:10;letter-spacing:0px;opacity:0.55;stroke-width:0.79151243;stroke:#000000;font-style:italic">
+     style="fill:#aaccff;font-size:24px;-inkscape-font-specification:'Latin Modern Roman,  Bold';font-family:'Latin Modern Roman';line-height:0.9;stroke-miterlimit:10;letter-spacing:0px;stroke-width:0.03779528;text-anchor:middle;text-align:center;text-orientation:auto;font-weight:bold">
     <group
        width="1900"
        height="1036"
        x="10"
        y="10"
        maximized="1"
-       fullscreen="0"
+       fullscreen="1"
        id="geometry" />
     <group
        id="XYfront" />

@@ -10,10 +10,12 @@ nnoremap ;pu :cd $VIFM_CONTEXT/public<CR>
 nnoremap ;jj :cd $VIFM_CONTEXT/src/<CR>
 nnoremap ;jm :goto $VIFM_CONTEXT/src/main.js<CR>
 nnoremap ;jr :goto $VIFM_CONTEXT/src/router.js<CR>
+nnoremap ;rj :goto $VIFM_CONTEXT/src/router.js<CR>
 nnoremap ;rw :goto $VIFM_CONTEXT/src/router.js<CR>
 nnoremap ;ja :goto $VIFM_CONTEXT/src/App.vue<CR>
 nnoremap ;jp :cd $VIFM_CONTEXT/src/Pages/<CR>
 nnoremap ;jc :cd $VIFM_CONTEXT/src/Components/<CR>
+nnoremap ;js :cd $VIFM_CONTEXT/src/Shared/<CR>
 
 nnoremap ;ss :cd $VIFM_CONTEXT/src/<CR>
 nnoremap ;sa :cd $VIFM_CONTEXT/src/assets<CR>

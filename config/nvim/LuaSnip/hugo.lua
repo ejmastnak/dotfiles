@@ -18,17 +18,17 @@ return
       )
     ),
     -- SHORTCODE
-    s({trig="scc", snippetType="autosnippet"},
-      fmt(
-        [[
-          {{< () >}}
-        ]],
-        {
-          d(1, get_visual),
-        },
-        { delimiters = '()'}
-      )
-    ),
+    -- s({trig="scc", snippetType="autosnippet"},
+    --   fmt(
+    --     [[
+    --       {{< () >}}
+    --     ]],
+    --     {
+    --       d(1, get_visual),
+    --     },
+    --     { delimiters = '()'}
+    --   )
+    -- ),
     -- TOC SHORTCODE
     s({trig="toc"},
       fmt(

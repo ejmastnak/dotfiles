@@ -19,6 +19,8 @@
 - public/**
 - vendor/**
 
+- .env
+
 - edu/princeton/cs/algs4/**
 
 # Eclipse workspace aux files

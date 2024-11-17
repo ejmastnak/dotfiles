@@ -21,7 +21,7 @@ return
       {condition = line_begin}
     ),
     -- Print to stderr and exit
-    s({trig="pse", snippetType="autosnippet"},
+    s({trig="fpe", snippetType="autosnippet"},
       fmt(
         [[
           print({}, file=sys.stderr)
@@ -146,6 +146,19 @@ return
       ),
       {condition = line_begin}
     ),
+    -- for line in file
+    s({trig="flif", snippetType = "autosnippet"},
+      fmta(
+        [[
+        for line in file:
+            <>
+        ]],
+        {
+          i(1),
+        }
+      ),
+      {condition = line_begin}
+    ),
     -- RETURN STATEMENT
     s({trig = ";r", snippetType = "autosnippet"},
       { t("return") },
@@ -170,22 +183,6 @@ return
     -- SELF (for use in classes)
     s({trig = ";s", snippetType = "autosnippet"},
       { t("self.") }
-    ),
-    -- Open a filew
-    s({trig="wfo", snippetType = "autosnippet"},
-      fmta(
-        [[
-        with open(<>, '<>', encoding="<>") as <>:
-          <>
-        ]],
-        {
-          i(1),
-          i(2),
-          i(3, "utf-8"),
-          i(4, "f"),
-          i(0),
-        }
-      )
     ),
     -- except
     s({trig="exx", snippetType = "autosnippet"},
@@ -249,5 +246,32 @@ return
         }
       ),
       {condition = line_begin}
+    ),
+    -- Current time since epoch in ns
+    s({trig = 'tns', snippetType="autosnippet"},
+      fmt(
+        [[
+          timens = time.time_ns()
+        ]],
+        { }
+      ),
+      {condition = line_begin}
+    ),
+    -- Print time elapsed since previous time_ns call
+    s({trig = 'ptns', snippetType="autosnippet"},
+      fmta(
+        [[ 
+          print("Time: {:.<>f} <>".format((time.time_ns()-timens) / 1e<>))
+        ]],
+        { i(3, "3"), i(2, "ms"), i(1, "6")}
+      ),
+      {condition = line_begin}
+    ),
+    -- Format string
+    s({trig = 'f"', snippetType="autosnippet", priority=1000},
+      fmt(
+        [[f"{}"]],
+        { d(1, get_visual) }
+      )
     ),
   }

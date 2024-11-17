@@ -1,0 +1,150 @@
+local helpers = require('personal.luasnip-helper-funcs')
+local get_visual = helpers.get_visual
+
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
+
+return {}
+
+  -- {
+  --   -- Reserve sf for soundfile
+  --   s({trig = "sf", snippetType="autosnippet", priority=1000},
+  --     { t("sf") }
+  --   ),
+  --   -- And use ;` as a backup backtick
+  --   s({trig = ";`", snippetType="autosnippet"},
+  --     {
+  --       f( function(_, snip) return snip.captures[1] end ),
+  --       t("`"),
+  --       d(1, get_visual),
+  --       t("`"),
+  --     }
+  --   ),
+  --   -- SF_INFO structure for output file
+  --   s({trig = "sfoi", snippetType="autosnippet"},
+  --     fmta(
+  --       [[
+  --       SF_INFO <> = { 0 };
+  --       <>.samplerate = <>;
+  --       <>.channels = <>;
+  --       <>.format = (<> | <>);
+  --     ]],
+  --       { 
+  --         i(1, "sfinfo"),
+  --         rep(1),
+  --         i(2),
+  --         rep(1),
+  --         i(3),
+  --         rep(1),
+  --         i(4),
+  --         i(5),
+  --       }
+  --     ),
+  --     { condition = line_begin }
+  --   ),
+  --   -- sf_open
+  --   s({trig = "sfopen", snippetType="autosnippet"},
+  --     fmta(
+  --       [[
+  --       char* <> = <>;
+  --       SNDFILE *<> = NULL;
+  --       if (!(<> = sf_open(<>, <>, <>))) {
+  --           puts("Error: Not able to open <> file.");
+  --       };
+  --     ]],
+  --       { 
+  --         i(1, "fname"),
+  --         i(2),
+  --         i(3, "file"),
+  --         rep(3),
+  --         rep(1),
+  --         c(4, {t("SFM_WRITE"), t("SFM_READ")}),
+  --         i(5, "&sfinfo"),
+  --         c(6, {t("output"), t("input")}),
+  --       }
+  --     ),
+  --     { condition = line_begin }
+  --   ),
+  --   -- sf_read_int / sf_readf_int
+  --   s({trig = "sfri", snippetType="autosnippet"},
+  --     fmta(
+  --       [[
+  --       sf_read<>_int(<>, <>, <>);
+  --     ]],
+  --       { 
+  --         c(1, {t(""), t("f")}),
+  --         i(2, "file"),
+  --         i(3, "buffer"),
+  --         i(4, "SAMPLE_COUNT"),
+  --       }
+  --     ),
+  --     { condition = line_begin }
+  --   ),
+  --   -- sf_read_float / sf_readf_float
+  --   s({trig = "sfrf", snippetType="autosnippet"},
+  --     fmta(
+  --       [[
+  --       sf_read<>_float(<>, <>, <>);
+  --     ]],
+  --       { 
+  --         c(1, {t(""), t("f")}),
+  --         i(2, "file"),
+  --         i(3, "buffer"),
+  --         i(4, "SAMPLE_COUNT"),
+  --       }
+  --     ),
+  --     { condition = line_begin }
+  --   ),
+  --   -- sf_write_int / sf_writef_int
+  --   s({trig = "sfwi", snippetType="autosnippet"},
+  --     fmta(
+  --       [[
+  --     if (sf_write<>_int(<>, <>, <>) != <>) {
+  --         puts(sf_strerror(<>));
+  --     }
+  --     ]],
+  --       { 
+  --         c(1, {t(""), t("f")}),
+  --         i(2, "file"),
+  --         i(3, "buffer"),
+  --         i(4, "SAMPLE_COUNT"),
+  --         rep(4),
+  --         rep(2),
+  --       }
+  --     ),
+  --     { condition = line_begin }
+  --   ),
+  --   -- sf_write_float / sf_writef_float
+  --   s({trig = "sfwf", snippetType="autosnippet"},
+  --     fmta(
+  --       [[
+  --     if (sf_write<>_float(<>, <>, <>) != <>) {
+  --         puts(sf_strerror(<>));
+  --     }
+  --     ]],
+  --       { 
+  --         c(1, {t(""), t("f")}),
+  --         i(2, "file"),
+  --         i(3, "buffer"),
+  --         i(4, "SAMPLE_COUNT"),
+  --         rep(4),
+  --         rep(2),
+  --       }
+  --     ),
+  --     { condition = line_begin }
+  --   ),
+  --   -- sf_close
+  --   s({trig = "sfclose", snippetType="autosnippet"},
+  --     fmta(
+  --       [[
+  --       sf_close(<>);
+  --     ]],
+  --       { 
+  --         i(1, "file"),
+  --       }
+  --     )
+  --   ),
+  --   -- SF_FORMAT_
+  --   s({trig = "sff", snippetType="autosnippet"},
+  --     { t("SF_FORMAT_") }
+  --   )
+  -- }

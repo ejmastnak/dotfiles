@@ -1,0 +1,1 @@
+/home/ej/Documents/projects/rpi-ambient/syncambient2pi.bash

@@ -17,7 +17,8 @@ return
           i(1),
           rep(1)
         }
-      )
+      ),
+      {condition = line_begin}
     ),
     -- Import from Shared
     s({trig = "iss", snippetType="autosnippet"},
@@ -29,7 +30,8 @@ return
           i(1),
           rep(1)
         }
-      )
+      ),
+      {condition = line_begin}
     ),
     -- Import from Layouts
     s({trig = "ial", snippetType="autosnippet"},
@@ -41,7 +43,8 @@ return
           i(1),
           rep(1)
         }
-      )
+      ),
+      {condition = line_begin}
     ),
     -- Import from local Partials
     s({trig = "ipp", snippetType="autosnippet"},
@@ -53,7 +56,8 @@ return
           i(1),
           rep(1)
         }
-      )
+      ),
+      {condition = line_begin}
     ),
     -- Import a heroicons icon
     s({trig = "ihi", snippetType="autosnippet"},
@@ -62,7 +66,8 @@ return
           import { <> } from '@heroicons/vue/24/outline'
         ]],
         { i(1) }
-      )
+      ),
+      {condition = line_begin}
     ),
     -- Import from Inertia
     s({trig = "ivi", snippetType="autosnippet"},
@@ -71,7 +76,8 @@ return
           import { <> } from '@inertiajs/vue3'
         ]],
         { i(1) }
-      )
+      ),
+      {condition = line_begin}
     ),
     -- Import from Vue
     s({trig = "ivv", snippetType="autosnippet"},
@@ -80,7 +86,8 @@ return
           import { <> } from 'vue'
         ]],
         { i(1) }
-      )
+      ),
+      {condition = line_begin}
     ),
     -- Import from global utility functions
     s({trig = "igf", snippetType="autosnippet"},
@@ -89,7 +96,8 @@ return
           import { <> } from '@/utils/GlobalFunctions.js'
         ]],
         { i(1) }
-      )
+      ),
+      {condition = line_begin}
     ),
   }
 

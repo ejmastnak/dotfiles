@@ -23,14 +23,6 @@ end
 
 return
   {
-    -- Inline code block, overrides single paired back ticks for "all" filetype
-    s({trig="sd", snippetType="autosnippet", priority=1000},
-      {
-        f( function(_, snip) return snip.captures[1] end ),
-        t("``"),
-        d(1, get_visual),
-        t("``"),
-      }),
     -- Italic (emphasized) text
     s({trig="tii", snippetType="autosnippet"},
       {

@@ -235,7 +235,7 @@
 <Multi_key> <a> <a> : "á" aacute  # LATIN SMALL LETTER A WITH ACUTE
 <Multi_key> <e> <e> : "é" eacute  # LATIN SMALL LETTER E WITH ACUTE
 <Multi_key> <i> <i> : "í" iacute  # LATIN SMALL LETTER I WITH ACUTE
-<Multi_key> <I> <i> : "î" iacute  # to compensate for overriding default
+<Multi_key> <I> <i> : "í" iacute  # to compensate for overriding default
 <Multi_key> <o> <o> : "ó" oacute  # LATIN SMALL LETTER O WITH ACUTE
 <Multi_key> <u> <u> : "ú" uacute  # LATIN SMALL LETTER U WITH ACUTE
 <Multi_key> <U> <u> : "ü" uacute  # to compensate for overriding default

@@ -25,7 +25,7 @@ return
     ),
     -- /bin/bash shebang
     s({trig = "!!", snippetType="autosnippet"},
-      {t("#!/bin/bash")},
+      {t("#!/usr/bin/env bash")},
       {condition = line_begin}
     ),
     s({trig = "fl", snippetType="autosnippet"},
@@ -108,6 +108,22 @@ return
         {
           d(1, get_visual),
         }
+      )
+    ),
+    -- Parameter validation
+    s({trig = "ifne", snippetType="autosnippet"},
+      fmta(
+        [[
+        if [ "$#" -ne <> ]; then
+            echo "Usage: ${0} <>" >>&2
+            exit 1
+        fi
+        ]],
+        {
+          i(1),
+          i(0),
+        },
+        {condition = line_begin}
       )
     ),
     s({trig = "ext"},
