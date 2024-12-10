@@ -44,7 +44,7 @@ nnoremap gjv :cd ~/Videos<CR>
 nnoremap gjg :cd ~/Games<CR>
 nnoremap gjt :cd ~/tmp<CR>
 nnoremap gjm :cd ~/mnt<CR>
-nnoremap gjb :cd ~/Documents/bolha-craigslist<CR>
+nnoremap gdb :cd ~/Documents/bolha-craigslist<CR>
 nnoremap gjT :cd /tmp<CR>
 nnoremap gju :cd /run/media/ej<CR>
 
@@ -88,6 +88,7 @@ nnoremap go4 :goto ~/Documents/projects/tv47/TODO.md<CR>
 nnoremap go5 :cd ~/Documents/projects/5mates<CR>
 nnoremap goa :cd ~/Documents/projects/rpi-ambient<CR>
 nnoremap goc :goto ~/Documents/projects/casino/app<CR>
+nnoremap gbb :goto ~/Documents/projects/casino/breaks/breaks.md<CR>
 nnoremap goe :cd ~/Documents/projects/ejmastnak<CR>
 nnoremap gof :goto ~/Documents/projects/found-my-phone/app<CR>
 nnoremap gog :goto ~/Documents/projects/gaia/app<CR>
@@ -159,7 +160,10 @@ nnoremap gaj :cd ~/Documents/academics/courses/algs<CR>
 nnoremap gmm :goto ~/Music/library/TODO.md<CR>
 nnoremap gmT :goto ~/Music/library/TODO.md<CR>
 nnoremap gmp :goto ~/Music/podcasts/left-off-at.md<CR>
+nnoremap gmu :goto ~/Music/library/latin/scuola-di-salsa/uno-dos-tres-cinco-seis-siete.mp3<CR>
+nnoremap gmB :cd ~/Music/podcasts/befrs<CR>
 nnoremap gmf :cd ~/Music/library/lofi<CR>
+nnoremap gmw :cd ~/Music/library/world<CR>
 nnoremap gmh :cd ~/Music/library/chillhop<CR>
 nnoremap gma :cd ~/Music/library/ambient<CR>
 nnoremap gmA :cd ~/Music/library/afrobeats<CR>

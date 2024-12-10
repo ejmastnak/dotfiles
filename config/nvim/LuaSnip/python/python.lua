@@ -146,6 +146,27 @@ return
       ),
       {condition = line_begin}
     ),
+    -- read a YAML file
+    s({trig="woy", snippetType = "autosnippet"},
+      fmta(
+        [[
+        with open(<>, "r") as <>:
+            try:
+                <> = yaml.safe_load(<>)<>
+            except yaml.YAMLError as e:
+                print("Error reading YAML file: {}".format(e))
+                sys.exit()
+      ]],
+        {
+          i(1, "file.yaml"),
+          i(2, "yf"),
+          i(3, "data"),
+          rep(2),
+          i(0),
+        }
+      ),
+      {condition = line_begin}
+    ),
     -- for line in file
     s({trig="flif", snippetType = "autosnippet"},
       fmta(

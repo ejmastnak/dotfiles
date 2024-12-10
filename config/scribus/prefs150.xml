@@ -5,8 +5,8 @@
 			<attribute key="area" value="0"/>
 			<attribute key="floating" value="1"/>
 			<attribute key="height" value="223"/>
-			<attribute key="left" value="243"/>
-			<attribute key="top" value="655"/>
+			<attribute key="left" value="330"/>
+			<attribute key="top" value="773"/>
 			<attribute key="visible" value="0"/>
 			<attribute key="width" value="409"/>
 		</context>
@@ -26,8 +26,8 @@
 			<attribute key="area" value="0"/>
 			<attribute key="floating" value="1"/>
 			<attribute key="height" value="523"/>
-			<attribute key="left" value="1294"/>
-			<attribute key="top" value="759"/>
+			<attribute key="left" value="872"/>
+			<attribute key="top" value="332"/>
 			<attribute key="visible" value="0"/>
 			<attribute key="width" value="392"/>
 		</context>
@@ -60,8 +60,8 @@
 		</context>
 		<context name="MeasurementsPalette">
 			<attribute key="height" value="192"/>
-			<attribute key="left" value="911"/>
-			<attribute key="top" value="764"/>
+			<attribute key="left" value="674"/>
+			<attribute key="top" value="833"/>
 			<attribute key="visible" value="1"/>
 			<attribute key="width" value="151"/>
 		</context>
@@ -74,15 +74,19 @@
 		<context name="PagePalette">
 			<attribute key="area" value="0"/>
 			<attribute key="floating" value="1"/>
+			<attribute key="height" value="552"/>
+			<attribute key="left" value="109"/>
+			<attribute key="top" value="270"/>
 			<attribute key="visible" value="0"/>
+			<attribute key="width" value="264"/>
 		</context>
 		<context name="PropertiesPalette">
 			<attribute key="area" value="0"/>
 			<attribute key="floating" value="1"/>
 			<attribute key="height" value="1079"/>
-			<attribute key="left" value="884"/>
-			<attribute key="top" value="324"/>
-			<attribute key="visible" value="0"/>
+			<attribute key="left" value="103"/>
+			<attribute key="top" value="359"/>
+			<attribute key="visible" value="1"/>
 			<attribute key="width" value="640"/>
 		</context>
 		<context name="Sclib">
@@ -129,29 +133,30 @@
 		</context>
 		<context name="checkDocument">
 			<attribute key="height" value="260"/>
-			<attribute key="left" value="325"/>
-			<attribute key="top" value="426"/>
+			<attribute key="left" value="329"/>
+			<attribute key="top" value="466"/>
 			<attribute key="visible" value="0"/>
 			<attribute key="width" value="320"/>
 		</context>
 		<context name="dirs">
 			<attribute key="collect" value="."/>
-			<attribute key="colors" value="/home/ej/dotfiles/config/scribus/palettes/gaia"/>
-			<attribute key="images" value="/home/ej/Documents"/>
+			<attribute key="colors" value="/home/ej/dotfiles/config/scribus/palettes/tailwind"/>
+			<attribute key="editformats" value="."/>
+			<attribute key="images" value="/home/ej/Documents/out"/>
 			<attribute key="keymapprefs_export" value="."/>
 			<attribute key="keymapprefs_import" value="/usr/share/scribus/keysets/"/>
-			<attribute key="pastefile" value="/home/ej/Documents/projects/gaia/design/labels/scribus/partials"/>
+			<attribute key="pastefile" value="/home/ej/dotfiles/config/scribus/palettes"/>
 			<attribute key="pdf" value="/home/ej/Documents/projects/gaia/design/labels/pdf"/>
 			<attribute key="save_text" value="/home/ej/Documents/"/>
-			<attribute key="story_load" value="/home/ej/Documents/projects/gaia/design/labels/text/stnolj"/>
+			<attribute key="story_load" value="/home/ej/Documents/projects/gaia/labels/text/stnolj"/>
 		</context>
 		<context name="marksManager">
 			<attribute key="visible" value="0"/>
 		</context>
 		<context name="nodePalette">
 			<attribute key="height" value="505"/>
-			<attribute key="left" value="885"/>
-			<attribute key="top" value="516"/>
+			<attribute key="left" value="1031"/>
+			<attribute key="top" value="603"/>
 			<attribute key="visible" value="1"/>
 			<attribute key="width" value="187"/>
 		</context>
@@ -192,14 +197,14 @@
 			<attribute key="registrationMarks" value="0"/>
 		</context>
 		<context name="styleManager">
-			<attribute key="InitX" value="471"/>
-			<attribute key="InitY" value="416"/>
-			<attribute key="eX" value="471"/>
-			<attribute key="eY" value="416"/>
+			<attribute key="InitX" value="159"/>
+			<attribute key="InitY" value="365"/>
+			<attribute key="eX" value="159"/>
+			<attribute key="eY" value="365"/>
 			<attribute key="height" value="297"/>
 			<attribute key="isEditMode" value="0"/>
-			<attribute key="left" value="471"/>
-			<attribute key="top" value="416"/>
+			<attribute key="left" value="159"/>
+			<attribute key="top" value="365"/>
 			<attribute key="visible" value="0"/>
 			<attribute key="width" value="274"/>
 		</context>
@@ -220,7 +225,7 @@
 		</context>
 		<context name="user_preferences">
 			<attribute key="gui_language" value="en_US"/>
-			<attribute key="mainwinstate" value="AAAA/wAAAAD9AAAAAAAAA7EAAAO/AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAUAAAAIAEYAaQBsAGUBAAAAAP////8AAAAAAAAAAAAAAAgARQBkAGkAdAEAAAC//////wAAAAAAAAAAAAAACgBUAG8AbwBsAHMBAAABTP////8AAAAAAAAAAAAAABIAUABEAEYAXwBUAG8AbwBsAHMBAAADIf////8AAAAAAAAAAAAAABQAVgBpAGUAdwBfAFQAbwBvAGwAcwEAAANX/////wAAAAAAAAAA"/>
+			<attribute key="mainwinstate" value="AAAA/wAAAAD9AAAAAAAAAnEAAAO/AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAUAAAAIAEYAaQBsAGUBAAAAAP////8AAAAAAAAAAAAAAAgARQBkAGkAdAEAAAC//////wAAAAAAAAAAAAAACgBUAG8AbwBsAHMBAAABTP////8AAAAAAAAAAAAAABIAUABEAEYAXwBUAG8AbwBsAHMBAAAB4f////8AAAAAAAAAAAAAABQAVgBpAGUAdwBfAFQAbwBvAGwAcwEAAAIX/////wAAAAAAAAAA"/>
 			<table name="activeTabs">
 			</table>
 			<table name="tabbedPalettes">
@@ -235,7 +240,7 @@
 			<attribute key="side" value="213"/>
 			<attribute key="top" value="10"/>
 			<attribute key="width" value="945"/>
-			<attribute key="winstate" value="AAAA/wAAAAD9AAAAAAAAA7EAAAN5AAAABAAAAAQAAAAIAAAACPwAAAADAAAAAgAAAAEAAAAIAEYAaQBsAGUBAAAAAP////8AAAAAAAAAAAAAAAIAAAACAAAACABGAG8AbgB0AQAAAAD/////AAAAAAAAAAAAAAAKAEEAbABpAGcAbgEAAAHw/////wAAAAAAAAAAAAAAAgAAAAMAAAAKAFMAdAB5AGwAZQEAAAAA/////wAAAAAAAAAAAAAACgBTAHQAcgBvAGsBAAABa/////8AAAAAAAAAAAAAAAgARgBpAGwAbAEAAAJC/////wAAAAAAAAAA"/>
+			<attribute key="winstate" value="AAAA/wAAAAD9AAAAAAAAA7EAAAN5AAAABAAAAAQAAAAIAAAACPwAAAADAAAAAgAAAAEAAAAIAEYAaQBsAGUBAAAAAP////8AAAAAAAAAAAAAAAIAAAACAAAACABGAG8AbgB0AQAAAAD/////AAAAAAAAAAAAAAAKAEEAbABpAGcAbgEAAAHw/////wAAAAAAAAAAAAAAAgAAAAMAAAAKAFMAdAB5AGwAZQEAAAAA/////wAAAAAAAAAAAAAACgBTAHQAcgBvAGsBAAABa/////8AAAAAAAAAAAAAAAgARgBpAGwAbAEAAAIw/////wAAAAAAAAAA"/>
 		</context>
 		<context name="helpbrowser">
 			<attribute key="xsize" value="945"/>
@@ -309,12 +314,18 @@
 			<attribute key="syntaxtext" value="#000000"/>
 			<table name="recentscripts">
 				<row index="0">
-					<col index="0">/home/ej/dotfiles/config/scribus/scripts/gaia-rgb2cmyk.py</col>
+					<col index="0">/home/ej/dotfiles/config/scribus/scripts/scribus-rgb2cmyk.py</col>
 				</row>
 				<row index="1">
-					<col index="0">/home/ej/dotfiles/config/scribus/scripts/tailwindrgb2cmyk.py</col>
+					<col index="0">/home/ej/dotfiles/config/scribus/scripts/scribus-trim-names.py</col>
 				</row>
 				<row index="2">
+					<col index="0">/home/ej/dotfiles/config/scribus/scripts/gaia-rgb2cmyk.py</col>
+				</row>
+				<row index="3">
+					<col index="0">/home/ej/dotfiles/config/scribus/scripts/tailwindrgb2cmyk.py</col>
+				</row>
+				<row index="4">
 					<col index="0">/home/ej/tmp/color/replacecolors.py</col>
 				</row>
 			</table>

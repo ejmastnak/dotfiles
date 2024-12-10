@@ -3,6 +3,7 @@
 nnoremap ;hh :cd $VIFM_CONTEXT<CR>
 nnoremap ;vv :goto $VIFM_CONTEXT/.vifm-context.vifm<CR>
 nnoremap ;pj :goto $VIFM_CONTEXT/package.json<CR>
+nnoremap ;ee :goto $VIFM_CONTEXT/.env<CR>
 
 nnoremap ;ii :goto $VIFM_CONTEXT/index.html<CR>
 nnoremap ;pu :cd $VIFM_CONTEXT/public<CR>
@@ -10,12 +11,12 @@ nnoremap ;pu :cd $VIFM_CONTEXT/public<CR>
 nnoremap ;jj :cd $VIFM_CONTEXT/src/<CR>
 nnoremap ;jm :goto $VIFM_CONTEXT/src/main.js<CR>
 nnoremap ;jr :goto $VIFM_CONTEXT/src/router.js<CR>
-nnoremap ;rj :goto $VIFM_CONTEXT/src/router.js<CR>
-nnoremap ;rw :goto $VIFM_CONTEXT/src/router.js<CR>
 nnoremap ;ja :goto $VIFM_CONTEXT/src/App.vue<CR>
+nnoremap ;ji :cd $VIFM_CONTEXT/src/i18n<CR>
 nnoremap ;jp :cd $VIFM_CONTEXT/src/Pages/<CR>
 nnoremap ;jc :cd $VIFM_CONTEXT/src/Components/<CR>
 nnoremap ;js :cd $VIFM_CONTEXT/src/Shared/<CR>
+nnoremap ;jv :cd $VIFM_CONTEXT/src/Views/<CR>
 
 nnoremap ;ss :cd $VIFM_CONTEXT/src/<CR>
 nnoremap ;sa :cd $VIFM_CONTEXT/src/assets<CR>

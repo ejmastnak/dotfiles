@@ -4,7 +4,6 @@
 
 [core]
 	editor = nvim
-	fileMode = false
 
 [init]
 	defaultBranch = main

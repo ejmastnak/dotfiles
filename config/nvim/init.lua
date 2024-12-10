@@ -236,6 +236,9 @@ vim.cmd[[
 
 -- Open file in MPV at given timestamp.
 -- Works with cursor over WORDs of the form "path/to/file.mp3;hh:mm:ss"
+-- If WORD under cursor does not match file.mp3;hh:mm:ss, falls back to
+-- interpretting the WORD under the cursor as path/to/file.mp3 (without
+-- timestamp) and plays the file instead.
 vim.keymap.set('n', '<Leader>o',
   function()
     local word = vim.fn.expand("<cWORD>")
@@ -243,8 +246,9 @@ vim.keymap.set('n', '<Leader>o',
     if file_path and timestamp then
       local cmd = string.format("mpv --start=%s %s", timestamp, file_path)
       vim.cmd('TermExec size=8 cmd="' .. cmd .. '"')
-    else
-      print("Invalid format. Expected: path/to/media-file.mp3;hh:mm:ss")
+    else  -- fall back to playing file without timestamp
+      local cmd = string.format("mpv %s", word)
+      vim.cmd('TermExec size=8 cmd="' .. cmd .. '"')
     end
   end,
   {desc = 'Open file in MPV at given timestamp.'})

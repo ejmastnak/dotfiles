@@ -39,7 +39,7 @@
     <function name="editJavascripts" shortcut=""/>
     <function name="editMark" shortcut=""/>
     <function name="editMarks" shortcut=""/>
-    <function name="editMasterPages" shortcut=""/>
+    <function name="editMasterPages" shortcut="Ctrl+Shift+M"/>
     <function name="editNotesStyles" shortcut=""/>
     <function name="editPaste" shortcut="P"/>
     <function name="editPasteContents" shortcut=""/>
@@ -48,8 +48,8 @@
     <function name="editRedoAction" shortcut="Ctrl+R"/>
     <function name="editReplaceColors" shortcut=""/>
     <function name="editSearchReplace" shortcut=""/>
-    <function name="editSelectAll" shortcut="Shift+V"/>
-    <function name="editSelectAllOnLayer" shortcut="V"/>
+    <function name="editSelectAll" shortcut="Ctrl+A"/>
+    <function name="editSelectAllOnLayer" shortcut=""/>
     <function name="editStyles" shortcut="Ctrl+Shift+S"/>
     <function name="editTruncateContents" shortcut=""/>
     <function name="editUndoAction" shortcut="U"/>

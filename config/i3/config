@@ -296,10 +296,6 @@ bar {
 
 # Key bindings to launch programs and similar
 # --------------------------------------------- #
-# Open Anki
-bindsym $mod+Shift+a exec anki
-# bindsym $mod+Shift+a exec --no-startup-id "${HOME}/scripts/ankitex.bash"
-
 # Open a temporary Vim scratchpad
 bindsym $mod+Shift+v exec --no-startup-id "${HOME}/scripts/vim-anywhere.bash"
 

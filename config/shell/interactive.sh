@@ -44,7 +44,7 @@ alias grep='grep --color=auto'
 alias venv="source ./venv/bin/activate && vifm ./ ./"
 
 # Download and extract audio from YouTube videos
-alias dlp-video='yt-dlp -S res:720 --sponsorblock-remove all'
+alias dlp-video='yt-dlp -S res:1080 --sponsorblock-remove all'
 alias dlp-audio='yt-dlp -S res:240 --extract-audio --sponsorblock-remove all'
 
 # Use loudgain to normalize opus or mp3 albums

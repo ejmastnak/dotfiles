@@ -124,10 +124,10 @@
        gradientdrag="1">
       <eventcontext
          id="rect"
-         style="fill:blue;"
-         usecurrent="1"
-         width="290.005126953125"
-         height="280.645935058594"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#fedcb3;fill-opacity:1;stroke:none;stroke-width:0.60472441;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         usecurrent="0"
+         width="15.2154336764118"
+         height="8.14231271818865"
          ry="0" />
       <eventcontext
          id="3dbox"
@@ -329,9 +329,9 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1;font-family:sans-serif;font-size:118.66666667px;text-anchor:middle;text-align:center;-inkscape-font-specification:'sans-serif Bold';font-weight:bold;text-orientation:auto"
+       style="line-height:1;font-family:'Latin Modern Roman';font-size:15.99999905px;-inkscape-font-specification:'Latin Modern Roman, Normal';text-orientation:auto"
        selcue="1"
-       align_mode="1"
+       align_mode="0"
        writing_mode="0"
        orientation_mode="0"
        direction_mode="0" />
@@ -414,7 +414,8 @@
        selcue="1"
        gradientdrag="0"
        changelayer="1"
-       changepage="1" />
+       changepage="1"
+       lock_aspect_ratio="1" />
     <eventcontext
        id="paintbucket"
        style="fill:#a0a0a0;stroke:none;"
@@ -542,7 +543,7 @@
   </group>
   <group
      id="colorselector"
-     page="RGB"
+     page="HSL"
      switcher="1">
     <group
        id="RGB"
@@ -577,12 +578,12 @@
        panel_mode="1"
        panel_ratio="100"
        panel_wrap="0"
-       palette="TailwindCSS"
+       palette="/home/ej/.config/inkscape/palettes/inkscapge-gaia-colors.gpl"
        panel_border="0"
-       tile_size="16"
+       tile_size="18"
        tile_aspect="0"
        tile_border="2"
-       rows="3"
+       rows="2"
        tile_stretch="0"
        enlarge_pinned="1"
        show_labels="0">
@@ -634,7 +635,7 @@
     <group
        id="preferences"
        state="1"
-       page="23" />
+       page="7" />
     <group
        id="gradienteditor" />
     <group
@@ -656,7 +657,7 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="300" />
+         value="27.093334197998" />
     </group>
     <group
        id="save_as"
@@ -829,7 +830,7 @@
        value="1.414213562" />
     <group
        id="zoomcorrection"
-       value="1.0"
+       value="1"
        unit="mm" />
     <group
        id="keyscroll"
@@ -910,7 +911,7 @@
        value="2" />
     <group
        id="transform"
-       stroke="0"
+       stroke="1"
        rectcorners="1"
        pattern="1"
        gradient="1" />
@@ -1036,7 +1037,8 @@
        partialdynamic="0"
        colorsontop="0" />
     <group
-       id="rendering" />
+       id="rendering"
+       devmode="0" />
     <group
        id="boot"
        theme="custom"
@@ -1102,14 +1104,14 @@
      org.inkscape.input.gdkpixbuf.png.do_not_ask="1" />
   <group
      id="desktop"
-     style="fill:#aaccff;font-size:24px;-inkscape-font-specification:'Latin Modern Roman,  Bold';font-family:'Latin Modern Roman';line-height:0.9;stroke-miterlimit:10;letter-spacing:0px;stroke-width:0.03779528;text-anchor:middle;text-align:center;text-orientation:auto;font-weight:bold">
+     style="fill:#fedcb3;font-size:8px;-inkscape-font-specification:'Latin Modern Roman, ';font-family:'Latin Modern Roman';line-height:1;stroke-miterlimit:10;letter-spacing:0px;stroke-width:0.1511811;text-orientation:auto;stroke:#c2410c">
     <group
        width="1900"
        height="1036"
        x="10"
        y="10"
        maximized="1"
-       fullscreen="1"
+       fullscreen="0"
        id="geometry" />
     <group
        id="XYfront" />

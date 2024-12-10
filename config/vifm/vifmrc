@@ -154,9 +154,6 @@ nnoremap cm :!chmod 644 *.
 " Make file under cursor executable
 nnoremap cx :!chmod +x %c<CR>
 
-" Play file under cursor with mpv
-nnoremap P :!mpv --keep-open=yes %c<CR>
-
 " Play ambient audio tracks
 nnoremap AA :!ambient.bash %c<CR>
 
@@ -168,6 +165,9 @@ nnoremap SS :!sudoedit %c<CR>
 
 " Open file under cursor with Inkscape
 nnoremap II :!inkscape %c > /dev/null 2>&1 &<CR>
+
+" Open file under cursor with Scribus
+nnoremap SC :!scribus %c > /dev/null 2>&1 &<CR>
 
 " Run file under cursor as a shell script
 nnoremap S :!sh %c<CR>
